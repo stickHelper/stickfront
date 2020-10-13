@@ -1,9 +1,9 @@
 # STICKFRONT
+---
 
 > This repository is monorepo for create library using lerna
 
 ## Used folder structure
----
 
 ```bash
 .
@@ -14,9 +14,9 @@
 └── README.md
 
 ```
+---
 
 ## How to use
----
 ```bash
 # clone repository
 # with ssh
@@ -56,9 +56,9 @@ $ cd stickfront
 # 2. and add styling on styles/components directory
 # 3. and the you can import your component to library-plugin.js
 ```
+---
 
 ## Publish
----
 ```bash
 # 1. Move to root directory
 $ yarn build
@@ -69,6 +69,7 @@ $ lerna publish
 > 1. Before publish please login to npm on your terminal, check your npm account with  *`npm whoami`* 
 > 2. Please read documentation lerna if your confused.
 
+---
 ## Team Reminder
 - Think about what you actually want (and why you want it)
 - We all have something to teach. We all have something to learn
