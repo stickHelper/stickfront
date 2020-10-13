@@ -1,4 +1,6 @@
 import './styles/index.scss'
+import './styles/icon/se-font.min.scss'
+import './styles/font/font-family.scss'
 
 import SEButton from './components/SEButton/index.vue'
 
