@@ -1,5 +1,4 @@
 # STICKFRONT
----
 
 > This repository is monorepo for create library using lerna
 
