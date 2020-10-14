@@ -1,0 +1,24 @@
+{
+  "name": "@stickearn/helper",
+  "version": "0.0.0",
+  "private": false,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "stickearn",
+  "main": "index.js",
+  "files": [
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "date-fns": "^2.16.1",
+    "js-cookie": "^2.2.1"
+  },
+  "description": ""
+}
