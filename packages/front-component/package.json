@@ -23,6 +23,7 @@
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name stickfront ./src/library-plugin.js",
+    "build:spa": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix"
