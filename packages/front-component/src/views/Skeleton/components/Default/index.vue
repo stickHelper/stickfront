@@ -1,48 +1,31 @@
 <template>
   <CodeCard>
     <CodeCardDemo>
-      <SEButton
-        label="Small"
-        size="small"
-      />
-
-      <SEButton
-        label="Medium"
-        size="medium"
-      />
-
-      <SEButton
-        label="Large"
-        size="large"
-      />
+      <SESkeleton />
     </CodeCardDemo>
     <CodeCardMeta @showCode="changeViewCode($event)">
       <div class="code-card-title">
-        Size
+        Default
       </div>
-      <span>Size:
-        <code>small</code> <code>medium</code> <code>large</code>
-      </span>
+      <span>Default: - </span>
     </CodeCardMeta>
     <CodeCardHightlight :show-code="showCode">
-      <pre><code class="xml hljs">&lt;SEButton label="small" size="small" /&gt;
-&lt;SEButton label="Medium" size="medium" /&gt;
-&lt;SEButton label="Large" size="Large" /&gt;</code></pre>
+      <pre><code class="xml hljs">&lt;SESkeleton /&gt;</code></pre>
     </CodeCardHightlight>
   </CodeCard>
 </template>
 
 <script>
-import SEButton from '@/components/SEButton'
+import SESkeleton from '@/components/SESkeleton'
 import CodeCard from '@/components/CodeCard'
 import CodeCardDemo from '@/components/CodeCard/CardDemo'
 import CodeCardMeta from '@/components/CodeCard/CardMeta'
 import CodeCardHightlight from '@/components/CodeCard/CardHightlight'
 
 export default {
-  name: 'ButtonSize',
+  name: 'SkeletonDefault',
   components: {
-    SEButton,
+    SESkeleton,
     CodeCard,
     CodeCardDemo,
     CodeCardMeta,

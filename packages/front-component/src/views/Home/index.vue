@@ -1,12 +1,19 @@
 <template>
-  <div class="home">
-    <section class="uw-banner p-xs-5">
-      <h1 class="c-white">
+  <div class="home-page">
+    <section class="home-page--banner p-xs-5">
+      <h1>
         Stickearn Design Component
       </h1>
-      <h3 class="c-white">
+      <h3>
         For Vue JS
       </h3>
+      <a href="https://badge.fury.io/js/%40stickearn%2Fstickfront">
+        <img
+          src="https://badge.fury.io/js/%40stickearn%2Fstickfront.svg"
+          alt="npm version"
+          height="18"
+        >
+      </a>
     </section>
     <div class="row p-xs-5">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -64,3 +71,7 @@ export default {
   components: {}
 }
 </script>
+
+<style lang="scss" scoped>
+@import './styles.scss';
+</style>

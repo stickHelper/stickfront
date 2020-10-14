@@ -2,32 +2,44 @@
   <CodeCard>
     <CodeCardDemo>
       <SEButton
-        label="Small"
+        label="Default"
         size="small"
       />
-
       <SEButton
-        label="Medium"
-        size="medium"
+        label="Primary"
+        color="primary"
+        size="small"
       />
-
       <SEButton
-        label="Large"
-        size="large"
+        label="Secondary"
+        color="secondary"
+        size="small"
+      />
+      <SEButton
+        label="Normal"
+        color="normal"
+        size="small"
+      />
+      <SEButton
+        label="Dark"
+        color="dark"
+        size="small"
       />
     </CodeCardDemo>
     <CodeCardMeta @showCode="changeViewCode($event)">
       <div class="code-card-title">
-        Size
+        Color
       </div>
-      <span>Size:
-        <code>small</code> <code>medium</code> <code>large</code>
+      <span>Color:
+        <code>primary</code> <code>secondary</code> <code>normal</code> <code>dark</code>
       </span>
     </CodeCardMeta>
     <CodeCardHightlight :show-code="showCode">
-      <pre><code class="xml hljs">&lt;SEButton label="small" size="small" /&gt;
-&lt;SEButton label="Medium" size="medium" /&gt;
-&lt;SEButton label="Large" size="Large" /&gt;</code></pre>
+      <pre><code class="xml hljs">&lt;SEButton label="Default" size="small" /&gt;
+&lt;SEButton label="Primary" color="primary" size="small" /&gt;
+&lt;SEButton label="Secondary" color="secondary" size="small" /&gt;
+&lt;SEButton label="Normal" color="normal" size="small" /&gt;
+&lt;SEButton label="Dark" color="dark" size="small" /&gt;</code></pre>
     </CodeCardHightlight>
   </CodeCard>
 </template>
@@ -40,7 +52,7 @@ import CodeCardMeta from '@/components/CodeCard/CardMeta'
 import CodeCardHightlight from '@/components/CodeCard/CardHightlight'
 
 export default {
-  name: 'ButtonSize',
+  name: 'ButtonColor',
   components: {
     SEButton,
     CodeCard,

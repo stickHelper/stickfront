@@ -33,6 +33,13 @@
               name: 'Button',
               url: '/button'
             }
+          },
+          {
+            label: 'Skeleton',
+            path: {
+              name: 'Skeleton',
+              url: '/skeleton'
+            }
           }
         ]
       }

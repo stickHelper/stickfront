@@ -41,9 +41,4 @@ export default {
   background-color: white;
   box-shadow: 0px 4px 16px rgba(black, .24);
 }
-.uw-banner{
-  width: 100%;
-  background-color: skyblue;
-  // @include border-radius($gutter-md);
-}
 </style>

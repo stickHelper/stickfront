@@ -1,0 +1,13 @@
+@import '@/styles/base/_color';
+@import '@/styles/base/_variable';
+@import '@/styles/base/_mixin';
+
+.home-page {
+  &--banner {
+    background-color: $purple;
+
+    h1, h3 {
+      color: $white;
+    }
+  }
+}

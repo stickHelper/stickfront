@@ -30,6 +30,10 @@ export default {
       validator: function (value) {
         return ['small', 'medium', 'large'].indexOf(value) !== -1
       }
+    },
+    className: {
+      type: String,
+      default: null
     }
   },
   computed: {
@@ -37,12 +41,8 @@ export default {
       return {
         'se-btn': true,
         [`se-btn--${this.color}`]: true,
-        [`se-btn--${this.size}`]: true
-      }
-    },
-    style() {
-      return {
-        backgroundColor: this.backgroundColor
+        [`se-btn--${this.size}`]: true,
+        [`${this.className}`]: this.className !== null
       }
     }
   },

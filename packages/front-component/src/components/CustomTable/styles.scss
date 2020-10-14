@@ -1,0 +1,76 @@
+@import '@/styles/base/_variable';
+@import '@/styles/base/_color';
+@import '@/styles/base/_custom';
+
+.custom-table {
+  position: relative;
+  // overflow: hidden;
+  background: $white;
+  color: $base-font-color;
+  font-size: $base-font-color;
+  border: 1px solid rgba(34,36,38,.15);
+  z-index: 1;
+
+  table {
+    table-layout: fixed;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+
+    td, th {
+      transition: background .1s ease,color .1s ease;
+      padding: $table-cell-padding;
+      border-bottom: $table-cell-border-style;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    thead th, tfoot th {
+      background: $table-th-background-color;
+      font-weight: 500;
+    }
+
+    thead {
+      tr {
+        th {
+          color: rgba(0, 0, 0, .75);
+          &:first-child {
+            width: 16%;
+          }
+          &:nth-child(3) {
+            width: 20%;
+          }
+          &:nth-child(4) {
+            width: 10%;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background: $table-cell-hover-background-color;
+        }
+        &:last-child td {
+          border-bottom: none;
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: $largestMobileScreen) {
+  .table {
+    table {
+      th, td {
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

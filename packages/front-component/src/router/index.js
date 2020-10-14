@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '@/views/Home/index.vue'
 import Button from '@/views/Button/index.vue'
+import Skeleton from '@/views/Skeleton/index.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/button',
     name: 'Button',
     component: Button
+  },
+  {
+    path: '/skeleton',
+    name: 'Skeleton',
+    component: Skeleton
   }
 ]
 
@@ -25,8 +31,10 @@ const router = new VueRouter({
   scrollBehavior(to, from) {
     // always scroll to top when navigate to other route
     if (to.path !== from.path) {
-      return { x: 0,
-        y: 0 }
+      return {
+        x: 0,
+        y: 0
+      }
     }
   },
   routes

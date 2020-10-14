@@ -91,6 +91,54 @@ h6 {
 }
 
 
+a {
+  text-decoration: none;
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+code, pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+}
+code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+}
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  white-space: pre;
+  word-wrap: normal;
+  margin-top: 0;
+  margin-bottom: 16px;
+  display: block;
+  margin: 1em 0px;
+  code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: initial;
+    border: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    color: $c-grey-darken-2;
+  }
+}
+
+
 // Text Style
 .text {
   // Position
@@ -194,4 +242,24 @@ h6 {
 
 .h-auto {
   height: auto !important;
+}
+
+.flex {
+  @include flexbox;
+  &-between {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+  }
+  &-arround {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+  }
+  &-dir--column {
+    @include flex-direction(column);
+  }
+  &-dir--row {
+    @include flex-direction(row);
+  }
 }
