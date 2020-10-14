@@ -1,5 +1,9 @@
 # @stickearn/helper
 
+[![npm version](https://badge.fury.io/js/%40stickearn%2Fhelper.svg)](https://badge.fury.io/js/%40stickearn%2Fhelper)
+
+This helper for stickearn javascript base
+
 ### Installing
 ___
 Using npm :
