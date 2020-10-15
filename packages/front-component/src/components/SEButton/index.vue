@@ -42,7 +42,7 @@ export default {
         'se-btn': true,
         [`se-btn--${this.color}`]: true,
         [`se-btn--${this.size}`]: true,
-        [`${this.className}`]: this.className !== null
+        [this.className]: this.className !== null
       }
     }
   },

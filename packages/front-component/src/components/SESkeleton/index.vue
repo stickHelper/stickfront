@@ -26,7 +26,7 @@ export default {
     classes() {
       return {
         'se-skeleton': true,
-        [`${this.className}`]: this.className !== null
+        [this.className]: this.className !== null
       }
     },
     style() {
