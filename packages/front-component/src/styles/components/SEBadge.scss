@@ -1,0 +1,134 @@
+.se-badge {
+  position: relative;
+  padding: $gutter-xs $gutter-sm;
+  background-color: $line;
+  color: $text-normal;
+  display: inline-flex;
+
+  @include border-radius(8px);
+  @include align-items(center);
+
+  &--primary {
+    color: $purple;
+    background-color: rgba($color: $purple, $alpha: .25);
+    
+    .tick {
+      background-color: $purple;
+    }
+  }
+  &--secondary {
+    color: $orange;
+    background-color: rgba($color: $orange, $alpha: .25);
+
+    .tick {
+      background-color: $orange;
+    }
+  }
+  &--dark {
+    color: $dark;
+    background-color: rgba($color: $dark, $alpha: .25);
+
+    .tick {
+      background-color: $dark;
+    }
+  }
+  &--mint {
+    color: $mint;
+    background-color: rgba($color: $mint, $alpha: .25);
+
+    .tick {
+      background-color: $mint;
+    }
+  }
+  &--red {
+    color: $red;
+    background-color: rgba($color: $red, $alpha: .25);
+
+    .tick {
+      background-color: $red;
+    }
+  }
+  &--error {
+    color: $error;
+    background-color: rgba($color: $error, $alpha: .25);
+
+    .tick {
+      background-color: $error;
+    }
+  }
+  &--salmon {
+    color: $salmon;
+    background-color: rgba($color: $salmon, $alpha: .25);
+
+    .tick {
+      background-color: $salmon;
+    }
+  }
+  &--normal {
+    color: $text-normal;
+    background-color: rgba($color: $text-normal, $alpha: .25);
+
+    .tick {
+      background-color: $text-normal;
+    }
+  }
+  &--accent {
+    color: $text-normal;
+    background-color: rgba($color: $accent, $alpha: 1);
+    
+    .tick {
+      background-color: $text-normal;
+    }
+  }
+  &--green {
+    color: $green;
+    background-color: rgba($color: $green, $alpha: .25);
+
+    .tick {
+      background-color: $green;
+    }
+  }
+  &--light-blue {
+    color: $light-blue;
+    background-color: rgba($color: $light-blue, $alpha: .25);
+
+    .tick {
+      background-color: $light-blue;
+    }
+  }
+  &--blue {
+    color: $blue;
+    background-color: rgba($color: $blue, $alpha: .25);
+
+    .tick {
+      background-color: $blue;
+    }
+  }
+
+  &--bald,
+  &--outline {
+    background-color: transparent !important;
+  }
+  &--outline {
+    &.se-badge--primary { border: 1px solid $purple; }
+    &.se-badge--secondary { border: 1px solid $orange; }
+    &.se-badge--dark { border: 1px solid $dark; }
+    &.se-badge--mint { border: 1px solid $mint; }
+    &.se-badge--red { border: 1px solid $red; }
+    &.se-badge--error { border: 1px solid $error; }
+    &.se-badge--salmon { border: 1px solid $salmon; }
+    &.se-badge--normal { border: 1px solid $text-normal; }
+    &.se-badge--accent { border: 1px solid $accent; }
+    &.se-badge--green { border: 1px solid $green; }
+    &.se-badge--light-blue { border: 1px solid $light-blue; }
+    &.se-badge--blue { border: 1px solid $blue; }
+  }
+
+  .tick {
+    height: 10px;
+    width: 10px;
+    margin-right: $gutter-sm;
+    
+    @include border-radius(50px);
+  }
+}

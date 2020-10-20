@@ -1,0 +1,69 @@
+.se-textarea {
+  position: relative;
+
+  @include flexbox;
+  @include flex-direction(column);
+
+  label {
+    margin-bottom: $gutter-sm;
+  }
+
+  textarea {
+    border: 1px solid $line;
+    outline: none;
+    padding: $text-md;
+    margin-bottom: $gutter-sm;
+    font-size: $text-md;
+    background-color: $accent;
+    @include border-radius(8px);
+
+    &::placeholder {
+      color: $text-subtle;
+    }
+
+    &:active,
+    &:focus {
+      border: 1px solid $orange;
+    }
+
+    &:focus + label {
+      color: $orange;
+    }
+  }
+
+  &--info {
+    font-size: $text-sm;
+    font-weight: bold;
+  }
+
+  &.error {
+    label,
+    input,
+    .icon,
+    .se-textarea--info {
+      color: $red;
+    }
+
+    textarea {
+      border: 1px solid $red;
+    }
+    
+  }
+
+  .success {
+    .icon {
+      color: $purple;
+    }
+
+    textarea {
+      border: 1px solid $purple;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 0;
+    right: $gutter-md;
+    transform: translateY(50%);
+  }
+}

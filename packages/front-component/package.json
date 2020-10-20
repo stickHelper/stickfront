@@ -20,7 +20,7 @@
     "vue-cli"
   ],
   "scripts": {
-    "start": "yarn serve",
+    "start": "yarn storybook",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name stickfront ./src/library-plugin.js",
     "build:spa": "vue-cli-service build",

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 /*
 Version         : 1.0
@@ -49,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Gilroy';
+  font-family: $font-stack;
   font-style: normal;
   font-weight: bold;
   margin: 1rem 0;
@@ -251,10 +252,10 @@ pre {
     @include align-items(center);
     @include justify-content(space-between);
   }
-  &-arround {
+  &-around {
     @include flexbox;
     @include align-items(center);
-    @include justify-content(space-between);
+    @include justify-content(space-around);
   }
   &-dir--column {
     @include flex-direction(column);

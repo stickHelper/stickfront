@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <section class="page-hero">
       <div class="row">
         <div class="col-md-6 col-xs-12">
@@ -11,23 +11,23 @@
       <h4>Text Sizes</h4>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H1
           </p>
-          <p>36px</p>
+          <p>48px</p>
         </div>
         <div class="col-xs-4">
           <h1>Heading One</h1>
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 36 = 54px)
+            Line height: 66px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H2
           </p>
           <p>32px</p>
@@ -37,13 +37,13 @@
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 32 = 48px)
+            Line height: 44px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H3
           </p>
           <p>24px</p>
@@ -53,61 +53,61 @@
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 24 = 36px)
+            Line height: 33px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H4
           </p>
-          <p>20px</p>
+          <p>18px</p>
         </div>
         <div class="col-xs-4">
           <h4>Heading Four</h4>
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 20 = 30px)
+            Line height: 27px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H5
           </p>
-          <p>18px</p>
+          <p>16px</p>
         </div>
         <div class="col-xs-4">
           <h5>Heading Five</h5>
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 18 = 27px)
+            Line height: 24px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             H6
           </p>
-          <p>16px</p>
+          <p>14px</p>
         </div>
         <div class="col-xs-4">
           <h6>Heading Six</h6>
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 16 = 24px)
+            Line height: 21px
           </p>
         </div>
       </div>
       <div class="row middle-xs border-bottom">
         <div class="col-xs-4">
-          <p class="font-semibold">
+          <p class="text-bold">
             P
           </p>
           <p>16px</p>
@@ -117,7 +117,7 @@
         </div>
         <div class="col-xs-4">
           <p class="fill">
-            Line height: 1.5rem (1.5 * 16 = 24px)
+            Line height: 24px
           </p>
         </div>
       </div>

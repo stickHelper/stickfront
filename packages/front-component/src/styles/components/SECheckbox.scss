@@ -1,0 +1,55 @@
+.se-checkbox {
+  &--item {
+    cursor: pointer;
+    display: inline-block;
+
+    input {
+      padding: 0;
+      height: initial;
+      width: initial;
+      margin-bottom: 0;
+      display: none;
+      cursor: pointer;
+    }
+
+    label {
+      cursor: pointer;
+      position: relative;
+
+      &:before {
+        content:'';
+        -webkit-appearance: none;
+        background-color: $accent;
+        border: 1px solid $line;
+        box-sizing: border-box;
+        padding: 10px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: $gutter-sm;
+        width: 32px;
+        height: 32px;
+
+        @include border-radius(4px)
+      }
+    }
+
+    input:checked + label:before {
+      background-color: $orange;
+    }
+
+    input:checked + label:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 12px;
+      width: 8px;
+      height: 16px;
+      border: solid $white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
