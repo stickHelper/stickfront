@@ -35,10 +35,18 @@ ___
 <SEButton label="Button" />
 ```
 
+For more information about how to usage for more components, please read documentation:
+
 ### More Components
 ___
 - SEButton
+- SEBadge
 - SESkeleton
+- SECard
+- SECheckbox
+- SERadio
+- SETextarea
+- SETextfield
 
 ### Authors
 ___
