@@ -1,0 +1,27 @@
+.se-img {
+  position: relative;
+  overflow: hidden;
+
+  @include border-radius(6px);
+  @include box-shadow(inset 0 0 0 1px rgba(black , .05));
+
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+
+  &.full-wdith {
+    width: 100%;
+  }
+  &.full-height {
+    height: 100%;
+  }
+
+  &--square {
+    @include border-radius(0);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

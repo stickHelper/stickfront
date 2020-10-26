@@ -1,0 +1,69 @@
+.se-avatar {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+  background: $line;
+
+  @include border-radius(100%);
+  @include box-shadow(inset 0 0 0 1px rgba(black , .05));
+  @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+
+  img {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  span {
+    display: inline;
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: (12/16)+rem;
+    line-height: 2rem;
+    color: $text-normal;
+  }
+
+  &--small {
+		width: 48px;
+		height: 48px;
+		span {
+			font-size: $text-xs;
+		}
+	}
+	&--medium {
+		width: 64px;
+		height: 64px;
+		span {
+			font-size: $text-md;
+		}
+	}
+	&--large {
+		width: 96px;
+		height: 96px;
+		span {
+			font-size: $text-xl;
+		}
+	}
+	&--extra-large {
+		width: 128px;
+		height: 128px;
+		span {
+			font-size: $text-xxl;
+		}
+  }
+  
+  &--square {
+    @include border-radius(0);
+  }
+}
