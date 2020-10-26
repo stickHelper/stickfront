@@ -1,132 +1,128 @@
 <template>
-  <div>
-    <section class="page-hero">
-      <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <h1>Typography</h1>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h4>Text Sizes</h4>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H1
-          </p>
-          <p>36px</p>
-        </div>
-        <div class="col-xs-4">
-          <h1>Heading One</h1>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 36 = 54px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H2
-          </p>
-          <p>32px</p>
-        </div>
-        <div class="col-xs-4">
-          <h2>Heading Two</h2>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 32 = 48px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H3
-          </p>
-          <p>24px</p>
-        </div>
-        <div class="col-xs-4">
-          <h3>Heading Three</h3>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 24 = 36px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H4
-          </p>
-          <p>20px</p>
-        </div>
-        <div class="col-xs-4">
-          <h4>Heading Four</h4>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 20 = 30px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H5
-          </p>
-          <p>18px</p>
-        </div>
-        <div class="col-xs-4">
-          <h5>Heading Five</h5>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 18 = 27px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            H6
-          </p>
-          <p>16px</p>
-        </div>
-        <div class="col-xs-4">
-          <h6>Heading Six</h6>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 16 = 24px)
-          </p>
-        </div>
-      </div>
-      <div class="row middle-xs border-bottom">
-        <div class="col-xs-4">
-          <p class="font-semibold">
-            P
-          </p>
-          <p>16px</p>
-        </div>
-        <div class="col-xs-4">
-          <p>Paragraph</p>
-        </div>
-        <div class="col-xs-4">
-          <p class="fill">
-            Line height: 1.5rem (1.5 * 16 = 24px)
-          </p>
-        </div>
-      </div>
-    </section>
+  <div :class="classes">
+    <label
+      v-if="labelName && labelName !== ''"
+      :for="name"
+    >
+      {{ labelName }}
+    </label>
+    <input
+      :id="name"
+      type="text"
+      :name="name"
+      :maxlength="maxlength"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :value="valueInput"
+      :style="icon && icon !== '' ? 'padding-right: 35px' : null"
+      @input="$emit('input', $event.target.value)"
+    >
+    <i
+      v-if="icon && icon !== ''"
+      :class="['icon', icon]"
+    />
+    <i
+      v-if="isError || isSuccess ||isDisabled"
+      :class="[
+        'icon',
+        isError ? 'icon-close' : null,
+        isSuccess ? 'icon-check' : null,
+        isDisabled ? 'icon-block' : null
+      ]"
+      :style="styles"
+    />
+    <div class="se-textfield--info">
+      {{ info }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'SETextfield',
+  props: {
+    inputName: {
+      type: String,
+      default: null
+    },
+    className: {
+      type: String,
+      default: null
+    },
+    type: {
+      type: String,
+      default: 'text'
+    },
+    labelName: {
+      type: String,
+      default: null
+    },
+    placeholder: {
+      type: String,
+      default: 'Placeholder'
+    },
+    icon: {
+      type: String,
+      default: null
+    },
+    size: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['small'].indexOf(value) !== -1
+      }
+    },
+    isDisabled: {
+      type: Boolean,
+      default: false
+    },
+    valueInput: {
+      type: [String, Number],
+      default: null
+    },
+    maxlength: {
+      type: [String, Number],
+      default: null
+    },
+    isError: {
+      type: Boolean,
+      default: false
+    },
+    isSuccess: {
+      type: Boolean,
+      default: false
+    },
+    info: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        'se-textfield': true,
+        [`se-textfield--${this.size}`]: this.size !== null,
+        [this.className]: this.className !== null,
+        disabled: this.isDisabled,
+        error: this.isError,
+        success: this.isSuccess
+      }
+    },
+    name() {
+      return this.inputName !== null ? this.inputName : null
+    },
+    disabled() {
+      return this.isDisabled
+    },
+    styles() {
+      let styles = null
+      if (this.info && this.info !== '' && this.labelName && this.labelName !== '') {
+        styles = 'top: 47%;'
+      } else if (this.labelName && this.labelName !== '') {
+        styles = 'top: 60%;'
+      }
+      return styles
+    }
+  }
 }
 </script>

@@ -61,6 +61,19 @@ Error.parameters = {
   }
 }
 
+export const Success = (args) => ({
+  components: { SETextfield },
+  template: '<SETextfield label-name="Label error" :isSuccess="true"/>'
+})
+
+Success.parameters = {
+  docs: {
+    source: {
+      code: '<SETextfield label-name="Label error" :isSuccess="true" info="Message Error" />'
+    }
+  }
+}
+
 export const Icon = (args) => ({
   components: { SETextfield },
   template: '<SETextfield icon="icon-check" />'
@@ -70,6 +83,36 @@ Icon.parameters = {
   docs: {
     source: {
       code: '<SETextfield icon="icon-check" />'
+    }
+  }
+}
+
+export const Disabled = (args) => ({
+  components: { SETextfield },
+  template: '<SETextfield :is-disabled="true" />'
+})
+
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<SETextfield :is-disabled="true"  />'
+    }
+  }
+}
+
+export const Size = (args) => ({
+  components: { SETextfield },
+  template: `<div>
+    <SETextfield size="small" value-input="Small" />
+    <SETextfield value-input="Default" />
+  </div>`
+})
+
+Size.parameters = {
+  docs: {
+    source: {
+      code: `<SETextfield size="small" value-input="Small" />
+<SETextfield value-input="Default" />`
     }
   }
 }

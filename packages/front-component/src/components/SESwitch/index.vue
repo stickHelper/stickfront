@@ -1,22 +1,26 @@
 <template>
   <div :class="classes">
-    <div class="se-radio--item">
+    <div class="se-switch--item">
       <input
         :id="id"
-        type="radio"
+        type="checkbox"
         :name="name"
         :value="value"
         :checked="checked"
         @change="$emit('change', $event.target.value)"
       >
-      <label :for="id">{{ label }}</label>
+      <label
+        :for="id"
+      >
+        Switch
+      </label>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SERadio',
+  name: 'SESwitch',
   props: {
     id: {
       type: String,
@@ -46,7 +50,7 @@ export default {
   computed: {
     classes() {
       return {
-        'se-radio': true,
+        'se-switch': true,
         [this.className]: this.className !== null
       }
     }

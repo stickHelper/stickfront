@@ -1,0 +1,49 @@
+.se-switch {
+  &--item {
+    position: relative;
+    display: inline-block;
+  }
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 59px;
+    height: 32px;
+    background: $accent;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 26px;
+    height: 26px;
+    background: $white;
+    border-radius: 50px;
+    transition: 0.3s;
+    @include box-shadow(2px 4px 8px rgba(180, 188, 208, 0.32));
+  }
+  
+  input:checked + label {
+    background: $orange;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 130px;
+  }
+  
+}

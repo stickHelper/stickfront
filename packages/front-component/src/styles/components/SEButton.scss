@@ -1,10 +1,9 @@
 .se-btn {
-  padding: $gutter-md $gutter-xl;
+  padding: ($gutter-md - 4) $gutter-xl;
   font-weight: bold;
   font-size: $text-md;
   line-height: 20px;
   outline: none;
-  display: inline-block;
   display: inline-flex;
   text-decoration: none;
   border: 1px solid transparent;
@@ -13,6 +12,8 @@
   @include box-shadow(inset -1px -1px 4px rgba(0, 0, 0, 0.12), inset 1px 1px 4px rgba(255, 255, 255, 0.42)); 
   @include border-radius(8px);
   @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+  @include justify-content(center);
+  @include align-items(center);
 
   &:hover {
     cursor: pointer;
@@ -25,7 +26,7 @@
     background-color: $purple;
     color: $white;
     &:hover {
-      background-color: darken($color: $purple, $amount: 1);
+      background-color: darken($color: $purple, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $purple, $amount: 2);
@@ -36,7 +37,7 @@
     background-color: $orange;
     color: $white;
     &:hover {
-      background-color: darken($color: $orange, $amount: 1);
+      background-color: darken($color: $orange, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $orange, $amount: 2);
@@ -47,7 +48,7 @@
     background-color: $red;
     color: $white;
     &:hover {
-      background-color: darken($color: $red, $amount: 1);
+      background-color: darken($color: $red, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $red, $amount: 2);
@@ -58,7 +59,7 @@
     background-color: $dark;
     color: $white;
     &:hover {
-      background-color: darken($color: $dark, $amount: 1);
+      background-color: darken($color: $dark, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $dark, $amount: 2);
@@ -69,7 +70,7 @@
     background-color: $text-normal;
     color: $white;
     &:hover {
-      background-color: darken($color: $text-normal, $amount: 1);
+      background-color: darken($color: $text-normal, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $text-normal, $amount: 2);
@@ -81,7 +82,7 @@
     background-color: $accent;
     color: $text-normal;
     &:hover {
-      background-color: darken($color: $accent, $amount: 1);
+      background-color: darken($color: $accent, $amount: 2);
     }
     &:focus {
       background-color: darken($color: $accent, $amount: 2);
@@ -89,16 +90,337 @@
     }
   }
 
+  &--line {
+    background-color: $line;
+    color: $text-normal;
+    &:hover {
+      background-color: darken($color: $line, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $line, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $line, $alpha: .15));
+    }
+  }
+
+  &--error {
+    background-color: $error;
+    color: $white;
+    &:hover {
+      background-color: darken($color: $error, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $error, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $error, $alpha: .15));
+    }
+  }
+
+  &--salmon {
+    background-color: $salmon;
+    color: $white;
+    &:hover {
+      background-color: darken($color: $salmon, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $salmon, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $salmon, $alpha: .15));
+    }
+  }
+
+  &--mint {
+    background-color: $mint;
+    color: $white;
+    &:hover {
+      background-color: darken($color: $mint, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $mint, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $mint, $alpha: .15));
+    }
+  }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+    &:hover {
+      background-color: darken($color: $blue, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $blue, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $blue, $alpha: .15));
+    }
+  }
+
+  &--light-blue {
+    background-color: $light-blue;
+    color: $white;
+    &:hover {
+      background-color: darken($color: $light-blue, $amount: 2);
+    }
+    &:focus {
+      background-color: darken($color: $light-blue, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $light-blue, $alpha: .15));
+    }
+  }
+
   &--small {
-    font-size: $text-sm;
-    padding: $gutter-sm $gutter-md;
+    font-size: $text-md;
+    padding: $gutter-xs $gutter-xl;
   }
   &--medium {
     font-size: $text-md;
-    padding: $gutter-md $gutter-xl;
+    padding: ($gutter-md - 4) $gutter-xl;
   }
   &--large {
     font-size: $text-xl;
     padding: $gutter-xl $gutter-xxl;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &--outline {
+    background-color: $white;
+    @include box-shadow(none);
+    &.se-btn {
+      &--primary {
+        border: 1px solid $purple;
+        color: $purple;
+        &:hover {
+          background-color: rgba($color: $purple, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $purple, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $purple, $alpha: .8));
+        }
+      }
+      &--secondary {
+        border: 1px solid $orange;
+        color: $orange;
+        &:hover {
+          background-color: rgba($color: $orange, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $orange, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $orange, $alpha: .8));
+        }
+      }
+      &--red {
+        border: 1px solid $red;
+        color: $red;
+        &:hover {
+          background-color: rgba($color: $red, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $red, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $red, $alpha: .8));
+        }
+      }
+      &--dark {
+        border: 1px solid $dark;
+        color: $dark;
+        &:hover {
+          background-color: rgba($color: $dark, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $dark, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $dark, $alpha: .8));
+        }
+      }
+      &--normal {
+        border: 1px solid $text-normal;
+        color: $text-normal;
+        &:hover {
+          background-color: rgba($color: $text-normal, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $text-normal, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $text-normal, $alpha: .8));
+        }
+      }
+    
+      &--accent {
+        border: 1px solid $accent;
+        color: $text-normal;
+        &:hover {
+          background-color: rgba($color: $accent, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $accent, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $accent, $alpha: .8));
+        }
+      }
+    
+      &--line {
+        border: 1px solid $line;
+        color: $text-normal;
+        &:hover {
+          background-color: rgba($color: $line, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $line, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $line, $alpha: .8));
+        }
+      }
+    
+      &--error {
+        border: 1px solid $error;
+        color: $error;
+        &:hover {
+          background-color: rgba($color: $error, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $error, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $error, $alpha: .8));
+        }
+      }
+    
+      &--salmon {
+        border: 1px solid $salmon;
+        color: $salmon;
+        &:hover {
+          background-color: rgba($color: $salmon, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $salmon, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $salmon, $alpha: .8));
+        }
+      }
+    
+      &--mint {
+        border: 1px solid $mint;
+        color: $mint;
+        &:hover {
+          background-color: rgba($color: $mint, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $mint, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $mint, $alpha: .8));
+        }
+      }
+    
+      &--blue {
+        border: 1px solid $blue;
+        color: $blue;
+        &:hover {
+          background-color: rgba($color: $blue, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $blue, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $blue, $alpha: .8));
+        }
+      }
+    
+      &--light-blue {
+        border: 1px solid $light-blue;
+        color: $light-blue;
+        &:hover {
+          background-color: rgba($color: $light-blue, $alpha: .15);
+        }
+        &:focus {
+          background-color: rgba($color: $light-blue, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $light-blue, $alpha: .8));
+        }
+      }
+    }
+  }
+
+  &--icon {
+    min-width: 26px;
+    min-height: 26px;
+    font-size: $text-xs;
+    padding: 3px;
+    line-height: 154%;
+
+    @include border-radius(4px);
+    @include box-shadow(none)
+  }
+
+  &--text {
+    background-color: transparent;
+    box-shadow: none;
+    &.se-btn--primary {
+      color: $purple;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--secondary {
+      color: $orange;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--dark {
+      color: $dark;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--mint {
+      color: $mint;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--red {
+      color: $red;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--error {
+      color: $error;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--salmon {
+      color: $salmon;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--normal {
+      color: $text-normal;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--accent {
+      color: $accent;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--green {
+      color: $green;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--light-blue {
+      color: $light-blue;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.se-btn--blue {
+      color: $blue;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: no-drop;
+    color: rgba($color: $text-normal, $alpha: .5);
+    background-color: $line;
+    &:hover {
+      background-color: $line;
+    }
+    
+    @include box-shadow(none)
   }
 }

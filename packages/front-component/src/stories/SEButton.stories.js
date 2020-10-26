@@ -5,8 +5,9 @@ export default {
   title: 'Components/Button',
   component: SEButton,
   argTypes: {
-    color: { control: { type: 'select', options: ['accent', 'primary', 'secondary', 'normal', 'dark'] } },
+    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'mint', 'blue', 'light-blue'] } },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    type: { control: { type: 'select', options: ['icon', 'outline', 'text'] } },
     label: { description: '' }
   }
 }
@@ -14,7 +15,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEButton },
-  template: '<SEButton @onClick="onClick" v-bind="$props" />'
+  template: '<SEButton @onClick="onClick" v-bind="$props">Default</SEButton>'
 })
 
 export const Default = Template.bind({})
@@ -24,7 +25,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: '<SEButton label="default" />'
+      code: '<SEButton>Default</SEButton>'
     }
   }
 }
@@ -32,11 +33,15 @@ Default.parameters = {
 export const Color = () => ({
   components: { SEButton },
   template: `<div>
-    <SEButton label="Primary" color="primary" />
-    <SEButton label="Secondary" color="secondary" />
-    <SEButton label="Default" />
-    <SEButton label="Normal" color="normal" />
-    <SEButton label="Dark" color="dark" />
+    <SEButton color="primary">Primary</SEButton>
+    <SEButton color="secondary">Secondary</SEButton>
+    <SEButton color="normal">Normal</SEButton>
+    <SEButton color="dark">Dark</SEButton>
+    <SEButton color="line">Line</SEButton>
+    <SEButton color="error">Error</SEButton>
+    <SEButton color="salmon">Salmon</SEButton>
+    <SEButton color="blue">Blue</SEButton>
+    <SEButton color="light-blue">Light Blue</SEButton>
   </div>
   `
 })
@@ -44,11 +49,10 @@ export const Color = () => ({
 Color.parameters = {
   docs: {
     source: {
-      code: ` <SEButton label="Primary" color="primary" />
-<SEButton label="Secondary" color="secondary" />
-<SEButton label="Default" />
-<SEButton label="Normal" color="normal" />
-<SEButton label="Dark" color="dark" />
+      code: `<SEButton color="primary">Primary</SEButton>
+<SEButton color="secondary">Secondary</SEButton>
+<SEButton color="normal">Normal</SEButton>
+<SEButton color="dark">Dark</SEButton>
       `
     }
   }
@@ -57,9 +61,9 @@ Color.parameters = {
 export const Size = () => ({
   components: { SEButton },
   template: `<div>
-    <SEButton label="Small" size="small" />
-    <SEButton label="Medium" />
-    <SEButton label="Large" size="large" />
+    <SEButton size="small">Small</SEButton>
+    <SEButton>Medium</SEButton>
+    <SEButton size="large">Large</SEButton>
   </div>
   `
 })
@@ -67,10 +71,64 @@ export const Size = () => ({
 Size.parameters = {
   docs: {
     source: {
-      code: `<SEButton label="Small" size="small" />
-<SEButton label="Medium" />
-<SEButton label="Large" size="large" />
+      code: `<SEButton size="small">Small</SEButton>
+<SEButton>Medium</SEButton>
+<SEButton size="large">Large</SEButton>
       `
+    }
+  }
+}
+
+export const Type = () => ({
+  components: { SEButton },
+  template: `<div>
+    <SEButton type="icon">00</SEButton>
+    <SEButton type="icon"><i class="icon icon-chevron-left"></i></SEButton>
+    <SEButton type="outline" color="primary">Outline</SEButton>
+    <SEButton type="text" color="secondary">Button Text</SEButton>
+  </div>
+  `
+})
+
+Type.parameters = {
+  docs: {
+    source: {
+      code: `<SEButton type="icon">00</SEButton>
+<SEButton type="icon"><i class="icon icon-chevron-left"></i></SEButton>
+<SEButton type="outline" color="primary">Primary</SEButton>
+<SEButton type="text" color="secondary">Secondary</SEButton>`
+    }
+  }
+}
+
+export const fullWidth = () => ({
+  components: { SEButton },
+  template: `<div>
+    <SEButton :full-width="true">Full Width</SEButton>
+  </div>
+  `
+})
+
+fullWidth.parameters = {
+  docs: {
+    source: {
+      code: '<SEButton :full-width="true">Full Width</SEButton>'
+    }
+  }
+}
+
+export const Disabled = () => ({
+  components: { SEButton },
+  template: `<div>
+    <SEButton :disabled="true">Disabled</SEButton>
+  </div>
+  `
+})
+
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<SEButton :disabled="true">Disabled</SEButton>'
     }
   }
 }

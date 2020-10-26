@@ -13,7 +13,7 @@
   input {
     border: 1px solid $line;
     outline: none;
-    padding: $text-md;
+    padding: ($gutter-md - 4) $text-md;
     margin-bottom: $gutter-sm;
     font-size: $text-md;
     background-color: $accent;
@@ -30,6 +30,12 @@
 
     &:focus + label {
       color: $orange;
+    }
+  }
+
+  &--small {
+    input {
+      padding: 4px $gutter-md;
     }
   }
 
@@ -52,8 +58,10 @@
     
   }
 
-  .success {
-    .icon {
+  &.success {
+    label,
+    .icon,
+    .se-textfield--info {
       color: $purple;
     }
 
@@ -62,10 +70,38 @@
     }
   }
 
+  &.disabled {
+    .icon {
+      color: $white;
+    }
+    input {
+      cursor: not-allowed;
+      background-color: $text-subtle;
+      color: $white;
+
+      &::placeholder {
+        color: $line;
+      }
+    }
+  }
+
+  &.error,
+  &.success,
+  &.disabled {
+    input {
+      padding-right: 35px;
+    }
+    i {
+      top: 40%;
+      transform: translateY(-50%);
+    }
+  }
+
   i {
+    font-size: $text-md + 2;
     position: absolute;
-    top: 0;
+    top: 40%;
     right: $gutter-md;
-    transform: translateY(50%);
+    transform: translateY(-50%);
   }
 }

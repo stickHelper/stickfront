@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    :id="id"
+    :class="classes"
+  >
     <span
       v-if="isTick"
       class="tick"
@@ -12,6 +15,10 @@
 export default {
   name: 'SEBadge',
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     color: {
       type: String,
       default: null,

@@ -1,11 +1,11 @@
 <template>
   <button
+    :id="id"
     type="button"
     :class="classes"
-    :style="style"
     @click="onClick"
   >
-    {{ label }}
+    <slot />
   </button>
 </template>
 
@@ -13,6 +13,10 @@
 export default {
   name: 'SEButton',
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
       default: 'Button'
@@ -21,7 +25,7 @@ export default {
       type: String,
       default: 'accent',
       validator: function (value) {
-        return ['primary', 'secondary', 'accent', 'normal', 'dark'].indexOf(value) !== -1
+        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'mint', 'blue', 'light-blue'].indexOf(value) !== -1
       }
     },
     size: {
@@ -31,9 +35,24 @@ export default {
         return ['small', 'medium', 'large'].indexOf(value) !== -1
       }
     },
+    type: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['icon', 'outline', 'text'].indexOf(value) !== -1
+      }
+    },
     className: {
       type: String,
       default: null
+    },
+    fullWidth: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -42,7 +61,10 @@ export default {
         'se-btn': true,
         [`se-btn--${this.color}`]: true,
         [`se-btn--${this.size}`]: true,
-        [this.className]: this.className !== null
+        [`se-btn--${this.type}`]: this.type !== null,
+        [this.className]: this.className !== null,
+        'full-width': this.fullWidth,
+        disabled: this.disabled
       }
     }
   },

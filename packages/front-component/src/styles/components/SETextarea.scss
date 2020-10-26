@@ -41,16 +41,16 @@
     input,
     .icon,
     .se-textarea--info {
-      color: $red;
+      color: $error;
     }
 
     textarea {
-      border: 1px solid $red;
+      border: 1px solid $error;
     }
     
   }
 
-  .success {
+  &.success {
     .icon {
       color: $purple;
     }
