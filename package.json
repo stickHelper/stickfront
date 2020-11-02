@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "publish": "lerna publish",
     "build": "lerna run build",
     "test": "lerna run test"
   },
