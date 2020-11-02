@@ -91,6 +91,11 @@ h6 {
   line-height: 16px;
 }
 
+input,
+textarea {
+  font-family             : $font-stack;
+  font-weight             : normal;
+}
 
 a {
   text-decoration: none;

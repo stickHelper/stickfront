@@ -1,7 +1,7 @@
 # stickfront
 [![npm version](https://badge.fury.io/js/%40stickearn%2Fstickfront.svg)](https://badge.fury.io/js/%40stickearn%2Fstickfront)
 
-stickfront is Stickearn vue component. See [Live Documetation](https://bxv0m.csb.app/)
+stickfront is Stickearn vue component. See [Live Documetation](https://stick-component.netlify.app/?path=/story/introduction--page)
 
 ### Installing
 ___
@@ -39,12 +39,16 @@ For more information about how to usage for more components, please read documen
 
 ### More Components
 ___
-- SEButton
+- SEavatar
 - SEBadge
-- SESkeleton
+- SEButton
 - SECard
 - SECheckbox
+- SEImg
+- SEPreloader
 - SERadio
+- SESkeleton
+- SESwitch
 - SETextarea
 - SETextfield
 
