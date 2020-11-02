@@ -7,7 +7,7 @@ import SEBadge from './components/SEBadge/index.vue'
 import SEButton from './components/SEButton/index.vue'
 import SECard from './components/SECard/index.vue'
 import SEChart from './components/SEChart/index.vue'
-import SEChecbox from './components/SEChecbox/index.vue'
+import SECheckbox from './components/SECheckbox/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEPreloader from './components/SEPreloader/index.vue'
 import SERadio from './components/SERadio/index.vue'
@@ -22,7 +22,7 @@ const components = {
   SEBadge,
   SECard,
   SEChart,
-  SEChecbox,
+  SECheckbox,
   SEImg,
   SEPreloader,
   SERadio,
