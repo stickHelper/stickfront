@@ -30,6 +30,7 @@
 
       &.active {
         background-color: $purple;
+        border: 1px solid $purple;
         cursor: default;
 
         span {
