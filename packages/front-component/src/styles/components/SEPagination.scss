@@ -1,0 +1,49 @@
+.se-pagination {
+  position: relative;
+  font-size: $text-sm;
+
+  ul {
+    list-style: none;
+    
+    @include flexbox;
+    @include align-items(center);
+
+    li {
+      background-color: $accent;
+      border: 1px solid $line;
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
+      font-weight: 800;
+
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include border-radius(50px);
+
+      &:not(:last-of-type) {
+        margin-right: $gutter-md;
+      }
+      &:hover {
+        border: 1px solid $text-subtle;
+      }
+
+      &.active {
+        background-color: $purple;
+        cursor: default;
+
+        span {
+          color: white;
+        }
+      }
+      
+      span {
+        color: $text-subtle;
+
+        i {
+          font-size: $text-xl;
+        }
+      }
+    }
+  }
+}
