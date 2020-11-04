@@ -15,6 +15,7 @@ import SESkeleton from './components/SESkeleton/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETextarea from './components/SETextarea/index.vue'
 import SETextfield from './components/SETextfield/index.vue'
+import SEPagination from './components/SEPagination/index.vue'
 
 const components = {
   SEButton,
@@ -29,7 +30,8 @@ const components = {
   SESkeleton,
   SESwitch,
   SETextarea,
-  SETextfield
+  SETextfield,
+  SEPagination
 }
 
 const install = (Vue, opts = {}) => {
