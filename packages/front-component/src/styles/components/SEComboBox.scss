@@ -1,0 +1,61 @@
+.se-comboBox {
+	& {
+		position: relative;
+		width: 165px;
+		padding-bottom: 8px;
+	}
+
+	&__header {
+		position: relative;
+		background: $accent;
+		padding: 5px 15px;
+	    border: 1px solid #EBEBF7;
+	    @include border-radius(8px);
+	}
+
+	&__header-text {
+		color: $text-subtle;
+	}
+
+	&__header-icon {
+		position: absolute;
+	    top: 50%;
+	    right: 15px;
+	    transform: translateY(-50%);
+	    @include flexbox;
+	}
+
+	&__header-icon svg {
+		width: 1em;
+		height: 1em
+	}
+
+	&__body {
+		position: absolute;
+	    width: 100%;
+	    background: $white;
+	    padding: 10px 0;
+	    margin-top: 8px;
+	    max-height: 190px;
+	    overflow-y: auto;
+	    @include border-radius(8px);
+	    @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+	}
+
+	&__body {
+	    transform: translateY(10px);
+	    visibility: hidden;
+	    opacity: 0;
+	}
+
+	&:hover .se-comboBox__body {
+	    transform: translateY(0);
+	    visibility: visible;
+	    opacity: 1;
+	}
+
+	&__item {
+		color: $text-normal;
+		padding: 5px 15px;
+	}
+}
