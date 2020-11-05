@@ -8,7 +8,11 @@ export default {
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { SEComboBox },
-	template: '<div style="min-height: 300px;"><SEComboBox>Combo Box</SEComboBox></div>'
+	template: `
+		<div style="min-height: 300px;">
+			<SEComboBox :options="['All', 'Draft', 'Sent', 'Sales Order', 'Cancelled']" />
+		</div>
+	`
 })
 
 export const Default = Template.bind({})

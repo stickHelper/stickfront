@@ -1,7 +1,5 @@
 <template>
-	<div
-	 :class="classes"
-	>
+	<div :class="classes" :options="options">
 		<div class="se-comboBox__header">
 			<span class="se-comboBox__header-text">All Status</span>
 			<span class="se-comboBox__header-icon">
@@ -9,11 +7,8 @@
 			</span>
 		</div>
 		<div class="se-comboBox__body">
-			<div class="se-comboBox__item">All</div>
-			<div class="se-comboBox__item">Draft</div>
-			<div class="se-comboBox__item">Sent</div>
-			<div class="se-comboBox__item">Sales Order</div>
-			<div class="se-comboBox__item">Cancelled</div>
+			<div class="se-comboBox__item" v-for="(item, index) in options">{{ item }}</div>
+			<div class="se-comboBox__item" v-if="getItem() === 0">List not defined</div>
 		</div>
 	</div>
 </template>
@@ -25,6 +20,12 @@
 			className: {
 				type: String,
 				default: null
+			},
+			options: {
+				type: Array,
+				default() {
+		          return []
+		        },
 			}
 		},
 		computed: {
@@ -33,6 +34,11 @@
 					'se-comboBox':true,
 					[this.className]: this.className !== null
 				}
+			}
+		},
+		methods: {
+			getItem() {
+				return this.options.length
 			}
 		}
 	}
