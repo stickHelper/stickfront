@@ -326,19 +326,94 @@
   }
 
   &--icon {
-    min-width: 26px;
-    min-height: 26px;
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
     font-size: $text-xs;
-    padding: 3px;
+    padding: 0;
     line-height: 154%;
 
     @include border-radius(4px);
-    @include box-shadow(none)
+    @include box-shadow(none);
+
+    span {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  &--dimmed {
+    box-shadow: none;
+    &.se-btn--primary {
+      color: $purple;
+      background-color: rgba($color: $purple, $alpha: .15);
+      border: 1px solid $purple;
+    }
+    &.se-btn--secondary {
+      color: $orange;
+      background-color: rgba($color: $orange, $alpha: .15);
+      border: 1px solid $orange;
+    }
+    &.se-btn--dark {
+      color: $dark;
+      background-color: rgba($color: $dark, $alpha: .15);
+      border: 1px solid $dark;
+    }
+    &.se-btn--mint {
+      color: $mint;
+      background-color: rgba($color: $mint, $alpha: .15);
+      border: 1px solid $mint;
+    }
+    &.se-btn--red {
+      color: $red;
+      background-color: rgba($color: $red, $alpha: .15);
+      border: 1px solid $red;
+    }
+    &.se-btn--error {
+      color: $error;
+      background-color: rgba($color: $error, $alpha: .15);
+      border: 1px solid $error;
+    }
+    &.se-btn--salmon {
+      color: $salmon;
+      background-color: rgba($color: $salmon, $alpha: .15);
+      border: 1px solid $salmon;
+    }
+    &.se-btn--normal {
+      color: $text-normal;
+      background-color: rgba($color: $text-normal, $alpha: .15);
+      border: 1px solid $text-normal;
+    }
+    &.se-btn--accent {
+      color: $text-normal;
+      background-color: rgba($color: $accent, $alpha: 1);
+      border: 1px solid $text-normal;
+    }
+    &.se-btn--green {
+      color: $green;
+      background-color: rgba($color: $green, $alpha: .15);
+      border: 1px solid $green;
+    }
+    &.se-btn--light-blue {
+      color: $light-blue;
+      background-color: rgba($color: $light-blue, $alpha: .15);
+      border: 1px solid $light-blue;
+    }
+    &.se-btn--blue {
+      color: $blue;
+      background-color: rgba($color: $blue, $alpha: .15);
+      border: 1px solid $blue;
+    }
   }
 
   &--text {
     background-color: transparent;
     box-shadow: none;
+    &:focus {
+      background-color: transparent;
+      box-shadow: none;
+    }
     &.se-btn--primary {
       color: $purple;
       &:hover {

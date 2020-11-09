@@ -1,5 +1,13 @@
 const icons = [
   {
+    name: 'volume-print',
+    content: 'eb9e'
+  },
+  {
+    name: 'volume-navigator',
+    content: 'eb9f'
+  },
+  {
     name: 'volume-down',
     content: 'e900'
   },

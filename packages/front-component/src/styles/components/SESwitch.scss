@@ -1,7 +1,24 @@
 .se-switch {
+  &--small {
+    label {
+      width: 41px!important;
+      height: 22px!important;
+
+      &:after {
+        top: 2px!important;
+        left: 2px!important;
+        width: 18px!important;
+        height: 18px!important;
+      }
+    }
+    
+    input:checked + label:after {
+      left: calc(100% - 2px) !important;
+    }
+  }
   &--item {
     position: relative;
-    display: inline-block;
+    @include flexbox;
   }
   input[type=checkbox]{
     height: 0;

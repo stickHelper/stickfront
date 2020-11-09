@@ -47,6 +47,14 @@
   vertical-align: middle;
 }
 
+.icon-print:before {
+  content: "\eb9e";
+  color: #70748a;
+}
+.icon-navigator:before {
+  content: "\eb9f";
+  color: #70748a;
+}
 .icon-volume-down:before {
   content: "\e900";
 }

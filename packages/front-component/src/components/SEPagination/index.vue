@@ -98,7 +98,6 @@ export default {
         for (let i = 1; i <= totalPages; i++) {
           arrPages.push(i)
         }
-        console.log('arrPages1', arrPages)
         return arrPages
       }
 

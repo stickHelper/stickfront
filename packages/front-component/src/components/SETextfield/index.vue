@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    :id="id"
+    :class="classes"
+  >
     <label
       v-if="labelName && labelName !== ''"
       :for="name"
@@ -41,6 +44,10 @@
 export default {
   name: 'SETextfield',
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     inputName: {
       type: String,
       default: null

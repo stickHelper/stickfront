@@ -53,6 +53,11 @@ Color.parameters = {
 <SEButton color="secondary">Secondary</SEButton>
 <SEButton color="normal">Normal</SEButton>
 <SEButton color="dark">Dark</SEButton>
+<SEButton color="line">Line</SEButton>
+<SEButton color="error">Error</SEButton>
+<SEButton color="salmon">Salmon</SEButton>
+<SEButton color="blue">Blue</SEButton>
+<SEButton color="light-blue">Light Blue</SEButton>
       `
     }
   }
@@ -113,6 +118,39 @@ fullWidth.parameters = {
   docs: {
     source: {
       code: '<SEButton :full-width="true">Full Width</SEButton>'
+    }
+  }
+}
+
+export const Dimmed = () => ({
+  components: { SEButton },
+  template: `<div>
+    <SEButton color="primary" :isDimmed="true">Primary</SEButton>
+    <SEButton color="secondary" :isDimmed="true">Secondary</SEButton>
+    <SEButton color="normal" :isDimmed="true">Normal</SEButton>
+    <SEButton color="dark" :isDimmed="true">Dark</SEButton>
+    <SEButton color="line" :isDimmed="true">Line</SEButton>
+    <SEButton color="error" :isDimmed="true">Error</SEButton>
+    <SEButton color="salmon" :isDimmed="true">Salmon</SEButton>
+    <SEButton color="blue" :isDimmed="true">Blue</SEButton>
+    <SEButton color="light-blue" :isDimmed="true">Light Blue</SEButton>
+  </div>
+  `
+})
+
+Dimmed.parameters = {
+  docs: {
+    source: {
+      code: `<SEButton color="primary">Primary</SEButton>
+<SEButton color="secondary">Secondary</SEButton>
+<SEButton color="normal">Normal</SEButton>
+<SEButton color="dark">Dark</SEButton>
+<SEButton color="line">Line</SEButton>
+<SEButton color="error">Error</SEButton>
+<SEButton color="salmon">Salmon</SEButton>
+<SEButton color="blue">Blue</SEButton>
+<SEButton color="light-blue">Light Blue</SEButton>
+      `
     }
   }
 }

@@ -53,6 +53,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    isDimmed: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -62,6 +66,7 @@ export default {
         [`se-btn--${this.color}`]: true,
         [`se-btn--${this.size}`]: true,
         [`se-btn--${this.type}`]: this.type !== null,
+        'se-btn--dimmed': this.isDimmed,
         [this.className]: this.className !== null,
         'full-width': this.fullWidth,
         disabled: this.disabled
@@ -71,7 +76,7 @@ export default {
 
   methods: {
     onClick() {
-      this.$emit('onClick')
+      this.$emit('click')
     }
   }
 }

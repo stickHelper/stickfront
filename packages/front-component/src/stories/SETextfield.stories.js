@@ -63,13 +63,13 @@ Error.parameters = {
 
 export const Success = (args) => ({
   components: { SETextfield },
-  template: '<SETextfield label-name="Label error" :isSuccess="true"/>'
+  template: '<SETextfield label-name="Label success" :isSuccess="true"/>'
 })
 
 Success.parameters = {
   docs: {
     source: {
-      code: '<SETextfield label-name="Label error" :isSuccess="true" info="Message Error" />'
+      code: '<SETextfield label-name="Label success" :isSuccess="true" />'
     }
   }
 }

@@ -14,14 +14,12 @@ const Template = (args, { argTypes }) => ({
     id="value1"
     name="default"
     value="value1"
-    label="Radio 1"
     class-name="mb-xs-2"
   />
   <SESwitch
     id="value2"
     name="default"
     value="value2"
-    label="Radio 2"
   />
   </div>`
 })
@@ -33,15 +31,52 @@ Default.parameters = {
       code: `<SESwitch
   name="default"
   value="value1"
-  label="Radio 1"
   :checked="true"
 />
 <SESwitch
   id="own"
   name="default"
   value="value1"
-  label="Radio 2"
 />`
+    }
+  }
+}
+
+export const Size = () => ({
+  components: { SESwitch },
+  template: `<div>
+    <SESwitch
+      id="valueSmall1"
+      name="default"
+      value="valueSmall1"
+      class-name="mb-xs-2"
+      size="small"
+    />
+    <SESwitch
+      id="valueSmall2"
+      name="default"
+      value="valueSmall2"
+    />
+  </div>
+  `
+})
+
+Size.parameters = {
+  docs: {
+    source: {
+      code: `<SESwitch
+  id="valueSmall1"
+  name="default"
+  value="valueSmall1"
+  class-name="mb-xs-2"
+  size="small"
+/>
+<SESwitch
+  id="valueSmall2"
+  name="default"
+  value="valueSmall2"
+/>
+      `
     }
   }
 }

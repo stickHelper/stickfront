@@ -262,6 +262,11 @@ pre {
     @include align-items(center);
     @include justify-content(space-around);
   }
+  &-center {
+    @include flexbox;
+    @include align-items(center !important);
+    @include justify-content(center !important);
+  }
   &-dir--column {
     @include flex-direction(column);
   }
