@@ -1,10 +1,10 @@
 const icons = [
   {
-    name: 'volume-print',
+    name: 'print',
     content: 'eb9e'
   },
   {
-    name: 'volume-navigator',
+    name: 'navigator',
     content: 'eb9f'
   },
   {
