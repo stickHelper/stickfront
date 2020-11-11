@@ -1,103 +1,165 @@
 <template>
   <div :class="classes">
-    <select
-      v-model="selectedValue"
-      class="se-comboBox__select"
-      style="display: none;"
+    <label
+      v-if="labelName && labelName !== ''"
+      :for="inputName"
     >
-      <option value="">
-        ---
-      </option>
-      <option
-        v-for="(option, index) in options"
-        :key="index"
-        :value="option"
-      >
-        {{ option }}
-      </option>
-    </select>
+      {{ labelName }}
+    </label>
+
     <div
-      class="se-comboBox__header"
-      :class="{ 'se-comboBox__header--active' : selectedValue }"
+      :id="inputName"
+      v-click-outside="hide"
+      :disabled="isDisabled"
+      class="se-combobox--field"
+      @click="triggerDropdown()"
     >
-      <span
-        v-if="selectedValue"
-        class="se-comboBox__header-text se-comboBox__header-text--active"
-      >{{ getSelectedOption() }}</span>
-      <span
+      <div
+        v-if="value && value !== ''"
+        class="field-value"
+      >
+        {{ value }}
+      </div>
+      <div
+        v-else-if="changeValue && changeValue !== ''"
+        class="field-value"
+      >
+        {{ changeValue }}
+      </div>
+      <div
         v-else
-        class="se-comboBox__header-text"
-      >{{ defaultText }}</span>
-      <span class="se-comboBox__header-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        ><defs /><path
-          fill="#B4BCD0"
-          d="M9.2.6A.8.8 0 008 .6l-3 3-3-3A.8.8 0 101 1.8l3.5 3.6a.8.8 0 001.2 0l3.6-3.6a.8.8 0 000-1.2z"
-        /></svg>
-      </span>
+        class="field-placeholder"
+      >
+        {{ placeholder }}
+      </div>
+      <i
+        v-if="icon && icon !== ''"
+        :class="['icon', icon]"
+      />
     </div>
-    <div class="se-comboBox__body">
-      <div
+
+    <ul
+      v-if="isDropdown && !isDisabled"
+      class="se-combobox--list"
+      :style="labelName && labelName !== '' ? 'top: 85px' : null"
+    >
+      <li
+        v-if="options.length === 0"
+        class="se-combobox--item no-data"
+      >
+        <div>No data to choose</div>
+      </li>
+      <li
         v-for="(option, index) in options"
-        class="se-comboBox__item"
-        @click="getOption(option)"
+        v-else
+        :key="index"
+        class="se-combobox--item"
+        @click="selectItem(option)"
       >
-        {{ option }}
-      </div>
-      <div
-        v-if="getOptionsLength === 0"
-        class="se-comboBox__item"
-      >
-        List not defined
-      </div>
+        <div>
+          {{ option.name }}
+        </div>
+      </li>
+    </ul>
+    <div class="se-combobox--info">
+      {{ info }}
     </div>
   </div>
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+
 export default {
-  name: 'SEComboBox',
+  name: 'SECombobox',
+  directives: {
+    ClickOutside
+  },
   props: {
+    inputName: {
+      type: String,
+      default: null
+    },
     className: {
       type: String,
       default: null
     },
-    defaultText: {
+    labelName: {
       type: String,
-      default: 'All Status'
+      default: null
+    },
+    placeholder: {
+      type: String,
+      default: 'Choose option...'
+    },
+    isDisabled: {
+      type: Boolean,
+      default: false
+    },
+    isError: {
+      type: Boolean,
+      default: false
+    },
+    isSuccess: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: String,
+      default: null
+    },
+    size: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['small'].indexOf(value) !== -1
+      }
+    },
+    info: {
+      type: String,
+      default: null
     },
     options: {
       type: Array,
-      default() {
-		          return []
-		        }
+      default: () => []
     }
   },
   data() {
     return {
-      selectedValue: ''
+      isDropdown: false,
+      changeValue: '',
+      icon: 'icon-chevron-down'
     }
   },
   computed: {
     classes() {
       return {
-        'se-comboBox':true,
-        [this.className]: this.className !== null
+        'se-combobox': true,
+        [`se-combobox--${this.size}`]: this.size !== null,
+        [this.className]: this.className !== null,
+        disabled: this.isDisabled,
+        error: this.isError,
+        success: this.isSuccess
       }
-    },
-    getOptionsLength() {
-      return this.options.length
     }
   },
   methods: {
-    getOption(option) {
-      return this.selectedValue = option
+    triggerDropdown() {
+      this.isDropdown = !this.isDropdown
+
+      if (this.isDropdown && !this.isDisabled) {
+        this.icon = 'icon-chevron-up'
+      } else {
+        this.icon = 'icon-chevron-down'
+      }
     },
-    getSelectedOption() {
-      return this.selectedValue
+    selectItem(value) {
+      this.changeValue = value.name
+      this.$emit('change', value)
+    },
+    hide() {
+      this.isDropdown = false
+      this.icon = 'icon-chevron-down'
     }
   }
 }

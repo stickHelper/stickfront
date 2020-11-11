@@ -274,3 +274,8 @@ pre {
     @include flex-direction(row);
   }
 }
+
+.no-wrap {
+  overflow-x: hidden;
+  white-space: nowrap;
+}

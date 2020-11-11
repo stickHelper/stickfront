@@ -8,14 +8,18 @@ import SEButton from './components/SEButton/index.vue'
 import SECard from './components/SECard/index.vue'
 import SEChart from './components/SEChart/index.vue'
 import SECheckbox from './components/SECheckbox/index.vue'
+import SECombobox from './components/SECombobox/index.vue'
+import SEDatatable from './components/SEDatatable/index.vue'
+import SEDatepciker from './components/SEDatepciker/index.vue'
 import SEImg from './components/SEImg/index.vue'
+import SEPagination from './components/SEPagination/index.vue'
 import SEPreloader from './components/SEPreloader/index.vue'
 import SERadio from './components/SERadio/index.vue'
+import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETextarea from './components/SETextarea/index.vue'
 import SETextfield from './components/SETextfield/index.vue'
-import SEPagination from './components/SEPagination/index.vue'
 
 const components = {
   SEButton,
@@ -24,14 +28,18 @@ const components = {
   SECard,
   SEChart,
   SECheckbox,
+  SECombobox,
+  SEDatatable,
+  SEDatepciker,
   SEImg,
+  SEPagination,
   SEPreloader,
   SERadio,
+  SESidebarMenu,
   SESkeleton,
   SESwitch,
   SETextarea,
-  SETextfield,
-  SEPagination
+  SETextfield
 }
 
 const install = (Vue, opts = {}) => {

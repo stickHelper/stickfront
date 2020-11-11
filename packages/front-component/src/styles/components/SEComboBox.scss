@@ -1,76 +1,141 @@
-.se-comboBox {
-	& {
-		position: relative;
-		width: 165px;
-		padding-bottom: 8px;
+
+.se-combobox {
+  position: relative;
+  width: auto;
+
+  @include flexbox;
+  @include flex-direction(column);
+
+  label {
+    margin-bottom: $gutter-sm;
+  }
+
+  &--field {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    border: 1px solid $line;
+    outline: none;
+    padding: ($gutter-md - 4) ($text-lg + $gutter-md) ($gutter-md - 4) $gutter-md;
+    margin-bottom: $gutter-sm;
+    font-size: $text-md;
+    background-color: $accent;
+    @include border-radius(8px);
+
+    .field {
+      &-placeholder {
+        color: $text-subtle;
+      }
+      &-value {
+        color: $text-normal;
+      }
+    }
+
 	}
 
-	&__header {
-		position: relative;
-		background: $accent;
-		padding: 5px 15px;
-	    border: 1px solid #EBEBF7;
-	    @include border-radius(8px);
-	}
-
-	&__header--active {
-		background: $white;
-		border-color: $white;
-	}
-
-	&__header-text {
-		color: $text-subtle;
-	}
-
-	&__header-text {
-		color: $text-normal;
-	}
-
-	&__header-icon {
+	&--small {
+    .se-combobox--field {
+			padding-top: $gutter-xs;
+			padding-bottom: $gutter-xs;
+		}
+		.se-combobox--list {
+			top: 37px;
+		}
+		i {
+			top: 0.3rem!important;
+		}
+  }
+	
+	&--list {
+		min-width: 186px;
+		z-index: 9;
 		position: absolute;
-	    top: 50%;
-	    right: 15px;
-	    transform: translateY(-50%);
-	    @include flexbox;
-	}
-
-	&__header-icon svg {
-		width: 1em;
-		height: 1em
-	}
-
-	&__body {
-		position: absolute;
-	    width: 100%;
-	    background: $white;
-	    padding: 10px 0;
-	    margin-top: 8px;
-	    max-height: 190px;
-	    overflow-y: auto;
-	    @include border-radius(8px);
-	    @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
-	}
-
-	&__body {
-	    transform: translateY(10px);
-	    visibility: hidden;
-	    opacity: 0;
-	}
-
-	&:hover .se-comboBox__body {
-	    transform: translateY(0);
-	    visibility: visible;
-	    opacity: 1;
-	}
-
-	&__item {
+		text-align: left;
+		list-style: none;
+		right: 0;
+		top: 54px;
 		color: $text-normal;
-		padding: 5px 15px;
-		cursor: pointer;
-	    @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+
+		background-color: $white;
+		border: 1px solid $line;
+		padding: $gutter-xs 0;
+		
+		@include box-shadow(0px 6px 16px rgba($text-normal, 0.32));
+		@include border-radius(8px);
+
+		li {
+			div {
+				padding: $gutter-sm $gutter-md;
+				cursor: pointer;
+				&:hover {
+					background-color: rgba($accent, 0.5);
+				}
+			}
+		}
+		
+		&-left {
+			left: 0;
+		}
 	}
 
-	&__item:hover {
-		color: $purple;
+	&--item {
+		&.no-data {
+			div {
+				color: $text-subtle;
+				cursor: default;
+				background-color: rgba($accent, 0.5);
+			}
+		}
 	}
+
+  &--info {
+    font-size: $text-sm;
+    font-weight: bold;
+  }
+
+  &.error {
+    label,
+    input,
+    .icon,
+    .se-combobox--info,
+    .se-combobox--field {
+      color: $error;
+    }
+
+    .se-combobox--field {
+      border: 1px solid $error;
+    }
+    
+  }
+
+  &.success {
+    .icon {
+      color: $purple;
+    }
+
+    .se-combobox--field {
+      border: 1px solid $purple;
+    }
+	}
+	
+	&.disabled {
+    .icon {
+      color: $white;
+    }
+		.se-combobox--field {
+      cursor: not-allowed;
+      background-color: $text-subtle;
+      color: $white;
+
+			.field-placeholder {
+				color: $line;
+			}
+    }
+  }
+
+  i {
+    position: absolute;
+    top: .85rem;
+    right: 1rem;
+  }
 }
