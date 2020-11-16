@@ -32,7 +32,7 @@ export default {
     },
     label: {
       type: String,
-      default: 'Some label'
+      default: null
     },
     className: {
       type: String,

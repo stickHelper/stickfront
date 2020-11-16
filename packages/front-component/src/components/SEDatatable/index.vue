@@ -14,7 +14,19 @@
                 class="divTableHead"
                 @click="handleSort(head)"
               >
-                <div :class="head.key === 'action' || head.key === 'status' ? 'flex-center' : null">
+                <div v-if="checkable && head.key === 'checkbox'">
+                  <SECheckbox
+                    :id="`checked-all-table-${index}`"
+                    name="check-all"
+                    :value="head.key"
+                    size="small"
+                    @change="checkAllTable($event)"
+                  />
+                </div>
+                <div
+                  v-else
+                  :class="head.key === 'action' || head.key === 'status' ? 'flex-center' : null"
+                >
                   {{ head.label }}
                   <span
                     v-if="head.sortable"
@@ -27,7 +39,10 @@
               </div>
             </div>
           </div>
-          <div class="divTableBody">
+          <div
+            v-if="dataBody.length > 0"
+            class="divTableBody"
+          >
             <div
               v-for="(body, index) in dataBody"
               :key="`tr-${index}`"
@@ -53,15 +68,40 @@
                   :status-data="body[head.key]"
                   @triggerStatus="triggerStatus($event, body, index)"
                 />
+                <SEDatatableEdit
+                  v-else-if="editTable"
+                  :data-cell="body[head.key]"
+                  @changeValue="changeValue($event, body, head.key, index)"
+                />
+                <SECheckbox
+                  v-else-if="checkable && head.key === 'checkbox'"
+                  :id="`checked-cell-${index}`"
+                  name="check-cell"
+                  value="cell"
+                  size="small"
+                  :checked="body[head.key]"
+                  @change="checkTableCell($event, body, index)"
+                />
                 <div v-else>
                   {{ body[head.key] }}
                 </div>
               </div>
             </div>
           </div>
+          <div
+            v-else
+            class="divTableBody"
+          >
+            <div class="divTableRow">
+              Not Data Found
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-12 se-datatable--footer">
+      <div
+        v-if="isPagination"
+        class="col-md-12 se-datatable--footer"
+      >
         <div>
           <select
             class="footer-row"
@@ -91,14 +131,18 @@
 <script>
 import SEDatatableActions from './components/SEDatatableActions'
 import SEDatatableStatus from './components/SEDatatableStatus'
+import SEDatatableEdit from './components/SEDatatableEdit'
 import SEPagination from '../SEPagination'
+import SECheckbox from '../SECheckbox'
 
 export default {
   name: 'SEDatatable',
   components: {
     SEPagination,
+    SECheckbox,
     SEDatatableActions,
-    SEDatatableStatus
+    SEDatatableStatus,
+    SEDatatableEdit
   },
   props: {
     id: {
@@ -132,6 +176,18 @@ export default {
     actions: {
       type: Array,
       default: () => []
+    },
+    checkable: {
+      type: Boolean,
+      default: false
+    },
+    editTable: {
+      type: Boolean,
+      default: false
+    },
+    isPagination: {
+      type: Boolean,
+      default: true
     },
     actionType: {
       type: String,
@@ -208,6 +264,15 @@ export default {
     },
     triggerStatus(event, body, index) {
       this.$emit('triggerStatus', { event, body, index })
+    },
+    checkAllTable(event) {
+      this.$emit('checkAllTable', event)
+    },
+    checkTableCell(event, body, index) {
+      this.$emit('checkTableCell', { event, body, index })
+    },
+    changeValue(event, body, key, index) {
+      this.$emit('changeValue', { event, body, key, index })
     }
   }
 }

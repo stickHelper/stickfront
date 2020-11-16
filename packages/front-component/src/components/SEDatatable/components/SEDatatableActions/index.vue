@@ -31,7 +31,7 @@
         v-for="(action, idx) in actions"
         :key="idx"
         type="icon"
-        :is-dimmed="true"
+        :is-dimmed="action.isDimmed"
         class="ml-sm-2"
         :color="action.color"
         @click="handleActionIcon(action, index)"

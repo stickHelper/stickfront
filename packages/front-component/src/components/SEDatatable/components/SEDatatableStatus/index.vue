@@ -31,10 +31,7 @@ export default {
     },
     type: {
       type: String,
-      default: null,
-      validator: function (value) {
-        return ['info', 'swicth'].indexOf(value) !== -1
-      }
+      default: 'info'
     }
   },
   methods: {

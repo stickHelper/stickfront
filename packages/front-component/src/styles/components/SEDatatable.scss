@@ -134,6 +134,11 @@
   .divTableHeading { display: table-header-group;}
   .divTableFoot { display: table-footer-group;}
   .divTableBody { display: table-row-group;}
+  .divTableCell {
+    .se-checkbox--small input:checked + label:after {
+      top: 2px;
+    }
+  }
 
   &--footer {
     margin-top: $gutter-lg;
