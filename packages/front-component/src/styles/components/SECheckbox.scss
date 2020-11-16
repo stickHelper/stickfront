@@ -52,4 +52,19 @@
       transform: rotate(45deg);
     }
   }
+
+  &--small {
+    label {
+      &:before {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    input:checked + label:after {
+      top: 6px;
+      left: 9px;
+      width: 6px;
+      height: 12px;
+    }
+  }
 }

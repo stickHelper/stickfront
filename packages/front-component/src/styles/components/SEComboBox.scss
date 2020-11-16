@@ -31,7 +31,7 @@
       }
     }
 
-	}
+  }
 
 	&--small {
     .se-combobox--field {
@@ -48,6 +48,7 @@
 	
 	&--list {
 		min-width: 186px;
+		width: 100%;
 		z-index: 9;
 		position: absolute;
 		text-align: left;
@@ -85,7 +86,32 @@
 				cursor: default;
 				background-color: rgba($accent, 0.5);
 			}
-		}
+    }
+    &.search {
+      div {
+        position: relative;
+        border-bottom: 1px solid $line;
+        cursor: default;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+      span {
+        position: absolute;
+        left: 16px;
+      }
+      input {
+        width: 100%;
+        padding-left: $gutter-lg;
+        outline: none;
+        border: none;
+        background: transparent;
+        &::placeholder {
+          color: $text-subtle;
+        }
+        font-size: $text-md - 2;
+      }
+    }
 	}
 
   &--info {
@@ -133,7 +159,7 @@
     }
   }
 
-  i {
+  i:not(.icon-search) {
     position: absolute;
     top: .85rem;
     right: 1rem;

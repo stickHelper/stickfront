@@ -41,12 +41,20 @@ export default {
     checked: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['small'].indexOf(value) !== -1
+      }
     }
   },
   computed: {
     classes() {
       return {
         'se-checkbox': true,
+        [`se-checkbox--${this.size}`]: this.size !== null,
         [this.className]: this.className !== null
       }
     }

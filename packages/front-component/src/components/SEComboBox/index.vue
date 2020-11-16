@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    v-click-outside="hide"
+    :class="classes"
+  >
     <label
       v-if="labelName && labelName !== ''"
       :for="inputName"
@@ -9,7 +12,6 @@
 
     <div
       :id="inputName"
-      v-click-outside="hide"
       :disabled="isDisabled"
       class="se-combobox--field"
       @click="triggerDropdown()"
@@ -37,15 +39,29 @@
         :class="['icon', icon]"
       />
     </div>
-
     <ul
       v-if="isDropdown && !isDisabled"
       class="se-combobox--list"
       :style="labelName && labelName !== '' ? 'top: 85px' : null"
     >
       <li
+        v-if="isSearch"
+        class="se-combobox--item search"
+      >
+        <div>
+          <span><i class="icon icon-search" /></span>
+          <input
+            type="text"
+            name="search-combobox"
+            placeholder="Search here..."
+            @input="$emit('input-search', $event.target.value)"
+          >
+        </div>
+      </li>
+      <li
         v-if="options.length === 0"
         class="se-combobox--item no-data"
+        @click="hide"
       >
         <div>No data to choose</div>
       </li>
@@ -104,6 +120,10 @@ export default {
       type: Boolean,
       default: false
     },
+    isSearch: {
+      type: Boolean,
+      default: false
+    },
     value: {
       type: String,
       default: null
@@ -156,6 +176,7 @@ export default {
     selectItem(value) {
       this.changeValue = value.name
       this.$emit('change', value)
+      this.hide()
     },
     hide() {
       this.isDropdown = false

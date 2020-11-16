@@ -45,3 +45,44 @@ Default.parameters = {
     }
   }
 }
+
+export const Size = (args) => ({
+  components: { SECheckbox },
+  template: `<div>
+    <SECheckbox
+      id="small"
+      name="size"
+      value="small"
+      label="Small"
+      size="small"
+      class-name="mb-xs-2"
+    />
+    <SECheckbox
+      id="default"
+      name="size"
+      value="default"
+      label="Default"
+    />
+  </div>`
+})
+
+Size.parameters = {
+  docs: {
+    source: {
+      code: `<SECheckbox
+  id="small"
+  name="size"
+  value="small"
+  label="Small"
+  size="small"
+  class-name="mb-xs-2"
+/>
+<SECheckbox
+  id="default"
+  name="size"
+  value="default"
+  label="Default"
+/>`
+    }
+  }
+}

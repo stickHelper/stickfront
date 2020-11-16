@@ -99,16 +99,72 @@ Disabled.parameters = {
 export const Size = (args) => ({
   components: { SECombobox },
   template: `<div>
-    <SECombobox size="small" value-input="Small" />
-    <SECombobox value-input="Default" />
+    <SECombobox size="small" />
+    <SECombobox />
   </div>`
 })
 
 Size.parameters = {
   docs: {
     source: {
-      code: `<SECombobox size="small" value-input="Small" />
-<SECombobox value-input="Default" />`
+      code: `<SECombobox size="small" />
+<SECombobox />`
+    }
+  }
+}
+
+export const Searchable = (args) => ({
+  components: { SECombobox },
+  template: `<div>
+    <SECombobox
+      size="small"
+      :isSearch="true"
+      :options="[
+        { value: 'option1', name: 'option 1' },
+        { value: 'option2', name: 'option 2' },
+        { value: 'option3', name: 'option 3' },
+        { value: 'option4', name: 'option 4' },
+        { value: 'option5', name: 'option 5' }
+      ]"
+    />
+    <SECombobox
+      :isSearch="true"
+      :options="[
+        { value: 'option1', name: 'option 1' },
+        { value: 'option2', name: 'option 2' },
+        { value: 'option3', name: 'option 3' },
+        { value: 'option4', name: 'option 4' },
+        { value: 'option5', name: 'option 5' }
+      ]"
+    />
+  </div>`
+})
+
+Searchable.parameters = {
+  docs: {
+    source: {
+      code: `<SECombobox
+  size="small"
+  :isSearch="true"
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+/>
+<SECombobox
+  :isSearch="true"
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+/>
+`
     }
   }
 }
