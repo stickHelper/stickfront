@@ -1,3 +1,2 @@
 [build]
-publish = "packages/front-component/storybook-static/"
-command = "cd packages/front-component && yarn build-storybook"
+publish = "storybook-static"

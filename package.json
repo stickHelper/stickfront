@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "publish": "lerna publish",
-    "build": "lerna run build",
+    "build": "rm -rf storybook-static/ && lerna run build",
     "test": "lerna run test"
   },
   "devDependencies": {
