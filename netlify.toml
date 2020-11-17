@@ -1,0 +1,4 @@
+[build]
+base = "packages/front-component"
+publish = "storyboo-static/"
+command = "yarn build-storybook"
