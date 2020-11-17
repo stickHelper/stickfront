@@ -1,4 +1,3 @@
 [build]
-base = "packages/front-component"
-publish = "storybook-static/"
-command = "CI= npm run build-storybook"
+publish = "packages/front-component/storybook-static/"
+command = "cd packages/front-component && npm run build-storybook"
