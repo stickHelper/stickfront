@@ -11,7 +11,7 @@
     </label>
     <input
       :id="name"
-      type="text"
+      :type="type"
       :name="name"
       :maxlength="maxlength"
       :placeholder="placeholder"
