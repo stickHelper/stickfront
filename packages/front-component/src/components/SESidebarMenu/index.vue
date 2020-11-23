@@ -19,7 +19,7 @@
           :class="menu.type === 'label' ? 'label-menu' : null"
         >
           <div class="se-sidebarmenu--icon">
-            <span :class="menu.class" />
+            <span :class="menu.icon" />
           </div>
           <span
             v-if="expandMenu"
