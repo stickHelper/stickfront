@@ -26,7 +26,17 @@ export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: '<SECombobox />'
+      code: `<div>
+  <SECombobox
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+  />      
+</div>`
     }
   }
 }
