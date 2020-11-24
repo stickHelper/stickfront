@@ -30,7 +30,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['bald', 'buttton', 'tick'].indexOf(value) !== -1
+        return ['bald', 'buttton', 'tick', 'outline'].indexOf(value) !== -1
       }
     },
     className: {
