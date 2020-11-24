@@ -39,16 +39,23 @@ For more information about how to usage for more components, please read documen
 
 ### More Components
 ___
-- SEavatar
+- SEAvatar
 - SEBadge
 - SEButton
 - SECard
+- SEChart
 - SECheckbox
+- SECombobox
+- SEDatatable
+- SEDatepicker
 - SEImg
+- SEModal
+- SEPagination
 - SEPreloader
 - SERadio
 - SESkeleton
 - SESwitch
+- SETabMenu
 - SETextarea
 - SETextfield
 

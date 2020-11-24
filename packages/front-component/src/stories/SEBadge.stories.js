@@ -103,6 +103,7 @@ Bald.parameters = {
 export const Outline = () => ({
   components: { SEBadge },
   template: `<div>
+    <SEBadge type="outline">Default</SEBadge>
     <SEBadge type="outline" color="primary">Primary</SEBadge>
     <SEBadge type="outline" color="secondary">Secondary</SEBadge>
     <SEBadge type="outline" color="accent">Accent</SEBadge>

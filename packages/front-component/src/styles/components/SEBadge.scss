@@ -110,6 +110,7 @@
     background-color: transparent !important;
   }
   &--outline {
+    border: 1px solid $line;
     &.se-badge--primary { border: 1px solid $purple; }
     &.se-badge--secondary { border: 1px solid $orange; }
     &.se-badge--dark { border: 1px solid $dark; }
