@@ -1,0 +1,62 @@
+.se-fileAttachment {
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+
+	& {
+	    position: relative;
+	    flex-wrap: wrap;
+
+	    @include flexbox;
+	    @include align-items(center);
+	}
+
+	&__label {
+		flex: 0 0 100%;
+		color: $text-normal;
+		margin-bottom: $gutter-sm;
+	}
+
+	&__label--inline {
+	    flex: 0 0 20%;
+	    margin-bottom: 0;
+	}
+
+	&__wrapper {
+	    position: relative;
+	    display: flex;
+	    flex-grow: 1;
+	    flex-wrap: wrap;
+	}
+
+	&__input {
+	    opacity: 0;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    cursor: pointer;
+	}
+
+	&__icon {
+	    background: $text-subtle;
+	    flex: 0 0 45px;
+
+	    @include flexbox;
+	    @include align-items(center);
+	    @include justify-content(center);
+	    @include border-radius(0 8px 8px 0);
+	}
+
+	&__preview {
+	    background: $accent;
+	    flex: 1;
+	    border: 1px solid #EBEBF7;
+	    // padding: 6px 1rem;
+	    padding: ($gutter-md - 4) $text-md;
+	    
+	    @include border-radius(8px 0 0 8px)
+	}
+}
