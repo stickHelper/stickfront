@@ -12,6 +12,7 @@ import SECombobox from './components/SECombobox/index.vue'
 import SEDatatable from './components/SEDatatable/index.vue'
 import SEDatepicker from './components/SEDatepicker/index.vue'
 import SEImg from './components/SEImg/index.vue'
+import SEFileAttachment from './components/SEFileAttachment/index.vue'
 import SEModal from './components/SEModal/index.vue'
 import SEPagination from './components/SEPagination/index.vue'
 import SEPreloader from './components/SEPreloader/index.vue'
@@ -34,6 +35,7 @@ const components = {
   SEDatatable,
   SEDatepicker,
   SEImg,
+  SEFileAttachment,
   SEModal,
   SEPagination,
   SEPreloader,
