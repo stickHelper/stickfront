@@ -37,7 +37,10 @@
           d="M6.5 4.5l.8-.9v7.7a.7.7 0 001.4 0V3.6l.8.9a.7.7 0 001.1-.2.7.7 0 00-.1-.8l-2-2a.7.7 0 00-1 0l-2 2a.7.7 0 101 1zM12 6h-1.3a.7.7 0 100 1.3H12a.7.7 0 01.7.7v4.7a.7.7 0 01-.7.6H4a.7.7 0 01-.7-.6V8a.7.7 0 01.7-.7h1.3a.7.7 0 000-1.3H4a2 2 0 00-2 2v4.7a2 2 0 002 2h8a2 2 0 002-2V8a2 2 0 00-2-2z"
         /></svg>
       </div>
-      <div class="se-fileAttachment__info" v-if="info && info !== '' ">
+      <div
+        v-if="info && info !== '' "
+        class="se-fileAttachment__info"
+      >
         {{ info }}
       </div>
     </div>
@@ -101,7 +104,7 @@ export default {
         [this.className]: this.className !== null,
         'se-fileAttachment--disabled': this.isDisabled,
         'se-fileAttachment--error': this.isError,
-        'se-fileAttachment--success': this.isSuccess,
+        'se-fileAttachment--success': this.isSuccess
       }
     },
     name() {
