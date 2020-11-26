@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'UHCard',
+  name: 'SECard',
   props: {
     id: {
       type: String,
