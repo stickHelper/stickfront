@@ -121,9 +121,9 @@ export default {
       const files = e.target.files
 
       if (!files.length) {
-        this.fileName = this.placeholder
+        this.fileName = ''
 
-        return this.placeholder
+        return this.fileName
       }
 
       this.fileName = files[0].name
