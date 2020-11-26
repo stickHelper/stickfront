@@ -1,4 +1,6 @@
 .se-fileAttachment {
+	$self: &;
+
 	svg {
 		width: 1em;
 		height: 1em;
@@ -40,8 +42,20 @@
 	    cursor: pointer;
 	}
 
+	&__preview {
+	    background: $accent;
+	    flex: 1;
+	    border: 1px solid $line;
+	    border-width: 1px 0 1px 1px;
+	    padding: ($gutter-md - 4) $text-md;
+	    
+	    @include border-radius(8px 0 0 8px);
+	}
+
 	&__icon {
 	    background: $text-subtle;
+	    border: 1px solid $text-subtle;
+	    border-width: 1px 1px 1px 0;
 	    flex: 0 0 45px;
 
 	    @include flexbox;
@@ -50,13 +64,48 @@
 	    @include border-radius(0 8px 8px 0);
 	}
 
-	&__preview {
-	    background: $accent;
-	    flex: 1;
-	    border: 1px solid #EBEBF7;
-	    // padding: 6px 1rem;
-	    padding: ($gutter-md - 4) $text-md;
-	    
-	    @include border-radius(8px 0 0 8px)
+	&__info {
+		flex: 0 0 100%;
+		font-size: $text-sm;
+	    font-weight: bold;
+		margin-top: $gutter-sm;
+	}
+
+	/**
+	 * modifier state
+	 */
+	&--success {
+		#{ $self }__label,
+		#{ $self }__preview,
+		#{ $self }__info {
+			color: $purple;
+		}
+
+		#{ $self }__preview,
+		#{ $self }__icon {
+			border-color: $purple;
+		}
+	}
+
+	&--error {
+		#{ $self }__label,
+		#{ $self }__preview,
+		#{ $self }__info {
+			color: $red;
+		}
+
+		#{ $self }__preview,
+		#{ $self }__icon {
+			border-color: $red;
+		}
+	}
+
+	&--disabled {
+		#{ $self }__preview {
+			cursor: not-allowed;
+			background-color: $text-subtle;
+			border-color: $text-subtle;
+			color: $white;
+		}
 	}
 }
