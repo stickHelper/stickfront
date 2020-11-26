@@ -71,6 +71,11 @@
 		margin-top: $gutter-sm;
 	}
 
+	&__info--inline {
+		flex: 0 0 80%;
+	    margin-left: 20%;
+	}
+
 	/**
 	 * modifier state
 	 */
