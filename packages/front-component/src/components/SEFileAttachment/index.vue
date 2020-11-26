@@ -13,7 +13,7 @@
     >
       {{ labelName }}
     </label>
-    <div class="se-fileAttachment__wrapper">
+    <div :class="['se-fileAttachment__wrapper', isInline ? 'se-fileAttachment__wrapper--inline' : '']">
       <input
         :id="name"
         :name="name"
@@ -24,7 +24,7 @@
         @change="handleChange"
       >
       <div class="se-fileAttachment__preview">
-        {{ fileName ? fileName : placeholder }}
+        <span class="se-fileAttachment__preview-name">{{ fileName ? fileName : placeholder }}</span>
       </div>
       <div class="se-fileAttachment__icon">
         <svg

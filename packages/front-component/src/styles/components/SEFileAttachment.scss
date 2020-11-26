@@ -22,14 +22,22 @@
 
 	&__label--inline {
 	    flex: 0 0 20%;
+	    max-width: 20%;
 	    margin-bottom: 0;
 	}
 
 	&__wrapper {
 	    position: relative;
-	    display: flex;
-	    flex-grow: 1;
 	    flex-wrap: wrap;
+	    flex: 0 0 100%;
+		max-width: 100%;
+
+		@include flexbox;
+	}
+
+	&__wrapper--inline {
+		flex: 0 0 80%;
+		max-width: 80%;
 	}
 
 	&__input {
@@ -44,12 +52,20 @@
 
 	&__preview {
 	    background: $accent;
-	    flex: 1;
 	    border: 1px solid $line;
 	    border-width: 1px 0 1px 1px;
 	    padding: ($gutter-md - 4) $text-md;
+	    flex: 1;
+	    min-width: 0;
 	    
+	    @include flexbox;
 	    @include border-radius(8px 0 0 8px);
+	}
+
+	&__preview-name {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 
 	&__icon {
@@ -57,6 +73,7 @@
 	    border: 1px solid $text-subtle;
 	    border-width: 1px 1px 1px 0;
 	    flex: 0 0 45px;
+	    max-width: 45px;
 
 	    @include flexbox;
 	    @include align-items(center);
@@ -66,6 +83,7 @@
 
 	&__info {
 		flex: 0 0 100%;
+		max-width: 100%;
 		font-size: $text-sm;
 	    font-weight: bold;
 		margin-top: $gutter-sm;
@@ -73,6 +91,7 @@
 
 	&__info--inline {
 		flex: 0 0 80%;
+		max-width: 80%;
 	    margin-left: 20%;
 	}
 
