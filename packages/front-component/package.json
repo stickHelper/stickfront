@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
+    "@ckeditor/ckeditor5-build-classic": "^23.1.0",
+    "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-essentials": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",

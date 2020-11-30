@@ -1,0 +1,16 @@
+.se-wysiwyg {
+	$self: &;
+
+	.ck-editor__editable {
+		min-height: 200px;
+	}
+
+	&--disabled {
+		cursor: not-allowed;
+		
+		.ck-editor__editable,
+		.ck-toolbar_grouping {
+			background-color: $text-subtle !important;
+		}
+	}
+}
