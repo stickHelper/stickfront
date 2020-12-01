@@ -1,4 +1,9 @@
 /*!
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+
+/*!
  * ApexCharts v3.22.0
  * (c) 2018-2020 Juned Chhipa
  * Released under the MIT License.
