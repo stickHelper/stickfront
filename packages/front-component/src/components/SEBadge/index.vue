@@ -30,7 +30,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['bald', 'buttton', 'tick', 'outline'].indexOf(value) !== -1
+        return ['bald', 'buttton', 'tick', 'outline', 'rounded'].indexOf(value) !== -1
       }
     },
     className: {
@@ -38,6 +38,10 @@ export default {
       default: null
     },
     isTick: {
+      type: Boolean,
+      default: false
+    },
+    fullColor: {
       type: Boolean,
       default: false
     }
@@ -48,6 +52,7 @@ export default {
         'se-badge': true,
         [`se-badge--${this.color}`]: this.color !== null,
         [`se-badge--${this.type}`]: this.type !== null,
+        'se-badge--full-color': this.fullColor,
         [this.className]: this.className !== null
       }
     }

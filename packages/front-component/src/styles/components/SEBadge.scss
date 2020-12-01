@@ -124,6 +124,23 @@
     &.se-badge--light-blue { border: 1px solid $light-blue; }
     &.se-badge--blue { border: 1px solid $blue; }
   }
+  &--rounded {
+    @include border-radius(50px);
+  }
+  &--full-color {
+    &.se-badge--primary { color: $white; background-color: $purple; }
+    &.se-badge--secondary { color: $white; background-color: $orange; }
+    &.se-badge--dark { color: $white; background-color: $dark; }
+    &.se-badge--mint { color: $white; background-color: $mint; }
+    &.se-badge--red { color: $white; background-color: $red; }
+    &.se-badge--error { color: $white; background-color: $error; }
+    &.se-badge--salmon { color: $white; background-color: $salmon; }
+    &.se-badge--normal { color: $white; background-color: $text-normal; }
+    &.se-badge--accent { color: $text-normal; background-color: $accent; }
+    &.se-badge--green { color: $white; background-color: $green; }
+    &.se-badge--light-blue { color: $white; background-color: $light-blue; }
+    &.se-badge--blue { color: $white; background-color: $blue; }
+  }
 
   .tick {
     height: 10px;

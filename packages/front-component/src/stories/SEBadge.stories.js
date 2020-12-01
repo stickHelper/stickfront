@@ -5,7 +5,8 @@ export default {
   title: 'Components/Badge',
   component: SEBadge,
   argTypes: {
-    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'mint', 'red', 'green', 'light-blue', 'blue'] } }
+    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'mint', 'red', 'green', 'light-blue', 'blue'] } },
+    type: { control: { type: 'select', options: ['bald', 'buttton', 'tick', 'outline', 'rounded'] } }
   }
 }
 
@@ -57,6 +58,82 @@ Color.parameters = {
 <SEBadge color="green">Green</SEBadge>
 <SEBadge color="light-blue">Light Blue</SEBadge>
 <SEBadge color="blue">Blue</SEBadge>
+      `
+    }
+  }
+}
+
+export const FullColor = () => ({
+  components: { SEBadge },
+  template: `<div>
+    <SEBadge :full-color="true" color="primary">Primary</SEBadge>
+    <SEBadge :full-color="true" color="secondary">Secondary</SEBadge>
+    <SEBadge :full-color="true" color="accent">Accent</SEBadge>
+    <SEBadge :full-color="true" color="normal">Normal</SEBadge>
+    <SEBadge :full-color="true" color="dark">Dark</SEBadge>
+    <SEBadge :full-color="true" color="mint">Mint</SEBadge>
+    <SEBadge :full-color="true" color="red">Red</SEBadge>
+    <SEBadge :full-color="true" color="error">Error</SEBadge>
+    <SEBadge :full-color="true" color="salmon">Salmon</SEBadge>
+    <SEBadge :full-color="true" color="green">Green</SEBadge>
+    <SEBadge :full-color="true" color="light-blue">Light Blue</SEBadge>
+    <SEBadge :full-color="true" color="blue">Blue</SEBadge>
+  </div>
+  `
+})
+FullColor.parameters = {
+  docs: {
+    source: {
+      code: `<SEBadge :full-color="true" color="primary">Primary</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="secondary">Secondary</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="accent">Accent</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="normal">Normal</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="dark">Dark</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="mint">Mint</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="red">Red</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="error">Error</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="salmon">Salmon</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="green">Green</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="light-blue">Light Blue</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="blue">Blue</SEBadge>
+      `
+    }
+  }
+}
+
+export const Rounded = () => ({
+  components: { SEBadge },
+  template: `<div>
+    <SEBadge type="rounded" :full-color="true" color="primary">Primary</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="secondary">Secondary</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="accent">Accent</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="normal">Normal</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="dark">Dark</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="mint">Mint</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="red">Red</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="error">Error</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="salmon">Salmon</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="green">Green</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="light-blue">Light Blue</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="blue">Blue</SEBadge>
+  </div>
+  `
+})
+Rounded.parameters = {
+  docs: {
+    source: {
+      code: `<SEBadge :full-color="true" color="primary">Primary</SEBadge>
+<SEBadge :full-color="true" color="secondary">Secondary</SEBadge>
+<SEBadge :full-color="true" color="accent">Accent</SEBadge>
+<SEBadge :full-color="true" color="normal">Normal</SEBadge>
+<SEBadge :full-color="true" color="dark">Dark</SEBadge>
+<SEBadge :full-color="true" color="mint">Mint</SEBadge>
+<SEBadge :full-color="true" color="red">Red</SEBadge>
+<SEBadge :full-color="true" color="error">Error</SEBadge>
+<SEBadge :full-color="true" color="salmon">Salmon</SEBadge>
+<SEBadge :full-color="true" color="green">Green</SEBadge>
+<SEBadge :full-color="true" color="light-blue">Light Blue</SEBadge>
+<SEBadge :full-color="true" color="blue">Blue</SEBadge>
       `
     }
   }
