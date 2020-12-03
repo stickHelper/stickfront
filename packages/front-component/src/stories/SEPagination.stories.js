@@ -20,3 +20,16 @@ Default.parameters = {
     }
   }
 }
+
+export const Rectangle = () => ({
+  components: { SEPagination },
+  template: '<SEPagination totalPages="10" type="rectangle" />'
+})
+
+Rectangle.parameters = {
+  docs: {
+    source: {
+      code: '<SEPagination totalPages="10" type="rectangle" />'
+    }
+  }
+}

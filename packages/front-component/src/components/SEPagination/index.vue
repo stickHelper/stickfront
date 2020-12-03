@@ -45,6 +45,13 @@ export default {
     currentPage: {
       type: [Number, String],
       default: 1
+    },
+    type: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['rectangle'].indexOf(value) !== -1
+      }
     }
   },
   data() {
@@ -56,6 +63,7 @@ export default {
     classes() {
       return {
         'se-pagination': true,
+        [this.type]: this.type !== null,
         [this.className]: this.className !== null
       }
     },

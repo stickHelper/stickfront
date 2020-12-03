@@ -51,4 +51,10 @@
       }
     }
   }
+
+  &.rectangle {
+    ul li span {
+      @include border-radius(4px);
+    }
+  }
 }

@@ -14,7 +14,7 @@
 import VueApexCharts from 'vue-apexcharts'
 
 export default {
-  name: 'Chart',
+  name: 'SEChart',
   components: {
     VueApexCharts
   },
@@ -91,7 +91,6 @@ export default {
         },
         plotOptions: {
           bar: {
-            startingShape: 'rounded',
             endingShape: 'rounded',
             columnWidth: '30%'
           },

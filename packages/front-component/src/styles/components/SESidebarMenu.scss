@@ -73,7 +73,8 @@
           @include border-radius(8px);
         }
 
-        &.router-link-exact-active {
+        &.router-link-exact-active,
+        &.router-link-active {
           background-color: $orange;
           @include border-radius(8px);
 

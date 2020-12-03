@@ -84,7 +84,8 @@ export const FullColor = () => ({
 FullColor.parameters = {
   docs: {
     source: {
-      code: `<SEBadge :full-color="true" color="primary">Primary</SEBadge>
+      code: `<SEBadge :full-color="true">Default</SEBadge>
+<SEBadge :full-color="true" color="primary">Primary</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="secondary">Secondary</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="accent">Accent</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="normal">Normal</SEBadge>
