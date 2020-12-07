@@ -1,0 +1,45 @@
+.se-toast {
+	$self: &;
+
+	& {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		padding: ($gutter-md - 4) $gutter-xl;
+		min-width: 200px;
+		background-color: $purple;
+		
+		@include border-radius(8px);
+		@include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+	}
+
+	&__message {
+		font-size: $text-md;
+		color: $white;
+		text-align: center;
+	}
+
+	&__close {
+		color: $white;
+		position: absolute;
+		top: 48%;
+		right: 10px;
+		transform: translateY(-48%);
+	}
+
+	&--success {
+		background-color: $green;
+	}
+
+	&--info {
+		background-color: $blue;
+	}
+
+	&--warning {
+		background-color: $orange;
+	}
+
+	&--error {
+		background-color: $error;
+	}
+}
