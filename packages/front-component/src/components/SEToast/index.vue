@@ -1,8 +1,10 @@
 <template>
-	<div :id="id" :class="classes">
-		<p class="se-toast__message">{{ message }}</p>
-		<i class="se-toast__close icon icon-close" @click="close"></i>
-	</div>
+	<transition name="slide-fade">
+		<div :id="id" :class="classes" v-if="active" v-model="active">
+			<p class="se-toast__message">{{ message }}</p>
+			<i class="se-toast__close icon icon-close" @click="close"></i>
+		</div>
+	</transition>
 </template>
 
 <script>
@@ -24,14 +26,19 @@
 			    	return ['success', 'info', 'warning', 'error'].indexOf(value) !== -1
 				}
 			},
+			isActive: {
+				type: Boolean,
+				default: false
+			},
 			message: {
 				type: String,
-				default: 'No message area defined'
+				default: 'No message are defined'
 			}
 		},
 		data() {
 			return {
-				active: false
+				active: this.isActive,
+				timeout: 3000,
 			}
 		},
 		computed: {
@@ -46,10 +53,32 @@
 		methods: {
 			show() {
 				this.active = true
+				setTimeout(() => this.close(), this.timeout)
+				
 			},
 			close() {
+				clearTimeout(this.timeout)
 				this.active = false
+				this.$destroy()
 			}
 		}
 	}
 </script>
+
+<style>
+	.slide-fade-enter-active {
+	  transition: all .3s ease;
+	}
+	.slide-fade-leave-active {
+	  transition: all .3s ease;
+	}
+	.slide-fade-enter{
+	  transform: translateX(10px);
+	  opacity: 0;
+	}
+
+	.slide-fade-leave-to {
+		transform: translateY(-10px);
+		opacity: 0;
+	}
+</style>
