@@ -1,11 +1,11 @@
 // flexbox
 
-@mixin flexbox{
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+@mixin flexbox($s...){
+  display: -webkit-box $s;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box $s;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox $s;      /* TWEENER - IE 10 */
+  display: -webkit-flex $s;     /* NEW - Chrome */
+  display: flex $s;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 @mixin flex-middle {
   -ms-flex-align: center;
