@@ -59,7 +59,6 @@
 			close() {
 				clearTimeout(this.timeout)
 				this.active = false
-				this.$destroy()
 			}
 		}
 	}

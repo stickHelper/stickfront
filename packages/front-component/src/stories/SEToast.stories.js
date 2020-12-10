@@ -74,19 +74,19 @@ export const Demo = () => ({
   },
   template: `<div class="toast-template-wrapper">
     <p class="mb-xs-3">
-      <SEButton @click="toastSuccess" v-bind="$props">Show Toaster Success</SEButton>
+      <SEButton @click="toastSuccess" v-bind="$props" size="medium">Show Toaster Success</SEButton>
     </p>
 
     <p class="mb-xs-3">
-      <SEButton @click="toastInfo" v-bind="$props" color="blue">Show Toaster Info</SEButton>
+      <SEButton @click="toastInfo" v-bind="$props" color="blue" size="medium">Show Toaster Info</SEButton>
     </p>
 
     <p class="mb-xs-3">
-      <SEButton @click="toastWarning" v-bind="$props" color="secondary">Show Toaster Warning</SEButton>
+      <SEButton @click="toastWarning" v-bind="$props" color="secondary" size="medium">Show Toaster Warning</SEButton>
     </p>
 
     <p class="mb-xs-3">
-      <SEButton @click="toastError" v-bind="$props" color="error">Show Toaster Error</SEButton>
+      <SEButton @click="toastError" v-bind="$props" color="error" size="medium">Show Toaster Error</SEButton>
     </p>
   </div>`
 })
