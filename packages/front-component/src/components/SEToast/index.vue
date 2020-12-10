@@ -1,10 +1,10 @@
 <template>
-	<transition name="slide-fade">
-		<div :id="id" :class="classes" v-if="active" v-model="active">
-			<p class="se-toast__message">{{ message }}</p>
-			<i class="se-toast__close icon icon-close" @click="close"></i>
-		</div>
-	</transition>
+		<transition name="slide-fade">
+			<div :id="id" :class="classes" v-show="active">
+				<p class="se-toast__message">{{ message }}</p>
+				<i class="se-toast__close icon icon-close" @click="close"></i>
+			</div>
+		</transition>
 </template>
 
 <script>
@@ -30,6 +30,10 @@
 				type: Boolean,
 				default: false
 			},
+			duration: {
+				type: Number,
+				default: 30000
+			},
 			message: {
 				type: String,
 				default: 'No message are defined'
@@ -38,27 +42,55 @@
 		data() {
 			return {
 				active: this.isActive,
-				timeout: 3000,
+				timeout: this.duration,
+				container: null
 			}
 		},
+		beforeMount() {
+	      this.setupContainer()
+	    },
 		computed: {
 			classes() {
 				return {
-					'se-toast': true,
-					[`se-toast--${this.type}`]: this.type !== null,
-					[this.className]: this.className !== null,
+					'se-toast__item': true,
+					[`se-toast__item--${this.type}`]: this.type !== null,
 				}
-			}
+			},
 		},
 		methods: {
+			setupContainer() {
+				this.container = document.querySelector('.se-toast')
+
+				if (this.container) return
+
+				if (!this.container) {
+		          this.container = document.createElement('div');
+		          this.container.className = 'se-toast';
+		        }
+
+		        const documentBody = document.body;
+		        documentBody.appendChild(this.container);
+			},
+			removeElement(el) {
+				if (typeof el.remove !== 'undefined') {
+					el.remove()
+				} else {
+					el.parentNode.removeChild(el)
+				}
+			},
 			show() {
+				this.container.insertAdjacentElement('afterbegin', this.$el)
 				this.active = true
 				setTimeout(() => this.close(), this.timeout)
-				
 			},
 			close() {
 				clearTimeout(this.timeout)
 				this.active = false
+
+				setTimeout(() => {
+					this.$destroy();
+					this.removeElement(this.$el)
+				}, 300)
 			}
 		}
 	}
@@ -71,13 +103,12 @@
 	.slide-fade-leave-active {
 	  transition: all .3s ease;
 	}
-	.slide-fade-enter{
+	.slide-fade-enter {
 	  transform: translateX(10px);
 	  opacity: 0;
 	}
-
 	.slide-fade-leave-to {
-		transform: translateY(-10px);
+		transform: translateY(10px);
 		opacity: 0;
 	}
 </style>

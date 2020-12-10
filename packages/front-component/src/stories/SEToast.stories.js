@@ -55,9 +55,9 @@ export const Demo = () => ({
       toast.message = message
       toast.type = type
 
-      document.querySelector('.toast-template-wrapper').appendChild(toast.$mount().$el);
-
-      return toast.show();
+      // document.querySelector('.toast-template-wrapper').appendChild(toast.$mount().$el);
+      toast.$mount().$el
+      return toast.show()
     },
     toastSuccess: function() {
       this.showToaster({ message: 'Success Toaster', type: 'success' })
