@@ -1,0 +1,14 @@
+.se-slider {
+  .vue-slider {
+    &-rail {
+      background-color: $line;
+    }
+    &-process {
+      background-color: $orange;
+    }
+    &-dot-tooltip-inner  {
+      border-color: $orange;
+      background-color: $orange;
+    }
+  }
+}

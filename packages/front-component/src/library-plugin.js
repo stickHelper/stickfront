@@ -19,6 +19,7 @@ import SEPreloader from './components/SEPreloader/index.vue'
 import SERadio from './components/SERadio/index.vue'
 import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
+import SESlider from './components/SESlider/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETabMenu from './components/SETabMenu/index.vue'
 import SETextarea from './components/SETextarea/index.vue'
@@ -42,6 +43,7 @@ const components = {
   SERadio,
   SESidebarMenu,
   SESkeleton,
+  SESlider,
   SESwitch,
   SETabMenu,
   SETextarea,
