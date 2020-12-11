@@ -47,7 +47,8 @@ const components = {
   SESwitch,
   SETabMenu,
   SETextarea,
-  SETextfield
+  SETextfield,
+  SEToast
 }
 
 const install = (Vue, opts = {}) => {
