@@ -76,7 +76,6 @@ export default {
   },
   methods: {
     changeSlide(value) {
-      console.log('value', value)
       this.$emit('changeSlide', value)
     }
   }
