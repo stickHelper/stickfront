@@ -15,7 +15,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEButton },
-  template: '<SEButton @onClick="onClick" v-bind="$props">Default</SEButton>'
+  template: '<SEButton v-bind="$props">Default</SEButton>'
 })
 
 export const Default = Template.bind({})
