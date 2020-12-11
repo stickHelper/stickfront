@@ -31,20 +31,52 @@ export const Success = () => ({
   template: '<SEToast type="success" :isActive="true" />'
 })
 
+Success.parameters = {
+  docs: {
+    source: {
+      code: '<SEToast type="success" :isActive="true" />'
+    }
+  }
+}
+
 export const Info = () => ({
   components: { SEToast },
   template: '<SEToast type="info" :isActive="true" />'
 })
+
+Info.parameters = {
+  docs: {
+    source: {
+      code: '<SEToast type="info" :isActive="true" />'
+    }
+  }
+}
 
 export const Warning = () => ({
   components: { SEToast },
   template: '<SEToast type="warning" :isActive="true" />'
 })
 
+Warning.parameters = {
+  docs: {
+    source: {
+      code: '<SEToast type="warning" :isActive="true" />'
+    }
+  }
+}
+
 export const Error = () => ({
   components: { SEToast },
   template: '<SEToast type="error" :isActive="true" />'
 })
+
+Error.parameters = {
+  docs: {
+    source: {
+      code: '<SEToast type="error" :isActive="true" />'
+    }
+  }
+}
 
 export const Demo = () => ({
   components: { SEToast, SEButton },
@@ -90,3 +122,16 @@ export const Demo = () => ({
     </p>
   </div>`
 })
+
+Demo.parameters = {
+  docs: {
+    source: {
+      code: `<div class="toast-template-wrapper">
+        <p class="mb-xs-3"><SEButton @click="toastSuccess" v-bind="$props" size="medium">Show Toaster Success</SEButton></p>
+        <p class="mb-xs-3"><SEButton @click="toastInfo" v-bind="$props" color="blue" size="medium">Show Toaster Info</SEButton></p>
+        <p class="mb-xs-3"><SEButton @click="toastWarning" v-bind="$props" color="secondary" size="medium">Show Toaster Warning</SEButton>/p>
+        <p class="mb-xs-3"><SEButton @click="toastError" v-bind="$props" color="error" size="medium">Show Toaster Error</SEButton></p>
+      </div>`
+    }
+  }
+}
