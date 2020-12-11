@@ -32,7 +32,7 @@
 			},
 			duration: {
 				type: Number,
-				default: 30000
+				default: 3000
 			},
 			message: {
 				type: String,
