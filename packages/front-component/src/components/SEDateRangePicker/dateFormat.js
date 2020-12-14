@@ -1,3 +1,7 @@
+/* eslint-disable */
+/* eslint-disable no-eval */
+/*eslint no-inline-comments: "error"*/
+
 /*
  * Date Format 1.2.3
  * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
@@ -11,56 +15,56 @@
  * The date defaults to the current date/time.
  * The mask defaults to dateFormat.masks.default.
  */
-'use strict';
+
+'use strict'
 
 const dateFormat = (function () {
-  var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|"[^"]*"|'[^']*'/g;
-  var timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g;
-  var timezoneClip = /[^-+\dA-Z]/g;
+  var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|"[^"]*"|'[^']*'/g
+  var timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g
+  var timezoneClip = /[^-+\dA-Z]/g
 
   // Regexes and supporting functions are cached through closure
   return function (date, mask, utc, gmt) {
-
     // You can't provide utc if you skip other args (use the 'UTC:' mask prefix)
     if (arguments.length === 1 && kindOf(date) === 'string' && !/\d/.test(date)) {
-      mask = date;
-      date = undefined;
+      mask = date
+      date = undefined
     }
 
-    date = date || new Date;
+    date = date || new Date()
 
     if (!(date instanceof Date)) {
-      date = new Date(date);
+      date = new Date(date)
     }
 
     if (isNaN(date)) {
-      throw TypeError('Invalid date');
+      throw TypeError('Invalid date')
     }
 
-    mask = String(dateFormat.masks[mask] || mask || dateFormat.masks['default']);
+    mask = String(dateFormat.masks[mask] || mask || dateFormat.masks.default)
 
     // Allow setting the utc/gmt argument via the mask
-    var maskSlice = mask.slice(0, 4);
+    var maskSlice = mask.slice(0, 4)
     if (maskSlice === 'UTC:' || maskSlice === 'GMT:') {
-      mask = mask.slice(4);
-      utc = true;
+      mask = mask.slice(4)
+      utc = true
       if (maskSlice === 'GMT:') {
-        gmt = true;
+        gmt = true
       }
     }
 
-    var _ = utc ? 'getUTC' : 'get';
-    var d = date[_ + 'Date']();
-    var D = date[_ + 'Day']();
-    var m = date[_ + 'Month']();
-    var y = date[_ + 'FullYear']();
-    var H = date[_ + 'Hours']();
-    var M = date[_ + 'Minutes']();
-    var s = date[_ + 'Seconds']();
-    var L = date[_ + 'Milliseconds']();
-    var o = utc ? 0 : date.getTimezoneOffset();
-    var W = getWeek(date);
-    var N = getDayOfWeek(date);
+    var _ = utc ? 'getUTC' : 'get'
+    var d = date[_ + 'Date']()
+    var D = date[_ + 'Day']()
+    var m = date[_ + 'Month']()
+    var y = date[_ + 'FullYear']()
+    var H = date[_ + 'Hours']()
+    var M = date[_ + 'Minutes']()
+    var s = date[_ + 'Seconds']()
+    var L = date[_ + 'Milliseconds']()
+    var o = utc ? 0 : date.getTimezoneOffset()
+    var W = getWeek(date)
+    var N = getDayOfWeek(date)
     var flags = {
       d: d,
       dd: pad(d),
@@ -91,32 +95,32 @@ const dateFormat = (function () {
       S: ['th', 'st', 'nd', 'rd'][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
       W: W,
       N: N
-    };
+    }
 
     return mask.replace(token, function (match) {
       if (match in flags) {
-        return flags[match];
+        return flags[match]
       }
-      return match.slice(1, match.length - 1);
-    });
-  };
-})();
+      return match.slice(1, match.length - 1)
+    })
+  }
+})()
 
 dateFormat.masks = {
-  'default': 'ddd mmm dd yyyy HH:MM:ss',
-  'shortDate': 'm/d/yy',
-  'mediumDate': 'mmm d, yyyy',
-  'longDate': 'mmmm d, yyyy',
-  'fullDate': 'dddd, mmmm d, yyyy',
-  'shortTime': 'h:MM TT',
-  'mediumTime': 'h:MM:ss TT',
-  'longTime': 'h:MM:ss TT Z',
-  'isoDate': 'yyyy-mm-dd',
-  'isoTime': 'HH:MM:ss',
-  'isoDateTime': 'yyyy-mm-dd\'T\'HH:MM:sso',
-  'isoUtcDateTime': 'UTC:yyyy-mm-dd\'T\'HH:MM:ss\'Z\'',
-  'expiresHeaderFormat': 'ddd, dd mmm yyyy HH:MM:ss Z'
-};
+  default: 'ddd mmm dd yyyy HH:MM:ss',
+  shortDate: 'm/d/yy',
+  mediumDate: 'mmm d, yyyy',
+  longDate: 'mmmm d, yyyy',
+  fullDate: 'dddd, mmmm d, yyyy',
+  shortTime: 'h:MM TT',
+  mediumTime: 'h:MM:ss TT',
+  longTime: 'h:MM:ss TT Z',
+  isoDate: 'yyyy-mm-dd',
+  isoTime: 'HH:MM:ss',
+  isoDateTime: 'yyyy-mm-dd\'T\'HH:MM:sso',
+  isoUtcDateTime: 'UTC:yyyy-mm-dd\'T\'HH:MM:ss\'Z\'',
+  expiresHeaderFormat: 'ddd, dd mmm yyyy HH:MM:ss Z'
+}
 
 // Internationalization strings
 dateFormat.i18n = {
@@ -131,15 +135,15 @@ dateFormat.i18n = {
   timeNames: [
     'a', 'p', 'am', 'pm', 'A', 'P', 'AM', 'PM'
   ]
-};
+}
 
-function pad (val, len) {
-  val = String(val);
-  len = len || 2;
+function pad(val, len) {
+  val = String(val)
+  len = len || 2
   while (val.length < len) {
-    val = '0' + val;
+    val = '0' + val
   }
-  return val;
+  return val
 }
 
 /**
@@ -150,26 +154,26 @@ function pad (val, len) {
  * @param  {Object} `date`
  * @return {Number}
  */
-function getWeek (date) {
+function getWeek(date) {
   // Remove time components of date
-  var targetThursday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  var targetThursday = new Date(date.getFullYear(), date.getMonth(), date.getDate())
 
   // Change date to Thursday same week
-  targetThursday.setDate(targetThursday.getDate() - ((targetThursday.getDay() + 6) % 7) + 3);
+  targetThursday.setDate(targetThursday.getDate() - ((targetThursday.getDay() + 6) % 7) + 3)
 
   // Take January 4th as it is always in week 1 (see ISO 8601)
-  var firstThursday = new Date(targetThursday.getFullYear(), 0, 4);
+  var firstThursday = new Date(targetThursday.getFullYear(), 0, 4)
 
   // Change date to Thursday same week
-  firstThursday.setDate(firstThursday.getDate() - ((firstThursday.getDay() + 6) % 7) + 3);
+  firstThursday.setDate(firstThursday.getDate() - ((firstThursday.getDay() + 6) % 7) + 3)
 
   // Check if daylight-saving-time-switch occurred and correct for it
-  var ds = targetThursday.getTimezoneOffset() - firstThursday.getTimezoneOffset();
-  targetThursday.setHours(targetThursday.getHours() - ds);
+  var ds = targetThursday.getTimezoneOffset() - firstThursday.getTimezoneOffset()
+  targetThursday.setHours(targetThursday.getHours() - ds)
 
   // Number of weeks between target Thursday and first Thursday
-  var weekDiff = (targetThursday - firstThursday) / (86400000 * 7);
-  return 1 + Math.floor(weekDiff);
+  var weekDiff = (targetThursday - firstThursday) / (86400000 * 7)
+  return 1 + Math.floor(weekDiff)
 }
 
 /**
@@ -179,12 +183,12 @@ function getWeek (date) {
  * @param  {Object} `date`
  * @return {Number}
  */
-function getDayOfWeek (date) {
-  var dow = date.getDay();
+function getDayOfWeek(date) {
+  var dow = date.getDay()
   if (dow === 0) {
-    dow = 7;
+    dow = 7
   }
-  return dow;
+  return dow
 }
 
 /**
@@ -192,25 +196,25 @@ function getDayOfWeek (date) {
  * @param  {*} val
  * @return {String}
  */
-function kindOf (val) {
+function kindOf(val) {
   if (val === null) {
-    return 'null';
+    return 'null'
   }
 
   if (val === undefined) {
-    return 'undefined';
+    return 'undefined'
   }
 
   if (typeof val !== 'object') {
-    return typeof val;
+    return typeof val
   }
 
   if (Array.isArray(val)) {
-    return 'array';
+    return 'array'
   }
 
   return {}.toString.call(val)
-    .slice(8, -1).toLowerCase();
+    .slice(8, -1).toLowerCase()
 }
 
-export {dateFormat, getDayOfWeek, getWeek }
+export { dateFormat, getDayOfWeek, getWeek }

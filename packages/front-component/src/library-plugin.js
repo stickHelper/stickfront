@@ -11,7 +11,7 @@ import SECheckbox from './components/SECheckbox/index.vue'
 import SECombobox from './components/SECombobox/index.vue'
 import SEDatatable from './components/SEDatatable/index.vue'
 import SEDatepicker from './components/SEDatepicker/index.vue'
-import SEDatepicker from './components/SEDateRangePicker/index.vue'
+import SEDateRangePicker from './components/SEDateRangePicker/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
 import SEModal from './components/SEModal/index.vue'
@@ -25,6 +25,7 @@ import SESwitch from './components/SESwitch/index.vue'
 import SETabMenu from './components/SETabMenu/index.vue'
 import SETextarea from './components/SETextarea/index.vue'
 import SETextfield from './components/SETextfield/index.vue'
+import SEToast from './components/SEToast/index.vue'
 
 const components = {
   SEButton,

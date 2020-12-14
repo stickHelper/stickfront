@@ -27,7 +27,7 @@ Default.parameters = {
 }
 
 export const Success = () => ({
-  components: { SEToast },  
+  components: { SEToast },
   template: '<SEToast type="success" :isActive="true" />'
 })
 
@@ -81,8 +81,8 @@ Error.parameters = {
 export const Demo = () => ({
   components: { SEToast, SEButton },
   methods: {
-    showToaster: function({message, type}) {
-      const toast = new Vue(SEToast);
+    showToaster: function ({ message, type }) {
+      const toast = new Vue(SEToast)
 
       toast.message = message
       toast.type = type
@@ -91,16 +91,16 @@ export const Demo = () => ({
       toast.$mount().$el
       return toast.show()
     },
-    toastSuccess: function() {
+    toastSuccess: function () {
       this.showToaster({ message: 'Success Toaster', type: 'success' })
     },
-    toastInfo: function() {
+    toastInfo: function () {
       this.showToaster({ message: 'Info Toaster', type: 'info' })
     },
-    toastWarning: function() {
+    toastWarning: function () {
       this.showToaster({ message: 'Warning Toaster', type: 'warning' })
     },
-    toastError: function() {
+    toastError: function () {
       this.showToaster({ message: 'Error Toaster', type: 'error' })
     }
   },

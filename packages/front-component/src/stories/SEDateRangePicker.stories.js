@@ -5,7 +5,7 @@ import '@/styles/icon/se-font.min.scss'
 
 export default {
   title: 'Components/DateRangePicker',
-  component: SEDateRangePicker,
+  component: SEDateRangePicker
 }
 
 const Template = (args, { argTypes }) => ({
@@ -100,7 +100,7 @@ export const Size = (args) => ({
 Size.parameters = {
   docs: {
     source: {
-      code: `<SEDatepicker size="small" /><SEDatepicker />`
+      code: '<SEDatepicker size="small" /><SEDatepicker />'
     }
   }
 }
