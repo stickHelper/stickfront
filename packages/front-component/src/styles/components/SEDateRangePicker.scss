@@ -1,0 +1,125 @@
+.se-daterangepicker {
+	$self: &;
+
+	& {
+		position: relative;
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: $gutter-sm;
+	}
+
+	&__icon {
+		position: absolute;
+		cursor: pointer;
+		font-size: 18px;
+	    top: 50%;
+	    right: 20px;
+	    transform: translateY(-50%);
+	    
+	    @include flexbox(!important);
+	}
+
+	&__info {
+		font-size: $text-sm;
+	    font-weight: bold;
+	}
+
+	.vue-daterange-picker {
+		display: block !important;
+	}
+
+	.reportrange-text {
+		border: 1px solid $line !important;
+	    outline: none;
+	    padding: $text-md !important;
+	    margin-bottom: $gutter-sm;
+	    font-size: $text-md;
+	    background-color: $accent !important;
+	    color: $text-normal;
+	    height: auto;
+	    
+	    @include border-radius(8px);
+	}
+
+	/**
+	 * modifier state
+	 */
+	&--success {
+		#{ $self }__label,
+		#{ $self }__icon,
+		#{ $self }__value,
+		#{ $self }__placeholder,
+		#{ $self }__info {
+			color: $purple;
+		}
+
+		.reportrange-text {
+			border-color: $purple !important;
+		}
+	}
+
+	&--error {
+		#{ $self }__label,
+		#{ $self }__icon,
+		#{ $self }__value,
+		#{ $self }__placeholder,
+		#{ $self }__info {
+			color: $red;
+		}
+
+		.reportrange-text {
+			border-color: $red !important;
+		}
+	}
+
+	&--disabled {
+		#{ $self }__label,
+		#{ $self }__icon,
+		#{ $self }__value,
+		#{ $self }__placeholder {
+			color: $white;
+		}
+
+		.reportrange-text {
+			cursor: not-allowed !important;
+			background-color: $text-subtle !important;
+			border-color: $white !important;
+		}
+	}
+
+	&--small {
+		.reportrange-text {
+			padding: 4px $gutter-md !important;
+		}
+	}
+
+}
+
+.daterangepicker {
+	& {
+		border: none !important;
+		margin-top: 0 !important;
+	}
+
+	&:before,
+	&:after {
+		display: none !important;
+	}
+
+	td.in-range {
+		background-color: #ffe7a5 !important;
+	}
+
+	td.active, 
+	td.active:hover {
+		background-color: #fab800 !important;
+	}
+
+	.calendar-table {
+		padding: 1rem 18.5px !important;
+		box-shadow: 0px 6px 16px rgba(122, 106, 135, 0.32);
+		border-radius: 8px !important;
+	}
+}

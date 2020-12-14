@@ -11,6 +11,7 @@ import SECheckbox from './components/SECheckbox/index.vue'
 import SECombobox from './components/SECombobox/index.vue'
 import SEDatatable from './components/SEDatatable/index.vue'
 import SEDatepicker from './components/SEDatepicker/index.vue'
+import SEDatepicker from './components/SEDateRangePicker/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
 import SEModal from './components/SEModal/index.vue'
@@ -35,6 +36,7 @@ const components = {
   SECombobox,
   SEDatatable,
   SEDatepicker,
+  SEDateRangePicker,
   SEImg,
   SEFileAttachment,
   SEModal,
