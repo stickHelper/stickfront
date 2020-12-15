@@ -24,6 +24,7 @@
 	&__info {
 		font-size: $text-sm;
 	    font-weight: bold;
+	    margin-top: $gutter-sm;
 	}
 
 	.vue-daterange-picker {
@@ -34,7 +35,6 @@
 		border: 1px solid $line !important;
 	    outline: none;
 	    padding: $text-md !important;
-	    margin-bottom: $gutter-sm;
 	    font-size: $text-md;
 	    background-color: $accent !important;
 	    color: $text-normal;
@@ -92,6 +92,30 @@
 	&--small {
 		.reportrange-text {
 			padding: 4px $gutter-md !important;
+		}
+	}
+
+	&--inline {
+		flex-wrap: wrap;
+
+		@include flexbox;
+		@include align-items(center);
+
+		#{ $self }__label {
+			flex: 0 0 20%;
+			max-width: 20%;
+		    margin-bottom: 0;
+		}
+
+		#{ $self }__wrapper {
+			flex: 0 0 80%;
+			max-width: 80%;
+		}
+
+		#{ $self }__info {
+			flex: 0 0 80%;
+			max-width: 80%;
+			margin-left: 20%;
 		}
 	}
 

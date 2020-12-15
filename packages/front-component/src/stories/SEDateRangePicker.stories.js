@@ -37,6 +37,19 @@ Label.parameters = {
   }
 }
 
+export const LabelInline = () => ({
+  components: { SEDateRangePicker },
+  template: '<SEDateRangePicker label-name="Label info" isInline />'
+})
+
+Label.parameters = {
+  docs: {
+    source: {
+      code: '<SEDateRangePicker label-name="Label info" isInline />'
+    }
+  }
+}
+
 export const Info = () => ({
   components: { SEDateRangePicker },
   template: '<SEDateRangePicker info="Message info" />'
