@@ -9,15 +9,15 @@
     >{{ labelName }}</label>
     <div class="se-daterangepicker__wrapper">
       <date-range-picker
-       ref="picker"
-       v-model="dateRange"
-       :single-date-picker="typePicker"
-       :auto-apply="isAutoApply"
-       :append-to-body="isAppendToBody"
-       :locale-data="{ firstDay: 1, format: formatDate, monthNames: calendarMonthsName, daysOfWeek: calendarDaysName }"
-       :ranges="isShowRanges"
-       :disabled="isDisabled"
-       @update="dateUpdate"
+        ref="picker"
+        v-model="dateRange"
+        :single-date-picker="typePicker"
+        :auto-apply="isAutoApply"
+        :append-to-body="isAppendToBody"
+        :locale-data="{ firstDay: 1, format: formatDate, monthNames: calendarMonthsName, daysOfWeek: calendarDaysName }"
+        :ranges="isShowRanges"
+        :disabled="isDisabled"
+        @update="dateUpdate"
       >
         <template #input="picker">
           <div class="se-daterangepicker__input">
@@ -28,7 +28,7 @@
             <span
               v-else
               class="se-daterangepicker__value"
-            >{{ dateRange.startDate }} - {{ dateRange.endDate }}</span>
+            >{{ getDateFormat( dateRange.startDate ) }} - {{ getDateFormat( dateRange.endDate ) }}</span>
           </div>
           <i
             :class="[
@@ -170,7 +170,6 @@ export default {
       this.dateRange.endDate = dateUtil.format(values.endDate, 'yyyy-mm-dd')
 
       this.$emit('update', { ...values })
-      console.log('event: update', { ...values })
     },
     isDateRangeEmpty() {
       if (this.dateRange.startDate === null && this.dateRange.endDate === null) return true
@@ -187,6 +186,9 @@ export default {
       }
 
       return classes
+    },
+    getDateFormat(date) {
+      return dateUtil.format(date, this.formatDate)
     },
     clearDateRange() {
       this.dateRange.startDate = null
