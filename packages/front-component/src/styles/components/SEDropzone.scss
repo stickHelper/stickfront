@@ -1,0 +1,20 @@
+.se-dropzone {
+  position: relative;
+
+  .vue-dropzone {
+    border: 1px solid $line;
+    background-color: $accent;
+    font-family: $font-stack;
+    color: $text-normal;
+    text-align: center;
+
+    @include border-radius(8px);
+  }
+  &--content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+}

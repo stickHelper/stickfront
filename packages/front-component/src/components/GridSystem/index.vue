@@ -773,7 +773,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .layout {
   display: flex;
   min-height: 100vh;

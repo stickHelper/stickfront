@@ -86,3 +86,132 @@ ExpandMenu.parameters = {
     }
   }
 }
+
+export const Mint = () => ({
+  components: { SESidebarMenu },
+  template: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="mint"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+  `
+})
+
+Mint.parameters = {
+  docs: {
+    source: {
+      code: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="mint"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+      `
+    }
+  }
+}
+
+export const Orange = () => ({
+  components: { SESidebarMenu },
+  template: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="orange"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+  `
+})
+
+Orange.parameters = {
+  docs: {
+    source: {
+      code: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="orange"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+      `
+    }
+  }
+}
+
+export const Accent = () => ({
+  components: { SESidebarMenu },
+  template: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="accent"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+  `
+})
+
+Accent.parameters = {
+  docs: {
+    source: {
+      code: `<SESidebarMenu
+  :isVueRouter='false'
+  theme="accent"
+  :menus="[
+    { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
+    { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
+    { label: 'Label 1', path: '', type: 'label', icon: '' },
+    { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
+    { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
+    { label: 'Label 2', path: '', type: 'label', icon: '' },
+    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+  ]"
+>
+  <img  src="${logo}" alt="logo" />
+</SESidebarMenu>
+      `
+    }
+  }
+}

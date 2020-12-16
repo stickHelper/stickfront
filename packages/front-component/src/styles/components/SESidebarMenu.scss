@@ -1,5 +1,4 @@
 .se-sidebarmenu {
-  background: $purple;
   width: 82px;
   position: fixed;
   left: 0;
@@ -38,7 +37,7 @@
   &--label {
     margin-left: 16px;
     white-space: nowrap;
-    transition: 0.3s;
+    
   }
 
   &--icon {
@@ -59,7 +58,6 @@
         text-decoration: none;
         letter-spacing: 0;
         line-height: 16px;
-        color: $white;
         font-weight: 800;
         padding: 12px ($gutter-md - 2);
         width: 100%;
@@ -68,14 +66,11 @@
         @include align-items(center);
 
         &:hover {
-          background-color: $orange;
-
           @include border-radius(8px);
         }
 
         &.router-link-exact-active,
         &.router-link-active {
-          background-color: $orange;
           @include border-radius(8px);
 
           &:hover {
@@ -88,7 +83,6 @@
           font-size: $text-sm;
           line-height: 154%;
           padding: $gutter-md ($gutter-md - 2) $gutter-md 0;
-          color: rgba($color: $white, $alpha: .64);
 
           &:hover {
             background-color: transparent;
@@ -99,4 +93,120 @@
       }
     }
   }
+
+
+  &.purple {
+    background: $purple;
+    .se-sidebarmenu--brand {
+      color: $white;
+    }
+    .se-sidebarmenu--item {
+      a {
+        color: $white;
+
+        &:hover {
+          background-color: $orange;
+        }
+
+        &.router-link-exact-active,
+        &.router-link-active {
+          background-color: $orange;
+        }
+
+        &.label-menu {
+          color: rgba($color: $white, $alpha: .64);
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &.mint {
+    background: $mint;
+    .se-sidebarmenu--brand {
+      color: $white;
+    }
+    .se-sidebarmenu--item {
+      a {
+        color: $white;
+
+        &:hover {
+          background-color: $orange;
+        }
+
+        &.router-link-exact-active,
+        &.router-link-active {
+          background-color: $orange;
+        }
+
+        &.label-menu {
+          color: rgba($color: $white, $alpha: .64);
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &.orange {
+    background: $orange;
+    .se-sidebarmenu--brand {
+      color: $white;
+    }
+    .se-sidebarmenu--item {
+      a {
+        color: $white;
+
+        &:hover {
+          background-color: $purple;
+        }
+
+        &.router-link-exact-active,
+        &.router-link-active {
+          background-color: $purple;
+        }
+
+        &.label-menu {
+          color: rgba($color: $white, $alpha: .64);
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &.accent {
+    background: $accent;
+    .se-sidebarmenu--brand {
+      color: $white;
+    }
+    .se-sidebarmenu--item {
+      a {
+        color: $text-normal;
+
+        &:hover {
+          background-color: $orange;
+          color: $white;
+        }
+
+        &.router-link-exact-active,
+        &.router-link-active {
+          background-color: $orange;
+          color: $white;
+        }
+
+        &.label-menu {
+          color: $text-subtle;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  
 }

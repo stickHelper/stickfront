@@ -116,3 +116,62 @@ Size.parameters = {
     }
   }
 }
+
+export const Tags = (args) => ({
+  components: { SETextfield },
+  template: `<div>
+    <SETextfield :isTags="true" />
+  </div>`
+})
+
+Tags.parameters = {
+  docs: {
+    source: {
+      code: '<SETextfield :isTags="true" />'
+    }
+  }
+}
+
+export const TagsList = (args) => ({
+  components: { SETextfield },
+  template: `<div>
+    <SETextfield
+      :isTagsList="true"
+      :optionsList="[
+        {
+          key: '1',
+          label: 'Jakarta Selatan',
+          value: 'Jakarta Selatan'
+        },
+        {
+          key: '2',
+          label: 'Jakarta Timur',
+          value: 'Jakarta Timur'
+        },
+        {
+          key: '3',
+          label: 'Jakarta Utara',
+          value: 'Jakarta Utara'
+        },
+        {
+          key: '4',
+          label: 'Jakarta Barat',
+          value: 'Jakarta Barat'
+        },
+        {
+          key: '5',
+          label: 'Jakarta Pusat',
+          value: 'Jakarta Pusat'
+        }
+      ]"
+    />
+  </div>`
+})
+
+TagsList.parameters = {
+  docs: {
+    source: {
+      code: '<SETextfield :isTagsList="true" />'
+    }
+  }
+}

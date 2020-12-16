@@ -79,6 +79,13 @@ export default {
     isExpand: {
       type: Boolean,
       default: false
+    },
+    theme: {
+      type: String,
+      default: 'purple',
+      validator: function (value) {
+        return ['purple', 'mint', 'accent', 'orange'].indexOf(value) !== -1
+      }
     }
   },
   data() {
@@ -91,8 +98,14 @@ export default {
       return {
         'se-sidebarmenu': true,
         [this.className]: this.className !== null,
+        [this.theme]: true,
         show: !this.isExpand ? true : this.expandMenu
       }
+    }
+  },
+  mounted() {
+    if (!this.isExpand) {
+      this.expandMenu = true
     }
   },
   methods: {
