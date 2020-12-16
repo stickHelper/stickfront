@@ -1,0 +1,9 @@
+42 error Error: Command failed: git push --follow-tags --no-verify --atomic origin master
+42 error ssh: connect to host github.com port 22: Operation timed out
+42 error fatal: Could not read from remote repository.
+42 error
+42 error Please make sure you have the correct access rights
+42 error and the repository exists.
+42 error
+42 error     at makeError (/Users/it-riskinugrohoputra/Documents/stickearn/stickfront/node_modules/execa/index.js:174:9)
+42 error     at /Users/it-riskinugrohoputra/Documents/stickearn/stickfront/node_modules/execa/index.js:278:16
