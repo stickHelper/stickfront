@@ -19,7 +19,7 @@
         :disabled="isDisabled"
         @update="dateUpdate"
       >
-        <template #input="picker">
+        <template>
           <div class="se-daterangepicker__input">
             <span
               v-if="isDateRangeEmpty()"

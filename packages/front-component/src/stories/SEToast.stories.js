@@ -88,6 +88,7 @@ export const Demo = () => ({
       toast.type = type
 
       // document.querySelector('.toast-template-wrapper').appendChild(toast.$mount().$el);
+      // eslint-disable-next-line no-unused-expressions
       toast.$mount().$el
       return toast.show()
     },
