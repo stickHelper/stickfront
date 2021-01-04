@@ -135,6 +135,7 @@
   .divTableFoot { display: table-footer-group;}
   .divTableBody { display: table-row-group;}
   .divTableCell {
+    vertical-align: top;
     .se-checkbox--small input:checked + label:after {
       top: 2px;
     }
@@ -174,6 +175,14 @@
     &-bg-error {
       background-color: $error;
       color: $white;
+    }
+  }
+
+  &--edit {
+    .se-textfield {
+      input {
+        width: auto;
+      }
     }
   }
 

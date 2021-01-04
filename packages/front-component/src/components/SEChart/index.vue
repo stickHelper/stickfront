@@ -23,7 +23,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['bar', 'donut', 'pie', 'area'].indexOf(value) !== -1
+        return ['bar', 'donut', 'pie', 'area', 'radialBar'].indexOf(value) !== -1
       }
     },
     colors: {

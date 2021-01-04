@@ -35,7 +35,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['icon', 'outline', 'text'].indexOf(value) !== -1
+        return ['icon', 'img'].indexOf(value) !== -1
       }
     },
     content: {
