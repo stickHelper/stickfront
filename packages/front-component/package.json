@@ -1,6 +1,6 @@
 {
   "name": "@stickearn/stickfront",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "private": false,
   "license": "MIT",
   "publishConfig": {
