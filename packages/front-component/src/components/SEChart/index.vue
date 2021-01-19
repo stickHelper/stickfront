@@ -143,6 +143,12 @@ export default {
             show: false
           },
           custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            let label = w.globals.labels[dataPointIndex]
+            let value = series[seriesIndex][dataPointIndex]
+            if (!dataPointIndex || dataPointIndex === null) {
+              label = w.globals.labels[seriesIndex]
+              value = series[seriesIndex]
+            }
             return (`<div class="se-chart__tooltip">
               <span class="p-xs-2">
                 <span class="se-chart__tooltip-color"
@@ -154,7 +160,7 @@ export default {
                   "
                 >
                 </span>
-                ${w.globals.labels[dataPointIndex]}: ${series[seriesIndex][dataPointIndex]}
+                ${label}: ${value}
               </span>
             </div>`)
           }
