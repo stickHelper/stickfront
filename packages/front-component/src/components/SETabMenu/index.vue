@@ -42,11 +42,10 @@ export default {
       validator: function (value) {
         return ['small'].indexOf(value) !== -1
       }
-    }
-  },
-  data() {
-    return {
-      activeIndex: 0
+    },
+    activeIndex: {
+      type: Number,
+      default: 0
     }
   },
   computed: {
@@ -60,8 +59,7 @@ export default {
   },
   methods: {
     triggerMenu(index) {
-      this.activeIndex = index
-      this.$emit('activeIndex', index)
+      this.$emit('triggerIndex', index)
     }
   }
 }

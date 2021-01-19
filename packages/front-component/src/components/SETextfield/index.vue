@@ -20,6 +20,7 @@
         :value="valueInput"
         :style="icon && icon !== '' ? 'padding-right: 35px' : null"
         @input="$emit('input', $event.target.value)"
+        @keyup.enter="$emit('enterPress')"
       >
       <i
         v-if="icon && icon !== ''"
