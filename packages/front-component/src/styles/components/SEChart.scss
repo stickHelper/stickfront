@@ -1,0 +1,12 @@
+.se-chart {
+  &__tooltip {
+    padding: $gutter-xxs $gutter-xs;
+    font-size: $text-xxs;
+    font-weight: 800;
+    &-color {
+      height: 4px;
+      width: 4px;
+      @include border-radius(50px);
+    }
+  }
+}

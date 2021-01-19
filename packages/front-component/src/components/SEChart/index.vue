@@ -141,6 +141,22 @@ export default {
           enabled: this.isTooltip,
           x: {
             show: false
+          },
+          custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            return (`<div class="se-chart__tooltip">
+              <span class="p-xs-2">
+                <span class="se-chart__tooltip-color"
+                  style="
+                    height: 4px;
+                    width: 4px;
+                    border-radius: 50px;
+                    background-color: ${w.globals.colors[seriesIndex]}
+                  "
+                >
+                </span>
+                ${w.globals.labels[dataPointIndex]}: ${series[seriesIndex][dataPointIndex]}
+              </span>
+            </div>`)
           }
         },
         stroke: {
