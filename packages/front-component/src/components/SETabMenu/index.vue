@@ -43,9 +43,14 @@ export default {
         return ['small'].indexOf(value) !== -1
       }
     },
-    activeIndex: {
+    maxSlot: {
       type: Number,
-      default: 0
+      default: null
+    }
+  },
+  data() {
+    return {
+      activeIndex: 0
     }
   },
   computed: {
@@ -59,7 +64,13 @@ export default {
   },
   methods: {
     triggerMenu(index) {
-      this.$emit('triggerIndex', index)
+      if (this.maxSlot && index + 1 <= this.maxSlot) {
+        this.activeIndex = index
+        this.$emit('triggerIndex', index)
+      } else {
+        this.activeIndex = index
+        this.$emit('triggerIndex', index)
+      }
     }
   }
 }
