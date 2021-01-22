@@ -62,3 +62,31 @@ Small.parameters = {
     }
   }
 }
+
+export const MaxSlot = () => ({
+  components: { SETabMenu },
+  template: `<SETabMenu
+    :menus="[
+      { label: 'Menu 1' },
+      { label: 'Menu 2' },
+      { label: 'Menu 3' }
+    ]"
+    :maxSlot="2"
+  />
+  `
+})
+MaxSlot.parameters = {
+  docs: {
+    source: {
+      code: `<SETabMenu
+  :menus="[
+    {label: Menu 1},
+    {label: Menu 2},
+    {label: Menu 3}
+  ]"
+  :maxSlot="2"
+/>
+`
+    }
+  }
+}

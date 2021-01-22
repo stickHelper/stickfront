@@ -18,7 +18,7 @@ const Template = (args, { argTypes }) => ({
       :colors="['#FFB800']"
       :categories="['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12']"
       :series-data="[{
-        data: [30,40,20,50,45,60,30,40,20,50,45,60]
+        data: [300,400,1000,500,45,600,300,400,200,500,450,600]
       }]"
     />
   </div>`
@@ -34,7 +34,7 @@ Default.parameters = {
   :colors="['#FFB800']"
   :categories="['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12']"
   :series-data="[{
-    data: [30,40,20,50,45,60,30,40,20,50,45,60]
+    data: [300,400,1000,500,45,600,300,400,200,500,450,600]
   }]"
 />`
     }
@@ -50,9 +50,11 @@ export const BarMultiple = () => ({
     :categories="['10 - 20', '20 - 30', '30 - 40', '40 - 50', '50 - 60', '> 60']"
     :series-data="[
       {
+        name: 'Male',
         data: [10, 30, 30, 50, 55, 80]
       },
       {
+        name: 'Female',
         data: [15, 25, 40, 45, 68, 70]
       }
     ]"
@@ -87,8 +89,8 @@ export const Donut = () => ({
   <SEChart
     type="donut"
     :colors="['#4E277A', '#F7A300', '#FF5757', '#00B4AE']"
-    :categories="['10 - 20', '20 - 30', '30 - 40', '40 - 50', '50 - 60', '> 60']"
-    :series-data="[44, 55, 13, 33]"
+    :categories="['SD', 'SMP', 'SMA', 'S1']"
+    :series-data="[1000, 1500, 1300, 900]"
   />
   </div>
   `
@@ -100,8 +102,8 @@ Donut.parameters = {
       code: ` <SEChart
   type="donut"
   :colors="['#4E277A', '#F7A300', '#FF5757', '#00B4AE']"
-  :categories="['Data 1', 'Data 2', 'Data 3', 'Data 4']"
-  :series-data="[44, 55, 13, 33]"
+  :categories="['SD', 'SMP', 'SMA', 'S1']"
+  :series-data="[1000, 1500, 1300, 900]"
 />`
     }
   }

@@ -64,9 +64,11 @@ export default {
   },
   methods: {
     triggerMenu(index) {
-      if (this.maxSlot && index + 1 <= this.maxSlot) {
-        this.activeIndex = index
-        this.$emit('triggerIndex', index)
+      if (this.maxSlot) {
+        if (index + 1 <= this.maxSlot) {
+          this.activeIndex = index
+          this.$emit('triggerIndex', index)
+        }
       } else {
         this.activeIndex = index
         this.$emit('triggerIndex', index)

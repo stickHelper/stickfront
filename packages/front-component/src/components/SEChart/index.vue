@@ -98,16 +98,22 @@ export default {
             donut: {
               size: '80%',
               labels: {
-                show: true,
+                show: false,
                 name: {
                   show: false
+                },
+                value: {
+                  show: true,
+                  formatter: function (val) {
+                    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                  }
                 },
                 total: {
                   show: true,
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce((a, b) => {
                       return a + b
-                    }, 0)
+                    }, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
                   }
                 }
               }
@@ -140,30 +146,9 @@ export default {
         tooltip: {
           enabled: this.isTooltip,
           x: {
-            show: false
+            show: true
           },
-          custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-            let label = w.globals.labels[dataPointIndex]
-            let value = series[seriesIndex][dataPointIndex]
-            if (!dataPointIndex || dataPointIndex === null) {
-              label = w.globals.labels[seriesIndex]
-              value = series[seriesIndex]
-            }
-            return (`<div class="se-chart__tooltip">
-              <span class="p-xs-2">
-                <span class="se-chart__tooltip-color"
-                  style="
-                    height: 4px;
-                    width: 4px;
-                    border-radius: 50px;
-                    background-color: ${w.globals.colors[seriesIndex]}
-                  "
-                >
-                </span>
-                ${label}: ${value}
-              </span>
-            </div>`)
-          }
+          y: this.YFormatter()
         },
         stroke: {
           lineCap: 'round'
@@ -200,6 +185,23 @@ export default {
           categories: newVal
         }
       }
+    }
+  },
+  methods: {
+    YFormatter() {
+      return this.seriesData.map(() => {
+        return {
+          formatter: function (y) {
+            if (typeof y !== 'undefined') {
+              return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            }
+            return y
+          },
+          title: {
+            formatter: () => ''
+          }
+        }
+      })
     }
   }
 }
