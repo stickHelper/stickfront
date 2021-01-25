@@ -18,16 +18,16 @@
     @include border-radius(8px);
 
     &::placeholder {
-      color: $text-subtle;
+      color: $text-subtitle;
     }
 
     &:active,
     &:focus {
-      border: 1px solid $orange;
+      border: 1px solid $yellow;
     }
 
     &:focus + label {
-      color: $orange;
+      color: $yellow;
     }
   }
 

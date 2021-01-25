@@ -24,7 +24,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['orange'].indexOf(value) !== -1
+        return ['yellow'].indexOf(value) !== -1
       }
     },
     size: {

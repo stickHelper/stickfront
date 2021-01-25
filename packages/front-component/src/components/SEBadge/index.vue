@@ -23,7 +23,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'mint', 'red', 'error', 'salmon', 'green', 'light-blue', 'blue'].indexOf(value) !== -1
+        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'turquoise', 'red', 'error', 'salmon', 'green', 'light-blue', 'blue'].indexOf(value) !== -1
       }
     },
     type: {

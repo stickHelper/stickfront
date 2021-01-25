@@ -105,12 +105,12 @@
         color: $white;
 
         &:hover {
-          background-color: $orange;
+          background-color: $yellow;
         }
 
         &.router-link-exact-active,
         &.router-link-active {
-          background-color: $orange;
+          background-color: $yellow;
         }
 
         &.label-menu {
@@ -123,8 +123,8 @@
     }
   }
 
-  &.mint {
-    background: $mint;
+  &.turquoise {
+    background: $turquoise;
     .se-sidebarmenu--brand {
       color: $white;
     }
@@ -133,12 +133,12 @@
         color: $white;
 
         &:hover {
-          background-color: $orange;
+          background-color: $yellow;
         }
 
         &.router-link-exact-active,
         &.router-link-active {
-          background-color: $orange;
+          background-color: $yellow;
         }
 
         &.label-menu {
@@ -151,8 +151,8 @@
     }
   }
 
-  &.orange {
-    background: $orange;
+  &.yellow {
+    background: $yellow;
     .se-sidebarmenu--brand {
       color: $white;
     }
@@ -189,18 +189,18 @@
         color: $text-normal;
 
         &:hover {
-          background-color: $orange;
+          background-color: $yellow;
           color: $white;
         }
 
         &.router-link-exact-active,
         &.router-link-active {
-          background-color: $orange;
+          background-color: $yellow;
           color: $white;
         }
 
         &.label-menu {
-          color: $text-subtle;
+          color: $text-subtitle;
           &:hover {
             background-color: transparent;
           }

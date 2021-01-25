@@ -21,16 +21,16 @@
     @include border-radius(8px);
 
     &::placeholder {
-      color: $text-subtle;
+      color: $text-subtitle;
     }
 
     &:active,
     &:focus {
-      border: 1px solid $orange;
+      border: 1px solid $yellow;
     }
 
     &:focus + label {
-      color: $orange;
+      color: $yellow;
     }
   }
 
@@ -95,7 +95,7 @@
 
         &.empty {
           cursor: not-allowed;
-          background-color: rgba($color: $text-subtle, $alpha: .25);
+          background-color: rgba($color: $text-subtitle, $alpha: .25);
         }
       }
     }
@@ -135,7 +135,7 @@
 
   &.active {
     .se-textfield--tags {
-      border: 1px solid $orange;
+      border: 1px solid $yellow;
       input {
         border: none;
       }
@@ -166,7 +166,7 @@
     }
     input {
       cursor: not-allowed;
-      background-color: $text-subtle;
+      background-color: $text-subtitle;
       color: $white;
 
       &::placeholder {

@@ -22,7 +22,7 @@
       }
       
       span {
-        color: $text-subtle;
+        color: $text-subtitle;
         background-color: $accent;
         border: 1px solid $line;
         height: 24px;
@@ -36,7 +36,7 @@
         @include border-radius(50px);
 
         &:hover {
-          border: 1px solid $text-subtle;
+          border: 1px solid $text-subtitle;
         }
 
         i {

@@ -1,0 +1,50 @@
+@mixin title-extra-large {
+  font-size: $text-huge;
+  font-weight: 700;
+  letter-spacing: 1%;
+}
+@mixin title-large {
+  font-size: $text-xxl;
+  font-weight: 700;
+  letter-spacing: 1%;
+}
+@mixin title-normal {
+  font-size: $text-xl;
+  font-weight: 700;
+  letter-spacing: 1%;
+}
+@mixin body-large {
+  font-size: $text-xl;
+  font-weight: normal;
+  letter-spacing: 1%;
+  line-height: 144%;
+}
+@mixin body-normal {
+  font-size: $text-md;
+  font-weight: normal;
+  letter-spacing: 1%;
+  line-height: 148%;
+}
+@mixin body-normal-bold {
+  font-size: $text-md;
+  font-weight: 700;
+  letter-spacing: 1%;
+  line-height: 148%;
+}
+@mixin subtitle {
+  font-size: $text-lg;
+  font-weight: 700;
+  letter-spacing: 1%;
+}
+@mixin body-small {
+  font-size: $text-sm;
+  font-weight: normal;
+  letter-spacing: 1%;
+  line-height: 154%;
+}
+@mixin body-small-bold {
+  font-size: $text-sm;
+  font-weight: 700;
+  letter-spacing: 1%;
+  line-height: 154%;
+}

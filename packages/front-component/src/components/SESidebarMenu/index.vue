@@ -84,7 +84,7 @@ export default {
       type: String,
       default: 'purple',
       validator: function (value) {
-        return ['purple', 'mint', 'accent', 'orange'].indexOf(value) !== -1
+        return ['purple', 'turquoise', 'accent', 'yellow'].indexOf(value) !== -1
       }
     }
   },

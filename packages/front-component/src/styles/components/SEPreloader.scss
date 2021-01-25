@@ -10,10 +10,10 @@
     border-radius: 50%;
     position: relative;
     text-indent: -9999em;
-    border-top: 4px solid rgba($text-subtle, 0.2);
-    border-right: 4px solid rgba($text-subtle, 0.2);
-    border-bottom: 4px solid rgba($text-subtle, 0.2);
-    border-left: 4px solid rgba($text-subtle, .8);
+    border-top: 4px solid rgba($text-subtitle, 0.2);
+    border-right: 4px solid rgba($text-subtitle, 0.2);
+    border-bottom: 4px solid rgba($text-subtitle, 0.2);
+    border-left: 4px solid rgba($text-subtitle, .8);
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
@@ -41,11 +41,11 @@
         height: 32px;
       }
     }
-    &--orange {
-      border-top: 4px solid rgba($orange, 0.2);
-      border-right: 4px solid rgba($orange, 0.2);
-      border-bottom: 4px solid rgba($orange, 0.2);
-      border-left: 4px solid rgba($orange, .8);
+    &--yellow {
+      border-top: 4px solid rgba($yellow, 0.2);
+      border-right: 4px solid rgba($yellow, 0.2);
+      border-bottom: 4px solid rgba($yellow, 0.2);
+      border-left: 4px solid rgba($yellow, .8);
     }
     
     @-webkit-keyframes animate-rotate {

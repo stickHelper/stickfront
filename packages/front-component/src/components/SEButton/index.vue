@@ -25,7 +25,7 @@ export default {
       type: String,
       default: 'accent',
       validator: function (value) {
-        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'mint', 'blue', 'light-blue'].indexOf(value) !== -1
+        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'turquoise', 'blue', 'light-blue'].indexOf(value) !== -1
       }
     },
     size: {

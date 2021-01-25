@@ -5,7 +5,7 @@ export default {
   title: 'Components/Button',
   component: SEButton,
   argTypes: {
-    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'mint', 'blue', 'light-blue'] } },
+    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'turquoise', 'blue', 'light-blue'] } },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     type: { control: { type: 'select', options: ['icon', 'outline', 'text'] } },
     label: { description: '' }

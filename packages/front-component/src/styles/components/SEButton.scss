@@ -34,14 +34,14 @@
     }
   }
   &--secondary {
-    background-color: $orange;
+    background-color: $yellow;
     color: $white;
     &:hover {
-      background-color: darken($color: $orange, $amount: 2);
+      background-color: darken($color: $yellow, $amount: 2);
     }
     &:focus {
-      background-color: darken($color: $orange, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $orange, $alpha: .15));
+      background-color: darken($color: $yellow, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $yellow, $alpha: .15));
     }
   }
   &--red {
@@ -126,15 +126,15 @@
     }
   }
 
-  &--mint {
-    background-color: $mint;
+  &--turquoise {
+    background-color: $turquoise;
     color: $white;
     &:hover {
-      background-color: darken($color: $mint, $amount: 2);
+      background-color: darken($color: $turquoise, $amount: 2);
     }
     &:focus {
-      background-color: darken($color: $mint, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $mint, $alpha: .15));
+      background-color: darken($color: $turquoise, $amount: 2);
+      @include box-shadow(0 0 0 3px rgba($color: $turquoise, $alpha: .15));
     }
   }
 
@@ -195,14 +195,14 @@
         }
       }
       &--secondary {
-        border: 1px solid $orange;
-        color: $orange;
+        border: 1px solid $yellow;
+        color: $yellow;
         &:hover {
-          background-color: rgba($color: $orange, $alpha: .15);
+          background-color: rgba($color: $yellow, $alpha: .15);
         }
         &:focus {
-          background-color: rgba($color: $orange, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $orange, $alpha: .8));
+          background-color: rgba($color: $yellow, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $yellow, $alpha: .8));
         }
       }
       &--red {
@@ -287,15 +287,15 @@
         }
       }
     
-      &--mint {
-        border: 1px solid $mint;
-        color: $mint;
+      &--turquoise {
+        border: 1px solid $turquoise;
+        color: $turquoise;
         &:hover {
-          background-color: rgba($color: $mint, $alpha: .15);
+          background-color: rgba($color: $turquoise, $alpha: .15);
         }
         &:focus {
-          background-color: rgba($color: $mint, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $mint, $alpha: .8));
+          background-color: rgba($color: $turquoise, $alpha: .15);
+          @include box-shadow(0 0 0 1px rgba($color: $turquoise, $alpha: .8));
         }
       }
     
@@ -351,19 +351,19 @@
       border: 1px solid $purple;
     }
     &.se-btn--secondary {
-      color: $orange;
-      background-color: rgba($color: $orange, $alpha: .15);
-      border: 1px solid $orange;
+      color: $yellow;
+      background-color: rgba($color: $yellow, $alpha: .15);
+      border: 1px solid $yellow;
     }
     &.se-btn--dark {
       color: $dark;
       background-color: rgba($color: $dark, $alpha: .15);
       border: 1px solid $dark;
     }
-    &.se-btn--mint {
-      color: $mint;
-      background-color: rgba($color: $mint, $alpha: .15);
-      border: 1px solid $mint;
+    &.se-btn--turquoise {
+      color: $turquoise;
+      background-color: rgba($color: $turquoise, $alpha: .15);
+      border: 1px solid $turquoise;
     }
     &.se-btn--red {
       color: $red;
@@ -421,7 +421,7 @@
       }
     }
     &.se-btn--secondary {
-      color: $orange;
+      color: $yellow;
       &:hover {
         background-color: transparent;
       }
@@ -432,8 +432,8 @@
         background-color: transparent;
       }
     }
-    &.se-btn--mint {
-      color: $mint;
+    &.se-btn--turquoise {
+      color: $turquoise;
       &:hover {
         background-color: transparent;
       }

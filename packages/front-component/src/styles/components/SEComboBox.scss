@@ -24,7 +24,7 @@
 
     .field {
       &-placeholder {
-        color: $text-subtle;
+        color: $text-subtitle;
       }
       &-value {
         color: $text-normal;
@@ -82,7 +82,7 @@
 	&--item {
 		&.no-data {
 			div {
-				color: $text-subtle;
+				color: $text-subtitle;
 				cursor: default;
 				background-color: rgba($accent, 0.5);
 			}
@@ -107,7 +107,7 @@
         border: none;
         background: transparent;
         &::placeholder {
-          color: $text-subtle;
+          color: $text-subtitle;
         }
         font-size: $text-md - 2;
       }
@@ -150,7 +150,7 @@
     }
 		.se-combobox--field {
       cursor: not-allowed;
-      background-color: $text-subtle;
+      background-color: $text-subtitle;
       color: $white;
 
 			.field-placeholder {

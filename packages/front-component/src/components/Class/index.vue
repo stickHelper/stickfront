@@ -72,7 +72,7 @@
 .text-inherit {
   text-transform: inherit;
 }
-.text-subtle {
+.text-subtitle {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;

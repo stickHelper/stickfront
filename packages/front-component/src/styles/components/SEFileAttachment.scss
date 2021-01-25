@@ -69,8 +69,8 @@
 	}
 
 	&__icon {
-	    background: $text-subtle;
-	    border: 1px solid $text-subtle;
+	    background: $text-subtitle;
+	    border: 1px solid $text-subtitle;
 	    border-width: 1px 1px 1px 0;
 	    flex: 0 0 45px;
 	    max-width: 45px;
@@ -127,8 +127,8 @@
 	&--disabled {
 		#{ $self }__preview {
 			cursor: not-allowed;
-			background-color: $text-subtle;
-			border-color: $text-subtle;
+			background-color: $text-subtitle;
+			border-color: $text-subtitle;
 			color: $white;
 		}
 	}

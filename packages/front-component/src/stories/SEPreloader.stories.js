@@ -4,7 +4,7 @@ import '@/styles/index.scss'
 export default {
   title: 'Components/Preloader',
   component: SEPreloader,
-  color: { control: { type: 'select', options: ['orange'] } },
+  color: { control: { type: 'select', options: ['yellow'] } },
   size: { control: { type: 'select', options: ['small', 'medium', 'large'] } }
 }
 
@@ -46,18 +46,18 @@ Size.parameters = {
 export const Color = () => ({
   components: { SEPreloader },
   template: `<div class="flex">
-    <SEPreloader size="small" color="orange"></SEPreloader>
-    <SEPreloader color="orange"></SEPreloader>
-    <SEPreloader size="large" color="orange"></SEPreloader>
+    <SEPreloader size="small" color="yellow"></SEPreloader>
+    <SEPreloader color="yellow"></SEPreloader>
+    <SEPreloader size="large" color="yellow"></SEPreloader>
   </div>
   `
 })
 Color.parameters = {
   docs: {
     source: {
-      code: `<SEPreloader size="small" color="orange"></SEPreloader>
-<SEPreloader color="orange"></SEPreloader>
-<SEPreloader size="large" color="orange"></SEPreloader>
+      code: `<SEPreloader size="small" color="yellow"></SEPreloader>
+<SEPreloader color="yellow"></SEPreloader>
+<SEPreloader size="large" color="yellow"></SEPreloader>
       `
     }
   }

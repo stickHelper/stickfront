@@ -17,11 +17,11 @@
     }
   }
   &--secondary {
-    color: $orange;
-    background-color: rgba($color: $orange, $alpha: .25);
+    color: $yellow;
+    background-color: rgba($color: $yellow, $alpha: .25);
 
     .tick {
-      background-color: $orange;
+      background-color: $yellow;
     }
   }
   &--dark {
@@ -32,12 +32,12 @@
       background-color: $dark;
     }
   }
-  &--mint {
-    color: $mint;
-    background-color: rgba($color: $mint, $alpha: .25);
+  &--turquoise {
+    color: $turquoise;
+    background-color: rgba($color: $turquoise, $alpha: .25);
 
     .tick {
-      background-color: $mint;
+      background-color: $turquoise;
     }
   }
   &--red {
@@ -112,9 +112,9 @@
   &--outline {
     border: 1px solid $line;
     &.se-badge--primary { border: 1px solid $purple; }
-    &.se-badge--secondary { border: 1px solid $orange; }
+    &.se-badge--secondary { border: 1px solid $yellow; }
     &.se-badge--dark { border: 1px solid $dark; }
-    &.se-badge--mint { border: 1px solid $mint; }
+    &.se-badge--turquoise { border: 1px solid $turquoise; }
     &.se-badge--red { border: 1px solid $red; }
     &.se-badge--error { border: 1px solid $error; }
     &.se-badge--salmon { border: 1px solid $salmon; }
@@ -129,9 +129,9 @@
   }
   &--full-color {
     &.se-badge--primary { color: $white; background-color: $purple; }
-    &.se-badge--secondary { color: $white; background-color: $orange; }
+    &.se-badge--secondary { color: $white; background-color: $yellow; }
     &.se-badge--dark { color: $white; background-color: $dark; }
-    &.se-badge--mint { color: $white; background-color: $mint; }
+    &.se-badge--turquoise { color: $white; background-color: $turquoise; }
     &.se-badge--red { color: $white; background-color: $red; }
     &.se-badge--error { color: $white; background-color: $error; }
     &.se-badge--salmon { color: $white; background-color: $salmon; }

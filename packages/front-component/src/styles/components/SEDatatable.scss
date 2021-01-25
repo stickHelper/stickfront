@@ -86,7 +86,7 @@
           position: absolute;
           top: -12px;
           right: 0;
-          color: $text-subtle;
+          color: $text-subtitle;
 
           &.icon-arrow-up {
             right: 10px;
@@ -151,7 +151,7 @@
 
     .footer {
       &-row {
-        color: $text-subtle;
+        color: $text-subtitle;
         background-color: $accent;
         font-size: $text-sm;
         line-height: 154%;

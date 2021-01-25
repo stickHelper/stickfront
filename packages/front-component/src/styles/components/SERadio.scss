@@ -33,7 +33,7 @@
     content: '';
     width: 16px;
     height: 16px;
-    background: $orange;
+    background: $yellow;
     position: absolute;
     top: 4px;
     left: 4px;
@@ -43,7 +43,7 @@
   }
 
   [type="radio"]:checked + label::before {
-    border: 1px solid $orange;
+    border: 1px solid $yellow;
   }
 
   [type="radio"]:not(:checked) + label:after {

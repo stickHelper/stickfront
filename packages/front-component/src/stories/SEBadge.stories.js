@@ -5,7 +5,7 @@ export default {
   title: 'Components/Badge',
   component: SEBadge,
   argTypes: {
-    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'mint', 'red', 'green', 'light-blue', 'blue'] } },
+    color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'turquoise', 'red', 'green', 'light-blue', 'blue'] } },
     type: { control: { type: 'select', options: ['bald', 'buttton', 'tick', 'outline', 'rounded'] } }
   }
 }
@@ -33,7 +33,7 @@ export const Color = () => ({
     <SEBadge color="accent">Accent</SEBadge>
     <SEBadge color="normal">Normal</SEBadge>
     <SEBadge color="dark">Dark</SEBadge>
-    <SEBadge color="mint">Mint</SEBadge>
+    <SEBadge color="turquoise">Turquoise</SEBadge>
     <SEBadge color="red">Red</SEBadge>
     <SEBadge color="error">Error</SEBadge>
     <SEBadge color="salmon">Salmon</SEBadge>
@@ -51,7 +51,7 @@ Color.parameters = {
 <SEBadge color="accent">Accent</SEBadge>
 <SEBadge color="normal">Normal</SEBadge>
 <SEBadge color="dark">Dark</SEBadge>
-<SEBadge color="mint">Mint</SEBadge>
+<SEBadge color="turquoise">Turquoise</SEBadge>
 <SEBadge color="red">Red</SEBadge>
 <SEBadge color="error">Error</SEBadge>
 <SEBadge color="salmon">Salmon</SEBadge>
@@ -71,7 +71,7 @@ export const FullColor = () => ({
     <SEBadge :full-color="true" color="accent">Accent</SEBadge>
     <SEBadge :full-color="true" color="normal">Normal</SEBadge>
     <SEBadge :full-color="true" color="dark">Dark</SEBadge>
-    <SEBadge :full-color="true" color="mint">Mint</SEBadge>
+    <SEBadge :full-color="true" color="turquoise">Turquoise</SEBadge>
     <SEBadge :full-color="true" color="red">Red</SEBadge>
     <SEBadge :full-color="true" color="error">Error</SEBadge>
     <SEBadge :full-color="true" color="salmon">Salmon</SEBadge>
@@ -89,7 +89,7 @@ FullColor.parameters = {
 <SEBadge :full-color="true" color="accent">Accent</SEBadge>
 <SEBadge :full-color="true" color="normal">Normal</SEBadge>
 <SEBadge :full-color="true" color="dark">Dark</SEBadge>
-<SEBadge :full-color="true" color="mint">Mint</SEBadge>
+<SEBadge :full-color="true" color="turquoise">Turquoise</SEBadge>
 <SEBadge :full-color="true" color="red">Red</SEBadge>
 <SEBadge :full-color="true" color="error">Error</SEBadge>
 <SEBadge :full-color="true" color="salmon">Salmon</SEBadge>
@@ -109,7 +109,7 @@ export const Rounded = () => ({
     <SEBadge type="rounded" :full-color="true" color="accent">Accent</SEBadge>
     <SEBadge type="rounded" :full-color="true" color="normal">Normal</SEBadge>
     <SEBadge type="rounded" :full-color="true" color="dark">Dark</SEBadge>
-    <SEBadge type="rounded" :full-color="true" color="mint">Mint</SEBadge>
+    <SEBadge type="rounded" :full-color="true" color="turquoise">Turquoise</SEBadge>
     <SEBadge type="rounded" :full-color="true" color="red">Red</SEBadge>
     <SEBadge type="rounded" :full-color="true" color="error">Error</SEBadge>
     <SEBadge type="rounded" :full-color="true" color="salmon">Salmon</SEBadge>
@@ -127,7 +127,7 @@ Rounded.parameters = {
 <SEBadge type="rounded" :full-color="true" color="accent">Accent</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="normal">Normal</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="dark">Dark</SEBadge>
-<SEBadge type="rounded" :full-color="true" color="mint">Mint</SEBadge>
+<SEBadge type="rounded" :full-color="true" color="turquoise">Turquoise</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="red">Red</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="error">Error</SEBadge>
 <SEBadge type="rounded" :full-color="true" color="salmon">Salmon</SEBadge>
@@ -147,7 +147,7 @@ export const Bald = () => ({
     <SEBadge type="bald" color="accent">Accent</SEBadge>
     <SEBadge type="bald" color="normal">Normal</SEBadge>
     <SEBadge type="bald" color="dark">Dark</SEBadge>
-    <SEBadge type="bald" color="mint">Mint</SEBadge>
+    <SEBadge type="bald" color="turquoise">Turquoise</SEBadge>
     <SEBadge type="bald" color="red">Red</SEBadge>
     <SEBadge type="bald" color="error">Error</SEBadge>
     <SEBadge type="bald" color="salmon">Salmon</SEBadge>
@@ -165,7 +165,7 @@ Bald.parameters = {
 <SEBadge type="bald" color="accent">Accent</SEBadge>
 <SEBadge type="bald" color="normal">Normal</SEBadge>
 <SEBadge type="bald" color="dark">Dark</SEBadge>
-<SEBadge type="bald" color="mint">Mint</SEBadge>
+<SEBadge type="bald" color="turquoise">Turquoise</SEBadge>
 <SEBadge type="bald" color="red">Red</SEBadge>
 <SEBadge type="bald" color="error">Error</SEBadge>
 <SEBadge type="bald" color="salmon">Salmon</SEBadge>
@@ -186,7 +186,7 @@ export const Outline = () => ({
     <SEBadge type="outline" color="accent">Accent</SEBadge>
     <SEBadge type="outline" color="normal">Normal</SEBadge>
     <SEBadge type="outline" color="dark">Dark</SEBadge>
-    <SEBadge type="outline" color="mint">Mint</SEBadge>
+    <SEBadge type="outline" color="turquoise">Turquoise</SEBadge>
     <SEBadge type="outline" color="red">Red</SEBadge>
     <SEBadge type="outline" color="error">Error</SEBadge>
     <SEBadge type="outline" color="salmon">Salmon</SEBadge>
@@ -204,7 +204,7 @@ Outline.parameters = {
 <SEBadge type="outline" color="accent">Accent</SEBadge>
 <SEBadge type="outline" color="normal">Normal</SEBadge>
 <SEBadge type="outline" color="dark">Dark</SEBadge>
-<SEBadge type="outline" color="mint">Mint</SEBadge>
+<SEBadge type="outline" color="turquoise">Turquoise</SEBadge>
 <SEBadge type="outline" color="red">Red</SEBadge>
 <SEBadge type="outline" color="error">Error</SEBadge>
 <SEBadge type="outline" color="salmon">Salmon</SEBadge>
@@ -224,7 +224,7 @@ export const Tick = () => ({
     <SEBadge :is-tick="true" type="bald" color="accent">Accent</SEBadge>
     <SEBadge :is-tick="true" type="bald" color="normal">Normal</SEBadge>
     <SEBadge :is-tick="true" type="bald" color="dark">Dark</SEBadge>
-    <SEBadge :is-tick="true" type="bald" color="mint">Mint</SEBadge>
+    <SEBadge :is-tick="true" type="bald" color="turquoise">Turquoise</SEBadge>
     <SEBadge :is-tick="true" type="bald" color="red">Red</SEBadge>
     <SEBadge :is-tick="true" type="bald" color="error">Error</SEBadge>
     <SEBadge :is-tick="true" type="bald" color="salmon">Salmon</SEBadge>
@@ -242,7 +242,7 @@ Tick.parameters = {
 <SEBadge :is-tick="true" type="bald" color="accent">Accent</SEBadge>
 <SEBadge :is-tick="true" type="bald" color="normal">Normal</SEBadge>
 <SEBadge :is-tick="true" type="bald" color="dark">Dark</SEBadge>
-<SEBadge :is-tick="true" type="bald" color="mint">Mint</SEBadge>
+<SEBadge :is-tick="true" type="bald" color="turquoise">Turquoise</SEBadge>
 <SEBadge :is-tick="true" type="bald" color="red">Red</SEBadge>
 <SEBadge :is-tick="true" type="bald" color="error">Error</SEBadge>
 <SEBadge :is-tick="true" type="bald" color="salmon">Salmon</SEBadge>
@@ -277,8 +277,8 @@ export const Icon = () => ({
       Dark
       <span class="text-xs ml-md-2"><i class="icon icon-close" /></span>
     </SEBadge>
-    <SEBadge color="mint">
-      Mint
+    <SEBadge color="turquoise">
+      Turquoise
       <span class="text-xs ml-md-2"><i class="icon icon-close" /></span>
     </SEBadge>
     <SEBadge color="red">
@@ -331,8 +331,8 @@ Icon.parameters = {
   Dark
   <span class="text-xs ml-md-2"><i class="icon icon-close" /></span>
 </SEBadge>
-<SEBadge color="mint">
-  Mint
+<SEBadge color="turquoise">
+  Turquoise
   <span class="text-xs ml-md-2"><i class="icon icon-close" /></span>
 </SEBadge>
 <SEBadge color="red">

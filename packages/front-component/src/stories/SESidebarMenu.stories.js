@@ -87,11 +87,11 @@ ExpandMenu.parameters = {
   }
 }
 
-export const Mint = () => ({
+export const Turquoise = () => ({
   components: { SESidebarMenu },
   template: `<SESidebarMenu
   :isVueRouter='false'
-  theme="mint"
+  theme="turquoise"
   :menus="[
     { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
@@ -107,12 +107,12 @@ export const Mint = () => ({
   `
 })
 
-Mint.parameters = {
+Turquoise.parameters = {
   docs: {
     source: {
       code: `<SESidebarMenu
   :isVueRouter='false'
-  theme="mint"
+  theme="turquoise"
   :menus="[
     { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
@@ -130,11 +130,11 @@ Mint.parameters = {
   }
 }
 
-export const Orange = () => ({
+export const Yellow = () => ({
   components: { SESidebarMenu },
   template: `<SESidebarMenu
   :isVueRouter='false'
-  theme="orange"
+  theme="yellow"
   :menus="[
     { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
@@ -150,12 +150,12 @@ export const Orange = () => ({
   `
 })
 
-Orange.parameters = {
+Yellow.parameters = {
   docs: {
     source: {
       code: `<SESidebarMenu
   :isVueRouter='false'
-  theme="orange"
+  theme="yellow"
   :menus="[
     { label: 'menu 1', path: '/menu1', type: 'url', icon: 'icon-home' },
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
