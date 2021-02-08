@@ -1,0 +1,94 @@
+.se-topbar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  height: 80px;
+  max-height: 80px;
+  width: 100%;
+  background-color: $white;
+  font-size: $text-sm;
+
+  @include box-shadow(0px 4px 8px rgba(78, 39, 122, 0.12));
+  @include flexbox;
+  @include align-items(center);
+
+  &--content {
+    width: 100%;
+    padding: 0 $gutter-xl;
+
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    .content {
+      &-right {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+
+        
+      }
+    }
+  }
+
+  &--leftside {
+    position: relative;
+    padding: 0 $gutter-lg;
+    height: 100%;
+    width: 27.5%;
+    border-right: 1px solid $line;
+    @include flexbox;
+    @include align-items(center);
+
+    input {
+      margin-bottom: 0;
+    }
+  }
+
+  &--avatar {
+    position: relative;
+
+    .se-avatar {
+      cursor: pointer;
+    }
+
+    .avatar-list {
+      list-style: none;
+      position: absolute;
+      top: 43px;
+      right: 0;
+      background-color: $white;
+      padding: $gutter-xs 0;
+      min-width: 250px;
+      z-index: 1;
+
+      @include box-shadow(0px 6px 16px rgba($text-normal, 0.32));
+      @include border-radius(8px);
+
+      &:before {
+        content: '';
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $white;
+        position: absolute;
+        top: -9px;
+        right: 5px;
+      }
+    }
+    .avatar-item {
+      div,
+      a,
+      span {
+        display: block;
+        padding: $gutter-sm $gutter-md;
+        color: $text-normal;
+
+        &:hover {
+          background-color: rgba($text-subtitle, .1);
+        }
+      }
+    }
+  }
+}

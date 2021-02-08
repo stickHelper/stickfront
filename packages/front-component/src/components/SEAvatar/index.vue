@@ -2,6 +2,7 @@
   <div
     :id="id"
     :class="classes"
+    @click="$emit('click')"
   >
     <img
       v-if="type === 'img'"

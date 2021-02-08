@@ -1,0 +1,9 @@
+.se-template {
+  .se-content {
+    position: relative;
+    padding-top: 80px + $gutter-xl;;
+    padding-left: 82px + $gutter-xl;
+    padding-right: $gutter-xl;
+    padding-bottom: 80px;
+  }
+}

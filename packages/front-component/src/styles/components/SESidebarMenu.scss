@@ -83,6 +83,7 @@
           font-size: $text-sm;
           line-height: 154%;
           padding: $gutter-md ($gutter-md - 2) $gutter-md 0;
+          min-height: 55px;
 
           &:hover {
             background-color: transparent;
