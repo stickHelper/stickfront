@@ -25,6 +25,8 @@
     "build": "yarn lint && yarn build:lib && yarn build-storybook && cp -a storybook-static ../../storybook-static",
     "build:lib": "vue-cli-service build --target lib --name stickfront ./src/library-plugin.js",
     "build:spa": "vue-cli-service build",
+    "build:css": "npx tailwindcss-cli@latest build src/styles/tailwind.css -o src/styles/index.css",
+    "watch:css": "watch 'yarn build:css' src/styles",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix",
@@ -43,7 +45,8 @@
     "vue-slider-component": "^3.2.11",
     "vue2-datepicker": "^3.7.0",
     "vue2-daterange-picker": "^0.6.2",
-    "vue2-dropzone": "^3.6.0"
+    "vue2-dropzone": "^3.6.0",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
@@ -55,6 +58,7 @@
     "@storybook/addons": "^6.0.26",
     "@storybook/theming": "^6.0.26",
     "@storybook/vue": "^6.0.26",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -62,6 +66,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "eslint": "^6.7.2",
@@ -71,9 +76,12 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
+    "postcss": "^7",
+    "postcss-import": "^14.0.0",
     "react-is": "^16.13.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {

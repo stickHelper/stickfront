@@ -56,9 +56,9 @@ export default {
     classes() {
       return {
         'se-avatar': true,
-        [`se-avatar--${this.size}`]: this.size !== null,
-        [`se-avatar--${this.type}`]: this.type !== null,
-        'se-avatar--square': this.square,
+        [`se-avatar__${this.size}`]: this.size !== null,
+        [`se-avatar__${this.type}`]: this.type !== null,
+        'se-avatar__square': this.square,
         [this.className]: this.className !== null
       }
     }

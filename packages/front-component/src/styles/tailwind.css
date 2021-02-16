@@ -1,0 +1,155 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+/* SEAvatar */
+@layer components {
+  .se-avatar {
+    @apply h-8 w-8 relative overflow-hidden bg-line rounded-full shadow-md;
+  }
+  .se-avatar > img {
+    @apply max-w-full absolute top-0 right-0 left-0 bottom-0 m-auto;
+  }
+  .se-avatar > span {
+    @apply inline absolute w-full h-8 text-center top-0 right-0 left-0 bottom-0 m-auto text-xs leading-8 text-body;
+  }
+  .se-avatar__small {
+    @apply w-12 h-12;
+  }
+  .se-avatar__small > span {
+    @apply text-xs leading-8;
+  }
+
+  .se-avatar__medium {
+    @apply w-16 h-16;
+  }
+  .se-avatar__medium > span {
+    @apply text-base leading-8;
+  }
+
+  .se-avatar__large {
+    @apply w-24 h-24;
+  }
+  .se-avatar__large > span {
+    @apply text-2xl leading-8;
+  }
+
+  .se-avatar__extra-large {
+    @apply w-32 h-32;
+  }
+  .se-avatar__extra-large > span {
+    @apply text-3xl leading-8;
+  }
+
+  .se-avatar__square {
+    @apply rounded-none;
+  }
+  
+}
+
+/* SEBadge */
+@layer components {
+  .se-badge {
+    @apply relative bg-line text-line inline-flex rounded-lg items-center py-0.5 px-3;
+  }
+  .se-badge__primary {
+    @apply text-purple bg-purple bg-opacity-25;
+  }
+  .se-badge__primary > .tick {
+    @apply bg-purple;
+  }
+  
+  .se-badge__secondary {
+    @apply text-yellow bg-yellow bg-opacity-25;
+  }
+  .se-badge__secondary > .tick {
+    @apply bg-yellow;
+  }
+
+  .se-badge__dark {
+    @apply text-title bg-title bg-opacity-25;
+  }
+  .se-badge__dark > .tick {
+    @apply bg-title;
+  }
+
+  .se-badge__turquoise {
+    @apply text-turquoise bg-turquoise bg-opacity-25;
+  }
+  .se-badge__turquoise > .tick {
+    @apply bg-turquoise;
+  }
+
+  .se-badge__red {
+    @apply text-red bg-red bg-opacity-25;
+  }
+  .se-badge__red > .tick {
+    @apply bg-red;
+  }
+
+  .se-badge__error {
+    @apply text-error bg-error bg-opacity-25;
+  }
+  .se-badge__error > .tick {
+    @apply bg-error;
+  }
+
+  .se-badge__salmon {
+    @apply text-salmon bg-salmon bg-opacity-25;
+  }
+  .se-badge__salmon > .tick {
+    @apply bg-salmon;
+  }
+
+  .se-badge__body {
+    @apply text-body bg-body bg-opacity-25;
+  }
+  .se-badge__body > .tick {
+    @apply bg-body;
+  }
+
+  .se-badge__placeholder {
+    @apply text-placeholder bg-placeholder bg-opacity-25;
+  }
+  .se-badge__placeholder > .tick {
+    @apply bg-placeholder;
+  }
+
+  .se-badge__label {
+    @apply text-label bg-label bg-opacity-25;
+  }
+  .se-badge__label > .tick {
+    @apply bg-label;
+  }
+
+  .se-badge__green {
+    @apply text-green bg-green bg-opacity-25;
+  }
+  .se-badge__green > .tick {
+    @apply bg-green;
+  }
+
+  .se-badge__ligth-blue {
+    @apply text-ligth-blue bg-ligth-blue bg-opacity-25;
+  }
+  .se-badge__ligth-blue > .tick {
+    @apply bg-ligth-blue;
+  }
+
+  .se-badge__blue {
+    @apply text-blue bg-blue bg-opacity-25;
+  }
+  .se-badge__blue > .tick {
+    @apply bg-blue;
+  }
+
+  .se-badge__input {
+    @apply text-input bg-input bg-opacity-25;
+  }
+  .se-badge__input > .tick {
+    @apply bg-input;
+  }
+  
+}
+
+@import "tailwindcss/utilities";

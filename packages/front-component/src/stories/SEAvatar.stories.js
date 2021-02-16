@@ -1,4 +1,5 @@
 import '@/styles/index.scss'
+import '@/styles/index.css'
 import SEAvatar from '@/components/SEAvatar/index.vue'
 
 export default {
@@ -13,10 +14,10 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEAvatar },
-  template: `<div class="flex">
-    <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" class-name="mr-md-2" />
-    <SEAvatar type="icon" content="icon-user" class-name="mr-md-2" />
-    <SEAvatar content="SE" class-name="mr-md-2" />
+  template: `<div class="flex space-x-2">
+    <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" />
+    <SEAvatar type="icon" content="icon-user" />
+    <SEAvatar content="SE" />
   </div>`
 })
 
@@ -35,25 +36,25 @@ Default.parameters = {
 export const Size = () => ({
   components: { SEAvatar },
   template: `<div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="small" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="small" class-name="mr-md-2" />
+    <div class="flex space-x-2 mb-3">
+      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" />
+      <SEAvatar type="icon" content="icon-user" size="small" />
+      <SEAvatar content="SE" size="small" />
     </div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="medium" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="medium" class-name="mr-md-2" />
+    <div class="flex space-x-2 mb-3">
+      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" />
+      <SEAvatar type="icon" content="icon-user" size="medium" />
+      <SEAvatar content="SE" size="medium" />
     </div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="large" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="large" class-name="mr-md-2" />
+    <div class="flex space-x-2 mb-3">
+      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" />
+      <SEAvatar type="icon" content="icon-user" size="large" />
+      <SEAvatar content="SE" size="large" />
     </div>
-    <div class="flex">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="extra-large" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="extra-large" class-name="mr-md-2" />
+    <div class="flex space-x-2 mb-3">
+      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" />
+      <SEAvatar type="icon" content="icon-user" size="extra-large" />
+      <SEAvatar content="SE" size="extra-large" />
     </div>
   </div>
   `
@@ -62,25 +63,25 @@ export const Size = () => ({
 Size.parameters = {
   docs: {
     source: {
-      code: `<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="small" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="small" class-name="mr-md-2" />
+      code: `<div class="flex space-x-2 mb-3">
+  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" />
+  <SEAvatar type="icon" content="icon-user" size="small" />
+  <SEAvatar content="SE" size="small" />
 </div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="medium" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="medium" class-name="mr-md-2" />
+<div class="flex space-x-2 mb-3">
+  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" />
+  <SEAvatar type="icon" content="icon-user" size="medium" />
+  <SEAvatar content="SE" size="medium" />
 </div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="large" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="large" class-name="mr-md-2" />
+<div class="flex space-x-2 mb-3">
+  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" />
+  <SEAvatar type="icon" content="icon-user" size="large" />
+  <SEAvatar content="SE" size="large" />
 </div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="extra-large" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="extra-large" class-name="mr-md-2" />
+<div class="flex space-x-2 mb-3">
+  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" />
+  <SEAvatar type="icon" content="icon-user" size="extra-large" />
+  <SEAvatar content="SE" size="extra-large" />
 </div>
       `
     }

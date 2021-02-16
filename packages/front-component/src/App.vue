@@ -25,6 +25,7 @@ export default {
 <style lang="scss" src="./styles/icon/se-font.min.scss"></style>
 <style lang="scss">
 @import './styles/index.scss';
+@import './styles/tailwind.scss';
 
 .uw-container{
   padding-left: 240px;

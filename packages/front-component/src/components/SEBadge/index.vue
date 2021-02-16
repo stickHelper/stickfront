@@ -5,7 +5,7 @@
   >
     <span
       v-if="isTick"
-      class="tick"
+      class="tick h-2.5 w-2.5 m-2 rounded-full"
     />
     <slot />
   </div>
