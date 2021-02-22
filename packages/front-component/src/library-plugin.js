@@ -1,6 +1,7 @@
 import './styles/index.scss'
 import './styles/icon/se-font.min.scss'
 import './styles/font/font-family.scss'
+import 'ant-design-vue/dist/antd.css'
 
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'

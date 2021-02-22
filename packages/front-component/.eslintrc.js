@@ -165,7 +165,16 @@ module.exports = {
     'spaced-comment': 'error',
     'template-tag-spacing': 'error',
     'unicode-bom': 'error',
-    'wrap-regex': 'off'
+    'wrap-regex': 'off',
+
+    // VUE ESLINT
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 2,
+      multiline: {
+        max: 1,
+        allowFirstLine: false
+      }
+    }]
   },
   overrides: [
     {

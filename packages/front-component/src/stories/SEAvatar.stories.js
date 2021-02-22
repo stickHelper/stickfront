@@ -1,101 +1,96 @@
 import '@/styles/index.scss'
+import 'ant-design-vue/dist/antd.css'
+
 import SEAvatar from '@/components/SEAvatar/index.vue'
+import { Space } from 'ant-design-vue'
 
 export default {
   title: 'Components/Avatar',
   component: SEAvatar,
   argTypes: {
-    size: { control: { type: 'select', options: ['small', 'medium', 'large', 'extra-large'] } },
-    type: { control: { type: 'select', options: ['img', 'icon'] } }
+    size: {
+      description: 'You can add using number or list of size',
+      control: { type: 'select', options: ['small', 'default', 'large'] }
+    },
+    styleCustom: {
+      description: 'You can add inline style custom'
+    }
   }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SEAvatar },
-  template: `<div class="flex">
-    <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" class-name="mr-md-2" />
-    <SEAvatar type="icon" content="icon-user" class-name="mr-md-2" />
-    <SEAvatar content="SE" class-name="mr-md-2" />
-  </div>`
+  components: { SEAvatar, Space },
+  template: `<div>
+    <div>
+      <Space>
+        <SEAvatar :size="64" icon="user" />
+        <SEAvatar size="large" icon="user" />
+        <SEAvatar icon="user" />
+        <SEAvatar size="small" icon="user" />
+      </Space>
+    </div>
+    <br />
+    <div>
+      <Space>
+        <SEAvatar shape="square" :size="64" icon="user" />
+        <SEAvatar shape="square" size="large" icon="user" />
+        <SEAvatar shape="square" icon="user" />
+        <SEAvatar shape="square" size="small" icon="user" />
+      </Space>
+    </div>
+  </div>
+`
 })
 
 export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: `<SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" />
-<SEAvatar type="icon" content="icon-user" />
-<SEAvatar content="SE" />
+      code: `<div>
+  <SEAvatar :size="64" icon="user" />
+  <SEAvatar size="large" icon="user" />
+  <SEAvatar icon="user" />
+  <SEAvatar size="small" icon="user" />
+</div>
+<div>
+  <SEAvatar shape="square" :size="64" icon="user" />
+  <SEAvatar shape="square" size="large" icon="user" />
+  <SEAvatar shape="square" icon="user" />
+  <SEAvatar shape="square" size="small" icon="user" />
+</div>
       `
     }
   }
 }
 
-export const Size = () => ({
-  components: { SEAvatar },
-  template: `<div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="small" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="small" class-name="mr-md-2" />
-    </div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="medium" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="medium" class-name="mr-md-2" />
-    </div>
-    <div class="flex mb-md-2">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="large" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="large" class-name="mr-md-2" />
-    </div>
-    <div class="flex">
-      <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" class-name="mr-md-2" />
-      <SEAvatar type="icon" content="icon-user" size="extra-large" class-name="mr-md-2" />
-      <SEAvatar content="SE" size="extra-large" class-name="mr-md-2" />
-    </div>
-  </div>
+export const Type = () => ({
+  components: { SEAvatar, Space },
+  template: `<Space>
+    <SEAvatar icon="user" />
+    <SEAvatar>U</SEAvatar>
+    <SEAvatar>USER</SEAvatar>
+    <SEAvatar src="https://randomuser.me/api/portraits/women/17.jpg" />
+    <SEAvatar styleCustom="color: #f56a00; backgroundColor: #fde3cf">
+      U
+    </SEAvatar>
+    <SEAvatar styleCustom="backgroundColor:#87d068" icon="user" />
+  </Space>
   `
 })
 
-Size.parameters = {
+Type.parameters = {
   docs: {
     source: {
-      code: `<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="small" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="small" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="small" class-name="mr-md-2" />
-</div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="medium" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="medium" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="medium" class-name="mr-md-2" />
-</div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="large" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="large" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="large" class-name="mr-md-2" />
-</div>
-<div>
-  <SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" size="extra-large" class-name="mr-md-2" />
-  <SEAvatar type="icon" content="icon-user" size="extra-large" class-name="mr-md-2" />
-  <SEAvatar content="SE" size="extra-large" class-name="mr-md-2" />
-</div>
+      code: `<SEAvatar icon="user" />
+<SEAvatar>U</SEAvatar>
+<SEAvatar>USER</SEAvatar>
+<SEAvatar src="https://randomuser.me/api/portraits/women/17.jpg" />
+<SEAvatar styleCustom="color: #f56a00; backgroundColor: #fde3cf">
+  U
+</SEAvatar>
+<SEAvatar styleCustom="backgroundColor:#87d068" icon="user" />
       `
-    }
-  }
-}
-
-export const Variant = () => ({
-  components: { SEAvatar },
-  template: '<SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" :square="true" />'
-})
-
-Variant.parameters = {
-  docs: {
-    source: {
-      code: '<SEAvatar type="img" content="https://randomuser.me/api/portraits/women/17.jpg" :square="true" />'
     }
   }
 }
