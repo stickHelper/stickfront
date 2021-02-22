@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    :id="id"
+    :class="classes"
+  >
     <slot />
   </div>
 </template>
@@ -8,6 +11,10 @@
 export default {
   name: 'SECol',
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     lg: {
       type: [String, Number],
       default: 12

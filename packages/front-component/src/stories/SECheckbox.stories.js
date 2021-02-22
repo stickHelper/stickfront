@@ -86,3 +86,30 @@ Size.parameters = {
     }
   }
 }
+
+export const Disabled = (args) => ({
+  components: { SECheckbox },
+  template: `<div>
+    <SECheckbox
+      id="default"
+      name="size"
+      value="default"
+      label="Disabled"
+      :is-disabled="true"
+    />
+  </div>`
+})
+
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: `<SECheckbox
+  id="default"
+  name="size"
+  value="default"
+  label="Dsiabled"
+  :is-disabled="true"
+/>`
+    }
+  }
+}

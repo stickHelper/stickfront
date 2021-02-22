@@ -1,4 +1,5 @@
 .se-chart {
+  position: relative;
   &__tooltip {
     padding: $gutter-xxs $gutter-xs;
     font-size: $text-xxs;
@@ -8,5 +9,187 @@
       width: 4px;
       @include border-radius(50px);
     }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .label {
+      font-weight: 600;
+      font-size: $text-md;
+      line-height: 148%;
+      color: $dark;
+    }
+    .value {
+      font-weight: 600;
+      font-size: $text-xxl;
+      line-height: 39px;
+      color: $dark;
+    }
+  }
+
+  &__mirror {
+    position: relative;
+
+    .mirror-item {
+      margin-bottom: $gutter-sm;
+
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+
+      .tooltip-chart {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        visibility: hidden;
+
+        @include flexbox;
+        @include align-items(center);
+
+        .tooltip-pointer {
+          height: 14px;
+          width: 14px;
+          padding: $gutter-xxs;
+          background-color: $white;
+
+          @include border-radius(50px);
+          @include box-shadow(0px 6px 12px rgba(78, 39, 122, 0.24))
+        }
+        .tooltip-content {
+          background-color: $white;
+          padding: $gutter-sm $gutter-md;
+          text-align: left;
+          min-width: 130px;
+
+          @include border-radius(4px);
+          @include box-shadow(0px 6px 12px rgba(78, 39, 122, 0.24));
+
+          .tooltip-label {
+            font-weight: 800;
+            color: $dark;
+            line-height: 154%;
+          }
+          .tooltip-value {
+            font-weight: 600;
+            color: $text-subtitle;
+            line-height: 154%;
+          }
+        }
+      }
+    }
+    .mirror-left,
+    .mirror-right {
+      position: relative;
+      height: 30px;
+
+      -webkit-animation: animate-width 1.5s linear; 
+      -moz-animation: animate-width 1.5s linear;
+      animation: animate-width 1.5s linear;
+      width: 100%;
+    }
+
+    .bar-line__left,
+    .bar-line__right {
+      &:hover {
+        .tooltip-chart {
+          visibility: visible;
+        }
+      }
+    }
+
+    .bar-line__left {
+      position: relative;
+      min-width: var(--width-left);
+      float: right;
+
+      .line {
+        width: 100%;
+        height: 100%;
+        background-color: var(--colors-1);
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+      .tooltip-chart {
+        left: 0;
+      }
+      .tooltip-pointer {
+        div {
+          background-color: var(--colors-1);
+          @include border-radius(50px);
+        }
+      }
+      .tooltip-content {
+        margin-left: $gutter-sm;
+      }
+    }
+
+    .bar-line__right {
+      position: relative;
+      min-width: var(--width-right);
+      float: left;
+
+      .line {
+        width: 100%;
+        height: 100%;
+        background-color: var(--colors-2);
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+      .tooltip-chart {
+        right: 0;
+      }
+      .tooltip-pointer {
+        div {
+          background-color: var(--colors-2);
+          @include border-radius(50px);
+        }
+      }
+      .tooltip-content {
+        margin-right: $gutter-sm;
+      }
+    }
+
+    .mirror-category {
+      width: 54px;
+      max-width: 54px;
+      min-width: 54px;
+      white-space: nowrap;
+      margin-left: $gutter-xs;
+      margin-right: $gutter-xs;
+    }
+  }
+}
+
+@-webkit-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+    width: 100%;
+  }
+}
+@-moz-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

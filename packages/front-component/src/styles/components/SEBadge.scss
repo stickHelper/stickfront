@@ -5,7 +5,7 @@
   color: $text-normal;
   display: inline-flex;
 
-  @include border-radius(8px);
+  @include border-radius(4px);
   @include align-items(center);
 
   &--primary {

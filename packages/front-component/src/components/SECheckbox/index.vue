@@ -1,11 +1,15 @@
 <template>
   <div :class="classes">
-    <div class="se-checkbox--item">
+    <div
+      class="se-checkbox--item"
+      :class="isDisabled ? 'disabled' : null"
+    >
       <input
         :id="id"
         type="checkbox"
         :name="name"
         :value="value"
+        :disabled="isDisabled"
         :checked="checked"
         @change="$emit('change', $event.target.value)"
       >
@@ -39,6 +43,10 @@ export default {
       default: null
     },
     checked: {
+      type: Boolean,
+      default: false
+    },
+    isDisabled: {
       type: Boolean,
       default: false
     },

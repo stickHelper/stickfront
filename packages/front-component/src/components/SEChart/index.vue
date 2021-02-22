@@ -1,29 +1,64 @@
 <template>
-  <div :class="classes">
-    <VueApexCharts
-      width="100%"
+  <div
+    :id="id"
+    :class="classes"
+  >
+    <MirrorChart
+      v-if="type === 'mirror'"
       :height="height"
-      :type="type"
-      :options="options"
-      :series="seriesData"
+      :colors="colors"
+      :series-data="seriesData"
+      :bar-width="barWidth"
+      :categories="categories"
     />
+    <template v-else>
+      <VueApexCharts
+        width="100%"
+        :height="height"
+        :type="type"
+        :options="options"
+        :series="seriesData"
+      />
+      <div
+        v-if="type === 'donut'"
+        class="se-chart__label"
+        :class="type"
+      >
+        <div class="label">
+          {{ labelTotal }}
+        </div>
+        <div class="value">
+          {{ totalDonut }}
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import VueApexCharts from 'vue-apexcharts'
+import MirrorChart from './MirrorChart'
 
 export default {
   name: 'SEChart',
   components: {
-    VueApexCharts
+    VueApexCharts,
+    MirrorChart
   },
   props: {
+    id: {
+      type: String,
+      default: null
+    },
+    className: {
+      type: String,
+      default: null
+    },
     type: {
       type: String,
       default: null,
       validator: function (value) {
-        return ['bar', 'donut', 'pie', 'area', 'radialBar'].indexOf(value) !== -1
+        return ['bar', 'donut', 'pie', 'area', 'line', 'radialBar', 'mirror'].indexOf(value) !== -1
       }
     },
     colors: {
@@ -46,15 +81,44 @@ export default {
       type: Boolean,
       default: true
     },
+    labelTotal: {
+      type: String,
+      default: 'Total'
+    },
     labels: {
       type: Array,
       default: () => []
+    },
+    barWidth: {
+      type: [String, Number],
+      default: '30%'
+    },
+    isStacked: {
+      type: Boolean,
+      default: false
+    },
+    yAxisLabel: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
-      options: {
+    }
+  },
+
+  computed: {
+    classes() {
+      return {
+        'se-chart': true,
+        [this.className]: this.className !== null
+      }
+    },
+    options() {
+      return {
         chart: {
+          type: this.type,
+          stacked: this.isStacked,
           toolbar: {
             show: false
           },
@@ -65,6 +129,16 @@ export default {
         legend: {
           show: false
         },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            legend: {
+              position: 'bottom',
+              offsetX: -10,
+              offsetY: 0
+            }
+          }
+        }],
         dataLabels: {
           enabled: false
         },
@@ -72,7 +146,7 @@ export default {
         grid: {
           show: true,
           borderColor: '#ECECF4',
-          strokeDashArray: 7,
+          strokeDashArray: 0,
           position: 'back',
           xaxis: {
             lines: {
@@ -81,7 +155,15 @@ export default {
           }
         },
         yaxis: {
-          show: false
+          show: this.yAxisLabel,
+          labels: {
+            formatter: function (value) {
+              if (value >= 1000) {
+                return Math.sign(value) * ((Math.abs(value) / 1000).toFixed(1)) + 'k'
+              }
+              return value
+            }
+          }
         },
         xaxis: {
           categories: this.categories,
@@ -91,8 +173,7 @@ export default {
         },
         plotOptions: {
           bar: {
-            endingShape: 'rounded',
-            columnWidth: '30%'
+            columnWidth: this.barWidth
           },
           pie: {
             donut: {
@@ -166,14 +247,9 @@ export default {
           }
         }
       }
-    }
-  },
-
-  computed: {
-    classes() {
-      return {
-        'se-chart': true
-      }
+    },
+    totalDonut() {
+      return this.seriesData.reduce((a, b) => a + b, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     }
   },
   watch: {

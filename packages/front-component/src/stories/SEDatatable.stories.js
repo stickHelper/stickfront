@@ -792,3 +792,28 @@ EditTable.parameters = {
     }
   }
 }
+
+// export const ActionFree = () => ({
+//   components: { SEDatatable },
+//   template: `<
+//   :tableLayoutFixed="true"
+//   :tHead="[
+//     { key: 'first_name', label: 'First Name' },
+//     { key: 'last_name', label: 'Last Name' },
+//     { key: 'email', label: 'Email' },
+//     { key: 'country', label: 'Country' },
+//     { key: 'ip_address', label: 'IP Address' },
+//     { key: 'action', label: 'Action' }
+//   ]"
+//   :tBody="[
+//     { id:1, first_name:'Charles', last_name:'Daniels', email:'cdaniels0@java.com', country:'China', ip_address:'27.159.97.60' },
+//     { id:2, first_name:'Stephen', last_name:'Martinez', email:'smartinez1@hhs.gov', country:'Brazil', ip_address:'67.135.55.135' },
+//     { id:3, first_name:'Ronald', last_name:'Cox', email:'rcox2@hatena.ne.jp', country:'Ukraine', ip_address:'74.193.127.5' },
+//     { id:4, first_name:'Shawn', last_name:'Knight', email:'sknight3@smh.com.au', country:'Peru', ip_address:'4.104.253.210' },
+//     { id:5, first_name:'Ann', last_name:'Brooks', email:'abrooks4@surveymonkey.com', country:'Albania', ip_address:'158.232.103.250' }
+//   ]"
+// >
+
+// </
+//   `
+// })

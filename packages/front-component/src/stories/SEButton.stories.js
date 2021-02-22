@@ -6,7 +6,7 @@ export default {
   component: SEButton,
   argTypes: {
     color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'turquoise', 'blue', 'light-blue'] } },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    size: { control: { type: 'select', options: ['exrta-small', 'small', 'medium', 'large'] } },
     type: { control: { type: 'select', options: ['icon', 'outline', 'text'] } },
     label: { description: '' }
   }
@@ -66,6 +66,7 @@ Color.parameters = {
 export const Size = () => ({
   components: { SEButton },
   template: `<div>
+    <SEButton size="extra-small">Extra Small</SEButton>
     <SEButton size="small">Small</SEButton>
     <SEButton>Medium</SEButton>
     <SEButton size="large">Large</SEButton>

@@ -20,6 +20,7 @@ const Template = (args, { argTypes }) => ({
       :series-data="[{
         data: [300,400,1000,500,45,600,300,400,200,500,450,600]
       }]"
+      barWidth="80%"
     />
   </div>`
 })
@@ -36,6 +37,7 @@ Default.parameters = {
   :series-data="[{
     data: [300,400,1000,500,45,600,300,400,200,500,450,600]
   }]"
+  barWidth="80%"
 />`
     }
   }
@@ -78,6 +80,158 @@ BarMultiple.parameters = {
       data: [15, 25, 40, 45, 68, 70]
     }
   ]"
+/>`
+    }
+  }
+}
+
+export const BarStacked = () => ({
+  components: { SEChart },
+  template: `<div>
+  <SEChart
+    type="bar"
+    :colors="['#682DAA', '#B488E5', '#E8DFF2']"
+    :categories="['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des']"
+    :isStacked="true"
+    :series-data="[
+      {
+        name: 'Brand 1',
+        data: [10, 30, 30, 50, 55, 80, 20, 90, 45, 10, 23, 50]
+      },
+      {
+        name: 'Brand 2',
+        data: [15, 25, 40, 45, 68, 70, 30, 40, 50, 12, 20, 50]
+      },
+      {
+        name: 'Brand 3',
+        data: [40, 50, 25, 30, 50, 40, 38, 41, 55, 60, 40, 55]
+      }
+    ]"
+  />
+  </div>
+  `
+})
+
+BarStacked.parameters = {
+  docs: {
+    source: {
+      code: `<SEChart
+  type="bar"
+  :colors="['#682DAA', '#B488E5', '#E8DFF2']"
+  :categories="['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des']"
+  :isStacked="true"
+  :series-data="[
+    {
+      name: 'Brand 1',
+      data: [10, 30, 30, 50, 55, 80, 20, 90, 45, 10, 23, 50]
+    },
+    {
+      name: 'Brand 2',
+      data: [15, 25, 40, 45, 68, 70, 30, 40, 50, 12, 20, 50]
+    },
+    {
+      name: 'Brand 3',
+      data: [40, 50, 25, 30, 50, 40, 38, 41, 55, 60, 40, 55]
+    }
+  ]"
+/>`
+    }
+  }
+}
+
+export const LineChart = () => ({
+  components: { SEChart },
+  template: `<div>
+  <SEChart
+    type="line"
+    :colors="['#682DAA', '#B488E5', '#E8DFF2']"
+    :categories="['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des']"
+    :series-data="[
+      {
+        name: 'Brand 1',
+        data: [10, 30, 30, 50, 55, 80, 20, 90, 45, 10, 23, 50]
+      },
+      {
+        name: 'Brand 2',
+        data: [15, 25, 40, 45, 68, 70, 30, 40, 50, 12, 20, 50]
+      },
+      {
+        name: 'Brand 3',
+        data: [40, 50, 25, 30, 50, 40, 38, 41, 55, 60, 40, 55]
+      }
+    ]"
+  />
+  </div>
+  `
+})
+
+LineChart.parameters = {
+  docs: {
+    source: {
+      code: `<SEChart
+  type="bar"
+  :colors="['#682DAA', '#B488E5', '#E8DFF2']"
+  :categories="['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des']"
+  :isStacked="true"
+  :series-data="[
+    {
+      name: 'Brand 1',
+      data: [10, 30, 30, 50, 55, 80, 20, 90, 45, 10, 23, 50]
+    },
+    {
+      name: 'Brand 2',
+      data: [15, 25, 40, 45, 68, 70, 30, 40, 50, 12, 20, 50]
+    },
+    {
+      name: 'Brand 3',
+      data: [40, 50, 25, 30, 50, 40, 38, 41, 55, 60, 40, 55]
+    }
+  ]"
+/>`
+    }
+  }
+}
+
+export const MirrorChart = () => ({
+  components: { SEChart },
+  template: `<div>
+  <SEChart
+    type="mirror"
+    :colors="['#FFB800', '#682DAA']"
+    :categories="['> 60', '50 - 60', '40 - 50', '30 - 40', '20 - 30', '10 - 20']"
+    :series-data="[
+      {
+        name: 'Male',
+        data: [10, 30, 30, 50, 55, 80]
+      },
+      {
+        name: 'Female',
+        data: [15, 25, 40, 45, 68, 70]
+      }
+    ]"
+    height="auto"
+  />
+</div>`
+})
+
+MirrorChart.parameters = {
+  docs: {
+    source: {
+      code: `<SEChart
+  type="mirror"
+  :colors="['#FFB800', '#682DAA']"
+  :categories="['> 60', '50 - 60', '40 - 50', '30 - 40', '20 - 30', '10 - 20']"
+  :series-data="[
+    {
+      name: 'Male',
+      data: [10, 30, 30, 50, 55, 80]
+    },
+    {
+      name: 'Female',
+      data: [15, 25, 40, 45, 68, 70]
+    }
+  ]"
+  height="auto"
 />`
     }
   }

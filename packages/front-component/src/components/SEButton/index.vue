@@ -32,7 +32,7 @@ export default {
       type: String,
       default: 'medium',
       validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1
+        return ['extra-small', 'small', 'medium', 'large'].indexOf(value) !== -1
       }
     },
     type: {

@@ -1,5 +1,6 @@
 <template>
   <div
+    :id="id"
     v-click-outside="hide"
     :class="classes"
   >
@@ -12,7 +13,7 @@
 
     <div
       :id="inputName"
-      :disabled="isDisabled"
+      :class="isDisabled ? 'disabled' : null"
       class="se-combobox--field"
       @click="triggerDropdown()"
     >
@@ -92,6 +93,10 @@ export default {
     ClickOutside
   },
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     inputName: {
       type: String,
       default: null

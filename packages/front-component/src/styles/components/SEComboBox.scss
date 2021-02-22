@@ -18,9 +18,9 @@
     outline: none;
     padding: ($gutter-md - 4) ($text-lg + $gutter-md) ($gutter-md - 4) $gutter-md;
     margin-bottom: $gutter-sm;
-    font-size: $text-md;
+    font-size: $text-sm;
     background-color: $accent;
-    @include border-radius(8px);
+    @include border-radius(4px);
 
     .field {
       &-placeholder {
@@ -35,8 +35,8 @@
 
 	&--small {
     .se-combobox--field {
-			padding-top: $gutter-xs;
-			padding-bottom: $gutter-xs;
+			padding-top: $gutter-xs + 2;
+			padding-bottom: $gutter-xs + 2;
 		}
 		.se-combobox--list {
 			top: 37px;
@@ -61,8 +61,8 @@
 		border: 1px solid $line;
 		padding: $gutter-xs 0;
 		
-		@include box-shadow(0px 6px 16px rgba($text-normal, 0.32));
-		@include border-radius(8px);
+		@include box-shadow(0px 4px 8px rgba(112, 116, 138, 0.24));
+		@include border-radius(4px);
 
 		li {
 			div {

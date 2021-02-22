@@ -12,13 +12,13 @@
   input {
     border: 1px solid $line;
     outline: none;
-    padding: $text-md;
+    padding: ($gutter-md - 4) $gutter-md;
     margin-bottom: $gutter-sm;
-    font-size: $text-md;
+    font-size: $text-sm;
     background-color: $accent;
     color: text;
     height: auto;
-    @include border-radius(8px);
+    @include border-radius(4px);
 
     &::placeholder {
       color: $text-subtitle;

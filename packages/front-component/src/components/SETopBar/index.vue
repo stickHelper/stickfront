@@ -95,7 +95,6 @@ export default {
   },
   methods: {
     hideProfile() {
-      console.log('hide')
       this.showProfile = false
     }
   }
