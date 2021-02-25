@@ -1,0 +1,154 @@
+.se-tag {
+  position: relative;
+  font-weight: bold;
+  line-height: 154%;
+
+  // SIZE
+  &__large {
+    .ant-tag {
+      font-size: $text-sm;
+      padding: $gutter-xs ($gutter-sm + 4);
+    }
+  }
+
+  &__rounded {
+    .ant-tag {
+      border-radius: 50px;
+    }
+  }
+
+  // COLOR
+  &__primary {
+    .ant-tag {
+      color: $purple;
+      background-color: rgba($color: $purple, $alpha: .25);
+    }
+  }
+  &__secondary {
+    .ant-tag {
+      color: $yellow;
+      background-color: rgba($color: $yellow, $alpha: .25);
+    }
+  }
+  &__dark {
+    .ant-tag {
+      color: $dark;
+      background-color: rgba($color: $dark, $alpha: .25);
+    }
+  }
+  &__turquoise {
+    .ant-tag {
+      color: $turquoise;
+      background-color: rgba($color: $turquoise, $alpha: .25);
+    }
+  }
+  &__red {
+    .ant-tag {
+      color: $red;
+      background-color: rgba($color: $red, $alpha: .25);
+    }
+  }
+  &__error {
+    .ant-tag {
+      color: $error;
+      background-color: rgba($color: $error, $alpha: .25);
+    }
+  }
+  &__salmon {
+    .ant-tag {
+      color: $salmon;
+      background-color: rgba($color: $salmon, $alpha: .25);
+    }
+  }
+  &__normal {
+    .ant-tag {
+      color: $text-normal;
+      background-color: rgba($color: $text-normal, $alpha: .25);
+    }
+  }
+  &__accent {
+    .ant-tag {
+      color: $text-normal;
+      background-color: rgba($color: $accent, $alpha: 1);
+    }
+  }
+  &__green {
+    .ant-tag {
+      color: $green;
+      background-color: rgba($color: $green, $alpha: .25);
+    }
+  }
+  &__light-blue {
+    .ant-tag {
+      color: $light-blue;
+      background-color: rgba($color: $light-blue, $alpha: .25);
+    }
+  }
+  &__blue {
+    .ant-tag {
+      color: $blue;
+      background-color: rgba($color: $blue, $alpha: .25);
+    }
+  }
+  &__line {
+    .ant-tag {
+      color: $text-normal;
+      background-color: rgba($color: $line, $alpha: 1);
+    }
+  }
+
+  // FULL COLOR
+  &__full-color {
+    &.se-tag__primary {
+      .ant-tag { color: $white; background-color: $purple; }
+      .anticon { color: $white }
+    }
+    &.se-tag__secondary {
+      .ant-tag { color: $white; background-color: $yellow; }
+      .anticon { color: $white }
+    }
+    &.se-tag__dark {
+      .ant-tag { color: $white; background-color: $dark; }
+      .anticon { color: $white }
+    }
+    &.se-tag__turquoise {
+      .ant-tag { color: $white; background-color: $turquoise; }
+      .anticon { color: $white }
+    }
+    &.se-tag__red {
+      .ant-tag { color: $white; background-color: $red; }
+      .anticon { color: $white }
+    }
+    &.se-tag__error {
+      .ant-tag { color: $white; background-color: $error; }
+      .anticon { color: $white }
+    }
+    &.se-tag__salmon {
+      .ant-tag { color: $white; background-color: $salmon; }
+      .anticon { color: $white }
+    }
+    &.se-tag__normal {
+      .ant-tag { color: $white; background-color: $text-normal; }
+      .anticon { color: $white }
+    }
+    &.se-tag__accent {
+      .ant-tag { color: $text-normal; background-color: $accent; }
+    }
+    &.se-tag__green {
+      .ant-tag { color: $white; background-color: $green; }
+      .anticon { color: $white }
+    }
+    &.se-tag__light-blue {
+      .ant-tag { color: $white; background-color: $light-blue; }
+      .anticon { color: $white }
+    }
+    &.se-tag__blue {
+      .ant-tag { color: $white; background-color: $blue; }
+      .anticon { color: $white }
+    }
+    &.se-tag__line {
+      .ant-tag { color: $text-normal; background-color: $line; }
+    }
+  }
+
+}

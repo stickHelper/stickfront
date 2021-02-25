@@ -4,9 +4,6 @@
     :class="classes"
     @click="$emit('click')"
   >
-    <!-- <a-avatar :size="size" :icon="icon">
-      <slot />
-    </a-avatar> -->
     <a-avatar
       :size="size"
       :icon="icon"
@@ -78,7 +75,6 @@ export default {
       return {
         'se-avatar': true,
         [`se-avatar__${this.size}`]: this.size !== null,
-        [`se-avatar__${this.type}`]: this.type !== null,
         [`se-avatar__${this.shape}`]: this.shape !== null,
         [this.className]: this.className !== null
       }

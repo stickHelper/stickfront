@@ -30,7 +30,7 @@ About           : -
   * GENERAL HTML AND BODY STYLES
   */
 html, body {
-  font-family             : $font-stack;
+  font-family             : $font-stack !important;
   font-weight             : normal;
   font-size               : $text-sm;
   line-height             : 150%;
