@@ -1,181 +1,273 @@
 .se-btn {
-  padding: $gutter-sm $gutter-md;
-  font-weight: 600;
-  font-size: $text-sm;
-  line-height: 20px;
-  outline: none;
-  display: inline-flex;
-  text-decoration: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  display: initial;
+  .ant-btn {
+    padding: $gutter-sm $gutter-md;
+    font-weight: 600;
+    font-size: $text-sm;
+    line-height: 20px;
+    outline: none;
+    display: inline-flex;
+    text-decoration: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  
+    @include box-shadow(inset -1px -1px 2px rgba(0, 0, 0, 0.16), inset 1px 1px 2px rgba(255, 255, 255, 0.24)); 
+    @include border-radius(4px);
+    @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
+    @include justify-content(center);
+    @include align-items(center);
+  
+    &:hover {
+      cursor: pointer;
+    }
+    &:active,
+    &:focus {
+      @include box-shadow(0 0 0 3px rgba(33, 33, 33, 0.15));
+      outline: none;
+    }
 
-  @include box-shadow(inset -1px -1px 2px rgba(0, 0, 0, 0.16), inset 1px 1px 2px rgba(255, 255, 255, 0.24)); 
-  @include border-radius(4px);
-  @include transition(cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.2s);
-  @include justify-content(center);
-  @include align-items(center);
-
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
-    @include box-shadow(0 0 0 3px rgba(33, 33, 33, 0.15))
+    &-circle {
+      min-width: 32px;
+      padding-right: 0;
+      padding-left: 0;
+      text-align: center;
+      @include border-radius(50%);
+    }
+    &-round {
+      @include border-radius(32px);
+    }
   }
 
   &--primary {
-    background-color: $purple;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $purple, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $purple, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $purple, $alpha: .15));
+    .ant-btn {
+      background-color: $purple;
+      color: $white;
+      &:hover {
+        background-color: lighten($color: $purple, $amount: 3);
+        color: $white;
+        border-color: $purple;
+      }
+      &:focus {
+        background-color: lighten($color: $purple, $amount: 3);
+        color: $white;
+        border-color: $purple;
+        @include box-shadow(0 0 0 3px rgba($color: $purple, $alpha: .15));
+      }
     }
   }
   &--secondary {
-    background-color: $yellow;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $yellow, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $yellow, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $yellow, $alpha: .15));
+    .ant-btn {
+      background-color: $yellow;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $yellow, $amount: 2);
+        color: $white;
+        border-color: $yellow;
+      }
+      &:focus {
+        background-color: darken($color: $yellow, $amount: 2);
+        color: $white;
+        border-color: $yellow;
+        @include box-shadow(0 0 0 3px rgba($color: $yellow, $alpha: .15));
+      }
     }
   }
   &--red {
-    background-color: $red;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $red, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $red, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $red, $alpha: .15));
+    .ant-btn {
+      background-color: $red;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $red, $amount: 2);
+        color: $white;
+        border-color: $red;
+      }
+      &:focus {
+        background-color: darken($color: $red, $amount: 2);
+        color: $white;
+        border-color: $red;
+        @include box-shadow(0 0 0 3px rgba($color: $red, $alpha: .15));
+      }
     }
   }
   &--dark {
-    background-color: $dark;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $dark, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $dark, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $dark, $alpha: .15));
+    .ant-btn {
+      background-color: $dark;
+      color: $white;
+      &:hover {
+        background-color: lighten($color: $dark, $amount: 5);
+        color: $white;
+        border-color: $dark;
+      }
+      &:focus {
+        background-color: lighten($color: $dark, $amount: 2);
+        color: $white;
+        border-color: $dark;
+        @include box-shadow(0 0 0 3px rgba($color: $dark, $alpha: .15));
+      }
     }
   }
   &--normal {
-    background-color: $text-normal;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $text-normal, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $text-normal, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $text-normal, $alpha: .15));
+    .ant-btn {
+      background-color: $text-normal;
+      color: $white;
+      &:hover {
+        background-color: lighten($color: $text-normal, $amount: 2);
+        color: $white;
+        border-color: $text-normal;
+      }
+      &:focus {
+        background-color: lighten($color: $text-normal, $amount: 2);
+        color: $white;
+        border-color: $text-normal;
+        @include box-shadow(0 0 0 3px rgba($color: $text-normal, $alpha: .15));
+      }
     }
   }
 
   &--accent {
-    background-color: $accent;
-    color: $text-normal;
-    &:hover {
-      background-color: darken($color: $accent, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $accent, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $accent, $alpha: .15));
+    .ant-btn {
+      background-color: $accent;
+      color: $text-normal;
+      &:hover {
+        background-color: darken($color: $accent, $amount: 1);
+        color: $text-normal;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $accent, $amount: 2);
+        color: $text-normal;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $accent, $alpha: .15));
+      }
     }
   }
 
   &--line {
-    background-color: $line;
-    color: $text-normal;
-    &:hover {
-      background-color: darken($color: $line, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $line, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $line, $alpha: .15));
+    .ant-btn {
+      background-color: $line;
+      color: $text-normal;
+      &:hover {
+        background-color: darken($color: $line, $amount: 1);
+        color: $text-normal;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $line, $amount: 2);
+        color: $text-normal;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $line, $alpha: .15));
+      }
     }
   }
 
   &--error {
-    background-color: $error;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $error, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $error, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $error, $alpha: .15));
+    .ant-btn {
+      background-color: $error;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $error, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $error, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $error, $alpha: .15));
+      }
     }
   }
 
   &--salmon {
-    background-color: $salmon;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $salmon, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $salmon, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $salmon, $alpha: .15));
+    .ant-btn {
+      background-color: $salmon;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $salmon, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $salmon, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $salmon, $alpha: .15));
+      }
     }
   }
   &--turquoise {
-    background-color: $turquoise;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $turquoise, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $turquoise, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $turquoise, $alpha: .15));
+    .ant-btn {
+      background-color: $turquoise;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $turquoise, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $turquoise, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $turquoise, $alpha: .15));
+      }
     }
   }
 
   &--blue {
-    background-color: $blue;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $blue, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $blue, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $blue, $alpha: .15));
+    .ant-btn {
+      background-color: $blue;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $blue, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $blue, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $blue, $alpha: .15));
+      }
     }
   }
 
   &--light-blue {
-    background-color: $light-blue;
-    color: $white;
-    &:hover {
-      background-color: darken($color: $light-blue, $amount: 2);
-    }
-    &:focus {
-      background-color: darken($color: $light-blue, $amount: 2);
-      @include box-shadow(0 0 0 3px rgba($color: $light-blue, $alpha: .15));
+    .ant-btn {
+      background-color: $light-blue;
+      color: $white;
+      &:hover {
+        background-color: darken($color: $light-blue, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+      }
+      &:focus {
+        background-color: darken($color: $light-blue, $amount: 2);
+        color: $white;
+        border-color: $text-subtitle;
+        @include box-shadow(0 0 0 3px rgba($color: $light-blue, $alpha: .15));
+      }
     }
   }
 
-  &--extra-small {
-    font-size: $text-xs;
-    padding: $gutter-xs $gutter-sm;
-  }
+  // &--extra-small {
+  //   font-size: $text-xs;
+  //   padding: $gutter-xs $gutter-sm;
+  // }
   &--small {
-    font-size: $text-sm;
-    padding: $gutter-sm $gutter-md;
+    .ant-btn {
+      font-size: $text-xs;
+      padding: $gutter-xs $gutter-sm;
+    }
   }
-  &--medium {
-    font-size: $text-md;
-    padding: ($gutter-sm + 4) $gutter-md;
-  }
+  // &--medium {
+  //   font-size: $text-md;
+  //   padding: ($gutter-sm + 4) $gutter-md;
+  // }
   &--large {
-    font-size: $text-lg;
-    padding: $gutter-md $gutter-sm;
+    .ant-btn {
+      font-size: $text-md;
+      padding: ($gutter-md - 2) $gutter-md;
+    }
   }
 
   &.full-width {
@@ -183,146 +275,172 @@
   }
 
   &--outline {
-    background-color: $white;
-    @include box-shadow(none);
+    .ant-btn {
+      background-color: transparent;
+      @include box-shadow(none);
+    }
     &.se-btn {
       &--primary {
-        border: 1px solid $purple;
-        color: $purple;
-        &:hover {
-          background-color: rgba($color: $purple, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $purple, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $purple, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $purple;
+          color: $purple;
+          &:hover {
+            background-color: rgba($color: $purple, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $purple, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $purple, $alpha: .8));
+          }
         }
       }
       &--secondary {
-        border: 1px solid $yellow;
-        color: $yellow;
-        &:hover {
-          background-color: rgba($color: $yellow, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $yellow, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $yellow, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $yellow;
+          color: $yellow;
+          &:hover {
+            background-color: rgba($color: $yellow, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $yellow, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $yellow, $alpha: .8));
+          }
         }
       }
       &--red {
-        border: 1px solid $red;
-        color: $red;
-        &:hover {
-          background-color: rgba($color: $red, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $red, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $red, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $red;
+          color: $red;
+          &:hover {
+            background-color: rgba($color: $red, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $red, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $red, $alpha: .8));
+          }
         }
       }
       &--dark {
-        border: 1px solid $dark;
-        color: $dark;
-        &:hover {
-          background-color: rgba($color: $dark, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $dark, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $dark, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $dark;
+          color: $dark;
+          &:hover {
+            background-color: rgba($color: $dark, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $dark, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $dark, $alpha: .8));
+          }
         }
       }
       &--normal {
-        border: 1px solid $text-normal;
-        color: $text-normal;
-        &:hover {
-          background-color: rgba($color: $text-normal, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $text-normal, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $text-normal, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $text-normal;
+          color: $text-normal;
+          &:hover {
+            background-color: rgba($color: $text-normal, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $text-normal, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $text-normal, $alpha: .8));
+          }
         }
       }
     
       &--accent {
-        border: 1px solid $accent;
-        color: $text-normal;
-        &:hover {
-          background-color: rgba($color: $accent, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $accent, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $accent, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $line;
+          color: $text-normal;
+          &:hover {
+            background-color: rgba($color: $accent, $alpha: .5);
+          }
+          &:focus {
+            background-color: rgba($color: $accent, $alpha: .5);
+            @include box-shadow(0 0 0 1px rgba($color: $accent, $alpha: .8));
+          }
         }
       }
     
       &--line {
-        border: 1px solid $line;
-        color: $text-normal;
-        &:hover {
-          background-color: rgba($color: $line, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $line, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $line, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $line;
+          color: $text-normal;
+          &:hover {
+            background-color: rgba($color: $line, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $line, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $line, $alpha: .8));
+          }
         }
       }
     
       &--error {
-        border: 1px solid $error;
-        color: $error;
-        &:hover {
-          background-color: rgba($color: $error, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $error, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $error, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $error;
+          color: $error;
+          &:hover {
+            background-color: rgba($color: $error, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $error, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $error, $alpha: .8));
+          }
         }
       }
     
       &--salmon {
-        border: 1px solid $salmon;
-        color: $salmon;
-        &:hover {
-          background-color: rgba($color: $salmon, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $salmon, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $salmon, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $salmon;
+          color: $salmon;
+          &:hover {
+            background-color: rgba($color: $salmon, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $salmon, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $salmon, $alpha: .8));
+          }
         }
       }
     
       &--turquoise {
-        border: 1px solid $turquoise;
-        color: $turquoise;
-        &:hover {
-          background-color: rgba($color: $turquoise, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $turquoise, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $turquoise, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $turquoise;
+          color: $turquoise;
+          &:hover {
+            background-color: rgba($color: $turquoise, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $turquoise, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $turquoise, $alpha: .8));
+          }
         }
       }
     
       &--blue {
-        border: 1px solid $blue;
-        color: $blue;
-        &:hover {
-          background-color: rgba($color: $blue, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $blue, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $blue, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $blue;
+          color: $blue;
+          &:hover {
+            background-color: rgba($color: $blue, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $blue, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $blue, $alpha: .8));
+          }
         }
       }
     
       &--light-blue {
-        border: 1px solid $light-blue;
-        color: $light-blue;
-        &:hover {
-          background-color: rgba($color: $light-blue, $alpha: .15);
-        }
-        &:focus {
-          background-color: rgba($color: $light-blue, $alpha: .15);
-          @include box-shadow(0 0 0 1px rgba($color: $light-blue, $alpha: .8));
+        .ant-btn {
+          border: 1px solid $light-blue;
+          color: $light-blue;
+          &:hover {
+            background-color: rgba($color: $light-blue, $alpha: .15);
+          }
+          &:focus {
+            background-color: rgba($color: $light-blue, $alpha: .15);
+            @include box-shadow(0 0 0 1px rgba($color: $light-blue, $alpha: .8));
+          }
         }
       }
     }

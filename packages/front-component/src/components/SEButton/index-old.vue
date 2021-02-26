@@ -1,75 +1,52 @@
 <template>
-  <div
+  <button
     :id="id"
+    type="button"
     :class="classes"
+    @click="onClick"
   >
-    <AntButton
-      :size="size"
-      :shape="shape"
-      :icon="icon"
-      :loading="loading"
-      :block="block"
-      @click="$emit('click')"
-    >
-      <slot />
-    </AntButton>
-  </div>
+    <slot />
+  </button>
 </template>
 
 <script>
-import { Button } from 'ant-design-vue'
-
 export default {
   name: 'SEButton',
-  components: {
-    AntButton: Button
-  },
   props: {
     id: {
       type: String,
       default: null
     },
+    label: {
+      type: String,
+      default: 'Button'
+    },
     color: {
       type: String,
       default: 'accent',
       validator: function (value) {
-        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'red', 'salmon', 'turquoise', 'blue', 'light-blue'].indexOf(value) !== -1
+        return ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'salmon', 'turquoise', 'blue', 'light-blue'].indexOf(value) !== -1
       }
     },
     size: {
       type: String,
-      default: null,
+      default: 'medium',
       validator: function (value) {
-        return ['small', 'large'].indexOf(value) !== -1
+        return ['extra-small', 'small', 'medium', 'large'].indexOf(value) !== -1
       }
     },
     type: {
       type: String,
       default: null,
       validator: function (value) {
-        return ['outline'].indexOf(value) !== -1
-      }
-    },
-    shape: {
-      type: String,
-      default: null,
-      validator: function (value) {
-        return ['circle', 'round'].indexOf(value) !== -1
+        return ['icon', 'outline', 'text'].indexOf(value) !== -1
       }
     },
     className: {
       type: String,
       default: null
     },
-    icon: {
-      type: String,
-      default: null
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    block: {
+    fullWidth: {
       type: Boolean,
       default: false
     },

@@ -11,9 +11,9 @@
     }
   }
 
-  &__rounded {
+  &__round {
     .ant-tag {
-      border-radius: 50px;
+      @include border-radius(50px);
     }
   }
 

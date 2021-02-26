@@ -49,7 +49,7 @@ export default {
       type: String,
       default: 'square',
       validator: function (value) {
-        return ['rounded', 'square'].indexOf(value) !== -1
+        return ['round', 'square'].indexOf(value) !== -1
       }
     },
     size: {
