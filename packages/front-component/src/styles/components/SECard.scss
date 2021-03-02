@@ -2,8 +2,8 @@
   background: $white;
   padding: $gutter-md;
   text-align: left;
+  border: 1px solid $line;
 
-  @include box-shadow(0 0 0 1px rgba($dark, 0.1));
   @include border-radius(4px);
 
   &.depth-1 {

@@ -1,48 +1,96 @@
 <template>
-  <div
+  <!-- eslint-disable vue/html-self-closing -->
+  <Col
     :id="id"
     :class="classes"
+    :flex="flex"
+    :offset="offset"
+    :oreder="oreder"
+    :pull="pull"
+    :push="push"
+    :span="span"
+    :xs="xs"
+    :sm="sm"
+    :md="md"
+    :lg="sm"
+    :xl="sm"
+    :xxl="xxl"
   >
-    <slot />
-  </div>
+  <!-- eslint-disable-next-line vue/valid-template-root vue/no-multiple-template-root -->
+  <slot />
+  <!-- eslint-disable-next-line vue/no-parsing-error -->
+  </Col>
 </template>
 
 <script>
+import { Col } from 'ant-design-vue'
+
 export default {
   name: 'SECol',
+  components: {
+    Col
+  },
   props: {
     id: {
       type: String,
       default: null
     },
-    lg: {
-      type: [String, Number],
-      default: 12
+    className: {
+      type: String,
+      default: null
     },
-    md: {
+    flex: {
       type: [String, Number],
       default: null
     },
-    sm: {
-      type: [String, Number],
+    offset: {
+      type: Number,
+      default: 0
+    },
+    oreder: {
+      type: Number,
+      default: 0
+    },
+    pull: {
+      type: Number,
+      default: 0
+    },
+    push: {
+      type: Number,
+      default: 0
+    },
+    span: {
+      type: Number,
       default: null
     },
     xs: {
-      type: [String, Number],
+      type: [Number, Object],
       default: null
     },
-    className: {
-      type: String,
+    sm: {
+      type: [Number, Object],
+      default: null
+    },
+    md: {
+      type: [Number, Object],
+      default: null
+    },
+    lg: {
+      type: [Number, Object],
+      default: null
+    },
+    xl: {
+      type: [Number, Object],
+      default: null
+    },
+    xxl: {
+      type: [Number, Object],
       default: null
     }
   },
   computed: {
     classes() {
       return {
-        [`col-lg-${this.lg}`]: this.lg !== null,
-        [`col-md-${this.md}`]: this.md !== null,
-        [`col-sm-${this.sm}`]: this.sm !== null,
-        [`col-xs-${this.xs}`]: this.xs !== null,
         [`${this.className}`]: this.className !== null
       }
     }

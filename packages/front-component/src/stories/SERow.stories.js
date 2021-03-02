@@ -2,7 +2,7 @@ import SERow from '@/components/SERow/index.vue'
 import '@/styles/index.scss'
 
 export default {
-  title: 'Components/Row',
+  title: 'Layout/Row',
   component: SERow
 }
 

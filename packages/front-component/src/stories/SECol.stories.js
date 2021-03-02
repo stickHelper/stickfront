@@ -3,7 +3,7 @@ import SECol from '@/components/SECol/index.vue'
 import '@/styles/index.scss'
 
 export default {
-  title: 'Components/Column',
+  title: 'Layout/Column',
   component: SECol
 }
 
