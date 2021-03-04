@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <div
-      class="se-checkbox--item"
+      class="se-checkbox__item"
       :class="isDisabled ? 'disabled' : null"
     >
       <input
@@ -56,13 +56,21 @@ export default {
       validator: function (value) {
         return ['small'].indexOf(value) !== -1
       }
+    },
+    color: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['primary', 'secondary'].indexOf(value) !== -1
+      }
     }
   },
   computed: {
     classes() {
       return {
         'se-checkbox': true,
-        [`se-checkbox--${this.size}`]: this.size !== null,
+        [`se-checkbox__${this.size}`]: this.size !== null,
+        [`se-checkbox__${this.color}`]: this.color !== null,
         [this.className]: this.className !== null
       }
     }

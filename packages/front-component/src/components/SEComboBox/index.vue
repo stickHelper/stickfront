@@ -137,7 +137,7 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['small'].indexOf(value) !== -1
+        return ['small', 'extra-small'].indexOf(value) !== -1
       }
     },
     info: {

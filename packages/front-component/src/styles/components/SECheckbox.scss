@@ -1,5 +1,5 @@
 .se-checkbox {
-  &--item {
+  &__item {
     cursor: pointer;
     display: inline-block;
 
@@ -8,7 +8,7 @@
         background-color: $accent;
       }
       input:checked + label:before {
-        background-color: #DF7800;
+        background-color: darken($color: #1890ff, $amount: 3);
       }
     }
 
@@ -18,7 +18,7 @@
       }
 
       input:checked + label:before {
-        @include box-shadow(0px 0px 8px 8px rgba($color: $yellow, $alpha: .24))
+        @include box-shadow(0px 0px 8px 8px rgba($color: #1890ff, $alpha: .24))
       }
     }
 
@@ -70,7 +70,7 @@
     }
 
     input:checked + label:before {
-      background-color: $yellow;
+      background-color: #1890ff;
     }
 
     input:checked + label:after {
@@ -86,19 +86,57 @@
       transform: rotate(45deg);
     }
   }
-
-  &--small {
-    label {
-      &:before {
-        width: 24px;
-        height: 24px;
+  
+  &__small {
+    .se-checkbox__item {
+      label {
+        &:before {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      input:checked + label:after {
+        top: 4px;
+        left: 9px;
+        width: 6px;
+        height: 12px;
       }
     }
-    input:checked + label:after {
-      top: 4px;
-      left: 9px;
-      width: 6px;
-      height: 12px;
+  }
+
+  &__primary {
+    .se-checkbox__item {
+      &:hover {
+        input:checked + label:before {
+          background-color: darken($color: $purple, $amount: 3);
+        }
+      }
+      &:focus, &:active {
+        input:checked + label:before {
+          @include box-shadow(0px 0px 8px 8px rgba($color: $purple, $alpha: .24))
+        }
+      }
+      input:checked + label:before {
+        background-color: $purple;
+      }
+    }
+  }
+
+  &__secondary {
+    .se-checkbox__item {
+      &:hover {
+        input:checked + label:before {
+          background-color: darken($color: $yellow, $amount: 3);
+        }
+      }
+      &:focus, &:active {
+        input:checked + label:before {
+          @include box-shadow(0px 0px 8px 8px rgba($color: $yellow, $alpha: .24))
+        }
+      }
+      input:checked + label:before {
+        background-color: $yellow;
+      }
     }
   }
 }

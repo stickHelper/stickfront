@@ -11,6 +11,11 @@
       :bar-width="barWidth"
       :categories="categories"
     />
+    <SunburstChart
+      v-else-if="type === 'sunburst'"
+      :sunburst-data="sunburstData"
+      :color-list="colors"
+    />
     <template v-else>
       <VueApexCharts
         width="100%"
@@ -38,12 +43,14 @@
 <script>
 import VueApexCharts from 'vue-apexcharts'
 import MirrorChart from './MirrorChart'
+import SunburstChart from './SunburstChart'
 
 export default {
   name: 'SEChart',
   components: {
     VueApexCharts,
-    MirrorChart
+    MirrorChart,
+    SunburstChart
   },
   props: {
     id: {
@@ -58,8 +65,12 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['bar', 'donut', 'pie', 'area', 'line', 'radialBar', 'mirror'].indexOf(value) !== -1
+        return ['bar', 'donut', 'pie', 'area', 'line', 'radialBar', 'mirror', 'sunburst'].indexOf(value) !== -1
       }
+    },
+    sunburstData: {
+      type: Object,
+      default: () => null
     },
     colors: {
       type: Array,
@@ -76,6 +87,10 @@ export default {
     height: {
       type: String,
       default: '350px'
+    },
+    width: {
+      type: String,
+      default: '100%'
     },
     isTooltip: {
       type: Boolean,

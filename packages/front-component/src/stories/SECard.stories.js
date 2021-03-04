@@ -8,7 +8,8 @@ export default {
   title: 'Components/Card',
   component: SECard,
   argTypes: {
-    type: { control: { type: 'select', options: ['depth-1', 'depth-2', 'depth-3'] } }
+    type: { control: { type: 'select', options: ['depth-1', 'depth-2', 'depth-3'] } },
+    size: { control: { type: 'select', options: ['default', 'small'] } }
   }
 }
 

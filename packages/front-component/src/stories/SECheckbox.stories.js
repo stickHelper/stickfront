@@ -3,7 +3,11 @@ import '@/styles/index.scss'
 
 export default {
   title: 'Components/Checkbox',
-  component: SECheckbox
+  component: SECheckbox,
+  argTypes: {
+    size: { control: { type: 'select', options: ['small'] } },
+    color: { control: { type: 'select', options: ['primary', 'secondary'] } }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
@@ -86,6 +90,37 @@ Size.parameters = {
     }
   }
 }
+
+export const Colors = (args) => ({
+  components: { SECheckbox },
+  template: `<div>
+    <SECheckbox
+      id="deafult"
+      name="colors"
+      value="deafult"
+      label="Default"
+      checked
+      class-name="mb-xs-2"
+    />
+    <SECheckbox
+      id="primary"
+      name="colors"
+      value="primary"
+      label="Primary"
+      color="primary"
+      checked
+      class-name="mb-xs-2"
+    />
+    <SECheckbox
+      id="secondary"
+      name="colors"
+      value="secondary"
+      color="secondary"
+      checked
+      label="Secondary"
+    />
+  </div>`
+})
 
 export const Disabled = (args) => ({
   components: { SECheckbox },

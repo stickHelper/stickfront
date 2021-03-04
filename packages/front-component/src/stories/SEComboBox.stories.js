@@ -4,7 +4,10 @@ import '@/styles/icon/se-font.min.scss'
 
 export default {
   title: 'Components/Combobox',
-  component: SECombobox
+  component: SECombobox,
+  argTypes: {
+    size: { control: { type: 'select', options: ['small', 'extra-small'] } }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
