@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     log() {
-      console.log('object')
+      this.$emit('close')
     }
   }
 }

@@ -26,10 +26,10 @@ describe('SEAvatar', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
-  it('has class name se-avatar', () => {
+  it('has class name se-navbar', () => {
     // arrange
     const wrapper = factory()
-    expect(wrapper.classes('se-avatar')).toBe(true)
+    expect(wrapper.classes('se-navbar')).toBe(true)
   })
 
   it('has props id', () => {

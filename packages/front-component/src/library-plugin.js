@@ -17,6 +17,7 @@ import SEDatepicker from './components/SEDatepicker/index.vue'
 import SEDropzone from './components/SEDropzone/index.vue'
 import SEDateRangePicker from './components/SEDateRangePicker/index.vue'
 import SEImg from './components/SEImg/index.vue'
+import SEMediaUploader from './components/SEMediaUploader/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
 import SEIcon from './components/SEIcon/index.vue'
 import SEModal from './components/SEModal/index.vue'
@@ -70,7 +71,8 @@ const components = {
   SETopBar,
   SEWysiwyg,
   SEDropzone,
-  DefaultTemplate
+  DefaultTemplate,
+  SEMediaUploader
 }
 
 const install = (Vue, opts = {}) => {
