@@ -28,6 +28,7 @@ import SERow from './components/SERow/index.vue'
 import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
 import SESlider from './components/SESlider/index.vue'
+import SESpace from './components/SESpace/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETabMenu from './components/SETabMenu/index.vue'
 import SETag from './components/SETag/index.vue'
@@ -62,6 +63,7 @@ const components = {
   SESidebarMenu,
   SESkeleton,
   SESlider,
+  SESpace,
   SESwitch,
   SETabMenu,
   SETag,
