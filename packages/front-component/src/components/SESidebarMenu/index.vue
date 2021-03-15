@@ -12,53 +12,67 @@
         v-for="(menu, index) in menus"
         :key="index"
         class="se-sidebarmenu--item"
+        :class="menu.type"
       >
-        <router-link
-          v-if="isVueRouter"
-          :to="menu.path"
-          :class="menu.type === 'label' ? 'label-menu' : null"
-        >
-          <div class="se-sidebarmenu--icon">
-            <span :class="menu.icon" />
-          </div>
-          <span
-            v-if="expandMenu"
-            class="se-sidebarmenu--label"
-          >{{ menu.label }}</span>
-        </router-link>
-        <a
-          v-else
-          :href="menu.path"
-          :class="menu.type === 'label' ? 'label-menu' : null"
-        >
-          <div
-            v-if="expandMenu"
-            class="no-wrap"
+        <template v-if="menu.type === 'submenu'">
+          <SubMenu
+            :menu="menu"
+            :expand-menu="expandMenu"
+          />
+        </template>
+        <template v-else>
+          <router-link
+            v-if="isVueRouter"
+            :to="menu.path"
+            :class="menu.type === 'label' ? 'label-menu' : null"
           >
-            <span class="se-sidebarmenu--icon">
-              <i :class="menu.icon" />
-            </span>
-            <span class="se-sidebarmenu--label">
-              {{ menu.label }}
-            </span>
-          </div>
-          <div
+            <div class="se-sidebarmenu--icon">
+              <span :class="menu.icon" />
+            </div>
+            <span
+              v-if="expandMenu"
+              class="se-sidebarmenu--label"
+            >{{ menu.label }}</span>
+          </router-link>
+          <a
             v-else
-            class="no-wrap"
+            :href="menu.path"
+            :class="menu.type === 'label' ? 'label-menu' : null"
           >
-            <span class="se-sidebarmenu--icon">
-              <i :class="menu.icon" />
-            </span>
-          </div>
-        </a>
+            <div
+              v-if="expandMenu"
+              class="no-wrap"
+            >
+              <span class="se-sidebarmenu--icon">
+                <i :class="menu.icon" />
+              </span>
+              <span class="se-sidebarmenu--label">
+                {{ menu.label }}
+              </span>
+            </div>
+            <div
+              v-else
+              class="no-wrap"
+            >
+              <span class="se-sidebarmenu--icon">
+                <i :class="menu.icon" />
+              </span>
+            </div>
+          </a>
+        </template>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import SubMenu from './components/SubMenu'
+
 export default {
   name: 'SESidebarMenu',
+  components: {
+    SubMenu
+  },
   props: {
     id: {
       type: String,

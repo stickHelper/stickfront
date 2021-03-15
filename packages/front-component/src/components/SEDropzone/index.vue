@@ -121,11 +121,11 @@ export default {
       }
     },
     maxExceed: function () {
-      console.error('Dropzone | ', `You can not upload any more files. Maximum ${this.dropzoneOptions.maxFiles} file`)
+      this.$log.error('Dropzone | ', `You can not upload any more files. Maximum ${this.dropzoneOptions.maxFiles} file`)
       this.$emit('error', `You can not upload any more files. Maximum ${this.dropzoneOptions.maxFiles} file`)
     },
     errorResponse: function (file, message, xhr) {
-      console.error('Dropzone | ', { file, message, xhr })
+      this.$log.error('Dropzone | ', { file, message, xhr })
       this.$emit('error', { file, message, xhr })
     },
     uploadSuccess: function (file, response) {

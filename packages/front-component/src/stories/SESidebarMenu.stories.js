@@ -19,7 +19,19 @@ const Template = (args, { argTypes }) => ({
       { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
       { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
       { label: 'Label 2', path: '', type: 'label', icon: '' },
-      { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+      {
+        label: 'menu 5',
+        path: '',
+        type: 'submenu',
+        icon: 'icon-stopwatch',
+        active: true,
+        subMenus: [
+          { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+          { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+          { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+          { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+        ]
+      }
     ]"
   >
     <img  src="${logo}" alt="logo" />
@@ -39,7 +51,19 @@ Default.parameters = {
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="/path/image" alt="logo" />
@@ -57,7 +81,19 @@ export const ExpandMenu = () => ({
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
   :isExpand="true"
 >
@@ -76,7 +112,19 @@ ExpandMenu.parameters = {
     { label: 'menu 2', path: '/menu2', type: 'url', icon: 'icon-apps' },
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
   :isExpand="true"
 >
@@ -99,7 +147,19 @@ export const Turquoise = () => ({
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />
@@ -120,7 +180,19 @@ Turquoise.parameters = {
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />
@@ -142,7 +214,19 @@ export const Yellow = () => ({
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />
@@ -163,7 +247,19 @@ Yellow.parameters = {
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />
@@ -185,7 +281,19 @@ export const Accent = () => ({
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />
@@ -206,7 +314,19 @@ Accent.parameters = {
     { label: 'menu 3', path: '/menu3', type: 'url', icon: 'icon-user' },
     { label: 'menu 4', path: '/menu4', type: 'url', icon: 'icon-trophy' },
     { label: 'Label 2', path: '', type: 'label', icon: '' },
-    { label: 'menu 5', path: '/menu5', type: 'url', icon: 'icon-stopwatch' }
+    {
+      label: 'menu 5',
+      path: '',
+      type: 'submenu',
+      icon: 'icon-stopwatch',
+      active: true,
+      subMenus: [
+        { label: 'sub menu 1', path: '/sub-menu1', type: 'url', active: true },
+        { label: 'sub menu 2', path: '/sub-menu2', type: 'url', active: true },
+        { label: 'sub menu 3', path: '/sub-menu3', type: 'url', active: true },
+        { label: 'sub menu 4', path: '/sub-menu4', type: 'url', active: true }
+      ]
+    }
   ]"
 >
   <img  src="${logo}" alt="logo" />

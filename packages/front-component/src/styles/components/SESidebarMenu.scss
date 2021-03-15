@@ -37,6 +37,11 @@
   &--label {
     margin-left: 16px;
     white-space: nowrap;
+    width: 100%;
+
+    display: inline-flex;
+    @include align-items(center);
+    @include justify-content(space-between);
     
   }
 
@@ -49,17 +54,24 @@
     list-style: none;
     .se-sidebarmenu--item {
       text-transform: capitalize;
-      padding: $gutter-xxs $gutter-md;
+      padding: 0;
 
       @include flexbox;
       @include align-items(center);
       @include justify-content(flex-start);
-      a {
+
+      &.submenu {
+        position: relative;
+      }
+  
+      a,
+      span.submenu-label {
+        position: relative;
         text-decoration: none;
         letter-spacing: 0;
         line-height: 16px;
         font-weight: 800;
-        padding: 12px ($gutter-md - 2);
+        padding: 12px ($gutter-lg + 4);
         width: 100%;
 
         @include flexbox;
@@ -70,7 +82,8 @@
         }
 
         &.router-link-exact-active,
-        &.router-link-active {
+        &.router-link-active,
+        &.active {
           @include border-radius(8px);
 
           &:hover {
@@ -91,6 +104,38 @@
             @include border-radius(8px);
           }
         }
+
+        .se-sidebarmenu--label {
+          width: 80%;
+        }
+      }
+      .submenu-list {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 73%;
+        list-style: none;
+        border-left: 1px solid $line;
+      }
+      .submenu-item {
+        a {
+          padding-left: $gutter-md - 2;
+          padding-right: $gutter-md - 2;
+
+          &:hover,
+          &.router-link-exact-active,
+          &.router-link-active,
+          &.active {
+            background-color: transparent !important;
+          }
+        }
+        .se-sidebarmenu--label {
+          margin: 0;
+
+          .se-sidebarmenu--icon {
+            float: right;
+          }
+        }
       }
     }
   }
@@ -102,25 +147,45 @@
       color: $white;
     }
     .se-sidebarmenu--item {
-      a {
+      a,
+      span.submenu-label {
         color: $white;
-
-        &:hover {
-          background-color: $yellow;
-        }
-
-        &.router-link-exact-active,
-        &.router-link-active {
-          background-color: $yellow;
-        }
+        cursor: pointer;
+        @include border-radius(0);
 
         &.label-menu {
           color: rgba($color: $white, $alpha: .64);
+          cursor: default;
           &:hover {
             background-color: transparent;
+            border-left: none;
           }
         }
       }
+
+      &:not(.label) {
+        a,
+        span.submenu-label {
+          &:hover,
+          &.router-link-exact-active,
+          &.router-link-active,
+          &.active {
+            background-color: rgba($color: $yellow, $alpha: .1);
+            color: $yellow;
+  
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              border-left: 2px solid $yellow;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -130,25 +195,45 @@
       color: $white;
     }
     .se-sidebarmenu--item {
-      a {
+      a,
+      span.submenu-label {
         color: $white;
-
-        &:hover {
-          background-color: $yellow;
-        }
-
-        &.router-link-exact-active,
-        &.router-link-active {
-          background-color: $yellow;
-        }
+        cursor: pointer;
+        @include border-radius(0);
 
         &.label-menu {
           color: rgba($color: $white, $alpha: .64);
+          cursor: default;
           &:hover {
             background-color: transparent;
+            border-left: none;
           }
         }
       }
+
+      &:not(.label) {
+        a,
+        span.submenu-label {
+          &:hover,
+          &.router-link-exact-active,
+          &.router-link-active,
+          &.active {
+            background-color: rgba($color: $yellow, $alpha: .1);
+            color: $yellow;
+  
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              border-left: 2px solid $yellow;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -158,25 +243,45 @@
       color: $white;
     }
     .se-sidebarmenu--item {
-      a {
+      a,
+      span.submenu-label {
         color: $white;
-
-        &:hover {
-          background-color: $purple;
-        }
-
-        &.router-link-exact-active,
-        &.router-link-active {
-          background-color: $purple;
-        }
+        cursor: pointer;
+        @include border-radius(0);
 
         &.label-menu {
           color: rgba($color: $white, $alpha: .64);
+          cursor: default;
           &:hover {
             background-color: transparent;
+            border-left: none;
           }
         }
       }
+
+      &:not(.label) {
+        a,
+        span.submenu-label {
+          &:hover,
+          &.router-link-exact-active,
+          &.router-link-active,
+          &.active {
+            background-color: rgba($color: $purple, $alpha: .1);
+            color: $purple;
+  
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              border-left: 2px solid $purple;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -186,27 +291,45 @@
       color: $white;
     }
     .se-sidebarmenu--item {
-      a {
+      a,
+      span.submenu-label {
         color: $text-normal;
-
-        &:hover {
-          background-color: $yellow;
-          color: $white;
-        }
-
-        &.router-link-exact-active,
-        &.router-link-active {
-          background-color: $yellow;
-          color: $white;
-        }
+        cursor: pointer;
+        @include border-radius(0);
 
         &.label-menu {
           color: $text-subtitle;
+          cursor: default;
           &:hover {
             background-color: transparent;
+            border-left: none;
           }
         }
       }
+
+      &:not(.label) {
+        a,
+        span.submenu-label {
+          &:hover,
+          &.router-link-exact-active,
+          &.router-link-active,
+          &.active {
+            background-color: rgba($color: $purple, $alpha: .1);
+            color: $purple;
+  
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              border-left: 2px solid $purple;
+            }
+          }
+        }
+      }
+
     }
   }
   
