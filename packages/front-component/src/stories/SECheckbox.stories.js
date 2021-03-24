@@ -2,7 +2,7 @@ import SECheckbox from '@/components/SECheckbox/index.vue'
 import '@/styles/index.scss'
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Data Entry/Checkbox',
   component: SECheckbox,
   argTypes: {
     size: { control: { type: 'select', options: ['small'] } },

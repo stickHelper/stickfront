@@ -18,7 +18,7 @@ Components
 @import './components/SESkeleton';
 @import './components/SETextfield';
 @import './components/SETextarea';
-// @import './components/SEBadge';
+@import './components/SEDropdown';
 @import './components/SEBreadcrumbs.scss';
 @import './components/SEChart';
 @import './components/SECheckbox';
@@ -42,3 +42,4 @@ Components
 @import './components/SEDropzone';
 @import './components/SEDateRangePicker';
 @import './components/SEMediaUploader';
+@import './components/SESelect';

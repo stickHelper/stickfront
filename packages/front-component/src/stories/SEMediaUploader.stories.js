@@ -2,7 +2,7 @@ import '@/styles/index.scss'
 import SEMediaUploader from '@/components/SEMediaUploader/index.vue'
 
 export default {
-  title: 'Components/Media Uploader',
+  title: 'Data Entry/Media Uploader',
   component: SEMediaUploader
 }
 

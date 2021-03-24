@@ -13,10 +13,14 @@
       v-model="date"
       :value="valueInput"
       value-type="format"
-      placeholder="Please select date"
-      @change="dateChange($event)"
+      :type="type"
+      :placeholder="placeholder"
+      @change="dateChange"
     />
-    <div class="se-datepicker--info">
+    <div class="se-datepicker__helper">
+      {{ helper }}
+    </div>
+    <div class="se-datepicker__info">
       {{ info }}
     </div>
   </div>
@@ -46,7 +50,10 @@ export default {
     },
     type: {
       type: String,
-      default: 'date'
+      default: 'date',
+      validator: function (value) {
+        return ['date', 'month', 'year', 'datetime', 'time', 'week'].indexOf(value) !== -1
+      }
     },
     labelName: {
       type: String,
@@ -54,7 +61,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Placeholder'
+      default: ''
     },
     isDisabled: {
       type: Boolean,
@@ -76,6 +83,10 @@ export default {
       type: String,
       default: null
     },
+    helper: {
+      type: String,
+      default: null
+    },
     size: {
       type: String,
       default: null,
@@ -93,7 +104,7 @@ export default {
     classes() {
       return {
         'se-datepicker': true,
-        [`se-datepicker--${this.size}`]: this.size !== null,
+        [`se-datepicker__${this.size}`]: this.size !== null,
         [this.className]: this.className !== null,
         disabled: this.isDisabled,
         error: this.isError,
@@ -106,6 +117,7 @@ export default {
   },
   methods: {
     dateChange(value) {
+      console.log('value', value)
       this.$emit('change', value)
     }
   }

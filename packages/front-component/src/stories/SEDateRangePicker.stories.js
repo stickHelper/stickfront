@@ -4,7 +4,7 @@ import '@/styles/index.scss'
 import '@/styles/icon/se-font.min.scss'
 
 export default {
-  title: 'Components/DateRangePicker',
+  title: 'Data Entry/DateRangePicker',
   component: SEDateRangePicker
 }
 

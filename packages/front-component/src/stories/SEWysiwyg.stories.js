@@ -1,7 +1,7 @@
 import SEWysiwyg from '@/components/SEWysiwyg/index.vue'
 
 export default {
-  title: 'Components/Wysiwyg',
+  title: 'Data Entry/Wysiwyg',
   component: SEWysiwyg
 }
 

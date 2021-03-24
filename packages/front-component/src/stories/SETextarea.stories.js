@@ -3,7 +3,7 @@ import '@/styles/index.scss'
 import '@/styles/icon/se-font.min.scss'
 
 export default {
-  title: 'Components/Textarea',
+  title: 'Data Entry/Textarea',
   component: SETextarea
 }
 

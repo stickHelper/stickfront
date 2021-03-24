@@ -13,6 +13,7 @@ import SECheckbox from './components/SECheckbox/index.vue'
 import SECol from './components/SECol/index.vue'
 import SECombobox from './components/SECombobox/index.vue'
 import SEDatatable from './components/SEDatatable/index.vue'
+import SEDropdown from './components/SEDropdown/index.vue'
 import SEDatepicker from './components/SEDatepicker/index.vue'
 import SEDropzone from './components/SEDropzone/index.vue'
 import SEDateRangePicker from './components/SEDateRangePicker/index.vue'
@@ -50,6 +51,7 @@ const components = {
   SECol,
   SECombobox,
   SEDatatable,
+  SEDropdown,
   SEDatepicker,
   SEDateRangePicker,
   SEImg,

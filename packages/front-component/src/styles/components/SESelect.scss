@@ -1,0 +1,68 @@
+.se-select {
+  position: relative;
+
+  .label-name {
+    margin-bottom: $gutter-sm;
+    color: $text-normal;
+    line-height: 22px;
+
+    .asterisk {
+      font-size: $text-xs;
+      color: $error;
+    }
+  }
+  &__info,
+  &__helper {
+    font-size: $text-xs;
+    line-height: 20px;
+  }
+
+  .ant-select {
+    &:not(.ant-select-disabled) {
+      .ant-select-selection {
+        background-color: $accent;
+        border-color: $line;
+        
+        @include border-radius(6px);
+
+        &:active,
+        &:focus,
+        &:hover {
+          border-color: $accent;
+          @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
+        }
+      }
+    }
+
+    .ant-select-selection--multiple {
+      .ant-select-selection__choice {
+        background-color: $line;
+        color: $text-normal;
+        @include border-radius(99px);
+      }
+    }
+  }
+
+  &.error {
+    .label-name,
+    .se-select__info {
+      color: $red;
+    }
+
+    .ant-select-selection {
+      border-color: $red;
+    }
+    
+  }
+
+  &.success {
+    .label-name,
+    .se-select__info {
+      color: $purple;
+    }
+
+    .ant-select-selection {
+      border-color: $purple;
+    }
+  }
+}

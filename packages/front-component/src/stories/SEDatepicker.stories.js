@@ -1,59 +1,82 @@
 import SEDatepicker from '@/components/SEDatepicker/index.vue'
+import SESpace from '@/components/SESpace/index.vue'
+
 import '@/styles/index.scss'
 import '@/styles/icon/se-font.min.scss'
 
 export default {
-  title: 'Components/Datepicker',
-  component: SEDatepicker
+  title: 'Data Entry/Datepicker',
+  component: SEDatepicker,
+  argTypes: {
+    type: { control: { type: 'select', options: ['date', 'month', 'year', 'datetime', 'time', 'week'] } }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEDatepicker },
-  template: '<SEDatepicker />'
+  template: `<div>
+  <SEDatepicker />
+  <br/>
+  <SEDatepicker label-name="Label Info" />
+  <br />
+  <SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" />  
+</div>`
 })
 
 export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: '<SEDatepicker />'
-    }
-  }
-}
+      code: `<div>
+  <SEDatepicker />
 
-export const Label = () => ({
-  components: { SEDatepicker },
-  template: '<SEDatepicker label-name="Label info" />'
-})
+  <SEDatepicker label-name="Label Info" />
 
-Label.parameters = {
-  docs: {
-    source: {
-      code: '<SEDatepicker label-name="Label info" />'
+  <SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" />  
+</div>`
     }
   }
 }
 
 export const Info = () => ({
   components: { SEDatepicker },
-  template: '<SEDatepicker info="Message info" />'
+  template: `<div>
+  <SEDatepicker label-name="Label Info" info="Message info" />
+  <br />
+  <SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" isError /> 
+  <br />
+  <SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" isSuccess />
+</div>`
 })
 
 Info.parameters = {
   docs: {
     source: {
-      code: '<SEDatepicker info="Message info" />'
+      code: `<SEDatepicker label-name="Label Info" info="Message info" />
+
+<SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" isError /> 
+
+<SEDatepicker label-name="Label Info" helper="Helper text" info="Message info" isSuccess />`
     }
   }
 }
 
-export const Error = (args) => ({
-  components: { SEDatepicker },
-  template: '<SEDatepicker label-name="Label error" :isError="true" info="Message Error" />'
+export const Type = (args) => ({
+  components: { SEDatepicker, SESpace },
+  template: `<div>
+<SESpace>
+  <SEDatepicker label-name="Date (Default)" />
+  <SEDatepicker label-name="Month" type="month" />
+  <SEDatepicker label-name="Year" type="year" />
+  <SEDatepicker label-name="Datetime" type="datetime" />
+  <SEDatepicker label-name="Time" type="time" />
+  <SEDatepicker label-name="Week" type="week" />
+</SESpace>  
+</div>`
 })
 
-Error.parameters = {
+Type.parameters = {
   docs: {
     source: {
       code: '<SEDatepicker label-name="Label error" :isError="true" info="Message Error" />'

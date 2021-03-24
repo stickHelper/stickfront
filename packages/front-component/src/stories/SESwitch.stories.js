@@ -2,7 +2,7 @@ import SESwitch from '@/components/SESwitch/index.vue'
 import '@/styles/index.scss'
 
 export default {
-  title: 'Components/Switch',
+  title: 'Data Entry/Switch',
   component: SESwitch
 }
 

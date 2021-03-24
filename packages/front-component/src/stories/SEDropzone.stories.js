@@ -2,7 +2,7 @@ import SEDropzone from '@/components/SEDropzone/index.vue'
 import '@/styles/index.scss'
 
 export default {
-  title: 'Components/Dropzone',
+  title: 'Data Entry/Dropzone',
   component: SEDropzone
 }
 
