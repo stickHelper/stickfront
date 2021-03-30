@@ -1,116 +1,21 @@
-.se-datepicker {
-  position: relative;
-  // height: 116px;
-
-  @include flexbox;
-  @include flex-direction(column);
-
-  label {
-    margin-bottom: $gutter-sm;
-  }
-
-  input {
-    border: 1px solid $line;
-    outline: none;
-    padding: 0 $gutter-md;
-    margin-bottom: $gutter-sm;
+.ant-calendar-picker {
+  .ant-input:not(.ant-input-disabled) {
     font-size: $text-sm;
     background-color: $accent;
-    color: $text-normal;
-    height: auto;
-    min-height: 42px;
     @include border-radius(6px);
+  }
 
-    &::placeholder {
-      color: $text-subtitle;
-    }
-
-    &:active,
-    &:focus,
-    &:hover {
-      border-color: $accent;
+  &:active,
+  &:focus,
+  &:hover {
+    .ant-calendar-picker-input:not(.ant-input-disabled) {
+      border-color: $accent !important;
       @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
     }
   }
 
-  &__info,
-  &__helper {
-    font-size: $text-xs;
-    line-height: 20px;
-  }
-
-  &__small {
-    input {
-      padding: 0 $gutter-md;
-      min-height: 32px;
-    }
-    i {
-      top: 40% !important;
-    }
-  }
-
-  .mx-datepicker {
-    width: 100%;
-  }
-
-  &.error {
-    label,
-    input,
-    .icon,
-    .se-datepicker__info {
-      color: $red;
-    }
-
-    input {
-      border: 1px solid $red;
-    }
-    
-  }
-
-  &.success {
-    label,
-    .icon,
-    .se-datepicker__info {
-      color: $purple;
-    }
-
-    input {
-      border: 1px solid $purple;
-    }
-  }
-
-  &.disabled {
-    .icon {
-      color: $white;
-    }
-    input {
-      cursor: not-allowed;
-      background-color: $disabled;
-      color: $text-normal;
-
-      &::placeholder {
-        color: $line;
-      }
-    }
-  }
-
-  &.error,
-  &.success,
-  &.disabled {
-    input {
-      padding-right: 35px;
-    }
-    i {
-      top: 45%;
-      transform: translateY(-50%);
-    }
-  }
-
-  i {
-    font-size: $text-md + 2;
-    position: absolute;
-    top: 45%;
-    right: $gutter-md;
-    transform: translateY(-50%);
+  .ant-input-lg {
+    height: 42px;
+    font-size: $text-sm;
   }
 }

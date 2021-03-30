@@ -1,4 +1,5 @@
 import SESwitch from '@/components/SESwitch/index.vue'
+import SESpace from '@/components/SESpace/index.vue'
 import '@/styles/index.scss'
 
 export default {
@@ -8,20 +9,22 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SESwitch },
-  template: `<div>
+  components: { SESwitch, SESpace },
+  template: `<SESpace size="middle">
   <SESwitch
     id="value1"
-    name="default"
-    value="value1"
-    class-name="mb-xs-2"
   />
   <SESwitch
     id="value2"
-    name="default"
-    value="value2"
+    default-checked
+    disabled
   />
-  </div>`
+  <SESwitch
+    id="value2"
+    default-checked
+    loading
+  />
+  </SESpace>`
 })
 
 export const Default = Template.bind({})
@@ -29,35 +32,35 @@ Default.parameters = {
   docs: {
     source: {
       code: `<SESwitch
-  name="default"
-  value="value1"
-  :checked="true"
+  id="value1"
 />
+
 <SESwitch
-  id="own"
-  name="default"
-  value="value1"
+  id="value2"
+  default-checked
+  disabled
+/>
+
+<SESwitch
+  id="value2"
+  default-checked
+  loading
 />`
     }
   }
 }
 
 export const Size = () => ({
-  components: { SESwitch },
-  template: `<div>
+  components: { SESwitch, SESpace },
+  template: `<SESpace size="middle">
     <SESwitch
       id="valueSmall1"
-      name="default"
-      value="valueSmall1"
-      class-name="mb-xs-2"
       size="small"
     />
     <SESwitch
       id="valueSmall2"
-      name="default"
-      value="valueSmall2"
     />
-  </div>
+  </SESpace>
   `
 })
 
@@ -66,17 +69,56 @@ Size.parameters = {
     source: {
       code: `<SESwitch
   id="valueSmall1"
-  name="default"
-  value="valueSmall1"
-  class-name="mb-xs-2"
   size="small"
 />
+
 <SESwitch
   id="valueSmall2"
-  name="default"
-  value="valueSmall2"
 />
       `
+    }
+  }
+}
+
+export const Colors = () => ({
+  components: { SESwitch, SESpace },
+  template: `<SESpace size="middle">
+    <SESwitch
+      id="valueSmall1"
+      default-checked
+    />
+    <SESwitch
+      id="valueSmall2"
+      color="purple"
+      default-checked
+    />
+    <SESwitch
+      id="valueSmall2"
+      color="yellow"
+      default-checked
+    />
+  </SESpace>
+  `
+})
+Colors.parameters = {
+  docs: {
+    source: {
+      code: `<SESwitch
+  id="valueSmall1"
+  default-checked
+/>
+
+<SESwitch
+  id="valueSmall2"
+  color="purple"
+  default-checked
+/>
+
+<SESwitch
+  id="valueSmall2"
+  color="yellow"
+  default-checked
+/>`
     }
   }
 }

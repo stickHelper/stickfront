@@ -1,6 +1,84 @@
 .se-select {
   position: relative;
 
+  &.show-list {
+    .ant-select {
+      .ant-select-selection--multiple {
+        @include border-radius-bottom(0 !important)
+      }
+    }
+  }
+
+  .multiple-list {
+    list-style: none;
+    padding: $gutter-sm;
+    background-color: $accent;
+    border: 1px solid $line;
+
+    @include border-radius-bottom(6px);
+    @include flexbox;
+
+    .ant-select-selection__choice {
+      background-color: $line;
+      color: $text-normal;
+      font-size: $text-xs;
+      font-weight: 600;
+      height: 24px;
+      margin-top: 3px;
+      line-height: 22px;
+      position: relative;
+      float: left;
+      max-width: 99%;
+      margin-right: 4px;
+      padding: 0 20px 0 10px;
+      overflow: hidden;
+      border: 1px solid $line;
+      cursor: default;
+      transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      @include border-radius(99px);
+      
+      &__content {
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+  
+      &__remove {
+        color: inherit;
+        font-style: normal;
+        line-height: 0;
+        text-align: center;
+        text-transform: none;
+        vertical-align: -0.125em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        right: 4px;
+        color: rgba(0, 0, 0, 0.45);
+        font-weight: bold;
+        line-height: inherit;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        font-size: $text-xs;
+        transform: scale(0.83333333) rotate(0deg);
+      }
+    }
+
+  }
+
+  &__large {
+    .ant-select-lg {
+      font-size: $text-sm;
+      height: 42px;
+    }
+  }
+
   .label-name {
     margin-bottom: $gutter-sm;
     color: $text-normal;
@@ -36,9 +114,10 @@
 
     .ant-select-selection--multiple {
       .ant-select-selection__choice {
-        background-color: $line;
-        color: $text-normal;
-        @include border-radius(99px);
+        display: none;
+      }
+      .ant-select-selection__rendered {
+        margin-left: $gutter-sm;
       }
     }
   }

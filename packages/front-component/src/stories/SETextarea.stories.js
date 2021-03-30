@@ -10,66 +10,91 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SETextarea },
-  template: '<SETextarea />'
+  template: `<div>
+  <SETextarea autoSize />
+  
+  <br />
+
+  <SETextarea
+    placeholder="Placeholder"
+    label-name="Label Info"
+    :autoSize="{ minRows: 2, maxRows: 6 }"
+  />
+
+  <br />
+
+  <SETextarea
+    placeholder="Placeholder"
+    label-name="Label Info"
+    helper="Helper text"
+    info="Message info"
+    :autoSize="{ minRows: 3, maxRows: 5 }"
+  />
+</div>`
 })
 
 export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: '<SETextarea />'
-    }
-  }
-}
+      code: `<SETextarea autoSize />
 
-export const Label = () => ({
-  components: { SETextarea },
-  template: '<SETextarea label-name="Label info" />'
-})
+<SETextarea
+  placeholder="Placeholder"
+  label-name="Label Info"
+  :autoSize="{ minRows: 2, maxRows: 6 }"
+/>
 
-Label.parameters = {
-  docs: {
-    source: {
-      code: '<SETextarea label-name="Label info" />'
+<SETextarea
+  placeholder="Placeholder"
+  label-name="Label Info"
+  helper="Helper text"
+  info="Message info"
+  :autoSize="{ minRows: 3, maxRows: 5 }"
+/>
+`
     }
   }
 }
 
 export const Info = () => ({
   components: { SETextarea },
-  template: '<SETextarea info="Message info" />'
+  template: `<div>
+  <SETextarea label-name="Label info" info="Message info" />
+
+  <br />
+
+  <SETextarea label-name="Label error" :isError="true" info="Message Error" />
+
+  <br />
+
+  <SETextarea label-name="Label success" :isSuccess="true" info="Message Success" />
+
+</div>`
 })
 
 Info.parameters = {
   docs: {
     source: {
-      code: '<SETextarea info="Message info" />'
+      code: `<SETextarea label-name="Label info" info="Message info" />
+
+<SETextarea label-name="Label error" :isError="true" info="Message Error" />
+
+<SETextarea label-name="Label success" :isSuccess="true" info="Message Success" />    
+`
     }
   }
 }
 
-export const Error = (args) => ({
+export const Disabled = (args) => ({
   components: { SETextarea },
-  template: '<SETextarea label-name="Label error" :isError="true" info="Message Error" />'
+  template: '<SETextarea disabled />'
 })
 
-Error.parameters = {
+Disabled.parameters = {
   docs: {
     source: {
-      code: '<SETextarea label-name="Label error" :isError="true" info="Message Error" />'
-    }
-  }
-}
-
-export const Icon = (args) => ({
-  components: { SETextarea },
-  template: '<SETextarea icon="icon-check" />'
-})
-
-Icon.parameters = {
-  docs: {
-    source: {
-      code: '<SETextarea icon="icon-check" />'
+      code: '<SETextarea disabled  />'
     }
   }
 }

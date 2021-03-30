@@ -14,10 +14,7 @@
 </template>
 
 <script>
-// import Vue from 'vue'
 import { Radio } from 'ant-design-vue'
-
-// Vue.use(Radio)
 
 export default {
   name: 'SERadio',

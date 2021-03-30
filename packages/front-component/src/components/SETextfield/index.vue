@@ -5,16 +5,47 @@
   >
     <label v-if="labelName && labelName !== ''">
       {{ labelName }}
+      <span v-if="isRequired" class="asterisk">*</span>
     </label>
 
     <div class="se-textfield__field">
-      <a-input
+      <a-input-password
+        v-if="type === 'password'"
+        v-model="currentValue"
         :placeholder="placeholder"
         :size="size"
         :disabled="disabled"
         :addon-before="addonBefore"
         :addon-after="addonAfter"
         :default-value="defaultValue"
+        :allow-clear="allowClear"
+        @change="onChange"
+        @pressEnter="onChange"
+      >
+        <template slot="prefix">
+          <slot name="prefix" />
+        </template>
+        <template slot="suffix">
+          <slot name="suffix" />
+        </template>
+        <template slot="addonBefore">
+          <slot name="addonBefore" />
+        </template>
+        <template slot="addonAfter">
+          <slot name="addonAfter" />
+        </template>
+      </a-input-password>
+
+      <a-input
+        v-else
+        v-model="currentValue"
+        :placeholder="placeholder"
+        :size="size"
+        :disabled="disabled"
+        :addon-before="addonBefore"
+        :addon-after="addonAfter"
+        :default-value="defaultValue"
+        :allow-clear="allowClear"
         @change="onChange"
         @pressEnter="onChange"
       >
@@ -33,11 +64,13 @@
       </a-input>
     </div>
 
-    <div class="se-textfield__helper">
-      {{ helper }}
-    </div>
-    <div class="se-textfield__info">
-      {{ info }}
+    <div v-if="helper || info" class="mt-xs-2">
+      <div class="se-textfield__helper">
+        {{ helper }}
+      </div>
+      <div class="se-textfield__info">
+        {{ info }}
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +81,8 @@ import { Input } from 'ant-design-vue'
 export default {
   name: 'SETextfield',
   components: {
-    'a-input': Input
+    'a-input': Input,
+    'a-input-password': Input.Password
   },
   props: {
     id: {
@@ -58,6 +92,10 @@ export default {
     className: {
       type: String,
       default: null
+    },
+    type: {
+      type: String,
+      default: 'text'
     },
     labelName: {
       type: String,
@@ -106,6 +144,14 @@ export default {
       type: String,
       default: null
     },
+    allowClear: {
+      type: Boolean,
+      default: false
+    },
+    isRequired: {
+      type: Boolean,
+      default: false
+    },
     addonBefore: {
       type: String,
       default: null
@@ -114,6 +160,7 @@ export default {
   data() {
     return {
       tags: [],
+      currentValue: this.value,
       showList: false
     }
   },

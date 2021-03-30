@@ -1,6 +1,7 @@
 
 .se-radio {
   position: relative;
+  display: inherit;
   .ant-radio-wrapper {
     @include flexbox;
     @include align-items(center);
@@ -40,6 +41,23 @@
 
   &__group {
     position: inherit;
+
+    .label-name {
+      margin-bottom: $gutter-sm;
+      color: $text-normal;
+      line-height: 22px;
+  
+      .asterisk {
+        font-size: $text-xs;
+        color: $error;
+      }
+    }
+
+    &-info,
+    &-helper {
+      font-size: $text-xs;
+      line-height: 20px;
+    }
 
     .ant-radio-group-large .ant-radio-button-wrapper {
       height: 46px;
@@ -89,7 +107,7 @@
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
   color: $purple !important;
   border-color: $purple !important;
-  box-shadow: -1px 0 0 0 $purple !important;
+  box-shadow: 0 0 0 0 $purple !important;
   background: rgba($color: $purple, $alpha: .08) !important;
 }
 

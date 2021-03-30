@@ -7,22 +7,33 @@
       {{ labelName }}
       <span v-if="isRequired" class="asterisk">*</span>
     </div>
-
-    <RadioGroup
-      v-model="currentValue"
-      :default-value="defaultValue"
-      :disabled="disabled"
-      :size="size"
-      @change="onChange"
-    >
-      <slot />
-    </RadioGroup>
+    <template v-if="options.length">
+      <CheckboxGroup
+        v-model="currentValue"
+        :default-value="defaultValue"
+        :disabled="disabled"
+        :size="size"
+        :options="options"
+        @change="onChange"
+      />
+    </template>
+    <template v-else>
+      <CheckboxGroup
+        v-model="currentValue"
+        :default-value="defaultValue"
+        :disabled="disabled"
+        :size="size"
+        @change="onChange"
+      >
+        <slot />
+      </CheckboxGroup>
+    </template>
 
     <div v-if="helper || info" class="mt-xs-2">
-      <div class="se-radio__group-helper">
+      <div class="se-checkbox__group-helper">
         {{ helper }}
       </div>
-      <div class="se-radio__group-info">
+      <div class="se-checkbox__group-info">
         {{ info }}
       </div>
     </div>
@@ -31,14 +42,14 @@
 
 <script>
 // import Vue from 'vue'
-import { Radio } from 'ant-design-vue'
+import { Checkbox } from 'ant-design-vue'
 
-// Vue.use(Radio)
+// Vue.use(checkbox)
 
 export default {
-  name: 'SERadioGroup',
+  name: 'SECheckboxGroup',
   components: {
-    RadioGroup: Radio.Group
+    CheckboxGroup: Checkbox.Group
   },
   model: {
     prop: 'value',
@@ -66,8 +77,8 @@ export default {
       default: () => []
     },
     defaultValue: {
-      type: [String, Number, Boolean],
-      default: null
+      type: Array,
+      default: () => []
     },
     disabled: {
       type: Boolean,
@@ -81,15 +92,8 @@ export default {
       }
     },
     value: {
-      type: [String, Number],
-      default: null
-    },
-    buttonStyle: {
-      type: String,
-      default: 'outline',
-      validator: function (value) {
-        return ['outline', 'solid'].indexOf(value) !== -1
-      }
+      type: Array,
+      default: () => []
     },
     isRequired: {
       type: Boolean,
@@ -120,9 +124,9 @@ export default {
   computed: {
     classes() {
       return {
-        'se-radio__group': true,
+        'se-checkbox__group': true,
         [this.className]: this.className !== null,
-        [`se-radio__group-${this.size}`]: this.size !== null,
+        [`se-checkbox__group-${this.size}`]: this.size !== null,
         disabled: this.disabled,
         error: this.isError,
         success: this.isSuccess
@@ -130,8 +134,8 @@ export default {
     }
   },
   methods: {
-    onChange(e) {
-      this.$emit('change', e.target.value)
+    onChange(checkedValues) {
+      this.$emit('change', checkedValues)
     }
   }
 }

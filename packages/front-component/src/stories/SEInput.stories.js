@@ -256,7 +256,29 @@ export const InputGroup = (args) => ({
 InputGroup.parameters = {
   docs: {
     source: {
-      code: '<SETextfield addon-before="Http://" addon-after=".com" default-value="mysite" />'
+      code: `<SEInputGroup>
+  <SERow>
+    <SECol :span="5">
+      <SETextfield default-value="0571" />
+    </SECol>
+    <SECol :span="8">
+      <SETextfield default-value="26888888" />
+    </SECol>
+  </SERow>
+</SEInputGroup>`
+    }
+  }
+}
+
+export const Password = (args) => ({
+  components: { SETextfield },
+  template: '<SETextfield type="password" />'
+})
+
+Password.parameters = {
+  docs: {
+    source: {
+      code: '<SETextfield type="password"  />'
     }
   }
 }

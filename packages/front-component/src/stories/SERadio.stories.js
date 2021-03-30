@@ -90,7 +90,6 @@ export const RadioButton = () => ({
     className="group-button"
     name="radioGroup"
     default-value="a"
-    :default-value="1"
   >
     <SERadioButton value="a" :style="'width: 24%; margin-right: 10px;'">
       Hangzhou
@@ -111,7 +110,6 @@ export const RadioButton = () => ({
     name="large"
     size="large"
     default-value="a"
-    :default-value="1"
   >
     <SERadioButton value="a" :style="'width: 24%; margin-right: 10px;'">
       Hangzhou
@@ -130,29 +128,47 @@ export const RadioButton = () => ({
   `
 })
 
-RadioButton.args = {
-  value: 'a'
-}
-
 RadioButton.parameters = {
   docs: {
     source: {
       code: `<SERadioGroup
+  className="group-button"
   name="radioGroup"
-  :default-value="1"
+  default-value="a"
 >
-  <SERadio :value="1">
-    A
-  </SERadio>
-  <SERadio :value="2">
-    B
-  </SERadio>
-  <SERadio :value="3">
-    C
-  </SERadio>
-  <SERadio :value="4">
-    D
-  </SERadio>
+  <SERadioButton value="a" :style="'width: 24%; margin-right: 10px;'">
+    Hangzhou
+  </SERadioButton>
+  <SERadioButton value="b" :style="'width: 24%; margin-right: 10px;'">
+    Shanghai
+  </SERadioButton>
+  <SERadioButton value="c" :style="'width: 24%; margin-right: 10px;'">
+    Beijing
+  </SERadioButton>
+  <SERadioButton value="d" :style="'width: 24%'">
+    Chengdu
+  </SERadioButton>
+</SERadioGroup>
+
+
+<SERadioGroup
+  className="group-button"
+  name="large"
+  size="large"
+  default-value="a"
+>
+  <SERadioButton value="a" :style="'width: 24%; margin-right: 10px;'">
+    Hangzhou
+  </SERadioButton>
+  <SERadioButton value="b" :style="'width: 24%; margin-right: 10px;'">
+    Shanghai
+  </SERadioButton>
+  <SERadioButton value="c" :style="'width: 24%; margin-right: 10px;'">
+    Beijing
+  </SERadioButton>
+  <SERadioButton value="d" :style="'width: 24%'">
+    Chengdu
+  </SERadioButton>
 </SERadioGroup>`
     }
   }

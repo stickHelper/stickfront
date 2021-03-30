@@ -4,7 +4,7 @@ import SEIcon from '@/components/SEIcon/index.vue'
 import { Space } from 'ant-design-vue'
 
 export default {
-  title: 'Data Entry/Button',
+  title: 'Components/Button',
   component: SEButton,
   argTypes: {
     color: { control: { type: 'select', options: ['primary', 'secondary', 'accent', 'normal', 'dark', 'line', 'error', 'red', 'salmon', 'turquoise', 'blue', 'light-blue'] } },

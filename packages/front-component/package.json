@@ -48,7 +48,8 @@
     "vue2-datepicker": "^3.7.0",
     "vue2-daterange-picker": "^0.6.2",
     "vue2-dropzone": "^3.6.0",
-    "vuejs-logger": "^1.5.5"
+    "vuejs-logger": "^1.5.5",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",

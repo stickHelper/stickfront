@@ -21,20 +21,22 @@
     input {
       border: 1px solid $line;
       outline: none;
-      margin-bottom: $gutter-sm;
       background-color: $accent;
       width: 100%;
+      font-size: $text-sm;
       @include border-radius(6px);
   
       &::placeholder {
         color: $text-subtitle;
       }
   
-      &:active,
-      &:focus,
-      &:hover {
-        border-color: $accent;
-        @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
+      &:not(.ant-input-disabled) {
+        &:active,
+        &:focus,
+        &:hover {
+          border-color: $accent;
+          @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
+        }
       }
     }
 
