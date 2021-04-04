@@ -42,8 +42,8 @@ Default.parameters = {
 </div>
 
 <div>
-  <SETag shape="rounded">Basic</SETag>
-  <SETag shape="rounded" size="large">Basic</SETag>
+  <SETag shape="round">Basic</SETag>
+  <SETag shape="round" size="large">Basic</SETag>
 </div>
       `
     }

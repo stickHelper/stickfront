@@ -8,155 +8,76 @@
 
   label {
     margin-bottom: $gutter-sm;
-  }
+    color: $text-normal;
+    line-height: 22px;
 
-  input {
-    border: 1px solid $line;
-    outline: none;
-    padding: ($gutter-md - 4) $text-md;
-    margin-bottom: $gutter-sm;
-    font-size: $text-md;
-    background-color: $accent;
-    width: 100%;
-    @include border-radius(8px);
-
-    &::placeholder {
-      color: $text-subtitle;
-    }
-
-    &:active,
-    &:focus {
-      border: 1px solid $yellow;
-    }
-
-    &:focus + label {
-      color: $yellow;
+    .asterisk {
+      font-size: $text-xs;
+      color: $error;
     }
   }
 
-  &--tags {
-    padding: ($gutter-sm + $gutter-xs) $gutter-md;
-    border: 1px solid $line;
-    background-color: $accent;
-    margin-bottom: $gutter-sm;
-
-    @include border-radius(8px);
-
+  &__field {
     input {
-      border: none;
-      margin-bottom: 0;
-
-      &:active,
-      &:focus {
-        border: none;
-      }
-    }
-
-    .tags-list {
-      padding-top: $gutter-sm;
-      border-top: 1px solid $line;
-    }
-
-    .se-badge {
-      margin-bottom: $gutter-sm;
-      &:not(:last-of-type) {
-        margin-right: $gutter-sm;
-      }
-      i {
-        font-size: $text-sm;
-        top: 50%;
-        cursor: pointer;
-      }
-    }
-
-    &-dropdown {
-      list-style: none;
-      position: absolute;
-      top: 3.6rem;
-      left: 0;
-      padding-top: $gutter-xs;
-      padding-bottom: $gutter-xs;
-      background-color: $white;
       border: 1px solid $line;
+      outline: none;
+      background-color: $accent;
       width: 100%;
-      max-height: 170px;
-      overflow-y: auto;
-      z-index: 99;
-      
-      @include box-shadow(0px 4px 8px rgba(112, 116, 138, 0.24));
-      @include border-radius(8px);
-
-      .tag-items {
-        padding: $gutter-sm $gutter-md;
-        cursor: pointer;
+      font-size: $text-sm;
+      @include border-radius(6px);
+  
+      &::placeholder {
+        color: $text-subtitle;
+      }
+  
+      &:not(.ant-input-disabled) {
+        &:active,
+        &:focus,
         &:hover {
-          background-color: rgba($color: $accent, $alpha: .5);
+          border-color: $accent;
+          @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
         }
+      }
+    }
 
-        &.empty {
-          cursor: not-allowed;
-          background-color: rgba($color: $text-subtitle, $alpha: .25);
-        }
+    .ant-input-affix-wrapper {
+      .ant-input-prefix,
+      .ant-input-suffix {
+        top: 43%;
       }
     }
   }
 
-  &--small {
-    input {
-      padding: $gutter-xs $gutter-md;
-    }
-  }
 
-  &--info {
-    font-size: $text-sm;
-    font-weight: bold;
+  &__info,
+  &__helper {
+    font-size: $text-xs;
+    line-height: 20px;
   }
 
   &.error {
     label,
     input,
     .icon,
-    .se-textfield--info {
+    .se-textfield__info {
       color: $red;
-    }
-    .se-textfield--tags {
-      border: 1px solid $red;
-      input {
-        border: none;
-        color: $text-normal;
-      }
     }
 
     input {
-      border: 1px solid $red;
+      border-color: $red;
     }
     
-  }
-
-  &.active {
-    .se-textfield--tags {
-      border: 1px solid $yellow;
-      input {
-        border: none;
-      }
-    }
   }
 
   &.success {
     label,
     .icon,
-    .se-textfield--info {
+    .se-textfield__info {
       color: $purple;
-    }
-    .se-textfield--tags {
-      border: 1px solid $purple;
-      input {
-        border: none;
-      }
     }
 
     input {
-      border: 1px solid $purple;
+      border-color: $purple;
     }
   }
 
@@ -166,7 +87,7 @@
     }
     input {
       cursor: not-allowed;
-      background-color: $text-subtitle;
+      background-color: $disabled;
       color: $white;
 
       &::placeholder {
@@ -185,13 +106,5 @@
       top: 40%;
       transform: translateY(-50%);
     }
-  }
-
-  i {
-    font-size: $text-md + 2;
-    position: absolute;
-    top: 40%;
-    right: $gutter-md;
-    transform: translateY(-50%);
   }
 }

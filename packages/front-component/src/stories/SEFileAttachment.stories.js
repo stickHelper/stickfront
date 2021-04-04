@@ -1,7 +1,7 @@
 import SEFileAttachment from '@/components/SEFileAttachment/index.vue'
 
 export default {
-  title: 'Components/File Attachment',
+  title: 'Data Entry/File Attachment',
   component: SEFileAttachment
 }
 

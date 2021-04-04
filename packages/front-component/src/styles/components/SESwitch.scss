@@ -1,66 +1,40 @@
 .se-switch {
-  &--small {
-    label {
-      width: 41px!important;
-      height: 22px!important;
-
+  &.ant-switch {
+    &:not(.ant-switch-checked) {
+      background-color: $line;
+    }
+    &:not(.ant-switch-small) {
+      height: 24px;
+    }
+  }
+  &.ant-switch-loading-icon,
+  &.ant-switch {
+    &:not(.ant-switch-small) {
       &:after {
-        top: 2px!important;
-        left: 2px!important;
-        width: 18px!important;
-        height: 18px!important;
+        top: 1.5px;
       }
     }
-    
-    input:checked + label:after {
-      left: calc(100% - 2px) !important;
-    }
-  }
-  &--item {
-    position: relative;
-    @include flexbox;
-  }
-  input[type=checkbox]{
-    height: 0;
-    width: 0;
-    visibility: hidden;
   }
 
-  label {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 59px;
-    height: 32px;
-    background: $accent;
-    display: block;
-    border-radius: 100px;
-    position: relative;
+  // COLORS
+  &__yellow {
+    &.ant-switch {
+      &:focus {
+        @include box-shadow(0 0 0 2px rgba($color: $yellow, $alpha: .2));
+      }
+    }
+    &.ant-switch-checked {
+      background-color: $yellow;
+    }
   }
-  
-  label:after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 26px;
-    height: 26px;
-    background: $white;
-    border-radius: 50px;
-    transition: 0.3s;
-    @include box-shadow(2px 4px 8px rgba(180, 188, 208, 0.32));
+  &__purple {
+    &.ant-switch {
+      &:focus {
+        @include box-shadow(0 0 0 2px rgba($color: $purple, $alpha: .2));
+      }
+    }
+    &.ant-switch-checked {
+      background-color: $purple;
+    }
   }
-  
-  input:checked + label {
-    background: $yellow;
-  }
-  
-  input:checked + label:after {
-    left: calc(100% - 3px);
-    transform: translateX(-100%);
-  }
-  
-  label:active:after {
-    width: 130px;
-  }
-  
 }

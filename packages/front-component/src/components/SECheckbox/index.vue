@@ -1,40 +1,27 @@
 <template>
   <div :class="classes">
-    <div
-      class="se-checkbox__item"
-      :class="isDisabled ? 'disabled' : null"
+    <Checkbox
+      :disabled="disabled"
+      :default-checked="defaultChecked"
+      :value="value"
+      :indeterminate="indeterminate"
+      @change="onChange"
     >
-      <input
-        :id="id"
-        type="checkbox"
-        :name="name"
-        :value="value"
-        :disabled="isDisabled"
-        :checked="checked"
-        @change="$emit('change', $event.target.value)"
-      >
-      <label :for="id">{{ label }}</label>
-    </div>
+      <slot />
+    </Checkbox>
   </div>
 </template>
 
 <script>
+import { Checkbox } from 'ant-design-vue'
+
 export default {
   name: 'SECheckbox',
+  components: {
+    Checkbox
+  },
   props: {
     id: {
-      type: String,
-      default: null
-    },
-    name: {
-      type: String,
-      default: null
-    },
-    value: {
-      type: String,
-      default: null
-    },
-    label: {
       type: String,
       default: null
     },
@@ -44,9 +31,21 @@ export default {
     },
     checked: {
       type: Boolean,
+      default: null
+    },
+    value: {
+      type: String,
+      default: null
+    },
+    defaultChecked: {
+      type: Boolean,
       default: false
     },
-    isDisabled: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    indeterminate: {
       type: Boolean,
       default: false
     },
@@ -54,14 +53,14 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['small'].indexOf(value) !== -1
+        return ['small', 'large'].indexOf(value) !== -1
       }
     },
     color: {
       type: String,
       default: null,
       validator: function (value) {
-        return ['primary', 'secondary'].indexOf(value) !== -1
+        return ['purple', 'yellow'].indexOf(value) !== -1
       }
     }
   },
@@ -73,6 +72,11 @@ export default {
         [`se-checkbox__${this.color}`]: this.color !== null,
         [this.className]: this.className !== null
       }
+    }
+  },
+  methods: {
+    onChange(e) {
+      this.$emit('change', e.target.checked)
     }
   }
 }

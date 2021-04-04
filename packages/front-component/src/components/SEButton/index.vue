@@ -9,6 +9,7 @@
       :icon="icon"
       :loading="loading"
       :block="block"
+      :html-type="htmlType"
       @click="$emit('click')"
     >
       <slot />
@@ -80,6 +81,10 @@ export default {
     isDimmed: {
       type: Boolean,
       default: false
+    },
+    htmlType: {
+      type: String,
+      default: 'button'
     }
   },
   computed: {

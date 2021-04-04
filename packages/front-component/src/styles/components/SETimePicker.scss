@@ -1,0 +1,24 @@
+.ant-time-picker {
+  &.ant-time-picker-large {
+    .ant-time-picker-input {
+      height: 42px !important;
+      font-size: $text-sm !important;
+    }
+  }
+
+  .ant-time-picker-input {
+    &:not(:disabled) {
+      font-size: $text-sm;
+      background-color: $accent;
+      @include border-radius(6px);
+    }
+    &:active,
+    &:focus,
+    &:hover {
+      &:not(:disabled) {
+        border-color: $accent !important;
+        @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
+      }
+    }
+  }
+}

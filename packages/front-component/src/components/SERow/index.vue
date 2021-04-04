@@ -47,6 +47,10 @@ export default {
       validator: function (value) {
         return ['flex'].indexOf(value) !== -1
       }
+    },
+    gutter: {
+      type: [Number, Object, Array],
+      default: 0
     }
   },
   computed: {

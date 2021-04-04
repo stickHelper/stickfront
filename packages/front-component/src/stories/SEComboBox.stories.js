@@ -3,33 +3,17 @@ import '@/styles/index.scss'
 import '@/styles/icon/se-font.min.scss'
 
 export default {
-  title: 'Components/Combobox',
+  title: 'Data Entry/Combobox',
   component: SECombobox,
   argTypes: {
-    size: { control: { type: 'select', options: ['small', 'extra-small'] } }
+    size: { control: { type: 'select', options: ['small', 'large'] } }
   }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SECombobox },
-  template: `<SECombobox
-    :options="[
-      { value: 'option1', name: 'option 1' },
-      { value: 'option2', name: 'option 2' },
-      { value: 'option3', name: 'option 3' },
-      { value: 'option4', name: 'option 4' },
-      { value: 'option5', name: 'option 5' }
-    ]"
-  />
-  `
-})
-
-export const Default = Template.bind({})
-Default.parameters = {
-  docs: {
-    source: {
-      code: `<div>
+  template: `<div>
   <SECombobox
     :options="[
       { value: 'option1', name: 'option 1' },
@@ -38,73 +22,191 @@ Default.parameters = {
       { value: 'option4', name: 'option 4' },
       { value: 'option5', name: 'option 5' }
     ]"
-  />      
-</div>`
-    }
-  }
-}
+    placeholder="Choose options..."
+  />
 
-export const Label = () => ({
-  components: { SECombobox },
-  template: '<SECombobox label-name="Label info" />'
+  <br/>
+
+  <SECombobox
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+    placeholder="Choose options..."
+    helper="Helper text"
+  />
+
+  <br/>
+    
+  <SECombobox
+    label-name="Label info"
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+    placeholder="Choose options..."
+    helper="Helper text"
+  />
+</div>
+  `
 })
 
-Label.parameters = {
+export const Default = Template.bind({})
+Default.parameters = {
   docs: {
     source: {
-      code: '<SECombobox label-name="Label info" />'
+      code: `<SECombobox
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+/>
+
+<SECombobox
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+  helper="Helper text"
+/>
+      
+<SECombobox
+  label-name="Label info"
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+  helper="Helper text"
+/>`
     }
   }
 }
 
 export const Info = () => ({
   components: { SECombobox },
-  template: '<SECombobox info="Message info" />'
+  template: `<div>
+  <SECombobox
+    label-name="Label info"
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+    placeholder="Choose options..."
+    info="Message info"
+  />
+  <br>
+
+  <SECombobox
+    label-name="Label error"
+    isRequired
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+    placeholder="Choose options..."
+    info="Message error"
+    isError
+  />
+
+  <br>
+
+  <SECombobox
+    label-name="Label success"
+    :options="[
+      { value: 'option1', name: 'option 1' },
+      { value: 'option2', name: 'option 2' },
+      { value: 'option3', name: 'option 3' },
+      { value: 'option4', name: 'option 4' },
+      { value: 'option5', name: 'option 5' }
+    ]"
+    placeholder="Choose options..."
+    info="Message success"
+    isSuccess
+  />
+</div>`
 })
 
 Info.parameters = {
   docs: {
     source: {
-      code: '<SECombobox info="Message info" />'
-    }
-  }
-}
+      code: `<SECombobox
+  label-name="Label info"
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+  info="Message info"
+/>
 
-export const Error = (args) => ({
-  components: { SECombobox },
-  template: '<SECombobox label-name="Label error" :isError="true" info="Message Error" />'
-})
+<SECombobox
+  label-name="Label error"
+  isRequired
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+  info="Message error"
+  isError
+/>
 
-Error.parameters = {
-  docs: {
-    source: {
-      code: '<SECombobox label-name="Label error" :isError="true" info="Message Error" />'
-    }
-  }
-}
-
-export const Success = (args) => ({
-  components: { SECombobox },
-  template: '<SECombobox label-name="Label success" :isSuccess="true"/>'
-})
-
-Success.parameters = {
-  docs: {
-    source: {
-      code: '<SECombobox label-name="Label success" :isSuccess="true" />'
+<SECombobox
+  label-name="Label success"
+  :options="[
+    { value: 'option1', name: 'option 1' },
+    { value: 'option2', name: 'option 2' },
+    { value: 'option3', name: 'option 3' },
+    { value: 'option4', name: 'option 4' },
+    { value: 'option5', name: 'option 5' }
+  ]"
+  placeholder="Choose options..."
+  info="Message success"
+  isSuccess
+/>`
     }
   }
 }
 
 export const Disabled = (args) => ({
   components: { SECombobox },
-  template: '<SECombobox :is-disabled="true" />'
+  template: '<SECombobox disabled />'
 })
 
 Disabled.parameters = {
   docs: {
     source: {
-      code: '<SECombobox :is-disabled="true"  />'
+      code: '<SECombobox disabled />'
     }
   }
 }
@@ -114,6 +216,7 @@ export const Size = (args) => ({
   template: `<div>
     <SECombobox size="small" />
     <SECombobox />
+    <SECombobox size="large" />
   </div>`
 })
 

@@ -2,7 +2,7 @@ import '@/styles/index.scss'
 import SESlider from '@/components/SESlider/index.vue'
 
 export default {
-  title: 'Components/Slider',
+  title: 'Data Entry/Slider',
   component: SESlider
 }
 
