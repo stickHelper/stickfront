@@ -207,16 +207,16 @@ export default {
   },
   methods: {
     handleCancel() {
-      console.log('cancel')
+      // console.log('cancel')
     },
     handleSuccess(e) {
-      console.log('success', e)
+      // console.log('success', e)
     },
     handleError(e) {
-      console.log('error', e)
+      // console.log('error', e)
     },
     handleSubmit(e) {
-      console.log('submit', e)
+      // console.log('submit', e)
     }
   }
 }

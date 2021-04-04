@@ -1,6 +1,6 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatepicker
+    <SEDatePicker
       format="YYYY-MM-DD HH:mm:ss"
       :disabled-date="disabledDate"
       :disabled-time="disabledDateTime"
@@ -29,7 +29,7 @@ import moment from 'moment'
 export default {
   name: 'DisableDateTime',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SERangePicker: DatePicker.RangePicker,
     SEMonthPicker: DatePicker.MonthPicker,
     SESpace

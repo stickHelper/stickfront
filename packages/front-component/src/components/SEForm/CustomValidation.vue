@@ -40,13 +40,13 @@
       label="Success"
       validate-status="success"
     >
-      <SEDatepicker style="width: 100%" />
+      <SEDatePicker style="width: 100%" />
     </SEFormItem>
     <SEFormItem
       label="Warning"
       validate-status="warning"
     >
-      <SEDatepicker type="time" />
+      <SEDatePicker type="time" />
     </SEFormItem>
     <SEFormItem
       label="Error"
@@ -67,13 +67,13 @@
         help="Please select the correct date"
         :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }"
       >
-        <SEDatepicker style="width: 100%" />
+        <SEDatePicker style="width: 100%" />
       </SEFormItem>
       <span :style="{ display: 'inline-block', width: '24px', textAlign: 'center' }">
         -
       </span>
       <SEFormItem :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }">
-        <SEDatepicker style="width: 100%" />
+        <SEDatePicker style="width: 100%" />
       </SEFormItem>
     </SEFormItem>
     <SEFormItem
@@ -121,7 +121,7 @@ export default {
     SEFormItem: Form.Item,
     SETextfield,
     SESelect,
-    SEDatepicker: DatePicker
+    SEDatePicker: DatePicker
   },
   data() {
     return {

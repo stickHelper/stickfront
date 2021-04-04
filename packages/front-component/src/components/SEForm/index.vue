@@ -71,20 +71,20 @@ export default {
   methods: {
     handleError(error) {
       this.errors = error || {}
-      console.log('ini', error)
+      // console.log('ini', error)
     },
     handleOk(e) {
-      console.log('handleOk', e)
+      // console.log('handleOk', e)
     },
     getErrorMessage(name) {
-      console.log('this.errors', this.errors)
+      // console.log('this.errors', this.errors)
       return this.errors[name] ? this.errors[name].errors[0].message : ''
     },
     handleSubmit(e) {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values)
+          // console.log('Received values of form: ', values)
         }
       })
     }

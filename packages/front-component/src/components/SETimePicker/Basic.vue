@@ -12,7 +12,7 @@ export default {
   methods: {
     moment,
     onChange(time, timeString) {
-      console.log(time, timeString)
+      // console.log(time, timeString)
     }
   }
 }

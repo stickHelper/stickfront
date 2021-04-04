@@ -1,4 +1,5 @@
 .ant-calendar-picker {
+  width: 100%;
   .ant-input:not(.ant-input-disabled) {
     font-size: $text-sm;
     background-color: $accent;
@@ -12,6 +13,10 @@
       border-color: $accent !important;
       @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
     }
+  }
+
+  .ant-calendar-picker-input {
+    width: 100%;
   }
 
   .ant-input-lg {

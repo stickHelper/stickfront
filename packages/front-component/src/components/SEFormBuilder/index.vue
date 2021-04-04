@@ -175,6 +175,95 @@
             {{ schema.helpText }}
           </div>
         </SEFormItem>
+
+        <!-- TIME RELATED -->
+        <!-- <SEFormItem
+          v-else-if="schema.componentName === 'SERadioGroup'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SEDatePicker v-decorator="['date-picker', config]" />
+        </SEFormItem> -->
+        <SEFormItem
+          v-else-if="schema.componentName === 'SEDatePicker'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SEDatePicker
+            v-decorator="[
+              schema.name,
+              {
+                rules: schema.rules,
+                initialValue: schema.defaultValue
+              }
+            ]"
+            :show-time="schema.showTime"
+            :size="schema.size"
+            format="YYYY-MM-DD HH:mm:ss"
+          />
+        </SEFormItem>
+        <SEFormItem
+          v-else-if="schema.componentName === 'SEMonthPicker'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SEMonthPicker
+            v-decorator="[
+              schema.name,
+              {
+                rules: schema.rules,
+                initialValue: schema.defaultValue
+              }
+            ]"
+            :size="schema.size"
+          />
+        </SEFormItem>
+        <SEFormItem
+          v-else-if="schema.componentName === 'SERangePicker'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SERangePicker
+            v-decorator="[
+              schema.name,
+              {
+                rules: schema.rules,
+                initialValue: schema.defaultValue
+              }
+            ]"
+            :show-time="schema.showTime"
+            :size="schema.size"
+          />
+        </SEFormItem>
+        <SEFormItem
+          v-else-if="schema.componentName === 'SETimePicker'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SETimePicker
+            v-decorator="[
+              schema.name,
+              {
+                rules: schema.rules,
+                initialValue: schema.defaultValue
+              }
+            ]"
+            :size="schema.size"
+          />
+        </SEFormItem>
+        <template v-else>
+          <slot />
+        </template>
       </template>
 
       <!-- Action -->
@@ -210,7 +299,7 @@
 </template>
 
 <script>
-import { Form } from 'ant-design-vue'
+import { Form, DatePicker, TimePicker } from 'ant-design-vue'
 import SETextfield from '@/components/SETextfield'
 import SETextarea from '@/components/SETextarea'
 import SESelect from '@/components/SESelect'
@@ -236,7 +325,11 @@ export default {
     SECheckbox,
     SECheckboxGroup,
     SEButton,
-    SESpace
+    SESpace,
+    SEDatePicker: DatePicker,
+    SEMonthPicker: DatePicker.MonthPicker,
+    SERangePicker: DatePicker.RangePicker,
+    SETimePicker: TimePicker
   },
   props: {
     id: {
@@ -262,7 +355,7 @@ export default {
   data() {
     return {
       form: this.$form.createForm(this, { name: this.nameForm }),
-      formData: {},
+      // formData: {},
       isLoadingSubmit: false
     }
   },
@@ -292,9 +385,9 @@ export default {
     }
   },
   methods: {
-    onChange(value, name) {
-      this.formData[name] = value
-    },
+    // onChange(value, name) {
+    //   this.formData[name] = value
+    // },
     submitForm(e) {
       this.form.validateFields((err, values) => {
         if (!err) {

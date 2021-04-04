@@ -1,9 +1,9 @@
-import BasicExample from '@/components/SEDatepicker/Basic.vue'
-import SECustomDateRendering from '@/components/SEDatepicker/CustomDateRendering.vue'
-import SEDisableDateTime from '@/components/SEDatepicker/DisableDateTime.vue'
-import SEDisabled from '@/components/SEDatepicker/Disabled.vue'
-import SEDateFormat from '@/components/SEDatepicker/DateFormat.vue'
-import SESize from '@/components/SEDatepicker/Size.vue'
+import BasicExample from '@/components/SEDatePicker/Basic.vue'
+import SECustomDateRendering from '@/components/SEDatePicker/CustomDateRendering.vue'
+import SEDisableDateTime from '@/components/SEDatePicker/DisableDateTime.vue'
+import SEDisabled from '@/components/SEDatePicker/Disabled.vue'
+import SEDateFormat from '@/components/SEDatePicker/DateFormat.vue'
+import SESize from '@/components/SEDatePicker/Size.vue'
 import { DatePicker } from 'ant-design-vue'
 
 import '@/styles/index.scss'
@@ -28,7 +28,7 @@ Default.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatepicker @change="onChange" />
+    <SEDatePicker @change="onChange" />
 
     <SEMonthPicker placeholder="Select month" @change="onChange" />
 
@@ -66,13 +66,13 @@ CustomDateRendering.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatepicker>
+    <SEDatePicker>
       <template slot="dateRender" slot-scope="current, today">
         <div class="ant-calendar-date" :style="getCurrentStyle(current, today)">
           {{ current.date() }}
         </div>
       </template>
-    </SEDatepicker>
+    </SEDatePicker>
 
     <SERangePicker>
       <template slot="dateRender" slot-scope="current">
@@ -124,7 +124,7 @@ DisableDateTime.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatepicker
+    <SEDatePicker
       format="YYYY-MM-DD HH:mm:ss"
       :disabled-date="disabledDate"
       :disabled-time="disabledDateTime"
@@ -206,9 +206,9 @@ DateFormat.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatepicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
+    <SEDatePicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
 
-    <SEDatepicker
+    <SEDatePicker
       :default-value="moment('01/01/2015', dateFormatList[0])"
       :format="dateFormatList"
     />
@@ -230,7 +230,7 @@ import moment from 'moment'
 export default {
   name: 'DateFormat',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SERangePicker: DatePicker.RangePicker,
     SEMonthPicker: DatePicker.MonthPicker,
     SESpace
@@ -262,7 +262,7 @@ Disabled.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatepicker :default-value="moment('2015-06-06', dateFormat)" disabled />
+    <SEDatePicker :default-value="moment('2015-06-06', dateFormat)" disabled />
 
     <SEMonthPicker :default-value="moment('2015-06', 'YYYY-MM')" disabled />
 
@@ -316,7 +316,7 @@ Size.parameters = {
       </SERadioButton>
     </SERadioGroup>
     <br>
-    <SEDatepicker :size="size" />
+    <SEDatePicker :size="size" />
 
     <SEMonthPicker :size="size" placeholder="Select Month" />
 

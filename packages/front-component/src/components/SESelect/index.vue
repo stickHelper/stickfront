@@ -186,7 +186,7 @@ export default {
   },
   data() {
     return {
-      currentValue: this.value,
+      currentValue: this.defaultValue || this.value,
       currentDefalutValue: this.defaultValue || this.value
     }
   },

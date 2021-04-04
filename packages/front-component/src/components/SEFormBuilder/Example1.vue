@@ -6,7 +6,13 @@
     @success="handleSuccess"
     @error="handleError"
     @submit="handleSubmit"
-  />
+  >
+    <template>
+      <Texfield @change="handleChangeValue($event)">
+        asd
+      </Texfield>
+    </template>
+  </SEFormBuilder>
 </template>
 
 <script>
@@ -21,6 +27,10 @@ const dataSchema = {
       labelName: 'General Information',
       id: 'n6HeXAQuKtFmtsyo',
       componentName: 'FormTitle'
+    },
+    {
+      name: 'custom',
+      id: 'LudEgwhzxUZpx712GZsTasd'
     },
     {
       defaultValue: null,
@@ -178,6 +188,62 @@ const dataSchema = {
           value: '987e1ef3-5bd9-4f99-bb4d-498a1bcfe896'
         }
       ]
+    },
+    {
+      defaultValue: null,
+      name: 'datepicker',
+      labelName: 'Datepicker',
+      id: 'LudEgwhUZpzvbx7GZsT',
+      componentName: 'SEDatePicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM-DD',
+      placeholder: 'Input date picker',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input datepicker!!' }
+      ]
+    },
+    {
+      defaultValue: null,
+      name: 'monthpicker',
+      labelName: 'Monthpicker',
+      id: 'LudE1234UZpzvbx7GZsT',
+      componentName: 'SEMonthPicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM',
+      placeholder: 'Input month',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input month!!' }
+      ]
+    },
+    {
+      defaultValue: null,
+      name: 'rangepicker',
+      labelName: 'RangePicker',
+      id: 'Lua31dE1234UZpzvbx7GZsT',
+      componentName: 'SERangePicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM-DD - YYYY-MM-DD',
+      placeholder: 'Input range date',
+      showTime: false,
+      rules: [
+        { type: 'array', required: true, message: 'Please input range date!!' }
+      ]
+    },
+    {
+      defaultValue: null,
+      name: 'time-picker',
+      labelName: 'TimePicker',
+      id: 'LudE1235xcv4UZpzvbx7GZsT',
+      componentName: 'SETimePicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM-DD - YYYY-MM-DD',
+      placeholder: 'Input time',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input time!!' }
+      ]
     }
   ],
   actions: [
@@ -206,16 +272,16 @@ export default {
   },
   methods: {
     handleCancel() {
-      console.log('cancel')
+      // console.log('cancel')
     },
     handleSuccess(e) {
-      console.log('success', e)
+      // console.log('success', e)
     },
     handleError(e) {
-      console.log('error', e)
+      // console.log('error', e)
     },
     handleSubmit(e) {
-      console.log('submit', e)
+      // console.log('submit', e)
     }
   }
 }

@@ -2,7 +2,7 @@ import './styles/index.scss'
 import './styles/icon/se-font.min.scss'
 import './styles/font/font-family.scss'
 import 'ant-design-vue/dist/antd.css'
-import { Form, DatePicker, TimePicker } from 'ant-design-vue'
+import { Form, DatePicker, TimePicker, Table, Divider, Modal, Tooltip, message } from 'ant-design-vue'
 
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'
@@ -23,7 +23,7 @@ import SEMediaUploader from './components/SEMediaUploader/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
 import SEIcon from './components/SEIcon/index.vue'
 import SEInputGroup from './components/SEInputGroup/index.vue'
-import SEModal from './components/SEModal/index.vue'
+// import SEModal from './components/SEModal/index.vue'
 import SEPagination from './components/SEPagination/index.vue'
 import SEPreloader from './components/SEPreloader/index.vue'
 import SERadio from './components/SERadio/index.vue'
@@ -53,12 +53,13 @@ const components = {
   SECard,
   SEChart,
   SECheckbox,
+  SECheckboxGroup,
   SECol,
   SECombobox,
   SEDatatable,
+  SEDivider: Divider,
   SEDropdown,
-  SECheckboxGroup,
-  SEDatepicker: DatePicker,
+  SEDatePicker: DatePicker,
   SEMonthPicker: DatePicker.MonthPicker,
   SERangePicker: DatePicker.RangePicker,
   SEWeekPicker: DatePicker.WeekPicker,
@@ -68,7 +69,8 @@ const components = {
   SEFormItem: Form.Item,
   SEFormBuilder,
   SEIcon,
-  SEModal,
+  SEInputGroup,
+  SEModal: Modal,
   SEPagination,
   SEPreloader,
   SERadio,
@@ -88,10 +90,15 @@ const components = {
   SETimePicker: TimePicker,
   SEToast,
   SETopBar,
+  SETable: Table,
+  SETableColumn: Table.Column,
+  SETableColumnGroup: Table.ColumnGroup,
+  SETooltip: Tooltip,
   SEWysiwyg,
   SEDropzone,
   DefaultTemplate,
-  SEMediaUploader
+  SEMediaUploader,
+  message
 }
 
 const install = (Vue, opts = {}) => {

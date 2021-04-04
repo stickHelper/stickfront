@@ -12,7 +12,7 @@
       </SERadioButton>
     </SERadioGroup>
     <br>
-    <SEDatepicker :size="size" />
+    <SEDatePicker :size="size" />
 
     <SEMonthPicker :size="size" placeholder="Select Month" />
 
@@ -31,7 +31,7 @@ import SERadioGroup from '@/components/SERadio/SERadioGroup'
 export default {
   name: 'BasicExample',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SEMonthPicker: DatePicker.MonthPicker,
     SERangePicker: DatePicker.RangePicker,
     SEWeekPicker: DatePicker.WeekPicker,

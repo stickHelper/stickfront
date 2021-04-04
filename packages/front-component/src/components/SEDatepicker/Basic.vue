@@ -1,6 +1,6 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatepicker @change="onChange" />
+    <SEDatePicker @change="onChange" />
 
     <SEMonthPicker placeholder="Select month" @change="onChange" />
 
@@ -17,7 +17,7 @@ import SESpace from '@/components/SESpace'
 export default {
   name: 'BasicExample',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SEMonthPicker: DatePicker.MonthPicker,
     SERangePicker: DatePicker.RangePicker,
     SEWeekPicker: DatePicker.WeekPicker,
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     onChange(date, dateString) {
-      console.log(date, dateString)
+      // console.log(date, dateString)
     }
   }
 }

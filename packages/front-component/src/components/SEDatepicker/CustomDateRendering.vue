@@ -1,12 +1,12 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatepicker>
+    <SEDatePicker>
       <template slot="dateRender" slot-scope="current, today">
         <div class="ant-calendar-date" :style="getCurrentStyle(current, today)">
           {{ current.date() }}
         </div>
       </template>
-    </SEDatepicker>
+    </SEDatePicker>
 
     <SERangePicker>
       <template slot="dateRender" slot-scope="current">
@@ -33,7 +33,7 @@ import SESpace from '@/components/SESpace'
 export default {
   name: 'CustomDateRendering',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SERangePicker: DatePicker.RangePicker,
     SEWeekPicker: DatePicker.WeekPicker,
     SESpace

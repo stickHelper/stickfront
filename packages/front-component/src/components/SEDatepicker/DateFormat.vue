@@ -1,8 +1,8 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatepicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
+    <SEDatePicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
 
-    <SEDatepicker
+    <SEDatePicker
       :default-value="moment('01/01/2015', dateFormatList[0])"
       :format="dateFormatList"
     />
@@ -24,7 +24,7 @@ import moment from 'moment'
 export default {
   name: 'DateFormat',
   components: {
-    SEDatepicker: DatePicker,
+    SEDatePicker: DatePicker,
     SERangePicker: DatePicker.RangePicker,
     SEMonthPicker: DatePicker.MonthPicker,
     SESpace
