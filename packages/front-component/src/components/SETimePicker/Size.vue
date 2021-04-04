@@ -17,7 +17,7 @@ export default {
     SESpace
   },
   methods: {
-    moment,
-  },
-};
+    moment
+  }
+}
 </script>
