@@ -53,22 +53,6 @@
       />
       <SETextfield style="width: 100px; text-align: center; border-left: 0" placeholder="Maximum" />
     </SEInputGroup>
-    <!-- <br>
-    <SEInputGroup compact>
-      <SESelect style="width: 30%" default-value="Home">
-        <a-select-option value="Home">
-          Home
-        </a-select-option>
-        <a-select-option value="Company">
-          Company
-        </a-select-option>
-      </SESelect>
-      <a-cascader
-        style="width: 70%"
-        :options="options"
-        placeholder="Select Address"
-      />
-    </SEInputGroup> -->
   </div>
 </template>
 

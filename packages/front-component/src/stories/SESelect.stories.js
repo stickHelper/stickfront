@@ -227,7 +227,7 @@ Multipe.parameters = {
 }
 
 export const Size = () => ({
-  components: { SESelect, SESelectOption },
+  components: { SESelect },
   template: `<div>
   <SESelect
     label-name="Small"

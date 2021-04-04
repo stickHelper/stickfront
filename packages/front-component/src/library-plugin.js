@@ -2,7 +2,7 @@ import './styles/index.scss'
 import './styles/icon/se-font.min.scss'
 import './styles/font/font-family.scss'
 import 'ant-design-vue/dist/antd.css'
-import { Form, DatePicker, TimePicker, Table, Divider, Modal, Tooltip, message } from 'ant-design-vue'
+import { Form, DatePicker, TimePicker, Table, Divider, Modal, Tooltip } from 'ant-design-vue'
 
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'
@@ -97,13 +97,16 @@ const components = {
   SEWysiwyg,
   SEDropzone,
   DefaultTemplate,
-  SEMediaUploader,
-  message
+  SEMediaUploader
 }
 
 const install = (Vue, opts = {}) => {
   Object.values(components).forEach((component) => {
-    Vue.component(component.name, component)
+    let componentName = component.name
+    if (componentName === 'ATimePicker') {
+      componentName = 'SETimePicker'
+    }
+    Vue.component(componentName, component)
   })
 }
 
