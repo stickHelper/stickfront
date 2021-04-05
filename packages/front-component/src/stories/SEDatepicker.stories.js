@@ -28,13 +28,13 @@ Default.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatePicker @change="onChange" />
+    <ADatePicker @change="onChange" />
 
-    <SEMonthPicker placeholder="Select month" @change="onChange" />
+    <AMonthPicker placeholder="Select month" @change="onChange" />
 
-    <SERangePicker @change="onChange" />
+    <ARangePicker @change="onChange" />
 
-    <SEWeekPicker placeholder="Select week" @change="onChange" />
+    <AWeekPicker placeholder="Select week" @change="onChange" />
   </SESpace>
 </template>
 
@@ -66,29 +66,29 @@ CustomDateRendering.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatePicker>
+    <ADatePicker>
       <template slot="dateRender" slot-scope="current, today">
         <div class="ant-calendar-date" :style="getCurrentStyle(current, today)">
           {{ current.date() }}
         </div>
       </template>
-    </SEDatePicker>
+    </ADatePicker>
 
-    <SERangePicker>
+    <ARangePicker>
       <template slot="dateRender" slot-scope="current">
         <div class="ant-calendar-date" :style="getCurrentStyle(current)">
           {{ current.date() }}
         </div>
       </template>
-    </SERangePicker>
+    </ARangePicker>
 
-    <SEWeekPicker>
+    <AWeekPicker>
       <template slot="dateRender" slot-scope="current">
         <div class="ant-calendar-date" :style="getCurrentStyle(current)">
           {{ current.date() }}
         </div>
       </template>
-    </SEWeekPicker>
+    </AWeekPicker>
   </SESpace>
 </template>
 <script>
@@ -124,16 +124,16 @@ DisableDateTime.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatePicker
+    <ADatePicker
       format="YYYY-MM-DD HH:mm:ss"
       :disabled-date="disabledDate"
       :disabled-time="disabledDateTime"
       :show-time="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
     />
 
-    <SEMonthPicker :disabled-date="disabledDate" placeholder="Select month" />
+    <AMonthPicker :disabled-date="disabledDate" placeholder="Select month" />
 
-    <SERangePicker
+    <ARangePicker
       :disabled-date="disabledDate"
       :disabled-time="disabledRangeTime"
       :show-time="{
@@ -206,16 +206,16 @@ DateFormat.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatePicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
+    <ADatePicker :default-value="moment('2015/01/01', dateFormat)" :format="dateFormat" />
 
-    <SEDatePicker
+    <ADatePicker
       :default-value="moment('01/01/2015', dateFormatList[0])"
       :format="dateFormatList"
     />
 
-    <SEMonthPicker :default-value="moment('2015/01', monthFormat)" :format="monthFormat" />
+    <AMonthPicker :default-value="moment('2015/01', monthFormat)" :format="monthFormat" />
 
-    <SERangePicker
+    <ARangePicker
       :default-value="[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]"
       :format="dateFormat"
     />
@@ -230,9 +230,9 @@ import moment from 'moment'
 export default {
   name: 'DateFormat',
   components: {
-    SEDatePicker: DatePicker,
-    SERangePicker: DatePicker.RangePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
+    ADatePicker: DatePicker,
+    ARangePicker: DatePicker.RangePicker,
+    AMonthPicker: DatePicker.MonthPicker,
     SESpace
   },
   data() {
@@ -262,11 +262,11 @@ Disabled.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SEDatePicker :default-value="moment('2015-06-06', dateFormat)" disabled />
+    <ADatePicker :default-value="moment('2015-06-06', dateFormat)" disabled />
 
-    <SEMonthPicker :default-value="moment('2015-06', 'YYYY-MM')" disabled />
+    <AMonthPicker :default-value="moment('2015-06', 'YYYY-MM')" disabled />
 
-    <SERangePicker
+    <ARangePicker
       :default-value="[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]"
       disabled
     />
@@ -316,13 +316,13 @@ Size.parameters = {
       </SERadioButton>
     </SERadioGroup>
     <br>
-    <SEDatePicker :size="size" />
+    <ADatePicker :size="size" />
 
-    <SEMonthPicker :size="size" placeholder="Select Month" />
+    <AMonthPicker :size="size" placeholder="Select Month" />
 
-    <SERangePicker :size="size" />
+    <ARangePicker :size="size" />
 
-    <SEWeekPicker :size="size" placeholder="Select Week" />
+    <AWeekPicker :size="size" placeholder="Select Week" />
   </SESpace>
 </template>
 

@@ -1,15 +1,15 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatePicker
+    <ADatePicker
       format="YYYY-MM-DD HH:mm:ss"
       :disabled-date="disabledDate"
       :disabled-time="disabledDateTime"
       :show-time="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
     />
 
-    <SEMonthPicker :disabled-date="disabledDate" placeholder="Select month" />
+    <AMonthPicker :disabled-date="disabledDate" placeholder="Select month" />
 
-    <SERangePicker
+    <ARangePicker
       :disabled-date="disabledDate"
       :disabled-time="disabledRangeTime"
       :show-time="{
@@ -29,9 +29,9 @@ import moment from 'moment'
 export default {
   name: 'DisableDateTime',
   components: {
-    SEDatePicker: DatePicker,
-    SERangePicker: DatePicker.RangePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
+    ADatePicker: DatePicker,
+    ARangePicker: DatePicker.RangePicker,
+    AMonthPicker: DatePicker.MonthPicker,
     SESpace
   },
   methods: {

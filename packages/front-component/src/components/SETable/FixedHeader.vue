@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     :pagination="{ pageSize: 50 }"
@@ -38,7 +38,7 @@ for (let i = 0; i < 100; i++) {
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     return {

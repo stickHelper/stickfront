@@ -26,7 +26,7 @@ Default.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETimePicker :default-open-value="moment('00:00:00', 'HH:mm:ss')" @change="onChange" />
+  <ATimePicker :default-open-value="moment('00:00:00', 'HH:mm:ss')" @change="onChange" />
 </template>
 
 <script>
@@ -56,15 +56,15 @@ TwelveHour.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SETimePicker use12-hours @change="onChange" />
+    <ATimePicker use12-hours @change="onChange" />
 
-    <SETimePicker
+    <ATimePicker
       use12-hours
       format="h:mm:ss A"
       @change="onChange"
     />
 
-    <SETimePicker
+    <ATimePicker
       use12-hours
       format="h:mm a"
       @change="onChange"
@@ -98,7 +98,7 @@ HourTime.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETimePicker :default-value="moment('12:08', 'HH:mm')" format="HH:mm" />
+  <ATimePicker :default-value="moment('12:08', 'HH:mm')" format="HH:mm" />
 </template>
 
 <script>
@@ -124,7 +124,7 @@ Disabled.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" disabled />
+  <ATimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" disabled />
 </template>
 
 <script>
@@ -152,9 +152,9 @@ Size.parameters = {
     source: {
       code: `<template>
   <SESpace direction="vertical">
-    <SETimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" size="large" />
-    <SETimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" />
-    <SETimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" size="small" />
+    <ATimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" size="large" />
+    <ATimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" />
+    <ATimePicker :default-value="moment('12:08:23', 'HH:mm:ss')" size="small" />
   </SESpace>
 </template>
 

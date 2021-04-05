@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     @change="onChange"
@@ -102,7 +102,7 @@ function onChange(pagination, filters, sorter) {
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     return {

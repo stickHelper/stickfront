@@ -26,7 +26,7 @@ Default.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable :columns="columns" :data-source="data">
+  <ATable :columns="columns" :data-source="data">
     <a slot="name" slot-scope="text">{{ text }}</a>
     <span slot="customTitle">Name</span>
     <span slot="tags" slot-scope="tags">
@@ -40,18 +40,15 @@ Default.parameters = {
     </span>
     <span slot="action" slot-scope="text, record">
       <a>Invite 一 {{ record.name }}</a>
-      <SEDivider type="vertical" />
+      <ADivider type="vertical" />
       <a>Delete</a>
-      <SEDivider type="vertical" />
+      <ADivider type="vertical" />
       <a class="ant-dropdown-link"> More actions <span><i class="icon icon-angle-down" /></span> </a>
     </span>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
-import { Table, Divider } from 'ant-design-vue'
-import SETag from '@/components/SETag'
-
 const columns = [
   {
     dataIndex: 'name',
@@ -107,11 +104,6 @@ const data = [
 ]
 
 export default {
-  components: {
-    SETable: Table,
-    SEDivider: Divider,
-    SETag
-  },
   data() {
     return {
       data,
@@ -134,9 +126,9 @@ ElipsisColumn.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable :columns="columns" :data-source="data">
+  <ATable :columns="columns" :data-source="data">
     <a slot="name" slot-scope="text">{{ text }}</a>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -226,7 +218,7 @@ Ajax.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :row-key="record => record.login.uuid"
     :data-source="data"
@@ -237,7 +229,7 @@ Ajax.parameters = {
     <template slot="name" slot-scope="name">
       {{ name.first }} {{ name.last }}
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -347,7 +339,7 @@ BorderTitleFooter.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     bordered
@@ -361,7 +353,7 @@ BorderTitleFooter.parameters = {
     <template slot="footer" slot-scope="">
       Footer
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -432,7 +424,7 @@ ColSpanRowSpan.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     bordered
@@ -440,7 +432,7 @@ ColSpanRowSpan.parameters = {
     <template slot="name" slot-scope="text">
       <a>{{ text }}</a>
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -576,7 +568,7 @@ TableFixedColumns.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     :scroll="{ x: 1300 }"
@@ -586,7 +578,7 @@ TableFixedColumns.parameters = {
       slot-scope=""
       href="#"
     >action</a>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -648,7 +640,7 @@ TableFixedHeader.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     :pagination="{ pageSize: 50 }"
@@ -707,7 +699,7 @@ FilterSorter.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     @change="onChange"
@@ -830,13 +822,13 @@ Selection.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SETable
+  <ATable
     :row-selection="rowSelection"
     :columns="columns"
     :data-source="data"
   >
     <a slot="name" slot-scope="text">{{ text }}</a>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -910,51 +902,3 @@ export default {
     }
   }
 }
-
-// export const ElipsisColumn = () => ({
-//   components: { SETableElipsisColumn },
-//   template: '<SETableElipsisColumn />'
-// })
-
-// ElipsisColumn.parameters = {
-//   docs: {
-//     source: {
-//       code: `<SEModal :showModal="true" size="small" >
-//   Content here ...
-// </SEModal>
-//       `
-//     }
-//   }
-// }
-
-// export const ElipsisColumn = () => ({
-//   components: { SETableElipsisColumn },
-//   template: '<SETableElipsisColumn />'
-// })
-
-// ElipsisColumn.parameters = {
-//   docs: {
-//     source: {
-//       code: `<SEModal :showModal="true" size="small" >
-//   Content here ...
-// </SEModal>
-//       `
-//     }
-//   }
-// }
-
-// export const ElipsisColumn = () => ({
-//   components: { SETableElipsisColumn },
-//   template: '<SETableElipsisColumn />'
-// })
-
-// ElipsisColumn.parameters = {
-//   docs: {
-//     source: {
-//       code: `<SEModal :showModal="true" size="small" >
-//   Content here ...
-// </SEModal>
-//       `
-//     }
-//   }
-// }

@@ -1,18 +1,24 @@
 <template>
-  <SETooltip>
+  <a-tooltip>
     <template slot="title">
       prompt text
     </template>
     Tooltip will show when mouse enter.
-  </SETooltip>
+  </a-tooltip>
 </template>
 
 <script>
-import { Tooltip } from 'ant-design-vue'
+import Vue from 'vue'
+import Components from '@stickearn/stickfront'
+// import { Tooltip } from 'ant-design-vue'
 
+Vue.use(Components)
 export default {
   components: {
-    SETooltip: Tooltip
+    // SETooltip: Tooltip
+  },
+  mounted() {
+    console.log('Components2', Components)
   }
 }
 </script>

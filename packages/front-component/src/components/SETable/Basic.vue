@@ -1,5 +1,5 @@
 <template>
-  <SETable :columns="columns" :data-source="data">
+  <ATable :columns="columns" :data-source="data">
     <a slot="name" slot-scope="text">{{ text }}</a>
     <span slot="customTitle">Name</span>
     <span slot="tags" slot-scope="tags">
@@ -13,12 +13,12 @@
     </span>
     <span slot="action" slot-scope="text, record">
       <a>Invite 一 {{ record.name }}</a>
-      <SEDivider type="vertical" />
+      <ADivider type="vertical" />
       <a>Delete</a>
-      <SEDivider type="vertical" />
+      <ADivider type="vertical" />
       <a class="ant-dropdown-link"> More actions <span><i class="icon icon-angle-down" /></span> </a>
     </span>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -81,8 +81,8 @@ const data = [
 
 export default {
   components: {
-    SETable: Table,
-    SEDivider: Divider,
+    ATable: Table,
+    ADivider: Divider,
     SETag
   },
   data() {

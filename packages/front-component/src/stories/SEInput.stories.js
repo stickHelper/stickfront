@@ -275,7 +275,7 @@ InputGroup.parameters = {
   <br>
   <SEInputGroup compact>
     <SETextfield style="width: 50%" default-value="input content" />
-    <SEDatePicker style="width: 50%" />
+    <ADatePicker style="width: 50%" />
   </SEInputGroup>
   <br>
   <SEInputGroup compact>

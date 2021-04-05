@@ -1,6 +1,6 @@
 <template>
   <div class="se-formbuilder">
-    <SEForm
+    <AForm
       :form="form"
       :layout="formLayout"
       @submit.prevent="submitForm"
@@ -9,17 +9,17 @@
         v-for="(schema) in dataSchemas.schemas"
       >
         <!-- TITLE -->
-        <SEFormItem
+        <AFormItem
           v-if="schema.componentName === 'FormTitle'"
           :key="schema.id"
         >
           <h3 class="form-title">
             {{ schema.labelName }}
           </h3>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- TEXTFIELD -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SETextfield'"
           :key="schema.id"
           :label="schema.labelName"
@@ -40,10 +40,10 @@
           <div class="help-info">
             {{ schema.helpText }}
           </div>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- TEXTAREA -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SETextarea'"
           :key="schema.id"
           :label="schema.labelName"
@@ -64,10 +64,10 @@
           <div class="help-info">
             {{ schema.helpText }}
           </div>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- SELECT -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SESelect'"
           :key="schema.id"
           :label="schema.labelName"
@@ -90,10 +90,10 @@
           <div class="help-info">
             {{ schema.helpText }}
           </div>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- RADIO -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SERadioGroup'"
           :key="schema.id"
           :label="schema.labelName"
@@ -134,10 +134,10 @@
           <div class="help-info">
             {{ schema.helpText }}
           </div>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- CHECKBOX -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SECheckboxGroup'"
           :key="schema.id"
           :label="schema.labelName"
@@ -174,26 +174,17 @@
           <div class="help-info">
             {{ schema.helpText }}
           </div>
-        </SEFormItem>
+        </AFormItem>
 
         <!-- TIME RELATED -->
-        <!-- <SEFormItem
-          v-else-if="schema.componentName === 'SERadioGroup'"
-          :key="schema.id"
-          :label="schema.labelName"
-          :label-col="formItemLayout.labelCol"
-          :wrapper-col="formItemLayout.wrapperCol"
-        >
-          <SEDatePicker v-decorator="['date-picker', config]" />
-        </SEFormItem> -->
-        <SEFormItem
+        <AFormItem
           v-else-if="schema.componentName === 'SEDatePicker'"
           :key="schema.id"
           :label="schema.labelName"
           :label-col="formItemLayout.labelCol"
           :wrapper-col="formItemLayout.wrapperCol"
         >
-          <SEDatePicker
+          <ADatePicker
             v-decorator="[
               schema.name,
               {
@@ -205,15 +196,15 @@
             :size="schema.size"
             format="YYYY-MM-DD HH:mm:ss"
           />
-        </SEFormItem>
-        <SEFormItem
+        </AFormItem>
+        <AFormItem
           v-else-if="schema.componentName === 'SEMonthPicker'"
           :key="schema.id"
           :label="schema.labelName"
           :label-col="formItemLayout.labelCol"
           :wrapper-col="formItemLayout.wrapperCol"
         >
-          <SEMonthPicker
+          <AMonthPicker
             v-decorator="[
               schema.name,
               {
@@ -223,15 +214,15 @@
             ]"
             :size="schema.size"
           />
-        </SEFormItem>
-        <SEFormItem
+        </AFormItem>
+        <AFormItem
           v-else-if="schema.componentName === 'SERangePicker'"
           :key="schema.id"
           :label="schema.labelName"
           :label-col="formItemLayout.labelCol"
           :wrapper-col="formItemLayout.wrapperCol"
         >
-          <SERangePicker
+          <ARangePicker
             v-decorator="[
               schema.name,
               {
@@ -242,15 +233,15 @@
             :show-time="schema.showTime"
             :size="schema.size"
           />
-        </SEFormItem>
-        <SEFormItem
+        </AFormItem>
+        <AFormItem
           v-else-if="schema.componentName === 'SETimePicker'"
           :key="schema.id"
           :label="schema.labelName"
           :label-col="formItemLayout.labelCol"
           :wrapper-col="formItemLayout.wrapperCol"
         >
-          <SETimePicker
+          <ATimePicker
             v-decorator="[
               schema.name,
               {
@@ -260,14 +251,14 @@
             ]"
             :size="schema.size"
           />
-        </SEFormItem>
+        </AFormItem>
         <template v-else>
           <slot />
         </template>
       </template>
 
       <!-- Action -->
-      <SEFormItem
+      <AFormItem
         :wrapper-col="buttonItemLayout.wrapperCol"
       >
         <SESpace>
@@ -293,8 +284,8 @@
             </SEButton>
           </template>
         </SESpace>
-      </SEFormItem>
-    </SEForm>
+      </AFormItem>
+    </AForm>
   </div>
 </template>
 
@@ -312,13 +303,13 @@ import SEButton from '@/components/SEButton'
 import SESpace from '@/components/SESpace'
 
 export default {
-  name: 'SEFormBuilder',
+  name: 'AFormBuilder',
   components: {
     SETextfield,
     SETextarea,
     SESelect,
-    SEForm: Form,
-    SEFormItem: Form.Item,
+    AForm: Form,
+    AFormItem: Form.Item,
     SERadio,
     SERadioGroup,
     SERadioButton,
@@ -326,10 +317,10 @@ export default {
     SECheckboxGroup,
     SEButton,
     SESpace,
-    SEDatePicker: DatePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
-    SERangePicker: DatePicker.RangePicker,
-    SETimePicker: TimePicker
+    ADatePicker: DatePicker,
+    AMonthPicker: DatePicker.MonthPicker,
+    ARangePicker: DatePicker.RangePicker,
+    ATimePicker: TimePicker
   },
   props: {
     id: {

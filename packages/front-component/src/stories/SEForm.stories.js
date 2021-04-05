@@ -24,13 +24,13 @@ Default.parameters = {
     source: {
       code: `<template>
   <div>
-    <SEForm
+    <AForm
       :form="form"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
       @submit="handleSubmit"
     >
-      <SEFormItem
+      <AFormItem
         label="Note"
       >
         <SETextfield
@@ -43,8 +43,8 @@ Default.parameters = {
           ]"
           placeholder="Input notes!"
         />
-      </SEFormItem>
-      <SEFormItem
+      </AFormItem>
+      <AFormItem
         label="Gender"
       >
         <SESelect
@@ -61,13 +61,13 @@ Default.parameters = {
             { label: 'Female', value: 'female' }
           ]"
         />
-      </SEFormItem>
-      <SEFormItem :wrapper-col="{ span: 12, offset: 5 }">
+      </AFormItem>
+      <AFormItem :wrapper-col="{ span: 12, offset: 5 }">
         <SEButton color="primary" html-type="submit">
           Submit
         </SEButton>
-      </SEFormItem>
-    </SEForm>
+      </AFormItem>
+    </AForm>
   </div>
 </template>
 
@@ -118,8 +118,8 @@ FormLayout.parameters = {
   docs: {
     source: {
       code: `<template>
-<SEForm :layout="formLayout">
-  <SEFormItem
+<AForm :layout="formLayout">
+  <AFormItem
     label="Form Layout"
     :label-col="formItemLayout.labelCol"
     :wrapper-col="formItemLayout.wrapperCol"
@@ -135,27 +135,27 @@ FormLayout.parameters = {
         Inline
       </SERadioButton>
     </SERadioGroup>
-  </SEFormItem>
-  <SEFormItem
+  </AFormItem>
+  <AFormItem
     label="Field A"
     :label-col="formItemLayout.labelCol"
     :wrapper-col="formItemLayout.wrapperCol"
   >
     <SETextfield placeholder="input placeholder" />
-  </SEFormItem>
-  <SEFormItem
+  </AFormItem>
+  <AFormItem
     label="Field B"
     :label-col="formItemLayout.labelCol"
     :wrapper-col="formItemLayout.wrapperCol"
   >
     <SETextfield placeholder="input placeholder" />
-  </SEFormItem>
-  <SEFormItem :wrapper-col="buttonItemLayout.wrapperCol">
+  </AFormItem>
+  <AFormItem :wrapper-col="buttonItemLayout.wrapperCol">
     <SEButton color="primary">
       Submit
     </SEButton>
-  </SEFormItem>
-</SEForm>
+  </AFormItem>
+</AForm>
 </template>
 
 <script>
@@ -206,56 +206,56 @@ CustomValidation.parameters = {
   docs: {
     source: {
       code: `<template>
-  <SEForm :label-col="labelCol" :wrapper-col="wrapperCol">
-    <SEFormItem
+  <AForm :label-col="labelCol" :wrapper-col="wrapperCol">
+    <AFormItem
       label="Fail"
       validate-status="error"
       help="Should be combination of numbers & alphabets"
     >
       <SETextfield id="error" placeholder="unavailable choice" />
-    </SEFormItem>
-    <SEFormItem label="Warning" validate-status="warning">
+    </AFormItem>
+    <AFormItem label="Warning" validate-status="warning">
       <SETextfield id="warning" placeholder="Warning" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Validating"
       validate-status="validating"
       help="The information is being validated..."
     >
       <SETextfield id="validating" placeholder="I'm the content is being validated" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield id="success" placeholder="I'm the content" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
       <SETextfield id="warning2" placeholder="Warning" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Fail"
       validate-status="error"
       help="Should be combination of numbers & alphabets"
     >
       <SETextfield id="error2" placeholder="unavailable choice" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
-      <SEDatePicker style="width: 100%" />
-    </SEFormItem>
-    <SEFormItem
+      <ADatePicker style="width: 100%" />
+    </AFormItem>
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
-      <SEDatePicker type="time" />
-    </SEFormItem>
-    <SEFormItem
+      <ADatePicker type="time" />
+    </AFormItem>
+    <AFormItem
       label="Error"
       validate-status="error"
     >
@@ -267,43 +267,43 @@ CustomValidation.parameters = {
           { label: 'Option 3', value: '3' }
         ]"
       />
-    </SEFormItem>
-    <SEFormItem label="inline" style="margin-bottom:0;">
-      <SEFormItem
+    </AFormItem>
+    <AFormItem label="inline" style="margin-bottom:0;">
+      <AFormItem
         validate-status="error"
         help="Please select the correct date"
         :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }"
       >
-        <SEDatePicker style="width: 100%" />
-      </SEFormItem>
+        <ADatePicker style="width: 100%" />
+      </AFormItem>
       <span :style="{ display: 'inline-block', width: '24px', textAlign: 'center' }">
         -
       </span>
-      <SEFormItem :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }">
-        <SEDatePicker style="width: 100%" />
-      </SEFormItem>
-    </SEFormItem>
-    <SEFormItem
+      <AFormItem :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }">
+        <ADatePicker style="width: 100%" />
+      </AFormItem>
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield style="width: 100%" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield allow-clear placeholder="with allowClear" />
-    </SEFormItem>
+    </AFormItem>
 
-    <SEFormItem
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
       <SETextfield type="password" placeholder="with input password" />
-    </SEFormItem>
+    </AFormItem>
 
-    <SEFormItem
+    <AFormItem
       label="Error"
       validate-status="error"
     >
@@ -312,8 +312,8 @@ CustomValidation.parameters = {
         allow-clear
         placeholder="with input password and allowClear"
       />
-    </SEFormItem>
-  </SEForm>
+    </AFormItem>
+  </AForm>
 </template>
 
 <script>
@@ -343,24 +343,3 @@ export const TimeRelated = (args) => ({
   components: { SETimeRelated },
   template: '<SETimeRelated />'
 })
-
-// TimeRelated.parameters = {
-//   docs: {
-//     source: {
-//       code: ``
-//     }
-//   }
-// }
-
-// export const CustomValidation = (args) => ({
-//   components: { SECustomValidation },
-//   template: '<SECustomValidation />'
-// })
-
-// CustomValidation.parameters = {
-//   docs: {
-//     source: {
-//       code: ``
-//     }
-//   }
-// }

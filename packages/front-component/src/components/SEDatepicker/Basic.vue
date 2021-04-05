@@ -1,12 +1,12 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatePicker @change="onChange" />
+    <ADatePicker @change="onChange" />
 
-    <SEMonthPicker placeholder="Select month" @change="onChange" />
+    <AMonthPicker placeholder="Select month" @change="onChange" />
 
-    <SERangePicker @change="onChange" />
+    <ARangePicker @change="onChange" />
 
-    <SEWeekPicker placeholder="Select week" @change="onChange" />
+    <AWeekPicker placeholder="Select week" @change="onChange" />
   </SESpace>
 </template>
 
@@ -17,10 +17,10 @@ import SESpace from '@/components/SESpace'
 export default {
   name: 'BasicExample',
   components: {
-    SEDatePicker: DatePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
-    SERangePicker: DatePicker.RangePicker,
-    SEWeekPicker: DatePicker.WeekPicker,
+    ADatePicker: DatePicker,
+    AMonthPicker: DatePicker.MonthPicker,
+    ARangePicker: DatePicker.RangePicker,
+    AWeekPicker: DatePicker.WeekPicker,
     SESpace
   },
   methods: {

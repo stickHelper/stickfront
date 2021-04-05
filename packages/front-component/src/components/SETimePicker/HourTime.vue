@@ -1,5 +1,5 @@
 <template>
-  <SETimePicker :default-value="moment('12:08', 'HH:mm')" format="HH:mm" />
+  <ATimePicker :default-value="moment('12:08', 'HH:mm')" format="HH:mm" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import moment from 'moment'
 
 export default {
   components: {
-    SETimePicker: TimePicker
+    ATimePicker: TimePicker
   },
   methods: {
     moment

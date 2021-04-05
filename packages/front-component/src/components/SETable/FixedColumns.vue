@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     :scroll="{ x: 1300 }"
@@ -9,7 +9,7 @@
       slot-scope=""
       href="#"
     >action</a>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -52,7 +52,7 @@ const data = [
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     return {

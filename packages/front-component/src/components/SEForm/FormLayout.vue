@@ -1,6 +1,6 @@
 <template>
-  <SEForm :layout="formLayout">
-    <SEFormItem
+  <AForm :layout="formLayout">
+    <AFormItem
       label="Form Layout"
       :label-col="formItemLayout.labelCol"
       :wrapper-col="formItemLayout.wrapperCol"
@@ -16,27 +16,27 @@
           Inline
         </SERadioButton>
       </SERadioGroup>
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Field A"
       :label-col="formItemLayout.labelCol"
       :wrapper-col="formItemLayout.wrapperCol"
     >
       <SETextfield placeholder="input placeholder" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Field B"
       :label-col="formItemLayout.labelCol"
       :wrapper-col="formItemLayout.wrapperCol"
     >
       <SETextfield placeholder="input placeholder" />
-    </SEFormItem>
-    <SEFormItem :wrapper-col="buttonItemLayout.wrapperCol">
+    </AFormItem>
+    <AFormItem :wrapper-col="buttonItemLayout.wrapperCol">
       <SEButton color="primary">
         Submit
       </SEButton>
-    </SEFormItem>
-  </SEForm>
+    </AFormItem>
+  </AForm>
 </template>
 
 <script>
@@ -49,8 +49,8 @@ import SEButton from '@/components/SEButton/index.vue'
 export default {
   name: 'FormLayout',
   components: {
-    SEForm: Form,
-    SEFormItem: Form.Item,
+    AForm: Form,
+    AFormItem: Form.Item,
     SETextfield,
     SERadioButton,
     SERadioGroup,

@@ -1,54 +1,54 @@
 <template>
-  <SEForm :label-col="labelCol" :wrapper-col="wrapperCol">
-    <SEFormItem
+  <AForm :label-col="labelCol" :wrapper-col="wrapperCol">
+    <AFormItem
       label="Fail"
       validate-status="error"
       help="Should be combination of numbers & alphabets"
     >
       <SETextfield id="error" placeholder="unavailable choice" />
-    </SEFormItem>
-    <SEFormItem label="Warning" validate-status="warning">
+    </AFormItem>
+    <AFormItem label="Warning" validate-status="warning">
       <SETextfield id="warning" placeholder="Warning" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Validating"
       validate-status="validating"
       help="The information is being validated..."
     >
       <SETextfield id="validating" placeholder="I'm the content is being validated" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield id="success" placeholder="I'm the content" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
       <SETextfield id="warning2" placeholder="Warning" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Fail"
       validate-status="error"
       help="Should be combination of numbers & alphabets"
     >
       <SETextfield id="error2" placeholder="unavailable choice" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
-      <SEDatePicker style="width: 100%" />
-    </SEFormItem>
-    <SEFormItem
+      <ADatePicker style="width: 100%" />
+    </AFormItem>
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
-      <SEDatePicker type="time" />
-    </SEFormItem>
-    <SEFormItem
+      <ADatePicker type="time" />
+    </AFormItem>
+    <AFormItem
       label="Error"
       validate-status="error"
     >
@@ -60,43 +60,43 @@
           { label: 'Option 3', value: '3' }
         ]"
       />
-    </SEFormItem>
-    <SEFormItem label="inline" style="margin-bottom:0;">
-      <SEFormItem
+    </AFormItem>
+    <AFormItem label="inline" style="margin-bottom:0;">
+      <AFormItem
         validate-status="error"
         help="Please select the correct date"
         :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }"
       >
-        <SEDatePicker style="width: 100%" />
-      </SEFormItem>
+        <ADatePicker style="width: 100%" />
+      </AFormItem>
       <span :style="{ display: 'inline-block', width: '24px', textAlign: 'center' }">
         -
       </span>
-      <SEFormItem :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }">
-        <SEDatePicker style="width: 100%" />
-      </SEFormItem>
-    </SEFormItem>
-    <SEFormItem
+      <AFormItem :style="{ display: 'inline-block', width: 'calc(50% - 12px)' }">
+        <ADatePicker style="width: 100%" />
+      </AFormItem>
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield style="width: 100%" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem
       label="Success"
       validate-status="success"
     >
       <SETextfield allow-clear placeholder="with allowClear" />
-    </SEFormItem>
+    </AFormItem>
 
-    <SEFormItem
+    <AFormItem
       label="Warning"
       validate-status="warning"
     >
       <SETextfield type="password" placeholder="with input password" />
-    </SEFormItem>
+    </AFormItem>
 
-    <SEFormItem
+    <AFormItem
       label="Error"
       validate-status="error"
     >
@@ -105,8 +105,8 @@
         allow-clear
         placeholder="with input password and allowClear"
       />
-    </SEFormItem>
-  </SEForm>
+    </AFormItem>
+  </AForm>
 </template>
 
 <script>
@@ -117,11 +117,11 @@ import SESelect from '@/components/SESelect/index.vue'
 export default {
   name: 'CustomValidation',
   components: {
-    SEForm: Form,
-    SEFormItem: Form.Item,
+    AForm: Form,
+    AFormItem: Form.Item,
     SETextfield,
     SESelect,
-    SEDatePicker: DatePicker
+    ADatePicker: DatePicker
   },
   data() {
     return {

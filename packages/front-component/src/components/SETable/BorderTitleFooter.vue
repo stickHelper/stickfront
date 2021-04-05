@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     bordered
@@ -13,7 +13,7 @@
     <template slot="footer" slot-scope="">
       Footer
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -59,7 +59,7 @@ const data = [
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     return {

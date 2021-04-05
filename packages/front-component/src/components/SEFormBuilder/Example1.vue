@@ -6,13 +6,7 @@
     @success="handleSuccess"
     @error="handleError"
     @submit="handleSubmit"
-  >
-    <template>
-      <Texfield @change="handleChangeValue($event)">
-        asd
-      </Texfield>
-    </template>
-  </SEFormBuilder>
+  />
 </template>
 
 <script>

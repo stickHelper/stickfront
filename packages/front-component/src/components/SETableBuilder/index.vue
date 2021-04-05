@@ -3,7 +3,7 @@
     :id="id"
     :class="classes"
   >
-    <SETable
+    <ATable
       :columns="columns"
       :row-key="record => record.login.uuid"
       :data-source="data"
@@ -14,7 +14,7 @@
       <template slot="name" slot-scope="name">
         {{ name.first }} {{ name.last }}
       </template>
-    </SETable>
+    </ATable>
   </div>
 </template>
 
@@ -41,9 +41,9 @@ async function fetchingAPI(url = '', method, data = {}) {
 }
 
 export default {
-  name: 'SETableBuilder',
+  name: 'ATableBuilder',
   components: {
-    SETable: Table
+    ATable: Table
   },
   props: {
     id: {

@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :data-source="data"
     bordered
@@ -7,7 +7,7 @@
     <template slot="name" slot-scope="text">
       <a>{{ text }}</a>
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -70,7 +70,7 @@ const data = [
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     const columns = [

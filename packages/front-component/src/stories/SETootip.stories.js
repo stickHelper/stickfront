@@ -40,6 +40,7 @@ export const Placement = () => ({
   components: { SETooltipPlacement },
   template: `<div>
     <SETooltipPlacement />
+  </div>
   `
 })
 

@@ -1,14 +1,14 @@
 <template>
   <SESpace direction="vertical">
-    <SETimePicker use12-hours @change="onChange" />
+    <ATimePicker use12-hours @change="onChange" />
 
-    <SETimePicker
+    <ATimePicker
       use12-hours
       format="h:mm:ss A"
       @change="onChange"
     />
 
-    <SETimePicker
+    <ATimePicker
       use12-hours
       format="h:mm a"
       @change="onChange"
@@ -22,7 +22,7 @@ import SESpace from '@/components/SESpace'
 
 export default {
   components: {
-    SETimePicker: TimePicker,
+    ATimePicker: TimePicker,
     SESpace
   },
   methods: {

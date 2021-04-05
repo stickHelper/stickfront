@@ -2,7 +2,7 @@ import './styles/index.scss'
 import './styles/icon/se-font.min.scss'
 import './styles/font/font-family.scss'
 import 'ant-design-vue/dist/antd.css'
-import { Form, DatePicker, TimePicker, Table, Divider, Modal, Tooltip } from 'ant-design-vue'
+import { Form, DatePicker, TimePicker, Table, Divider, Modal, Tooltip, Alert } from 'ant-design-vue'
 
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'
@@ -97,7 +97,8 @@ const components = {
   SEWysiwyg,
   SEDropzone,
   DefaultTemplate,
-  SEMediaUploader
+  SEMediaUploader,
+  SEAlert: Alert
 }
 
 const install = (Vue, opts = {}) => {

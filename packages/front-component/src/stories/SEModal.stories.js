@@ -25,7 +25,7 @@ Default.parameters = {
     <SEButton type="primary" @click="showModal">
       Open Modal
     </SEButton>
-    <SEModal
+    <AModal
       v-model="visible"
       title="Basic Modal"
       @ok="handleOk"
@@ -34,7 +34,7 @@ Default.parameters = {
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>
-    </SEModal>
+    </AModal>
   </div>
 </template>
 
@@ -78,7 +78,7 @@ Plain.parameters = {
     <SEButton type="primary" @click="showModal">
       Open Modal
     </SEButton>
-    <SEModal
+    <AModal
       v-model="visible"
       :footer="null"
       :closable="false"
@@ -87,16 +87,12 @@ Plain.parameters = {
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>
-    </SEModal>
+    </AModal>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-    SEModal: Modal,
-    SEButton
-  },
   data() {
     return {
       visible: false

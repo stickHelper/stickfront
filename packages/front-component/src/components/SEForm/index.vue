@@ -1,12 +1,12 @@
 <template>
   <div>
-    <SEForm
+    <AForm
       :form="form"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
       @submit="handleSubmit"
     >
-      <SEFormItem
+      <AFormItem
         label="Note"
       >
         <SETextfield
@@ -19,8 +19,8 @@
           ]"
           placeholder="Input notes!"
         />
-      </SEFormItem>
-      <SEFormItem
+      </AFormItem>
+      <AFormItem
         label="Gender"
       >
         <SESelect
@@ -37,13 +37,13 @@
             { label: 'Female', value: 'female' }
           ]"
         />
-      </SEFormItem>
-      <SEFormItem :wrapper-col="{ span: 12, offset: 5 }">
+      </AFormItem>
+      <AFormItem :wrapper-col="{ span: 12, offset: 5 }">
         <SEButton color="primary" html-type="submit">
           Submit
         </SEButton>
-      </SEFormItem>
-    </SEForm>
+      </AFormItem>
+    </AForm>
   </div>
 </template>
 
@@ -54,10 +54,10 @@ import SESelect from '@/components/SESelect/index.vue'
 import SEButton from '@/components/SEButton/index.vue'
 
 export default {
-  name: 'SEFormExample',
+  name: 'AFormExample',
   components: {
-    SEForm: Form,
-    SEFormItem: Form.Item,
+    AForm: Form,
+    AFormItem: Form.Item,
     SETextfield,
     SESelect,
     SEButton

@@ -1,10 +1,10 @@
 <template>
   <SESpace direction="vertical">
-    <SEDatePicker :default-value="moment('2015-06-06', dateFormat)" disabled />
+    <ADatePicker :default-value="moment('2015-06-06', dateFormat)" disabled />
 
-    <SEMonthPicker :default-value="moment('2015-06', 'YYYY-MM')" disabled />
+    <AMonthPicker :default-value="moment('2015-06', 'YYYY-MM')" disabled />
 
-    <SERangePicker
+    <ARangePicker
       :default-value="[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]"
       disabled
     />
@@ -19,9 +19,9 @@ import moment from 'moment'
 export default {
   name: 'Disabled',
   components: {
-    SEDatePicker: DatePicker,
-    SERangePicker: DatePicker.RangePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
+    ADatePicker: DatePicker,
+    ARangePicker: DatePicker.RangePicker,
+    AMonthPicker: DatePicker.MonthPicker,
     SESpace
   },
   data() {

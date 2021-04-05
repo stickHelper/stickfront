@@ -1,5 +1,5 @@
 <template>
-  <SETable
+  <ATable
     :columns="columns"
     :row-key="record => record.login.uuid"
     :data-source="data"
@@ -10,7 +10,7 @@
     <template slot="name" slot-scope="name">
       {{ name.first }} {{ name.last }}
     </template>
-  </SETable>
+  </ATable>
 </template>
 
 <script>
@@ -59,7 +59,7 @@ async function getData(url = '') {
 
 export default {
   components: {
-    SETable: Table
+    ATable: Table
   },
   data() {
     return {

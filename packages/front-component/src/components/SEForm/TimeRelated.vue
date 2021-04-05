@@ -1,36 +1,36 @@
 <template>
-  <SEForm
+  <AForm
     v-bind="formItemLayout"
     :form="form"
     @submit="handleSubmit"
   >
-    <SEFormItem label="DatePicker">
-      <SEDatePicker v-decorator="['date-picker', config]" />
-    </SEFormItem>
-    <SEFormItem label="DatePicker[showTime]">
-      <SEDatePicker
+    <AFormItem label="DatePicker">
+      <ADatePicker v-decorator="['date-picker', config]" />
+    </AFormItem>
+    <AFormItem label="DatePicker[showTime]">
+      <ADatePicker
         v-decorator="['date-time-picker', config]"
         show-time
         format="YYYY-MM-DD HH:mm:ss"
       />
-    </SEFormItem>
-    <SEFormItem label="MonthPicker">
-      <SEMonthPicker v-decorator="['month-picker', config]" />
-    </SEFormItem>
-    <SEFormItem label="RangePicker">
-      <SERangePicker v-decorator="['range-picker', rangeConfig]" />
-    </SEFormItem>
-    <SEFormItem label="RangePicker[showTime]">
-      <SERangePicker
+    </AFormItem>
+    <AFormItem label="MonthPicker">
+      <AMonthPicker v-decorator="['month-picker', config]" />
+    </AFormItem>
+    <AFormItem label="RangePicker">
+      <ARangePicker v-decorator="['range-picker', rangeConfig]" />
+    </AFormItem>
+    <AFormItem label="RangePicker[showTime]">
+      <ARangePicker
         v-decorator="['range-time-picker', rangeConfig]"
         show-time
         format="YYYY-MM-DD HH:mm:ss"
       />
-    </SEFormItem>
-    <SEFormItem label="TimePicker">
-      <SETimePicker v-decorator="['time-picker', config]" />
-    </SEFormItem>
-    <SEFormItem
+    </AFormItem>
+    <AFormItem label="TimePicker">
+      <ATimePicker v-decorator="['time-picker', config]" />
+    </AFormItem>
+    <AFormItem
       :wrapper-col="{
         xs: { span: 24, offset: 0 },
         sm: { span: 16, offset: 8 },
@@ -39,8 +39,8 @@
       <SEButton color="primary" html-type="submit">
         Submit
       </SEButton>
-    </SEFormItem>
-  </SEForm>
+    </AFormItem>
+  </AForm>
 </template>
 
 <script>
@@ -49,12 +49,12 @@ import SEButton from '@/components/SEButton'
 
 export default {
   components: {
-    SEForm: Form,
-    SEFormItem: Form.Item,
-    SEDatePicker: DatePicker,
-    SEMonthPicker: DatePicker.MonthPicker,
-    SERangePicker: DatePicker.RangePicker,
-    SETimePicker: TimePicker,
+    AForm: Form,
+    AFormItem: Form.Item,
+    ADatePicker: DatePicker,
+    AMonthPicker: DatePicker.MonthPicker,
+    ARangePicker: DatePicker.RangePicker,
+    ATimePicker: TimePicker,
     SEButton
   },
   data() {

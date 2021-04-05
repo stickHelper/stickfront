@@ -3,7 +3,7 @@
     <SEButton type="primary" @click="showModal">
       Open Modal
     </SEButton>
-    <SEModal
+    <AModal
       v-model="visible"
       title="Basic Modal"
       @ok="handleOk"
@@ -12,7 +12,7 @@
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>
-    </SEModal>
+    </AModal>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ import SEButton from '@/components/SEButton'
 
 export default {
   components: {
-    SEModal: Modal,
+    AModal: Modal,
     SEButton
   },
   data() {
