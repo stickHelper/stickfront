@@ -303,7 +303,7 @@ import SEButton from '@/components/SEButton'
 import SESpace from '@/components/SESpace'
 
 export default {
-  name: 'AFormBuilder',
+  name: 'SEFormBuilder',
   components: {
     SETextfield,
     SETextarea,
