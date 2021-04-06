@@ -136,7 +136,7 @@
           </div>
         </AFormItem>
 
-        <!-- CHECKBOX -->
+        <!-- CHECKBOX GROUP -->
         <AFormItem
           v-else-if="schema.componentName === 'SECheckboxGroup'"
           :key="schema.id"
@@ -176,6 +176,70 @@
           </div>
         </AFormItem>
 
+        <!-- CHECKBOX -->
+        <AFormItem
+          v-else-if="schema.componentName === 'SECheckbox'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SECheckbox
+            v-decorator="[
+              schema.name,
+              {
+                rules: schema.rules,
+                valuePropName: 'defaultChecked',
+                initialValue: schema.defaultValue || false
+              }
+            ]"
+            :style="schema.style"
+            :color="schema.color"
+          >
+            {{ schema.labelField }}
+          </SECheckbox>
+          <div class="help-info">
+            {{ schema.helpText }}
+          </div>
+        </AFormItem>
+
+        <!-- Switch -->
+        <AFormItem
+          v-else-if="schema.componentName === 'SESwitch'"
+          :key="schema.id"
+          :label="schema.labelName"
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+        >
+          <SESpace align="center" size="middle">
+            <SESwitch
+              v-decorator="[
+                schema.name,
+                {
+                  rules: schema.rules,
+                  valuePropName: 'defaultChecked',
+                  initialValue: schema.defaultValue
+                }
+              ]"
+              :size="schema.size"
+              :style="schema.style"
+              :color="schema.color"
+            />
+
+            <div class="switch-label">
+              <div>
+                <strong>{{ schema.labelField }}</strong>
+              </div>
+              <div>
+                {{ schema.subLabelField }}
+              </div>
+            </div>
+          </SESpace>
+          <div class="help-info">
+            {{ schema.helpText }}
+          </div>
+        </AFormItem>
+
         <!-- TIME RELATED -->
         <AFormItem
           v-else-if="schema.componentName === 'SEDatePicker'"
@@ -194,7 +258,7 @@
             ]"
             :show-time="schema.showTime"
             :size="schema.size"
-            format="YYYY-MM-DD HH:mm:ss"
+            :format="schema.format || 'YYYY-MM-DD HH:mm:ss'"
           />
         </AFormItem>
         <AFormItem
@@ -213,6 +277,7 @@
               }
             ]"
             :size="schema.size"
+            :format="schema.format || 'YYYY-MM'"
           />
         </AFormItem>
         <AFormItem
@@ -250,6 +315,7 @@
               }
             ]"
             :size="schema.size"
+            :format="schema.format || 'HH:mm:ss'"
           />
         </AFormItem>
         <template v-else>
@@ -296,6 +362,7 @@ import SETextarea from '@/components/SETextarea'
 import SESelect from '@/components/SESelect'
 import SERadio from '@/components/SERadio'
 import SERadioGroup from '@/components/SERadio/SERadioGroup'
+import SESwitch from '@/components/SESwitch'
 import SECheckbox from '@/components/SECheckbox'
 import SECheckboxGroup from '@/components/SECheckbox/SECheckboxGroup'
 import SERadioButton from '@/components/SERadio/SERadioButton'
@@ -310,6 +377,7 @@ export default {
     SESelect,
     AForm: Form,
     AFormItem: Form.Item,
+    SESwitch,
     SERadio,
     SERadioGroup,
     SERadioButton,
@@ -383,37 +451,8 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           this.$emit('submit', values)
-          if (['post', 'patch'].includes(this.dataSchemas.submitMethod)) {
-            this.isLoadingSubmit = true
-            this.postData(this.dataSchemas.submitUrl, values)
-              .then(res => {
-                this.isLoadingSubmit = false
-                this.$emit('success', res)
-              })
-              .catch(err => {
-                this.isLoadingSubmit = false
-                this.$emit('error', err)
-              })
-          }
         }
       })
-    },
-    async postData(url = '', data = {}) {
-    // Default options are marked with *
-      const response = await fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        headers: {
-          'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
-      })
-      return response.json() // parses JSON response into native JavaScript objects
     },
     handleCancel() {
       this.form.resetFields()

@@ -10,12 +10,11 @@
 </template>
 
 <script>
+import moment from 'moment'
 import SEFormBuilder from '@/components/SEFormBuilder'
 
 const dataSchema = {
   formLayout: 'veritcal',
-  submitMethod: 'post',
-  submitUrl: 'http://asset-inventory.test/api/screenRestriction',
   schemas: [
     {
       labelName: 'General Information',
@@ -178,6 +177,87 @@ const dataSchema = {
           label: 'Red',
           value: '987e1ef3-5bd9-4f99-bb4d-498a1bcfe896'
         }
+      ]
+    },
+    {
+      defaultValue: moment(new Date(), 'YYYY-MM-DD'),
+      name: 'datepicker',
+      labelName: 'Datepicker',
+      id: 'LudEgwhUZpzvbx7GZsT',
+      componentName: 'SEDatePicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM-DD',
+      placeholder: 'Input date picker',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input datepicker!!' }
+      ]
+    },
+    {
+      defaultValue: moment(new Date(), 'YYYY-MM-DD'),
+      name: 'monthpicker',
+      labelName: 'Monthpicker',
+      id: 'LudE1234UZpzvbx7GZsT',
+      componentName: 'SEMonthPicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM',
+      placeholder: 'Input month',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input month!!' }
+      ]
+    },
+    {
+      defaultValue: [moment(new Date(), 'YYYY-MM-DD'), moment(new Date(), 'YYYY-MM-DD')],
+      name: 'rangepicker',
+      labelName: 'RangePicker',
+      id: 'Lua31dE1234UZpzvbx7GZsT',
+      componentName: 'SERangePicker',
+      size: 'large',
+      helpText: 'ex: YYYY-MM-DD - YYYY-MM-DD',
+      placeholder: 'Input range date',
+      showTime: false,
+      rules: [
+        { type: 'array', required: true, message: 'Please input range date!!' }
+      ]
+    },
+    {
+      defaultValue: moment(new Date(), 'HH:mm:ss'),
+      name: 'time-picker',
+      labelName: 'TimePicker',
+      id: 'LudE1235xcv4UZpzvbx7GZsT',
+      componentName: 'SETimePicker',
+      size: 'large',
+      helpText: 'ex: HH:mm:ss',
+      placeholder: 'Input time',
+      showTime: false,
+      rules: [
+        { type: 'object', required: true, message: 'Please input time!!' }
+      ]
+    },
+    {
+      defaultValue: true,
+      name: 'switch',
+      labelName: 'Please Select',
+      labelField: 'Label Field',
+      subLabelField: 'Label Field',
+      id: 'jhEbpg12Yas156s234WcqSfA',
+      componentName: 'SESwitch',
+      color: 'yellow',
+      rules: [
+        { required: true, message: 'Please Select!!' }
+      ]
+    },
+    {
+      defaultValue: true,
+      name: 'agree',
+      labelName: 'Select Agree',
+      labelField: 'Label Field',
+      id: 'jhEbpg12Y56s234WcqSfA',
+      componentName: 'SECheckbox',
+      color: 'yellow',
+      rules: [
+        { required: true, message: 'Please Select!!' }
       ]
     }
   ],
