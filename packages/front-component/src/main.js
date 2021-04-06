@@ -5,6 +5,10 @@ import VueLogger from 'vuejs-logger'
 
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
+import Components from '@stickearn/stickfront'
+import '@stickearn/stickfront/dist/stickfront.css'
+
+Vue.use(Components)
 
 const isProduction = process.env.NODE_ENV === 'production'
 

@@ -1,6 +1,6 @@
 {
   "name": "@stickearn/stickfront",
-  "version": "1.0.3",
+  "version": "1.1.5",
   "private": false,
   "license": "MIT",
   "publishConfig": {
@@ -32,12 +32,14 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@stickearn/stickfront": "^1.1.5",
     "ant-design-vue": "^1.7.3",
     "apexcharts": "^3.22.0",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "d3": "^6.5.0",
     "d3-scale": "^3.2.3",
+    "qs": "^6.10.1",
     "vue": "^2.6.11",
     "vue-apexcharts": "^1.6.0",
     "vue-chartjs": "^3.5.1",
@@ -45,8 +47,6 @@
     "vue-d3-sunburst": "^1.1.0",
     "vue-router": "^3.2.0",
     "vue-slider-component": "^3.2.11",
-    "vue2-datepicker": "^3.7.0",
-    "vue2-daterange-picker": "^0.6.2",
     "vue2-dropzone": "^3.6.0",
     "vuejs-logger": "^1.5.5"
   },
@@ -89,5 +89,6 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "gitHead": "1be42cac9aac6b3a6b5ca1cbef580f5d4e980d02"
 }

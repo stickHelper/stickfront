@@ -9,16 +9,17 @@
       :for="inputName"
     >
       {{ labelName }}
+      <span v-if="isRequired" class="asterisk">*</span>
     </label>
 
     <div
       :id="inputName"
-      :class="isDisabled ? 'disabled' : null"
+      :class="disabled ? 'disabled' : null"
       class="se-combobox--field"
       @click="triggerDropdown()"
     >
       <div
-        v-if="value && value !== ''"
+        v-if="value && (value !== '' || value === value.name)"
         class="field-value"
       >
         {{ value }}
@@ -41,9 +42,9 @@
       />
     </div>
     <ul
-      v-if="isDropdown && !isDisabled"
+      v-if="isDropdown && !disabled"
       class="se-combobox--list"
-      :style="labelName && labelName !== '' ? 'top: 85px' : null"
+      :style="labelName && labelName !== '' ? 'top: 66px' : null"
     >
       <li
         v-if="isSearch"
@@ -78,6 +79,9 @@
         </div>
       </li>
     </ul>
+    <div class="se-combobox--helper">
+      {{ helper }}
+    </div>
     <div class="se-combobox--info">
       {{ info }}
     </div>
@@ -111,9 +115,9 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Choose option...'
+      default: ''
     },
-    isDisabled: {
+    disabled: {
       type: Boolean,
       default: false
     },
@@ -137,16 +141,24 @@ export default {
       type: String,
       default: null,
       validator: function (value) {
-        return ['small', 'extra-small'].indexOf(value) !== -1
+        return ['small', 'large'].indexOf(value) !== -1
       }
     },
     info: {
       type: String,
       default: null
     },
+    helper: {
+      type: String,
+      default: null
+    },
     options: {
       type: Array,
       default: () => []
+    },
+    isRequired: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -162,7 +174,7 @@ export default {
         'se-combobox': true,
         [`se-combobox--${this.size}`]: this.size !== null,
         [this.className]: this.className !== null,
-        disabled: this.isDisabled,
+        disabled: this.disabled,
         error: this.isError,
         success: this.isSuccess
       }
@@ -172,7 +184,7 @@ export default {
     triggerDropdown() {
       this.isDropdown = !this.isDropdown
 
-      if (this.isDropdown && !this.isDisabled) {
+      if (this.isDropdown && !this.disabled) {
         this.icon = 'icon-chevron-up'
       } else {
         this.icon = 'icon-chevron-down'

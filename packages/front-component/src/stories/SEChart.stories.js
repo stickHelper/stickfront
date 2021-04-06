@@ -362,10 +362,36 @@ Sunburst.parameters = {
   docs: {
     source: {
       code: ` <SEChart
-  type="donut"
-  :colors="['#4E277A', '#F7A300', '#FF5757', '#00B4AE']"
-  :categories="['SD', 'SMP', 'SMA', 'S1']"
-  :series-data="[1000, 1500, 1300, 900]"
+  type="sunburst"
+  :sunburstData="{
+    name: 'flare',
+    children: [
+      {
+        name: 'analytics',
+        children: [
+          {
+            name: 'cluster',
+            children: [
+              { name: 'AgglomerativeCluster', size: 3938 }
+            ]
+          },
+          {
+            name: 'graph',
+            children: [
+              { name: 'BetweennessCentrality', size: 3534 }
+            ]
+          },
+          {
+            name: 'optimization',
+            children: [
+              { name: 'AspectRatioBanker', size: 7074 }
+            ]
+          }
+        ]
+      }
+    ]
+  }"
+  :colors="['#31ea74', '#3c7227']"
 />`
     }
   }

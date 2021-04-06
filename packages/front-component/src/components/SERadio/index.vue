@@ -1,38 +1,34 @@
 <template>
-  <div :class="classes">
-    <div class="se-radio--item">
-      <input
-        :id="id"
-        type="radio"
-        :name="name"
-        :value="value"
-        :checked="checked"
-        @change="$emit('change', $event.target.value)"
-      >
-      <label :for="id">{{ label }}</label>
-    </div>
+  <div :id="id" :class="classes">
+    <Radio
+      :default-checked="defaultChecked"
+      :disabled="disabled"
+      :size="size"
+      :value="value"
+      :style="styles"
+      @change="$emit('change', $event.target.value)"
+    >
+      <slot />
+    </Radio>
   </div>
 </template>
 
 <script>
+import { Radio } from 'ant-design-vue'
+
 export default {
   name: 'SERadio',
+  components: {
+    Radio
+  },
   props: {
     id: {
       type: String,
       default: null
     },
-    name: {
-      type: String,
-      default: null
-    },
     value: {
-      type: String,
+      type: [String, Number],
       default: null
-    },
-    label: {
-      type: String,
-      default: 'Some label'
     },
     className: {
       type: String,
@@ -40,14 +36,34 @@ export default {
     },
     checked: {
       type: Boolean,
+      default: null
+    },
+    defaultChecked: {
+      type: Boolean,
+      default: null
+    },
+    disabled: {
+      type: Boolean,
       default: false
+    },
+    styles: {
+      type: Object,
+      default: () => null
+    },
+    size: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['large', null].indexOf(value) !== -1
+      }
     }
   },
   computed: {
     classes() {
       return {
         'se-radio': true,
-        [this.className]: this.className !== null
+        [this.className]: this.className !== null,
+        [`se-radio__${this.size}`]: this.size !== null
       }
     }
   }

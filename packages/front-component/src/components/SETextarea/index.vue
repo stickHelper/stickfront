@@ -1,35 +1,48 @@
 <template>
-  <div :class="['se-textarea', className, isError ? 'error' : null]">
-    <label
-      v-if="labelName && labelName !== ''"
-      :for="inputName"
-    >
+  <div
+    :id="id"
+    :class="classes"
+  >
+    <div v-if="labelName && labelName !== ''" class="label-name">
       {{ labelName }}
-    </label>
-    <textarea
-      :id="inputName"
-      :class="isError ? 'error' : null"
-      :placeholder="placeholder"
-      :value="valueInput"
-      :rows="rows"
-      :style="icon && icon !== '' ? 'padding-right: 35px' : null"
-      @input="$emit('input', $event.target.value)"
-    />
-    <i
-      v-if="icon && icon !== ''"
-      :class="['icon', icon]"
-    />
-    <div class="se-textarea--info">
-      {{ info }}
+    </div>
+
+    <div class="se-textarea__field">
+      <a-textarea
+        v-model="currentValue"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :default-value="defaultValue"
+        :allow-clear="allowClear"
+        :auto-size="autoSize"
+        @change="onChange"
+        @pressEnter="onChange"
+      >
+      <!--  -->
+      </a-textarea>
+    </div>
+
+    <div v-if="helper || info" class="mt-xs-2">
+      <div class="se-textarea__helper">
+        {{ helper }}
+      </div>
+      <div class="se-textarea__info">
+        {{ info }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { Input } from 'ant-design-vue'
+
 export default {
   name: 'SETextarea',
+  components: {
+    'a-textarea': Input.TextArea
+  },
   props: {
-    inputName: {
+    id: {
       type: String,
       default: null
     },
@@ -37,31 +50,23 @@ export default {
       type: String,
       default: null
     },
-    type: {
-      type: String,
-      default: 'text'
-    },
     labelName: {
       type: String,
       default: null
     },
     placeholder: {
       type: String,
-      default: 'Placeholder'
+      default: ''
     },
-    icon: {
-      type: String,
-      default: null
-    },
-    isDisabled: {
+    disabled: {
       type: Boolean,
       default: false
     },
-    valueInput: {
-      type: String,
+    value: {
+      type: [String, Number],
       default: null
     },
-    rows: {
+    defaultValue: {
       type: [String, Number],
       default: null
     },
@@ -69,9 +74,49 @@ export default {
       type: Boolean,
       default: false
     },
+    isSuccess: {
+      type: Boolean,
+      default: false
+    },
+    allowClear: {
+      type: Boolean,
+      default: false
+    },
+    autoSize: {
+      type: [Boolean, Object],
+      default: () => null
+    },
     info: {
       type: String,
       default: null
+    },
+    helper: {
+      type: String,
+      default: null
+    }
+  },
+  data() {
+    return {
+      tags: [],
+      showList: false,
+      currentValue: this.value
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        'se-textarea': true,
+        [`se-textarea__${this.size}`]: this.size !== null,
+        [this.className]: this.className !== null,
+        disabled: this.disabled,
+        error: this.isError,
+        success: this.isSuccess
+      }
+    }
+  },
+  methods: {
+    onChange(e) {
+      this.$emit('change', e.target.value)
     }
   }
 }

@@ -1,141 +1,116 @@
 .se-checkbox {
-  &__item {
-    cursor: pointer;
-    display: inline-block;
-
+  position: relative;
+  .ant-checkbox-wrapper {
     &:hover {
-      input:not(:checked) + label:before {
-        background-color: $accent;
+      .ant-checkbox-checked {
+        &:after {
+          @include border-radius(6px);
+        }
       }
-      input:checked + label:before {
-        background-color: darken($color: #1890ff, $amount: 3);
+    }
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        width: 24px;
+        height: 24px;
+        @include border-radius(6px);
+        &:after {
+          top: 48%;
+          left: 27%;
+          width: 6.714286px;
+          height: 12.142857px;
+        }
       }
     }
 
-    &:focus, &:active {
-      input:not(:checked) + label:before {
-        @include box-shadow(0px 0px 8px 8px rgba($color: $line, $alpha: .24))
+    .ant-checkbox-indeterminate {
+      .ant-checkbox-inner {
+        &::after {
+          top: 50% !important;
+          left: 50% !important;
+          width: 12px !important;
+          height: 12px !important;
+
+          @include border-radius(4px);
+        }
       }
-
-      input:checked + label:before {
-        @include box-shadow(0px 0px 8px 8px rgba($color: #1890ff, $alpha: .24))
-      }
-    }
-
-    &.disabled {
-      cursor: not-allowed;
-
-      input:not(:checked) + label:before, 
-      input:checked + label:before {
-        background-color: $line;
-        cursor: not-allowed;
-      }
-
-      input,
-      label {
-        cursor: not-allowed;
-      }
-    }
-
-    input {
-      padding: 0;
-      height: initial;
-      width: initial;
-      margin-bottom: 0;
-      display: none;
-      cursor: pointer;
-    }
-
-    label {
-      cursor: pointer;
-      position: relative;
-
-      &:before {
-        content:'';
-        -webkit-appearance: none;
-        background-color: $white;
-        border: 1px solid $line;
-        box-sizing: border-box;
-        padding: 10px;
-        display: inline-block;
-        position: relative;
-        vertical-align: middle;
-        cursor: pointer;
-        margin-right: $gutter-sm;
-        width: 32px;
-        height: 32px;
-
-        @include border-radius(4px)
-      }
-    }
-
-    input:checked + label:before {
-      background-color: #1890ff;
-    }
-
-    input:checked + label:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 2px;
-      left: 12px;
-      width: 8px;
-      height: 16px;
-      border: solid $white;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
     }
   }
   
   &__small {
-    .se-checkbox__item {
-      label {
-        &:before {
-          width: 24px;
-          height: 24px;
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          width: 16px;
+          height: 16px;
+          @include border-radius(4px);
+          &:after {
+            top: 50%;
+            left: 22%;
+            width: 5.71428571px;
+            height: 9.14285714px;
+          }
         }
       }
-      input:checked + label:after {
-        top: 4px;
-        left: 9px;
-        width: 6px;
-        height: 12px;
+
+      .ant-checkbox-indeterminate {
+        .ant-checkbox-inner {
+          &::after {
+            width: 8px !important;
+            height: 8px !important;
+  
+            @include border-radius(2px);
+          }
+        }
       }
     }
   }
 
-  &__primary {
-    .se-checkbox__item {
-      &:hover {
-        input:checked + label:before {
-          background-color: darken($color: $purple, $amount: 3);
+  &__large {
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          width: 32px;
+          height: 32px;
+          &:after {
+            top: 50%;
+            left: 29%;
+            width: 8.71428571px;
+            height: 14.14285714px;
+          }
         }
       }
-      &:focus, &:active {
-        input:checked + label:before {
-          @include box-shadow(0px 0px 8px 8px rgba($color: $purple, $alpha: .24))
+
+      .ant-checkbox-indeterminate {
+        .ant-checkbox-inner {
+          &::after {
+            width: 16px !important;
+            height: 16px !important;
+  
+            @include border-radius(4px);
+          }
         }
-      }
-      input:checked + label:before {
-        background-color: $purple;
       }
     }
   }
 
-  &__secondary {
-    .se-checkbox__item {
-      &:hover {
-        input:checked + label:before {
-          background-color: darken($color: $yellow, $amount: 3);
+  &__purple {
+    .ant-checkbox-wrapper {
+      .ant-checkbox-checked {
+        .ant-checkbox-inner {
+          background-color: $purple;
+          border-color: $purple;
         }
       }
-      &:focus, &:active {
-        input:checked + label:before {
-          @include box-shadow(0px 0px 8px 8px rgba($color: $yellow, $alpha: .24))
+    }
+  }
+
+  &__yellow {
+    .ant-checkbox-wrapper {
+      .ant-checkbox-checked {
+        .ant-checkbox-inner {
+          background-color: $yellow;
+          border-color: $yellow;
         }
-      }
-      input:checked + label:before {
-        background-color: $yellow;
       }
     }
   }

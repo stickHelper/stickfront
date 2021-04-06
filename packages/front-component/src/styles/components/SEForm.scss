@@ -1,0 +1,30 @@
+.has-error {
+  .ant-select-selection {
+    border-color: $error!important;
+    color: $error;
+  }
+}
+
+.has-error,
+.has-warning {
+  .ant-input,
+  .ant-input:hover {
+    background-color: $accent !important;
+  }
+}
+
+.ant-form {
+  .help-info,
+  .ant-form-explain {
+    font-size: $text-xs;
+    line-height: 1.8;
+  }
+
+  .ant-form-item-label {
+    line-height: 26.9999px;
+  }
+
+  .ant-form-item {
+    margin-bottom: $gutter-md;
+  }
+}

@@ -61,7 +61,7 @@ export default {
   },
   data() {
     return {
-      singleValue: null,
+      singleValue: this.value,
       rangeValue: [this.min, this.max]
     }
   },

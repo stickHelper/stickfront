@@ -1,21 +1,18 @@
 import '@/styles/index.scss'
-import SEModal from '@/components/SEModal/index.vue'
+import { Modal } from 'ant-design-vue'
+import BasicExample from '@/components/SEModal/BasicExample.vue'
+import SEPlain from '@/components/SEModal/Plain.vue'
 
 export default {
   title: 'Components/Modal',
-  component: SEModal,
-  argTypes: {
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } }
-  }
+  component: Modal
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SEModal },
+  components: { BasicExample },
   template: `<div>
-    <SEModal :showModal="true" >
-      Content here ...
-    </SEModal>
+    <BasicExample />
   </div>`
 })
 
@@ -23,45 +20,96 @@ export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: '<SEModal :showModal="true" > Content here ...</SEModal>'
+      code: `<template>
+  <div>
+    <SEButton type="primary" @click="showModal">
+      Open Modal
+    </SEButton>
+    <AModal
+      v-model="visible"
+      title="Basic Modal"
+      @ok="handleOk"
+      @cancel="handleCancel"
+    >
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+    </AModal>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.visible = true
+    },
+    handleOk(e) {
+      console.log(e)
+      this.visible = false
+    },
+    handleCancel(e) {
+      console.log(e)
+      this.visible = false
+    }
+  }
+}
+</script>
+`
     }
   }
 }
 
-export const Small = () => ({
-  components: { SEModal },
-  template: `<SEModal :showModal="true" size="small" >
-    Content here ...
-  </SEModal>
-  `
+export const Plain = () => ({
+  components: { SEPlain },
+  template: '<SEPlain />'
 })
 
-Small.parameters = {
+Plain.parameters = {
   docs: {
     source: {
-      code: `<SEModal :showModal="true" size="small" >
-  Content here ...
-</SEModal>
-      `
+      code: `<template>
+  <div>
+    <SEButton type="primary" @click="showModal">
+      Open Modal
+    </SEButton>
+    <AModal
+      v-model="visible"
+      :footer="null"
+      :closable="false"
+      @cancel="handleCancel"
+    >
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+      <p>Some contents...</p>
+    </AModal>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.visible = true
+    },
+    handleCancel(e) {
+      console.log(e)
+      this.visible = false
     }
   }
 }
-
-export const Large = () => ({
-  components: { SEModal },
-  template: `<SEModal :showModal="true" size="large" >
-    Content here ...
-  </SEModal>
-  `
-})
-
-Large.parameters = {
-  docs: {
-    source: {
-      code: `<SEModal :showModal="true" size="large" >
-  Content here ...
-</SEModal>
-      `
+</script>
+`
     }
   }
 }

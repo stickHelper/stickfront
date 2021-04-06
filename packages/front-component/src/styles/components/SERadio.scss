@@ -1,60 +1,120 @@
 
 .se-radio {
-  [type="radio"]:checked,
-  [type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+  position: relative;
+  display: inherit;
+  .ant-radio-wrapper {
+    @include flexbox;
+    @include align-items(center);
   }
-
-  [type="radio"]:checked + label,
-  [type="radio"]:not(:checked) + label {
-    position: relative;
-    padding-left: $gutter-xl + $gutter-sm;
-    cursor: pointer;
-    line-height: 24px;
-    display: inline-block;
+  .ant-radio-wrapper:hover .ant-radio, 
+  .ant-radio:hover .ant-radio-inner,
+  .ant-radio-input:focus + .ant-radio-inner {
+    border-color: $yellow;
   }
-
-  [type="radio"]:checked + label:before,
-  [type="radio"]:not(:checked) + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 24px;
-    height: 24px;
-    border: 1px solid $line;
-    border-radius: 100%;
-    background: $accent;
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: 0 0 0 3px rgba($color: $yellow, $alpha: .08);
   }
-
-  [type="radio"]:checked + label:after,
-  [type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background: $yellow;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+  .ant-radio-checked .ant-radio-inner {
+    border-color: $yellow;
   }
-
-  [type="radio"]:checked + label::before {
+  .ant-radio-inner::after {
+    background-color: $yellow;
+  }
+  .ant-radio-checked::after {
     border: 1px solid $yellow;
   }
+  
 
-  [type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
+  &__large {
+    .ant-radio-inner {
+      width: 24px;
+      height: 24px;
+
+      &:after {
+        top: 5px;
+        left: 5px;
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
 
-  [type="radio"]:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+  &__group {
+    position: inherit;
+
+    .label-name {
+      margin-bottom: $gutter-sm;
+      color: $text-normal;
+      line-height: 22px;
+  
+      .asterisk {
+        font-size: $text-xs;
+        color: $error;
+      }
+    }
+
+    &-info,
+    &-helper {
+      font-size: $text-xs;
+      line-height: 20px;
+    }
+
+    .ant-radio-group-large .ant-radio-button-wrapper {
+      height: 46px;
+      font-size: $text-sm;
+      line-height: 44px;
+    }
+
+    .ant-radio-group-outline {
+      width: 100%;
+    }
+
+    .ant-radio-button-wrapper {
+      background-color: $accent;
+      border: 1px solid $line;
+      text-align: center;
+      font-weight: 600;
+
+      @include border-radius(6px !important);
+
+      &:first-child {
+        border-left: 1px solid $line;
+      }
+
+      &:not(:first-child)::before {
+        background-color: transparent;
+      }
+    }
   }
+
+  .group-button {
+    position: inherit !important;
+    .ant-radio-group {
+      @include flexbox;
+      @include justify-content(space-between);
+    }
+  }
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+  outline: none !important;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child {
+  border-color: $purple !important;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: $purple !important;
+  border-color: $purple !important;
+  box-shadow: 0 0 0 0 $purple !important;
+  background: rgba($color: $purple, $alpha: .08) !important;
+}
+
+.ant-radio-button-wrapper:hover {
+  color: $purple !important;
+}
+
+.ant-radio-button-wrapper:focus-within {
+  outline: none !important;
 }
