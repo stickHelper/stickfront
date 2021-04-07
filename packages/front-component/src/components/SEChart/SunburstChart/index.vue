@@ -62,34 +62,7 @@ export default {
   },
   data() {
     return {
-      data:  {
-        name: 'flare',
-        children: [
-          {
-            name: 'analytics',
-            children: [
-              {
-                name: 'cluster',
-                children: [
-                  { name: 'AgglomerativeCluster', size: 3938 }
-                ]
-              },
-              {
-                name: 'graph',
-                children: [
-                  { name: 'BetweennessCentrality', size: 3534 }
-                ]
-              },
-              {
-                name: 'optimization',
-                children: [
-                  { name: 'AspectRatioBanker', size: 7074 }
-                ]
-              }
-            ]
-          }
-        ]
-      },
+      data:  this.sunburstData,
       info: {
         name: null,
         value: null
