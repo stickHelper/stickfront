@@ -242,6 +242,36 @@ ol, ul, dl {
   }
 }
 
+.align {
+  &-center {
+    @include align-items(center);
+  }
+  &-start {
+    @include align-items(flex-start);
+  }
+  &-end {
+    @include align-items(flex-end);
+  }
+}
+
+.justify {
+  &-center {
+    @include justify-content(center)
+  }
+  &-between {
+    @include justify-content(space-between)
+  }
+  &-arround {
+    @include justify-content(space-arround)
+  }
+  &-start {
+    @include justify-content(flex-start)
+  }
+  &-end {
+    @include justify-content(flex-end)
+  }
+}
+
 .no-wrap {
   overflow-x: hidden;
   white-space: nowrap;

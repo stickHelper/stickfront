@@ -9,21 +9,22 @@
     >
       <div
         v-if="expandMenu"
-        class="no-wrap w-100"
+        class="flex w-100"
       >
         <span class="se-sidebarmenu--icon">
           <i :class="menu.icon" />
         </span>
-        <span class="se-sidebarmenu--label">
-          {{ menu.label }}
+        <div class="se-sidebarmenu--label">
+          <div>
+            {{ menu.label }}
+          </div>
           <span class="se-sidebarmenu--icon">
             <i class="icon" :class="showSubmenu ? 'icon-angle-up' : 'icon-angle-down'" />
           </span>
-        </span>
+        </div>
       </div>
       <div
         v-else
-        class="no-wrap"
       >
         <span class="se-sidebarmenu--icon">
           <i :class="menu.icon" />
@@ -41,11 +42,11 @@
       >
         <a :href="subMenu.path">
           <div
-            class="no-wrap"
+            class="flex"
           >
-            <span class="se-sidebarmenu--label">
+            <div class="se-sidebarmenu--label">
               {{ subMenu.label }}
-            </span>
+            </div>
           </div>
         </a>
       </li>
