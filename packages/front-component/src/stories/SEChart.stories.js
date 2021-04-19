@@ -202,11 +202,11 @@ export const MirrorChart = () => ({
     :series-data="[
       {
         name: 'Male',
-        data: [10, 30, 30, 50, 55, 80]
+        data: [1000, 1500, 1300, 900, 50, 0]
       },
       {
         name: 'Female',
-        data: [15, 25, 40, 45, 68, 70]
+        data: [15, 1000, 1500, 1300, 900, 100]
       }
     ]"
     height="auto"
@@ -224,11 +224,11 @@ MirrorChart.parameters = {
   :series-data="[
     {
       name: 'Male',
-      data: [10, 30, 30, 50, 55, 80]
+      data: [1000, 1500, 1300, 900, 50, 70]
     },
     {
       name: 'Female',
-      data: [15, 25, 40, 45, 68, 70]
+      data: [15, 1000, 1500, 1300, 900, 100]
     }
   ]"
   height="auto"
