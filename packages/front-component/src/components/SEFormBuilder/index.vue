@@ -318,8 +318,18 @@
             :format="schema.format || 'HH:mm:ss'"
           />
         </AFormItem>
+        <SEFormBuilderItem
+          v-else-if="schema.componentName === 'custom'"
+          :customComponentName="schema.customComponentName"
+          :customComponentParameters="schema.customComponentParameters"
+          :defaultValue="schema.defaultValue"
+          :name="schema.name"
+          :id="schema.id"
+          :ref="schema.name"
+          :className="schema.className"
+        />
         <template v-else>
-          <slot />
+          <slot :schema="schema"/>
         </template>
       </template>
 
@@ -357,34 +367,12 @@
 
 <script>
 import { Form, DatePicker, TimePicker } from 'ant-design-vue'
-import SETextfield from '@/components/SETextfield'
-import SETextarea from '@/components/SETextarea'
-import SESelect from '@/components/SESelect'
-import SERadio from '@/components/SERadio'
-import SERadioGroup from '@/components/SERadio/SERadioGroup'
-import SESwitch from '@/components/SESwitch'
-import SECheckbox from '@/components/SECheckbox'
-import SECheckboxGroup from '@/components/SECheckbox/SECheckboxGroup'
-import SERadioButton from '@/components/SERadio/SERadioButton'
-import SEButton from '@/components/SEButton'
-import SESpace from '@/components/SESpace'
 
 export default {
   name: 'SEFormBuilder',
   components: {
-    SETextfield,
-    SETextarea,
-    SESelect,
     AForm: Form,
     AFormItem: Form.Item,
-    SESwitch,
-    SERadio,
-    SERadioGroup,
-    SERadioButton,
-    SECheckbox,
-    SECheckboxGroup,
-    SEButton,
-    SESpace,
     ADatePicker: DatePicker,
     AMonthPicker: DatePicker.MonthPicker,
     ARangePicker: DatePicker.RangePicker,
@@ -448,13 +436,37 @@ export default {
     //   this.formData[name] = value
     // },
     submitForm(e) {
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          this.$emit('submit', values)
+        if(this.validateCustomFormValues()){
+            var customFormValues = this.getCustomFormValues()
+            this.form.validateFields((err, values) => {
+                if (!err) {
+                    this.$emit('submit', {...values, ...customFormValues})
+                }
+            })
         }
-      })
+    },
+    getCustomFormValues() {
+        var customKeyValues = {}
+        this.dataSchemas.schemas
+                .filter((schema) => schema.componentName === 'custom')
+                .forEach((schema) => {
+                    customKeyValues[schema.name] = this.$refs[schema.name][0].getValue()
+                })
+        return customKeyValues
+    },
+    validateCustomFormValues() {
+        var customKeyValues = {}
+        return this.dataSchemas.schemas
+                .filter((schema) => schema.componentName === 'custom')
+                .map((schema) => this.$refs[schema.name][0].validate())
+                .reduce((carry, item) => carry && item, true)
     },
     handleCancel() {
+        this.dataSchemas.schemas
+                .filter((schema) => schema.componentName === 'custom')
+                .forEach((schema) => {
+                    this.$refs[schema.name][0].reset()
+                })
       this.form.resetFields()
       this.$emit('cancel')
     }
