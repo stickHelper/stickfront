@@ -5,6 +5,7 @@
     :align="align"
     :justify="justify"
     :type="type"
+    :gutter="gutter"
   >
     <slot />
   </Row>

@@ -11,7 +11,7 @@
       <div class="mirror-left">
         <div
           class="bar-line__left h-100"
-          :style="`--width-left: ${seriesData[0].data[index]}%; --colors-1: ${colors[0]}`"
+          :style="`--width-left: ${calculateWidthChart(seriesData[0].data[index], totalLeftSide)}%; --colors-1: ${colors[0]}`"
         >
           <div class="line" />
           <div class="tooltip-chart">
@@ -33,7 +33,7 @@
       <div class="mirror-right">
         <div
           class="bar-line__right h-100"
-          :style="`--width-right: ${seriesData[1].data[index]}%; --colors-2: ${colors[1]}`"
+          :style="`--width-right: ${calculateWidthChart(seriesData[1].data[index], totalRightSide)}%; --colors-2: ${colors[1]}`"
         >
           <div class="line" />
           <div class="tooltip-chart">
@@ -86,6 +86,23 @@ export default {
     barWidth: {
       type: [String, Number],
       default: '30%'
+    }
+  },
+  computed: {
+    totalLeftSide() {
+      return this.seriesData[0].data.reduce((a, b) => a + b)
+    },
+    totalRightSide() {
+      return this.seriesData[1].data.reduce((a, b) => a + b)
+    }
+  },
+  methods: {
+    calculateWidthChart(num, total) {
+      if (num < 1) {
+        return 0.015
+      }
+
+      return (num / total) * 100
     }
   }
 }

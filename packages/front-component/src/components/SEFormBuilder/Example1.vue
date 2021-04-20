@@ -14,8 +14,6 @@ import SEFormBuilder from '@/components/SEFormBuilder'
 
 const dataSchema = {
   formLayout: 'veritcal',
-  submitMethod: 'post',
-  submitUrl: 'http://asset-inventory.test/api/screenRestriction',
   schemas: [
     {
       labelName: 'General Information',
@@ -238,6 +236,31 @@ const dataSchema = {
       rules: [
         { type: 'object', required: true, message: 'Please input time!!' }
       ]
+    },
+    {
+      defaultValue: null,
+      name: 'switch',
+      labelName: 'Please Select',
+      labelField: 'Label Field',
+      subLabelField: 'Label Field',
+      id: 'jhEbpg12Yas156s234WcqSfA',
+      componentName: 'SESwitch',
+      color: 'yellow',
+      rules: [
+        { required: true, message: 'Please Select!!' }
+      ]
+    },
+    {
+      defaultValue: null,
+      name: 'agree',
+      labelName: 'Select Agree',
+      labelField: 'Label Field',
+      id: 'jhEbpg12Y56s234WcqSfA',
+      componentName: 'SECheckbox',
+      color: 'yellow',
+      rules: [
+        { required: true, message: 'Please Select!!' }
+      ]
     }
   ],
   actions: [
@@ -275,7 +298,7 @@ export default {
       // console.log('error', e)
     },
     handleSubmit(e) {
-      // console.log('submit', e)
+      console.log('submit', e)
     }
   }
 }

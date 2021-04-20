@@ -41,18 +41,18 @@
           >
             <div
               v-if="expandMenu"
-              class="no-wrap"
+              class="flex"
             >
               <span class="se-sidebarmenu--icon">
                 <i :class="menu.icon" />
               </span>
-              <span class="se-sidebarmenu--label">
+              <div class="se-sidebarmenu--label">
                 {{ menu.label }}
-              </span>
+              </div>
             </div>
             <div
               v-else
-              class="no-wrap"
+              class="flex"
             >
               <span class="se-sidebarmenu--icon">
                 <i :class="menu.icon" />

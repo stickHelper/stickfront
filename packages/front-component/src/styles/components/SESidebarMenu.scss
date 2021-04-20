@@ -110,9 +110,8 @@
         }
       }
       .submenu-list {
-        position: absolute;
-        top: 50px;
-        right: 0;
+        position: relative;
+        left: 65px;
         width: 73%;
         list-style: none;
         border-left: 1px solid $line;
