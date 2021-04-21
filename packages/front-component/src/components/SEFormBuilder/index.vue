@@ -320,16 +320,17 @@
         </AFormItem>
         <SEFormBuilderItem
           v-else-if="schema.componentName === 'custom'"
-          :customComponentName="schema.customComponentName"
-          :customComponentParameters="schema.customComponentParameters"
-          :defaultValue="schema.defaultValue"
-          :name="schema.name"
           :id="schema.id"
+          :key="schema.id"
           :ref="schema.name"
-          :className="schema.className"
+          :custom-component-name="schema.customComponentName"
+          :custom-component-parameters="schema.customComponentParameters"
+          :default-value="schema.defaultValue"
+          :name="schema.name"
+          :class-name="schema.className"
         />
         <template v-else>
-          <slot :schema="schema"/>
+          <slot :schema="schema" />
         </template>
       </template>
 
@@ -436,36 +437,36 @@ export default {
     //   this.formData[name] = value
     // },
     submitForm(e) {
-        if(this.validateCustomFormValues()){
-            var customFormValues = this.getCustomFormValues()
-            this.form.validateFields((err, values) => {
-                if (!err) {
-                    this.$emit('submit', {...values, ...customFormValues})
-                }
-            })
-        }
+      if (this.validateCustomFormValues()) {
+        const customFormValues = this.getCustomFormValues()
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            this.$emit('submit', { ...values, ...customFormValues })
+          }
+        })
+      }
     },
     getCustomFormValues() {
-        var customKeyValues = {}
-        this.dataSchemas.schemas
+      const customKeyValues = {}
+      this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .forEach((schema) => {
-                    customKeyValues[schema.name] = this.$refs[schema.name][0].getValue()
+                  customKeyValues[schema.name] = this.$refs[schema.name][0].getValue()
                 })
-        return customKeyValues
+      return customKeyValues
     },
     validateCustomFormValues() {
-        var customKeyValues = {}
-        return this.dataSchemas.schemas
+      // const customKeyValues = {}
+      return this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .map((schema) => this.$refs[schema.name][0].validate())
                 .reduce((carry, item) => carry && item, true)
     },
     handleCancel() {
-        this.dataSchemas.schemas
+      this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .forEach((schema) => {
-                    this.$refs[schema.name][0].reset()
+                  this.$refs[schema.name][0].reset()
                 })
       this.form.resetFields()
       this.$emit('cancel')
