@@ -29,6 +29,7 @@ import SEDatatable from './components/SEDatatable/index.vue'
 import SEDropdown from './components/SEDropdown/index.vue'
 import SEDropzone from './components/SEDropzone/index.vue'
 import SEFormBuilder from './components/SEFormBuilder/index.vue'
+import SEFormBuilderItem from './components/SEFormBuilderItem/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEMediaUploader from './components/SEMediaUploader/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
@@ -81,6 +82,7 @@ const components = {
   SEFormItem: Form.Item,
   SEFormBuilder,
   SEHeaderMenu,
+  SEFormBuilderItem,
   SEIcon,
   SEInputGroup,
   SEModal: Modal,
