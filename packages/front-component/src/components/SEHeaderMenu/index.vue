@@ -52,15 +52,15 @@
           class="se-headermenu--item"
         >
           <div
-            class="se-headermenu--notification"
             v-click-outside="hide"
+            class="se-headermenu--notification"
             @click="showSubNotif = !showSubNotif"
           >
             <SEBadge :count="10" :overflow-count="9">
               <i
                 class="icon text-xl"
                 :class="notification.icon"
-              ></i>
+              />
             </SEBadge>
             <div
               v-if="showSubNotif"
@@ -89,7 +89,11 @@
             @mouseover="mouseEventDropdown(true)"
             @mouseleave="mouseEventDropdown(false)"
           >
-            <SEAvatar shape="square" :size="44" :src="profile.avatar" />
+            <SEAvatar
+              shape="square"
+              :size="44"
+              :src="profile.avatar"
+            />
             <div
               v-if="showSubProfile"
               class="submenu-list right"
@@ -109,7 +113,7 @@
                   class="submenu-item logout"
                 >
                   <a @click="$emit('clickLogout')">
-                    <i class="icon icon-exit"></i> Logout
+                    <i class="icon icon-exit" /> Logout
                   </a>
                 </li>
               </ul>
@@ -132,7 +136,7 @@ export default {
   components: {
     SubMenu,
     SEAvatar,
-    SEBadge,
+    SEBadge
   },
   directives: {
     ClickOutside
@@ -156,11 +160,11 @@ export default {
     },
     notification: {
       type: Object,
-      default: () => {}
+      default: () => null
     },
     profile: {
       type: Object,
-      default: () => {}
+      default: () => null
     }
   },
   data() {
