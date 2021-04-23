@@ -3746,6 +3746,10 @@ const icons = [
   {
     name: 'zoom-out',
     content: 'e266'
+  },
+  {
+    name: 'megaphone',
+    content: 'ec00'
   }
 ]
 

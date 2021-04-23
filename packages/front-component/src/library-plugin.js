@@ -33,6 +33,7 @@ import SEFormBuilderItem from './components/SEFormBuilderItem/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEMediaUploader from './components/SEMediaUploader/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
+import SEHeaderMenu from './components/SEHeaderMenu/index.vue'
 import SEIcon from './components/SEIcon/index.vue'
 import SEInputGroup from './components/SEInputGroup/index.vue'
 // import SEModal from './components/SEModal/index.vue'
@@ -80,6 +81,7 @@ const components = {
   SEForm: Form,
   SEFormItem: Form.Item,
   SEFormBuilder,
+  SEHeaderMenu,
   SEFormBuilderItem,
   SEIcon,
   SEInputGroup,

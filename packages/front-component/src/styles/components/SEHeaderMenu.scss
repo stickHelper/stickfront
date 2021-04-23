@@ -1,0 +1,115 @@
+.se-headermenu {
+  @include flexbox;
+  @include justify-content(space-between);
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0 $gutter-xl;
+  box-shadow: $card-box-shadow;
+
+  &--brand {
+    @include flexbox;
+    white-space: nowrap;
+    padding-right: $gutter-sm + 2;
+    img {
+      max-width: 40px;
+    }
+  }
+
+  &--icon {
+    font-size: $text-md;
+    padding-right: $gutter-xs * 3;
+  }
+
+  &--list {
+    @include flexbox;
+    white-space: nowrap;
+    list-style: none;
+
+    .submenu-list {
+      position: absolute;
+      min-width: 196px;
+      padding-top: $gutter-sm;
+      ul {
+        @include border-radius(6px);
+        list-style: none;
+        background-color: $white;
+        box-shadow: $card-box-shadow;
+        padding: $gutter-sm 0;
+        a {
+          padding: ($gutter-sm + 2) ($gutter-md - 2);
+          display: block;
+          color: $c-grey-darken-4;
+          &:hover {
+            background-color: $c-grey-lighten-6;
+          }
+        }
+      }
+    }
+
+    .se-headermenu--item {
+      .se-headermenu--btn {
+        padding: ($gutter-lg - 1) ($gutter-md + $gutter-xs);
+        cursor: pointer;
+        border-bottom: 2px solid $white;
+        color: $c-grey-darken-3;
+        @include align-items(baseline);
+        &:hover,
+        &.active {
+          border-bottom: 2px solid $purple;
+          color: $purple;
+        }
+      }
+      .se-headermenu--label {
+        @include flexbox;
+        @include justify-content(flex-start);
+
+        .se-headermenu--icon {
+          float: right;
+          display: none
+        }
+      }
+    }
+  }
+
+  &--left, &--right {
+    @include flexbox;
+    @include align-items(center);
+    white-space: nowrap;
+    flex-basis: auto;
+    flex-shrink: 0;
+  }
+
+  &--right {
+    .se-headermenu--list {
+      @include align-items(center);
+      .se-headermenu--item {
+        padding-right: $gutter-lg;
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+    .submenu-list {
+      &.right {
+        right: 0
+      }
+    }
+  }
+
+  &--notification {
+    position: relative;
+  }
+
+  &--profile {
+    position: relative;
+    .submenu-list {
+      .logout {
+        border-top: 1px solid $c-grey-lighten-7;
+        a {
+          color: $c-magenta-lighten-3;
+        }
+      }
+    }
+  }
+}
