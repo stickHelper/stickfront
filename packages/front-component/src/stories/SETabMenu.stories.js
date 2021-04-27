@@ -90,3 +90,55 @@ MaxSlot.parameters = {
     }
   }
 }
+
+export const CustomIcon = () => ({
+  components: { SETabMenu },
+  template: `<SETabMenu
+    :menus="[
+      {
+        label: 'All',
+        icon: 'layers-alt',
+        count: 5
+      },
+      {
+        label: 'Published',
+        icon: 'check-circle',
+        count: 9
+      },
+      {
+        label: 'Draft',
+        icon: 'file-alt',
+        count: 10
+      }
+    ]"
+    custom="custom-icon"
+  />
+  `
+})
+CustomIcon.parameters = {
+  docs: {
+    source: {
+      code: `<SETabMenu
+  :menus="[
+    {
+      label: 'All',
+      icon: 'layers-alt',
+      count: 10
+    },
+    {
+      label: 'Published',
+      icon: 'check-circle',
+      count: 10
+    },
+    {
+      label: 'Draft',
+      icon: 'file-alt',
+      count: 10
+    }
+  ]"
+  custom="custom-icon"
+/>
+`
+    }
+  }
+}

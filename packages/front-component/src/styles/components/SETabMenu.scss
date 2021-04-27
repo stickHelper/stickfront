@@ -31,4 +31,25 @@
       padding: $gutter-xs $gutter-md;
     }
   }
+
+  &--custom-icon {
+    border-bottom: 1px solid $c-grey-lighten-8;
+    .se-tabmenu--list {
+      padding: 0;
+      background-color: $white;
+      border-radius: unset;
+      .icon {
+        padding-right: 12px;
+      }
+    }
+    .se-tabmenu--item {
+      border-radius: unset;
+      font-weight: 600;
+      &.active {
+        border-bottom: 2px solid $purple;
+        background-color: $white;
+        color: $purple;
+      }
+    }
+  }
 }
