@@ -11,7 +11,9 @@
         :class="activeIndex === index ? 'active' : null"
         @click="triggerMenu(index)"
       >
+        <i v-if="menu.icon" :class="`icon icon-${menu.icon}`"></i>
         {{ menu.label }}
+        <span v-if="menu.count">({{ menu.count }})</span>
       </li>
     </ul>
   </div>
@@ -46,6 +48,10 @@ export default {
     maxSlot: {
       type: Number,
       default: null
+    },
+    custom: {
+      type: String,
+      default: null
     }
   },
   data() {
@@ -58,6 +64,7 @@ export default {
       return {
         'se-tabmenu': true,
         [`se-tabmenu--${this.size}`]: this.size !== null,
+        [`se-tabmenu--${this.custom}`]: this.custom !== null,
         [this.className]: this.className !== null
       }
     }
