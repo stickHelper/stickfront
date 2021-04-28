@@ -10,11 +10,11 @@ import {
   Divider,
   Modal,
   Tooltip,
-  Alert,
   Popover,
   Popconfirm
 } from 'ant-design-vue'
 
+import SEAlert from './components/SEAlert/index.vue'
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'
 import SEBreadcrumbs from './components/SEBreadcrumbs/index.vue'
@@ -115,7 +115,7 @@ const components = {
   SEDropzone,
   DefaultTemplate,
   SEMediaUploader,
-  SEAlert: Alert,
+  SEAlert,
   SEPopover: Popover,
   SEPopconfirm: Popconfirm
 }

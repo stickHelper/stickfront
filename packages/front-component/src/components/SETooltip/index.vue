@@ -18,7 +18,7 @@ export default {
     // SETooltip: Tooltip
   },
   mounted() {
-    console.log('Components2', Components)
+    // console.log('Components2', Components)
   }
 }
 </script>
