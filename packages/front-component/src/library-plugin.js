@@ -10,11 +10,11 @@ import {
   Divider,
   Modal,
   Tooltip,
-  Alert,
   Popover,
   Popconfirm
 } from 'ant-design-vue'
 
+import SEAlert from './components/SEAlert/index.vue'
 import SEAvatar from './components/SEAvatar/index.vue'
 import SEBadge from './components/SEBadge/index.vue'
 import SEBreadcrumbs from './components/SEBreadcrumbs/index.vue'
@@ -33,6 +33,7 @@ import SEFormBuilderItem from './components/SEFormBuilderItem/index.vue'
 import SEImg from './components/SEImg/index.vue'
 import SEMediaUploader from './components/SEMediaUploader/index.vue'
 import SEFileAttachment from './components/SEFileAttachment/index.vue'
+import SEHeaderMenu from './components/SEHeaderMenu/index.vue'
 import SEIcon from './components/SEIcon/index.vue'
 import SEInputGroup from './components/SEInputGroup/index.vue'
 // import SEModal from './components/SEModal/index.vue'
@@ -47,6 +48,7 @@ import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
 import SESlider from './components/SESlider/index.vue'
 import SESpace from './components/SESpace/index.vue'
+import SESteps from './components/SESteps/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETabMenu from './components/SETabMenu/index.vue'
 import SETag from './components/SETag/index.vue'
@@ -80,6 +82,7 @@ const components = {
   SEForm: Form,
   SEFormItem: Form.Item,
   SEFormBuilder,
+  SEHeaderMenu,
   SEFormBuilderItem,
   SEIcon,
   SEInputGroup,
@@ -95,6 +98,7 @@ const components = {
   SESkeleton,
   SESlider,
   SESpace,
+  SESteps,
   SESwitch,
   SETabMenu,
   SETag,
@@ -111,7 +115,7 @@ const components = {
   SEDropzone,
   DefaultTemplate,
   SEMediaUploader,
-  SEAlert: Alert,
+  SEAlert,
   SEPopover: Popover,
   SEPopconfirm: Popconfirm
 }
