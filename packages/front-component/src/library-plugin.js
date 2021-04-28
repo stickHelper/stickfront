@@ -48,6 +48,7 @@ import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
 import SESlider from './components/SESlider/index.vue'
 import SESpace from './components/SESpace/index.vue'
+import SESteps from './components/SESteps/index.vue'
 import SESwitch from './components/SESwitch/index.vue'
 import SETabMenu from './components/SETabMenu/index.vue'
 import SETag from './components/SETag/index.vue'
@@ -97,6 +98,7 @@ const components = {
   SESkeleton,
   SESlider,
   SESpace,
+  SESteps,
   SESwitch,
   SETabMenu,
   SETag,
