@@ -11,7 +11,7 @@
         :class="activeIndex === index ? 'active' : null"
         @click="triggerMenu(index)"
       >
-        <i v-if="menu.icon" :class="`icon icon-${menu.icon}`" />
+        <i v-if="menu.icon" :class="`icon icon-${menu.icon}`"></i>
         {{ menu.label }}
         <span v-if="menu.count">({{ menu.count }})</span>
       </li>
