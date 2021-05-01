@@ -9,6 +9,7 @@
       :type="type"
       :after-close="afterClose"
       @close="$emit('close')"
+      ref="alert"
     >
       <template slot="description">
         <slot name="description" />
@@ -62,7 +63,24 @@ export default {
     // eslint-disable-next-line vue/require-default-prop
     afterClose: {
       type: Function
+    },
+    defaultShown:{
+      type: Boolean,
+      default: true
     }
+  },
+  methods:{
+    show(){
+        this.$refs.alert.closed = false
+    },
+    close(){
+        this.$refs.alert.closed = true
+    }
+  },
+  mounted(){
+      if(!this.defaultShown){
+          this.close();
+      }
   }
 }
 </script>
