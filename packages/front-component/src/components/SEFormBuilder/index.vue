@@ -330,7 +330,7 @@
           :className="schema.className"
         />
         <template v-else>
-          <slot :schema="schema"/>
+          <slot :schema="schema" />
         </template>
         </div>
       </template>
@@ -447,17 +447,17 @@ export default {
     //   this.formData[name] = value
     // },
     submitForm(e) {
-        if(this.validateCustomFormValues()){
-            var customFormValues = this.getCustomFormValues()
-            this.form.validateFields((err, values) => {
-                if (!err) {
-                    this.$emit('submit', {...values, ...customFormValues})
-                }
-            })
+      if (this.validateCustomFormValues()) {
+        const customFormValues = this.getCustomFormValues()
+          this.form.validateFields((err, values) => {
+            if (!err) {
+              this.$emit('submit', { ...values, ...customFormValues })
+            }
+          })
         }
     },
     getCustomFormValues() {
-        var customKeyValues = {}
+      const customKeyValues = {}
         this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .forEach((schema) => {
@@ -466,7 +466,7 @@ export default {
         return customKeyValues
     },
     validateCustomFormValues() {
-        var customKeyValues = {}
+      // const customKeyValues = {}
         return this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .map((schema) => this.$refs[schema.name][0].validate())
