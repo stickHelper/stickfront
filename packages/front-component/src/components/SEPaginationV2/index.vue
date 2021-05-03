@@ -107,7 +107,6 @@ export default {
       return originalElement
     },
     displayTotal(total, range) {
-      console.log({ total, range })
       this.messageInfo = `Show ${range[0]} - ${range[1]} of ${total}`
     }
   }
