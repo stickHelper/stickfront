@@ -1,0 +1,160 @@
+.se-pagination-v2 {
+  position: relative;
+  margin-top: $gutter-lg;
+
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  &__info {
+    @include flexbox;
+    @include align-items(center);
+
+    .se-select {
+      margin-right: $gutter-sm;
+
+      .ant-select {
+        .ant-select-selection-selected-value {
+          margin-right: $gutter-xs;
+        }
+      }
+    }
+  }
+
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    font-size: $text-lg + 2;
+    @include border-radius(6px);
+
+    .anticon {
+      vertical-align: 0.1em;
+    }
+
+    .icon {
+      display: inline-flex;
+    }
+
+  }
+
+  .ant-pagination-disabled a,
+  .ant-pagination-disabled:hover a,
+  .ant-pagination-disabled:focus a,
+  .ant-pagination-disabled .ant-pagination-item-link,
+  .ant-pagination-disabled:hover .ant-pagination-item-link,
+  .ant-pagination-disabled:focus .ant-pagination-item-link {
+    opacity: .4;
+    color: $white;
+    border-color: $purple;
+  }
+
+  .ant-pagination {
+    &-item {
+      font-family : $font-stack !important;
+      font-size   : $text-sm;
+      line-height : 150%;
+      overflow-x  : hidden;
+      color       : $text-normal;
+      border-color: transparent;
+
+      @include border-radius(6px);
+
+      &-active {
+        border-color: transparent;
+
+        &:hover,
+        &:focus {
+          a {
+            cursor: default;
+          }
+        }
+      }
+
+      &:not(.ant-pagination-item-active) {
+        &:hover,
+        *:focus {
+          border-color: $text-subtitle;
+          a {
+            color: $text-normal;
+          }
+        }
+      }
+    }
+
+    li {
+      a {
+        height: 100%;
+        font-weight : 600;
+
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+      }
+    }
+  }
+
+  // COLOR
+  &__purple {
+    .ant-pagination-item {
+      &-active {
+        border-color: transparent;
+        background-color: $purple;
+
+        &:hover,
+        &:focus {
+          border-color: $purple;
+          a {
+            color: $white;
+            cursor: default;
+          }
+        }
+
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      &:not(.ant-pagination-disabled) {
+        &:hover,
+        &:focus {
+          border-color: $purple;
+          a {
+            color: $white;
+            border-color: $purple;
+          }
+        }
+      }
+    }
+
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link {
+      background-color: $purple;
+      color: $white;
+    }
+  }
+
+  // TYPE
+  &__circle {
+    .ant-pagination-item {
+      @include border-radius(999px);
+    }
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link {
+      @include border-radius(999px);
+    }
+  }
+
+  // SIZE
+  &__small {
+    .ant-pagination-item {
+      font-size: $text-xs;
+    }
+
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link {
+      font-size: $text-lg;
+    }
+  }
+}

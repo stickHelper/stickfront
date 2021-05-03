@@ -112,11 +112,15 @@ export default {
       return this.isTotalMoreThan(start, end, limit, page, totalPages)
     }
   },
+  watch: {
+    pageActive(newVal) {
+      this.$emit('change', newVal)
+    }
+  },
   methods: {
     choosePage: function (page) {
       if (page !== '...') {
         this.pageActive = page
-        this.$emit('change', page)
       }
     },
     nextPage: function () {

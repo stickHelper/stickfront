@@ -38,6 +38,7 @@ import SEIcon from './components/SEIcon/index.vue'
 import SEInputGroup from './components/SEInputGroup/index.vue'
 // import SEModal from './components/SEModal/index.vue'
 import SEPagination from './components/SEPagination/index.vue'
+import SEPaginationV2 from './components/SEPaginationV2/index.vue'
 import SEPreloader from './components/SEPreloader/index.vue'
 import SERadio from './components/SERadio/index.vue'
 import SERadioGroup from './components/SERadio/SERadioGroup/index.vue'
@@ -88,6 +89,7 @@ const components = {
   SEInputGroup,
   SEModal: Modal,
   SEPagination,
+  SEPaginationV2,
   SEPreloader,
   SERadio,
   SERadioGroup,
