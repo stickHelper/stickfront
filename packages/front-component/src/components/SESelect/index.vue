@@ -39,7 +39,7 @@
         {{ option.label }}
       </a-select-option>
     </a-select>
-    <ul v-if="mode === 'multiple' && currentDefalutValue && currentDefalutValue.length" class="multiple-list">
+    <ul v-if="mode === 'multiple' && currentDefalutValue && currentDefalutValue.length && !count" class="multiple-list">
       <template
         v-for="(item, index) in currentDefalutValue"
       >
@@ -57,6 +57,9 @@
         </li>
       </template>
     </ul>
+    <span v-if="mode === 'multiple' && currentDefalutValue && currentDefalutValue.length && count" class="count-list">
+      {{ currentDefalutValue.length }} {{ count }}
+    </span>
 
     <div v-if="helper || info" class="mt-xs-2">
       <div class="se-select__helper">
@@ -182,6 +185,10 @@ export default {
     info: {
       type: String,
       default: null
+    },
+    count: {
+      type: String,
+      default: null
     }
   },
   data() {
@@ -196,7 +203,8 @@ export default {
         'se-select': true,
         [this.className]: this.className !== null,
         [`se-select__${this.size}`]: this.size !== null,
-        'show-list': this.mode === 'multiple' && this.currentDefalutValue && this.currentDefalutValue.length,
+        'show-list': this.mode === 'multiple' && this.currentDefalutValue && this.currentDefalutValue.length && !this.count,
+        'count-multiple': this.mode === 'multiple' && this.count,
         disabled: this.disabled,
         error: this.isError,
         success: this.isSuccess
