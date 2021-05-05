@@ -288,3 +288,58 @@ Size.parameters = {
     }
   }
 }
+
+export const CountMultiple = () => ({
+  components: { SESelect },
+  template: `<div>
+  <SESelect
+    mode="multiple"
+    count="count selected"
+    :default-value="['a1', 'b1']"
+    style="width: 100%"
+    placeholder="Please select"
+    :options="[
+      { label: 'a1', value: 'a1'}, 
+      { label: 'b1', value: 'b1'},
+      { label: 'c1', value: 'c1'}, 
+      { label: 'd1', value: 'd1'},
+      { label: 'e1', value: 'e1'}, 
+      { label: 'f1', value: 'f1'},
+      { label: 'g1', value: 'g1'}, 
+      { label: 'h1', value: 'h1'},
+      { label: 'i1', value: 'i1'}, 
+      { label: 'j1', value: 'j1'}
+    ]"
+  >
+  </SESelect>  
+
+</div>`
+})
+
+CountMultiple.parameters = {
+  docs: {
+    source: {
+      code: `<SESelect
+    mode="multiple"
+    count="count selected"
+    :default-value="['a1', 'b1']"
+    style="width: 100%"
+    placeholder="Please select"
+    :options="[
+      { label: 'a1', value: 'a1'}, 
+      { label: 'b1', value: 'b1'},
+      { label: 'c1', value: 'c1'}, 
+      { label: 'd1', value: 'd1'},
+      { label: 'e1', value: 'e1'}, 
+      { label: 'f1', value: 'f1'},
+      { label: 'g1', value: 'g1'}, 
+      { label: 'h1', value: 'h1'},
+      { label: 'i1', value: 'i1'}, 
+      { label: 'j1', value: 'j1'}
+    ]"
+  >
+  </SESelect> 
+`
+    }
+  }
+}

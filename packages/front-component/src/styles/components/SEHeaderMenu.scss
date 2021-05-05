@@ -30,6 +30,7 @@
       position: absolute;
       min-width: 196px;
       padding-top: $gutter-sm;
+      z-index: 10;
       ul {
         @include border-radius(6px);
         list-style: none;

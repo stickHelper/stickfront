@@ -10,6 +10,7 @@ import SETableFixedHeader from '@/components/SETable/FixedHeader.vue'
 import SETableFilterSorter from '@/components/SETable/FilterSorter.vue'
 import SETableSelection from '@/components/SETable/Selection.vue'
 import SETableRadioSelection from '@/components/SETable/RadioSelection.vue'
+import SETableSelectDropdown from '@/components/SETable/SelectDropdown.vue'
 
 export default {
   title: 'Components/Table',
@@ -985,6 +986,147 @@ export default {
           }
         })
       }
+    }
+  }
+}
+</script>
+`
+    }
+  }
+}
+
+export const SelectDropdown = () => ({
+  components: { SETableSelectDropdown },
+  template: '<SETableSelectDropdown />'
+})
+
+SelectDropdown.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <ATable
+    :row-selection="rowSelection"
+    :columns="columns"
+    :data-source="data"
+  >
+    <span slot="tags" slot-scope="tags">
+      <SETag
+        style="margin-bottom: 5px"
+        v-for="tag in tags"
+        :key="tag"
+        :color="tag === 'loser' ? 'error' : tag.length > 5 ? 'light-blue' : 'blue'"
+      >
+        {{ tag.toUpperCase() }}
+      </SETag>
+    </span>
+    <span slot="slot" slot-scope="slot">
+      <SESelect
+        :id="slot.key"
+        mode="multiple"
+        count="slot selected"
+        :default-value="slot.slots"
+        style="width: 240px"
+        placeholder="Please select"
+        :options="items"
+      />
+    </span>
+    <span slot="action" slot-scope="action">
+      <SEDropdown position="right" :id="action.key">
+        <i class="icon icon-ellipsis-v"></i>
+        <template v-slot:list>
+          <li class="se-dropdown__item">
+            Edit
+          </li>
+          <li class="se-dropdown__item">
+            Delete
+          </li>
+        </template>
+      </SEDropdown>
+    </span>
+  </ATable>
+</template>
+
+<script>
+const columns = [
+  {
+    dataIndex: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age'
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address'
+  },
+  {
+    title: 'Tags',
+    key: 'tags',
+    dataIndex: 'tags',
+    scopedSlots: { customRender: 'tags' }
+  },
+  {
+    title: 'Slot',
+    key: 'slot',
+    scopedSlots: { customRender: 'slot' }
+  },
+  {
+    title: 'Action',
+    align: 'center',
+    key: 'action',
+    scopedSlots: { customRender: 'action' }
+  }
+]
+
+const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
+    slots: ['a1', 'b1']
+  },
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+    tags: ['loser'],
+    slots: ['c1', 'b1']
+  },
+  {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+    slots: ['d1', 'b1']
+  },
+  {
+    key: '4',
+    name: 'Disabled User',
+    age: 99,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+    slots: ['b1', 'c1']
+  }
+]
+
+export default {
+  data() {
+    return {
+      data,
+      columns,
+      items:[
+        { label: 'a1', value: 'a1' },
+        { label: 'b1', value: 'b1' },
+        { label: 'c1', value: 'c1' },
+        { label: 'd1', value: 'd1' }
+      ]
     }
   }
 }
