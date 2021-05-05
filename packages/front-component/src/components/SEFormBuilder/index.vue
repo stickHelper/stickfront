@@ -8,6 +8,7 @@
       <template
         v-for="(schema) in dataSchemas.schemas"
       >
+          <div :class="schema.className || ''">
         <!-- TITLE -->
         <AFormItem
           v-if="schema.componentName === 'FormTitle'"
@@ -320,18 +321,18 @@
         </AFormItem>
         <SEFormBuilderItem
           v-else-if="schema.componentName === 'custom'"
-          :id="schema.id"
-          :key="schema.id"
-          :ref="schema.name"
-          :custom-component-name="schema.customComponentName"
-          :custom-component-parameters="schema.customComponentParameters"
-          :default-value="schema.defaultValue"
+          :customComponentName="schema.customComponentName"
+          :customComponentParameters="schema.customComponentParameters"
+          :defaultValue="schema.defaultValue"
           :name="schema.name"
-          :class-name="schema.className"
+          :id="schema.id"
+          :ref="schema.name"
+          :className="schema.className"
         />
         <template v-else>
           <slot :schema="schema" />
         </template>
+        </div>
       </template>
 
       <!-- Action -->
@@ -356,6 +357,15 @@
               :color="action.color"
               :size="action.size"
               @click="handleCancel"
+            >
+              {{ action.label }}
+            </SEButton>
+            <SEButton
+              v-else=""
+              :key="index"
+              :color="action.color"
+              :size="action.size"
+              @click="handleCustom(action.type)"
             >
               {{ action.label }}
             </SEButton>
@@ -439,37 +449,42 @@ export default {
     submitForm(e) {
       if (this.validateCustomFormValues()) {
         const customFormValues = this.getCustomFormValues()
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            this.$emit('submit', { ...values, ...customFormValues })
-          }
-        })
-      }
+          this.form.validateFields((err, values) => {
+            if (!err) {
+              this.$emit('submit', { ...values, ...customFormValues })
+            }
+          })
+        }
     },
     getCustomFormValues() {
       const customKeyValues = {}
-      this.dataSchemas.schemas
+        this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .forEach((schema) => {
-                  customKeyValues[schema.name] = this.$refs[schema.name][0].getValue()
+                    customKeyValues[schema.name] = this.$refs[schema.name][0].getValue()
                 })
-      return customKeyValues
+        return customKeyValues
     },
     validateCustomFormValues() {
       // const customKeyValues = {}
-      return this.dataSchemas.schemas
+        return this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .map((schema) => this.$refs[schema.name][0].validate())
                 .reduce((carry, item) => carry && item, true)
     },
     handleCancel() {
-      this.dataSchemas.schemas
+        this.dataSchemas.schemas
                 .filter((schema) => schema.componentName === 'custom')
                 .forEach((schema) => {
-                  this.$refs[schema.name][0].reset()
+                    this.$refs[schema.name][0].reset()
                 })
       this.form.resetFields()
       this.$emit('cancel')
+    },
+    handleCustom(action, actions) {
+      var values = this.form.getFieldsValue()
+      var customFormValues = this.getCustomFormValues()
+      this.$emit('custom', action, {...values, ...customFormValues}, actions)
     }
   }
 }
