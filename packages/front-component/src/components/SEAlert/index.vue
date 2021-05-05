@@ -1,6 +1,7 @@
 <template>
   <div class="se-alert">
     <Alert
+      ref="alert"
       :banner="banner"
       :closable="closable"
       :description="description"
@@ -9,7 +10,6 @@
       :type="type"
       :after-close="afterClose"
       @close="$emit('close')"
-      ref="alert"
     >
       <template slot="description">
         <slot name="description" />
@@ -69,18 +69,18 @@ export default {
       default: true
     }
   },
-  methods:{
-    show(){
-        this.$refs.alert.closed = false
-    },
-    close(){
-        this.$refs.alert.closed = true
+  mounted() {
+    if (!this.defaultShown) {
+      this.close()
     }
   },
-  mounted(){
-      if(!this.defaultShown){
-          this.close();
-      }
+  methods:{
+    show() {
+      this.$refs.alert.closed = false
+    },
+    close() {
+      this.$refs.alert.closed = true
+    }
   }
 }
 </script>

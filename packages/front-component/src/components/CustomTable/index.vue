@@ -21,7 +21,6 @@
           </td>
           <td
             width="40%"
-            v-html="row.desc"
           />
           <td width="20%">
             {{ row.type }}

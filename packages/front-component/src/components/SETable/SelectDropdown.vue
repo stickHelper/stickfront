@@ -6,9 +6,9 @@
   >
     <span slot="tags" slot-scope="tags">
       <SETag
-        style="margin-bottom: 5px"
         v-for="tag in tags"
         :key="tag"
+        style="margin-bottom: 5px"
         :color="tag === 'loser' ? 'error' : tag.length > 5 ? 'light-blue' : 'blue'"
       >
         {{ tag.toUpperCase() }}
@@ -26,8 +26,8 @@
       />
     </span>
     <span slot="action" slot-scope="action">
-      <SEDropdown position="right" :id="action.key">
-        <i class="icon icon-ellipsis-v"></i>
+      <SEDropdown :id="action.key" position="right">
+        <i class="icon icon-ellipsis-v" />
         <template v-slot:list>
           <li class="se-dropdown__item">
             Edit
@@ -50,7 +50,7 @@ import SEDropdown from '@/components/SEDropdown'
 const columns = [
   {
     dataIndex: 'name',
-    key: 'name',
+    key: 'name'
   },
   {
     title: 'Age',

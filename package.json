@@ -11,5 +11,14 @@
   },
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "cd packages/front-component && vue-cli-service lint",
+      "git add"
+    ]
   }
 }
