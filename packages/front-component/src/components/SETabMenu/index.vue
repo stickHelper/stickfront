@@ -52,6 +52,10 @@ export default {
     custom: {
       type: String,
       default: null
+    },
+    defaultIndex: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -69,7 +73,13 @@ export default {
       }
     }
   },
+  mounted() {
+    this.defaultIndexMenu()
+  },
   methods: {
+    defaultIndexMenu() {
+      this.activeIndex = this.defaultIndex
+    },
     triggerMenu(index) {
       if (this.maxSlot) {
         if (index + 1 <= this.maxSlot) {

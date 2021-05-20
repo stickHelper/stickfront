@@ -112,6 +112,7 @@ export const CustomIcon = () => ({
       }
     ]"
     custom="custom-icon"
+    :default-index="2"
   />
   `
 })
@@ -137,6 +138,7 @@ CustomIcon.parameters = {
     }
   ]"
   custom="custom-icon"
+  :default-index="2"
 />
 `
     }
