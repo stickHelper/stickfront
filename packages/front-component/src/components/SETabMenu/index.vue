@@ -1,8 +1,5 @@
 <template>
-  <div
-    :id="id"
-    :class="classes"
-  >
+  <div :id="id" :class="classes">
     <ul class="se-tabmenu--list">
       <li
         v-for="(menu, index) in menus"
@@ -33,10 +30,7 @@ export default {
     },
     menus: {
       type: Array,
-      default: () => [
-        { label: 'Menu 1' },
-        { label: 'Menu 2' }
-      ]
+      default: () => [{ label: 'Menu 1' }, { label: 'Menu 2' }]
     },
     size: {
       type: String,
