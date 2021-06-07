@@ -10,6 +10,7 @@
       :loading="loading"
       :block="block"
       :html-type="htmlType"
+      :disabled="disabled"
       @click="$emit('click')"
     >
       <slot />
