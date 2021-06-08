@@ -4,10 +4,11 @@
   left: 0;
   top: 0;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: auto;
   z-index: 1100;
   overflow-x: hidden;
   transition: 0.5s;
+  padding-bottom: $gutter-md;
 
   &.show {
     width: 250px;
