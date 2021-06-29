@@ -200,11 +200,14 @@ Duration.parameters = {
     source: {
       code: `<template>
   <div>
-    <SEButton @click="showToaster">Custom Duration</SEButton>
+    <SEButton @click="showToaster">
+      Custom Duration
+    </SEButton>
     <SEToast
       id="se-toast"
-      :isActive="activeToaster"
+      :is-active="activeToaster"
       :duration="toasterDuration"
+      description="I will never close automatically. I will never close automatically. I will never close automatically."
     />
   </div>
 </template>
@@ -221,6 +224,7 @@ export default {
   },
   data() {
     return {
+      activeToaster: false,
       toasterDuration: 0
     }
   },
@@ -228,7 +232,12 @@ export default {
     showToaster() {
       this.activeToaster = !this.activeToaster
 
-      setTimeout(() => this.activeToaster = false, 300)
+      this.hideToaster()
+    },
+    hideToaster() {
+      setTimeout(() => {
+        this.activeToaster = false
+      }, 300)
     }
   }
 }
