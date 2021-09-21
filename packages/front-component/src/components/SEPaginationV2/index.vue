@@ -2,7 +2,8 @@
   <div :class="classes">
     <div v-if="showSizeChanger" class="se-pagination-v2__info">
       <SESelect
-        default-value="10"
+        :default-value="10"
+        :value="perPage"
         :options="[
           { label: '10', value: 10 },
           { label: '20', value: 20 },
@@ -95,6 +96,14 @@ export default {
         [`se-pagination-v2__${this.type}`]: true,
         [`se-pagination-v2__${this.size}`]: true
       }
+    }
+  },
+  watch: {
+    page(newVal) {
+      this.current = newVal
+    },
+    perPage(newVal) {
+      this.perPage = newVal
     }
   },
   methods: {
