@@ -1,39 +1,39 @@
 const icons = [
   {
     name: 'abacus',
-    content: 'eb75'
-  },
-  {
-    name: 'accessible-icon-alt',
-    content: 'eb76'
-  },
-  {
-    name: 'adjust',
-    content: 'eb7a'
-  },
-  {
-    name: 'adjust-alt',
     content: 'eb77'
   },
   {
-    name: 'adjust-circle',
+    name: 'accessible-icon-alt',
     content: 'eb78'
   },
   {
-    name: 'adjust-half',
-    content: 'eb79'
-  },
-  {
-    name: 'adobe',
+    name: 'adjust',
     content: 'eb7c'
   },
   {
-    name: 'adobe-alt',
+    name: 'adjust-alt',
+    content: 'eb79'
+  },
+  {
+    name: 'adjust-circle',
+    content: 'eb7a'
+  },
+  {
+    name: 'adjust-half',
     content: 'eb7b'
   },
   {
-    name: 'airplay',
+    name: 'adobe',
+    content: 'eb7e'
+  },
+  {
+    name: 'adobe-alt',
     content: 'eb7d'
+  },
+  {
+    name: 'airplay',
+    content: 'eb7f'
   },
   {
     name: 'alarm',
@@ -53,11 +53,11 @@ const icons = [
   },
   {
     name: 'align',
-    content: 'eb86'
+    content: 'eb88'
   },
   {
     name: 'align-alt',
-    content: 'eb7e'
+    content: 'eb80'
   },
   {
     name: 'align-center',
@@ -65,19 +65,19 @@ const icons = [
   },
   {
     name: 'align-center-alt',
-    content: 'eb7f'
-  },
-  {
-    name: 'align-center-h',
-    content: 'eb80'
-  },
-  {
-    name: 'align-center-justify',
     content: 'eb81'
   },
   {
-    name: 'align-center-v',
+    name: 'align-center-h',
     content: 'eb82'
+  },
+  {
+    name: 'align-center-justify',
+    content: 'eb83'
+  },
+  {
+    name: 'align-center-v',
+    content: 'eb84'
   },
   {
     name: 'align-justify',
@@ -89,11 +89,11 @@ const icons = [
   },
   {
     name: 'align-left-justify',
-    content: 'eb83'
+    content: 'eb85'
   },
   {
     name: 'align-letter-right',
-    content: 'eb84'
+    content: 'eb86'
   },
   {
     name: 'align-right',
@@ -101,23 +101,23 @@ const icons = [
   },
   {
     name: 'align-right-justify',
-    content: 'eb85'
-  },
-  {
-    name: 'amazon',
     content: 'eb87'
   },
   {
-    name: 'ambulance',
-    content: 'eb88'
-  },
-  {
-    name: 'analysis',
+    name: 'amazon',
     content: 'eb89'
   },
   {
-    name: 'analytics',
+    name: 'ambulance',
     content: 'eb8a'
+  },
+  {
+    name: 'analysis',
+    content: 'eb8b'
+  },
+  {
+    name: 'analytics',
+    content: 'eb8c'
   },
   {
     name: 'anchor',
@@ -125,71 +125,71 @@ const icons = [
   },
   {
     name: 'android',
-    content: 'eb8d'
-  },
-  {
-    name: 'android-alt',
-    content: 'eb8b'
-  },
-  {
-    name: 'android-phone-slash',
-    content: 'eb8c'
-  },
-  {
-    name: 'angle-double-down',
-    content: 'eb8e'
-  },
-  {
-    name: 'angle-double-left',
     content: 'eb8f'
   },
   {
-    name: 'angle-double-right',
+    name: 'android-alt',
+    content: 'eb8d'
+  },
+  {
+    name: 'android-phone-slash',
+    content: 'eb8e'
+  },
+  {
+    name: 'angle-double-down',
     content: 'eb90'
   },
   {
-    name: 'angle-double-up',
+    name: 'angle-double-left',
     content: 'eb91'
   },
   {
-    name: 'angle-down',
+    name: 'angle-double-right',
     content: 'eb92'
   },
   {
-    name: 'angle-left',
-    content: 'eb94'
-  },
-  {
-    name: 'angle-left-b',
+    name: 'angle-double-up',
     content: 'eb93'
   },
   {
-    name: 'angle-right',
+    name: 'angle-down',
+    content: 'eb94'
+  },
+  {
+    name: 'angle-left',
     content: 'eb96'
   },
   {
-    name: 'angle-right-b',
+    name: 'angle-left-b',
     content: 'eb95'
   },
   {
-    name: 'angle-up',
-    content: 'eb97'
-  },
-  {
-    name: 'angry',
+    name: 'angle-right',
     content: 'eb98'
   },
   {
-    name: 'ankh',
+    name: 'angle-right-b',
+    content: 'eb97'
+  },
+  {
+    name: 'angle-up',
     content: 'eb99'
   },
   {
-    name: 'annoyed',
+    name: 'angry',
+    content: 'eb9a'
+  },
+  {
+    name: 'ankh',
     content: 'eb9b'
   },
   {
+    name: 'annoyed',
+    content: 'eb9d'
+  },
+  {
     name: 'annoyed-alt',
-    content: 'eb9a'
+    content: 'eb9c'
   },
   {
     name: 'apple',
@@ -197,7 +197,7 @@ const icons = [
   },
   {
     name: 'apple-alt',
-    content: 'eb9c'
+    content: 'eb9e'
   },
   {
     name: 'apps',
@@ -209,19 +209,19 @@ const icons = [
   },
   {
     name: 'archive-alt',
-    content: 'eb9d'
+    content: 'eb9f'
   },
   {
     name: 'archway',
-    content: 'eb26'
+    content: 'eb28'
   },
   {
     name: 'arrow',
-    content: 'eb35'
+    content: 'eb37'
   },
   {
     name: 'arrow-break',
-    content: 'eb27'
+    content: 'eb29'
   },
   {
     name: 'arrow-circle-down',
@@ -233,7 +233,7 @@ const icons = [
   },
   {
     name: 'arrow-circle-right',
-    content: 'e90e'
+    content: 'e910'
   },
   {
     name: 'arrow-circle-top',
@@ -241,11 +241,11 @@ const icons = [
   },
   {
     name: 'arrow-circle-up',
-    content: 'eb28'
+    content: 'eb2a'
   },
   {
     name: 'arrow-compress-h',
-    content: 'eb29'
+    content: 'eb2b'
   },
   {
     name: 'arrow-down',
@@ -253,23 +253,23 @@ const icons = [
   },
   {
     name: 'arrow-down-left',
-    content: 'eb2a'
-  },
-  {
-    name: 'arrow-down-right',
-    content: 'eb2b'
-  },
-  {
-    name: 'arrow-from-right',
     content: 'eb2c'
   },
   {
-    name: 'arrow-from-top',
+    name: 'arrow-down-right',
     content: 'eb2d'
   },
   {
-    name: 'arrow-growth',
+    name: 'arrow-from-right',
     content: 'eb2e'
+  },
+  {
+    name: 'arrow-from-top',
+    content: 'eb2f'
+  },
+  {
+    name: 'arrow-growth',
+    content: 'eb30'
   },
   {
     name: 'arrow-left',
@@ -277,11 +277,11 @@ const icons = [
   },
   {
     name: 'arrow-random',
-    content: 'eb2f'
+    content: 'eb31'
   },
   {
     name: 'arrow-resize-diagonal',
-    content: 'eb30'
+    content: 'eb32'
   },
   {
     name: 'arrow-right',
@@ -289,11 +289,11 @@ const icons = [
   },
   {
     name: 'arrow-to-bottom',
-    content: 'eb31'
+    content: 'eb33'
   },
   {
     name: 'arrow-to-right',
-    content: 'eb32'
+    content: 'eb34'
   },
   {
     name: 'arrow-up',
@@ -301,67 +301,67 @@ const icons = [
   },
   {
     name: 'arrow-up-left',
-    content: 'eb33'
+    content: 'eb35'
   },
   {
     name: 'arrow-up-right',
-    content: 'eb34'
-  },
-  {
-    name: 'arrows-h',
-    content: 'eb37'
-  },
-  {
-    name: 'arrows-h-alt',
     content: 'eb36'
   },
   {
-    name: 'arrows-left-down',
-    content: 'eb38'
-  },
-  {
-    name: 'arrows-maximize',
+    name: 'arrows-h',
     content: 'eb39'
   },
   {
-    name: 'arrows-merge',
+    name: 'arrows-h-alt',
+    content: 'eb38'
+  },
+  {
+    name: 'arrows-left-down',
     content: 'eb3a'
   },
   {
-    name: 'arrows-resize',
-    content: 'eb3d'
-  },
-  {
-    name: 'arrows-resize-h',
+    name: 'arrows-maximize',
     content: 'eb3b'
   },
   {
-    name: 'arrows-resize-v',
+    name: 'arrows-merge',
     content: 'eb3c'
   },
   {
-    name: 'arrows-right-down',
-    content: 'eb3e'
-  },
-  {
-    name: 'arrows-shrink-h',
+    name: 'arrows-resize',
     content: 'eb3f'
   },
   {
-    name: 'arrows-shrink-v',
+    name: 'arrows-resize-h',
+    content: 'eb3d'
+  },
+  {
+    name: 'arrows-resize-v',
+    content: 'eb3e'
+  },
+  {
+    name: 'arrows-right-down',
     content: 'eb40'
   },
   {
-    name: 'arrows-up-right',
+    name: 'arrows-shrink-h',
     content: 'eb41'
   },
   {
-    name: 'arrows-v',
+    name: 'arrows-shrink-v',
+    content: 'eb42'
+  },
+  {
+    name: 'arrows-up-right',
     content: 'eb43'
   },
   {
+    name: 'arrows-v',
+    content: 'eb45'
+  },
+  {
     name: 'arrows-v-alt',
-    content: 'eb42'
+    content: 'eb44'
   },
   {
     name: 'aspect-ratio',
@@ -369,19 +369,19 @@ const icons = [
   },
   {
     name: 'assistive-listening-systems',
-    content: 'eb44'
-  },
-  {
-    name: 'asterisk',
-    content: 'eb45'
-  },
-  {
-    name: 'at',
     content: 'eb46'
   },
   {
-    name: 'atom',
+    name: 'asterisk',
     content: 'eb47'
+  },
+  {
+    name: 'at',
+    content: 'eb48'
+  },
+  {
+    name: 'atom',
+    content: 'eb49'
   },
   {
     name: 'attachment',
@@ -397,79 +397,79 @@ const icons = [
   },
   {
     name: 'auto-flash',
-    content: 'eb48'
-  },
-  {
-    name: 'award',
     content: 'eb4a'
   },
   {
-    name: 'award-alt',
-    content: 'eb49'
-  },
-  {
-    name: 'baby-carriage',
-    content: 'eb4b'
-  },
-  {
-    name: 'backpack',
+    name: 'award',
     content: 'eb4c'
   },
   {
-    name: 'backspace',
+    name: 'award-alt',
+    content: 'eb4b'
+  },
+  {
+    name: 'baby-carriage',
     content: 'eb4d'
   },
   {
-    name: 'backward',
+    name: 'backpack',
     content: 'eb4e'
   },
   {
-    name: 'bag',
-    content: 'eb51'
-  },
-  {
-    name: 'bag-alt',
+    name: 'backspace',
     content: 'eb4f'
   },
   {
-    name: 'bag-slash',
+    name: 'backward',
     content: 'eb50'
   },
   {
-    name: 'balance-scale',
-    content: 'eb52'
-  },
-  {
-    name: 'ban',
+    name: 'bag',
     content: 'eb53'
   },
   {
-    name: 'band-aid',
+    name: 'bag-alt',
+    content: 'eb51'
+  },
+  {
+    name: 'bag-slash',
+    content: 'eb52'
+  },
+  {
+    name: 'balance-scale',
     content: 'eb54'
   },
   {
-    name: 'bars',
+    name: 'ban',
     content: 'eb55'
   },
   {
-    name: 'baseball-ball',
+    name: 'band-aid',
     content: 'eb56'
   },
   {
-    name: 'basketball',
-    content: 'eb58'
-  },
-  {
-    name: 'basketball-hoop',
+    name: 'bars',
     content: 'eb57'
   },
   {
-    name: 'bath',
+    name: 'baseball-ball',
+    content: 'eb58'
+  },
+  {
+    name: 'basketball',
+    content: 'eb5a'
+  },
+  {
+    name: 'basketball-hoop',
     content: 'eb59'
   },
   {
+    name: 'bath',
+    content: 'eb5b'
+  },
+  {
     name: 'battery-bolt',
-    content: 'eb5a'
+    content: 'eb5c'
   },
   {
     name: 'battery-charging',
@@ -493,59 +493,59 @@ const icons = [
   },
   {
     name: 'bed',
-    content: 'eb5c'
-  },
-  {
-    name: 'bed-double',
-    content: 'eb5b'
-  },
-  {
-    name: 'behance',
     content: 'eb5e'
   },
   {
-    name: 'behance-alt',
+    name: 'bed-double',
     content: 'eb5d'
   },
   {
-    name: 'bell',
-    content: 'eb61'
-  },
-  {
-    name: 'bell-school',
-    content: 'eb5f'
-  },
-  {
-    name: 'bell-slash',
+    name: 'behance',
     content: 'eb60'
   },
   {
-    name: 'bill',
-    content: 'eb62'
+    name: 'behance-alt',
+    content: 'eb5f'
   },
   {
-    name: 'bing',
+    name: 'bell',
     content: 'eb63'
   },
   {
-    name: 'bitcoin',
-    content: 'eb67'
+    name: 'bell-school',
+    content: 'eb61'
   },
   {
-    name: 'bitcoin-alt',
+    name: 'bell-slash',
+    content: 'eb62'
+  },
+  {
+    name: 'bill',
     content: 'eb64'
   },
   {
-    name: 'bitcoin-circle',
+    name: 'bing',
     content: 'eb65'
   },
   {
-    name: 'bitcoin-sign',
+    name: 'bitcoin',
+    content: 'eb69'
+  },
+  {
+    name: 'bitcoin-alt',
     content: 'eb66'
   },
   {
-    name: 'black-berry',
+    name: 'bitcoin-circle',
+    content: 'eb67'
+  },
+  {
+    name: 'bitcoin-sign',
     content: 'eb68'
+  },
+  {
+    name: 'black-berry',
+    content: 'eb6a'
   },
   {
     name: 'block',
@@ -553,11 +553,11 @@ const icons = [
   },
   {
     name: 'blogger',
-    content: 'eb6a'
+    content: 'eb6c'
   },
   {
     name: 'blogger-alt',
-    content: 'eb69'
+    content: 'eb6b'
   },
   {
     name: 'bluetooth',
@@ -565,11 +565,11 @@ const icons = [
   },
   {
     name: 'bluetooth-b',
-    content: 'eb6b'
+    content: 'eb6d'
   },
   {
     name: 'bold',
-    content: 'eb6c'
+    content: 'eb6e'
   },
   {
     name: 'bolt',
@@ -577,11 +577,11 @@ const icons = [
   },
   {
     name: 'bolt-alt',
-    content: 'eb6d'
+    content: 'eb6f'
   },
   {
     name: 'bolt-slash',
-    content: 'eb6e'
+    content: 'eb70'
   },
   {
     name: 'book',
@@ -589,19 +589,19 @@ const icons = [
   },
   {
     name: 'book-alt',
-    content: 'eb6f'
-  },
-  {
-    name: 'book-medical',
-    content: 'eb70'
-  },
-  {
-    name: 'book-open',
     content: 'eb71'
   },
   {
-    name: 'book-reader',
+    name: 'book-medical',
     content: 'eb72'
+  },
+  {
+    name: 'book-open',
+    content: 'eb73'
+  },
+  {
+    name: 'book-reader',
+    content: 'eb74'
   },
   {
     name: 'bookmark',
@@ -617,11 +617,11 @@ const icons = [
   },
   {
     name: 'books',
-    content: 'eb73'
+    content: 'eb75'
   },
   {
     name: 'boombox',
-    content: 'ea2f'
+    content: 'ea31'
   },
   {
     name: 'border-all',
@@ -629,7 +629,7 @@ const icons = [
   },
   {
     name: 'border-alt',
-    content: 'ea30'
+    content: 'ea32'
   },
   {
     name: 'border-bottom',
@@ -637,7 +637,7 @@ const icons = [
   },
   {
     name: 'border-clear',
-    content: 'ea31'
+    content: 'ea33'
   },
   {
     name: 'border-horizontal',
@@ -653,7 +653,7 @@ const icons = [
   },
   {
     name: 'border-out',
-    content: 'ea32'
+    content: 'ea34'
   },
   {
     name: 'border-outline',
@@ -677,35 +677,35 @@ const icons = [
   },
   {
     name: 'bowling-ball',
-    content: 'ea33'
-  },
-  {
-    name: 'box',
-    content: 'ea34'
-  },
-  {
-    name: 'brackets-curly',
     content: 'ea35'
   },
   {
-    name: 'brain',
+    name: 'box',
     content: 'ea36'
   },
   {
-    name: 'briefcase',
-    content: 'ea38'
-  },
-  {
-    name: 'briefcase-alt',
+    name: 'brackets-curly',
     content: 'ea37'
   },
   {
-    name: 'bright',
+    name: 'brain',
+    content: 'ea38'
+  },
+  {
+    name: 'briefcase',
+    content: 'ea3a'
+  },
+  {
+    name: 'briefcase-alt',
     content: 'ea39'
   },
   {
+    name: 'bright',
+    content: 'ea3b'
+  },
+  {
     name: 'brightness',
-    content: 'ea3e'
+    content: 'ea40'
   },
   {
     name: 'brightness-auto',
@@ -713,11 +713,11 @@ const icons = [
   },
   {
     name: 'brightness-empty',
-    content: 'ea3a'
+    content: 'ea3c'
   },
   {
     name: 'brightness-half',
-    content: 'ea3b'
+    content: 'ea3d'
   },
   {
     name: 'brightness-high',
@@ -733,27 +733,27 @@ const icons = [
   },
   {
     name: 'brightness-minus',
-    content: 'ea3c'
+    content: 'ea3e'
   },
   {
     name: 'brightness-plus',
-    content: 'ea3d'
-  },
-  {
-    name: 'bring-bottom',
     content: 'ea3f'
   },
   {
-    name: 'bring-front',
-    content: 'ea40'
-  },
-  {
-    name: 'browser',
+    name: 'bring-bottom',
     content: 'ea41'
   },
   {
-    name: 'brush-alt',
+    name: 'bring-front',
     content: 'ea42'
+  },
+  {
+    name: 'browser',
+    content: 'ea43'
+  },
+  {
+    name: 'brush-alt',
+    content: 'ea44'
   },
   {
     name: 'bug',
@@ -761,7 +761,7 @@ const icons = [
   },
   {
     name: 'building',
-    content: 'ea43'
+    content: 'ea45'
   },
   {
     name: 'bulb',
@@ -769,27 +769,27 @@ const icons = [
   },
   {
     name: 'bullseye',
-    content: 'ea44'
-  },
-  {
-    name: 'bus',
-    content: 'ea47'
-  },
-  {
-    name: 'bus-alt',
-    content: 'ea45'
-  },
-  {
-    name: 'bus-school',
     content: 'ea46'
   },
   {
-    name: 'calculator',
+    name: 'bus',
     content: 'ea49'
   },
   {
-    name: 'calculator-alt',
+    name: 'bus-alt',
+    content: 'ea47'
+  },
+  {
+    name: 'bus-school',
     content: 'ea48'
+  },
+  {
+    name: 'calculator',
+    content: 'ea4b'
+  },
+  {
+    name: 'calculator-alt',
+    content: 'ea4a'
   },
   {
     name: 'calendar',
@@ -801,7 +801,7 @@ const icons = [
   },
   {
     name: 'calendar-alt',
-    content: 'ea4a'
+    content: 'ea4c'
   },
   {
     name: 'calendar-days',
@@ -821,15 +821,15 @@ const icons = [
   },
   {
     name: 'calendar-slash',
-    content: 'ea4b'
+    content: 'ea4d'
   },
   {
     name: 'calender',
-    content: 'ea4c'
+    content: 'ea4e'
   },
   {
     name: 'calling',
-    content: 'ea4d'
+    content: 'ea4f'
   },
   {
     name: 'camera',
@@ -837,15 +837,15 @@ const icons = [
   },
   {
     name: 'camera-change',
-    content: 'ea4e'
+    content: 'ea50'
   },
   {
     name: 'camera-plus',
-    content: 'ea4f'
+    content: 'ea51'
   },
   {
     name: 'camera-slash',
-    content: 'ea50'
+    content: 'ea52'
   },
   {
     name: 'Campaign',
@@ -853,15 +853,15 @@ const icons = [
   },
   {
     name: 'cancel',
-    content: 'ea51'
+    content: 'ea53'
   },
   {
     name: 'capsule',
-    content: 'ea52'
+    content: 'ea54'
   },
   {
     name: 'capture',
-    content: 'ea53'
+    content: 'ea55'
   },
   {
     name: 'car',
@@ -869,43 +869,43 @@ const icons = [
   },
   {
     name: 'car-sideview',
-    content: 'ea54'
-  },
-  {
-    name: 'car-slash',
-    content: 'ea55'
-  },
-  {
-    name: 'car-wash',
     content: 'ea56'
   },
   {
-    name: 'card-atm',
+    name: 'car-slash',
     content: 'ea57'
   },
   {
-    name: 'caret-right',
+    name: 'car-wash',
     content: 'ea58'
   },
   {
-    name: 'cell',
+    name: 'card-atm',
     content: 'ea59'
   },
   {
-    name: 'celsius',
+    name: 'caret-right',
     content: 'ea5a'
   },
   {
-    name: 'channel',
-    content: 'ea5c'
-  },
-  {
-    name: 'channel-add',
+    name: 'cell',
     content: 'ea5b'
   },
   {
+    name: 'celsius',
+    content: 'ea5c'
+  },
+  {
+    name: 'channel',
+    content: 'ea5e'
+  },
+  {
+    name: 'channel-add',
+    content: 'ea5d'
+  },
+  {
     name: 'chart',
-    content: 'ea63'
+    content: 'ea65'
   },
   {
     name: 'chart-bar',
@@ -913,23 +913,23 @@ const icons = [
   },
   {
     name: 'chart-bar-alt',
-    content: 'ea5d'
-  },
-  {
-    name: 'chart-down',
-    content: 'ea5e'
-  },
-  {
-    name: 'chart-growth',
-    content: 'ea60'
-  },
-  {
-    name: 'chart-growth-alt',
     content: 'ea5f'
   },
   {
-    name: 'chart-line',
+    name: 'chart-down',
+    content: 'ea60'
+  },
+  {
+    name: 'chart-growth',
+    content: 'ea62'
+  },
+  {
+    name: 'chart-growth-alt',
     content: 'ea61'
+  },
+  {
+    name: 'chart-line',
+    content: 'ea63'
   },
   {
     name: 'chart-pie',
@@ -937,7 +937,7 @@ const icons = [
   },
   {
     name: 'chart-pie-alt',
-    content: 'ea62'
+    content: 'ea64'
   },
   {
     name: 'chat',
@@ -945,11 +945,11 @@ const icons = [
   },
   {
     name: 'chat-bubble-user',
-    content: 'ea64'
+    content: 'ea66'
   },
   {
     name: 'chat-info',
-    content: 'ea65'
+    content: 'ea67'
   },
   {
     name: 'check',
@@ -957,11 +957,11 @@ const icons = [
   },
   {
     name: 'check-circle',
-    content: 'ea66'
+    content: 'ea68'
   },
   {
     name: 'check-square',
-    content: 'ea67'
+    content: 'ea69'
   },
   {
     name: 'chevron-down',
@@ -981,71 +981,71 @@ const icons = [
   },
   {
     name: 'circle',
-    content: 'ea69'
-  },
-  {
-    name: 'circle-layer',
-    content: 'ea68'
-  },
-  {
-    name: 'circuit',
-    content: 'ea6a'
-  },
-  {
-    name: 'clapper-board',
     content: 'ea6b'
   },
   {
-    name: 'clinic-medical',
+    name: 'circle-layer',
+    content: 'ea6a'
+  },
+  {
+    name: 'circuit',
     content: 'ea6c'
   },
   {
-    name: 'clipboard',
-    content: 'ea70'
-  },
-  {
-    name: 'clipboard-alt',
+    name: 'clapper-board',
     content: 'ea6d'
   },
   {
-    name: 'clipboard-blank',
+    name: 'clinic-medical',
     content: 'ea6e'
   },
   {
-    name: 'clipboard-notes',
-    content: 'ea6f'
-  },
-  {
-    name: 'clock',
-    content: 'ea78'
-  },
-  {
-    name: 'clock-eight',
-    content: 'ea71'
-  },
-  {
-    name: 'clock-five',
+    name: 'clipboard',
     content: 'ea72'
   },
   {
-    name: 'clock-nine',
+    name: 'clipboard-alt',
+    content: 'ea6f'
+  },
+  {
+    name: 'clipboard-blank',
+    content: 'ea70'
+  },
+  {
+    name: 'clipboard-notes',
+    content: 'ea71'
+  },
+  {
+    name: 'clock',
+    content: 'ea7a'
+  },
+  {
+    name: 'clock-eight',
     content: 'ea73'
   },
   {
-    name: 'clock-seven',
+    name: 'clock-five',
     content: 'ea74'
   },
   {
-    name: 'clock-ten',
+    name: 'clock-nine',
     content: 'ea75'
   },
   {
-    name: 'clock-three',
+    name: 'clock-seven',
     content: 'ea76'
   },
   {
-    name: 'clock-two',
+    name: 'clock-ten',
     content: 'ea77'
+  },
+  {
+    name: 'clock-three',
+    content: 'ea78'
+  },
+  {
+    name: 'clock-two',
+    content: 'ea79'
   },
   {
     name: 'close',
@@ -1053,11 +1053,11 @@ const icons = [
   },
   {
     name: 'closed-captioning',
-    content: 'ea7a'
+    content: 'ea7c'
   },
   {
     name: 'closed-captioning-slash',
-    content: 'ea79'
+    content: 'ea7b'
   },
   {
     name: 'cloud',
@@ -1065,187 +1065,187 @@ const icons = [
   },
   {
     name: 'cloud-block',
-    content: 'ea7b'
-  },
-  {
-    name: 'cloud-bookmark',
-    content: 'ea7c'
-  },
-  {
-    name: 'cloud-check',
     content: 'ea7d'
   },
   {
-    name: 'cloud-computing',
+    name: 'cloud-bookmark',
     content: 'ea7e'
   },
   {
-    name: 'cloud-data-connection',
+    name: 'cloud-check',
     content: 'ea7f'
   },
   {
-    name: 'cloud-database-tree',
+    name: 'cloud-computing',
     content: 'ea80'
   },
   {
-    name: 'cloud-download',
+    name: 'cloud-data-connection',
     content: 'ea81'
   },
   {
-    name: 'cloud-drizzle',
+    name: 'cloud-database-tree',
     content: 'ea82'
   },
   {
-    name: 'cloud-exclamation',
+    name: 'cloud-download',
     content: 'ea83'
   },
   {
-    name: 'cloud-hail',
+    name: 'cloud-drizzle',
     content: 'ea84'
   },
   {
-    name: 'cloud-heart',
+    name: 'cloud-exclamation',
     content: 'ea85'
   },
   {
-    name: 'cloud-info',
+    name: 'cloud-hail',
     content: 'ea86'
   },
   {
-    name: 'cloud-lock',
+    name: 'cloud-heart',
     content: 'ea87'
   },
   {
-    name: 'cloud-meatball',
+    name: 'cloud-info',
     content: 'ea88'
   },
   {
-    name: 'cloud-moon',
-    content: 'ea8d'
-  },
-  {
-    name: 'cloud-moon-hail',
+    name: 'cloud-lock',
     content: 'ea89'
   },
   {
-    name: 'cloud-moon-meatball',
+    name: 'cloud-meatball',
     content: 'ea8a'
   },
   {
-    name: 'cloud-moon-rain',
-    content: 'ea8b'
-  },
-  {
-    name: 'cloud-moon-showers',
-    content: 'ea8c'
-  },
-  {
-    name: 'cloud-question',
-    content: 'ea8e'
-  },
-  {
-    name: 'cloud-rain',
-    content: 'ea90'
-  },
-  {
-    name: 'cloud-rain-sun',
+    name: 'cloud-moon',
     content: 'ea8f'
   },
   {
-    name: 'cloud-redo',
-    content: 'ea91'
+    name: 'cloud-moon-hail',
+    content: 'ea8b'
   },
   {
-    name: 'cloud-share',
+    name: 'cloud-moon-meatball',
+    content: 'ea8c'
+  },
+  {
+    name: 'cloud-moon-rain',
+    content: 'ea8d'
+  },
+  {
+    name: 'cloud-moon-showers',
+    content: 'ea8e'
+  },
+  {
+    name: 'cloud-question',
+    content: 'ea90'
+  },
+  {
+    name: 'cloud-rain',
     content: 'ea92'
   },
   {
-    name: 'cloud-shield',
+    name: 'cloud-rain-sun',
+    content: 'ea91'
+  },
+  {
+    name: 'cloud-redo',
     content: 'ea93'
   },
   {
-    name: 'cloud-showers',
-    content: 'ea96'
-  },
-  {
-    name: 'cloud-showers-alt',
+    name: 'cloud-share',
     content: 'ea94'
   },
   {
-    name: 'cloud-showers-heavy',
+    name: 'cloud-shield',
     content: 'ea95'
   },
   {
-    name: 'cloud-slash',
-    content: 'ea97'
-  },
-  {
-    name: 'cloud-sun',
-    content: 'ea9d'
-  },
-  {
-    name: 'cloud-sun-hail',
+    name: 'cloud-showers',
     content: 'ea98'
   },
   {
-    name: 'cloud-sun-meatball',
+    name: 'cloud-showers-alt',
+    content: 'ea96'
+  },
+  {
+    name: 'cloud-showers-heavy',
+    content: 'ea97'
+  },
+  {
+    name: 'cloud-slash',
     content: 'ea99'
   },
   {
-    name: 'cloud-sun-rain',
-    content: 'ea9b'
-  },
-  {
-    name: 'cloud-sun-rain-alt',
-    content: 'ea9a'
-  },
-  {
-    name: 'cloud-sun-tear',
-    content: 'ea9c'
-  },
-  {
-    name: 'cloud-times',
-    content: 'ea9e'
-  },
-  {
-    name: 'cloud-unlock',
+    name: 'cloud-sun',
     content: 'ea9f'
   },
   {
-    name: 'cloud-upload',
+    name: 'cloud-sun-hail',
+    content: 'ea9a'
+  },
+  {
+    name: 'cloud-sun-meatball',
+    content: 'ea9b'
+  },
+  {
+    name: 'cloud-sun-rain',
+    content: 'ea9d'
+  },
+  {
+    name: 'cloud-sun-rain-alt',
+    content: 'ea9c'
+  },
+  {
+    name: 'cloud-sun-tear',
+    content: 'ea9e'
+  },
+  {
+    name: 'cloud-times',
     content: 'eaa0'
   },
   {
-    name: 'cloud-wifi',
+    name: 'cloud-unlock',
     content: 'eaa1'
   },
   {
-    name: 'cloud-wind',
+    name: 'cloud-upload',
     content: 'eaa2'
   },
   {
-    name: 'clouds',
+    name: 'cloud-wifi',
     content: 'eaa3'
   },
   {
-    name: 'club',
+    name: 'cloud-wind',
     content: 'eaa4'
   },
   {
-    name: 'code-branch',
+    name: 'clouds',
     content: 'eaa5'
   },
   {
-    name: 'coffee',
+    name: 'club',
     content: 'eaa6'
   },
   {
-    name: 'cog',
+    name: 'code-branch',
     content: 'eaa7'
   },
   {
-    name: 'coins',
+    name: 'coffee',
     content: 'eaa8'
+  },
+  {
+    name: 'cog',
+    content: 'eaa9'
+  },
+  {
+    name: 'coins',
+    content: 'eaaa'
   },
   {
     name: 'column-2-vertical',
@@ -1253,7 +1253,7 @@ const icons = [
   },
   {
     name: 'columns',
-    content: 'eaa9'
+    content: 'eaab'
   },
   {
     name: 'comment',
@@ -1265,215 +1265,215 @@ const icons = [
   },
   {
     name: 'comment-alt',
-    content: 'eac2'
-  },
-  {
-    name: 'comment-alt-block',
-    content: 'eaaa'
-  },
-  {
-    name: 'comment-alt-chart-lines',
-    content: 'eaab'
-  },
-  {
-    name: 'comment-alt-check',
-    content: 'eaac'
-  },
-  {
-    name: 'comment-alt-dots',
-    content: 'eaad'
-  },
-  {
-    name: 'comment-alt-download',
-    content: 'eaae'
-  },
-  {
-    name: 'comment-alt-edit',
-    content: 'eaaf'
-  },
-  {
-    name: 'comment-alt-exclamation',
-    content: 'eab0'
-  },
-  {
-    name: 'comment-alt-heart',
-    content: 'eab1'
-  },
-  {
-    name: 'comment-alt-image',
-    content: 'eab2'
-  },
-  {
-    name: 'comment-alt-info',
-    content: 'eab3'
-  },
-  {
-    name: 'comment-alt-lines',
-    content: 'eab4'
-  },
-  {
-    name: 'comment-alt-lock',
-    content: 'eab5'
-  },
-  {
-    name: 'comment-alt-medical',
-    content: 'eab6'
-  },
-  {
-    name: 'comment-alt-message',
-    content: 'eab7'
-  },
-  {
-    name: 'comment-alt-notes',
-    content: 'eab8'
-  },
-  {
-    name: 'comment-alt-plus',
-    content: 'eab9'
-  },
-  {
-    name: 'comment-alt-question',
-    content: 'eaba'
-  },
-  {
-    name: 'comment-alt-redo',
-    content: 'eabb'
-  },
-  {
-    name: 'comment-alt-search',
-    content: 'eabc'
-  },
-  {
-    name: 'comment-alt-share',
-    content: 'eabd'
-  },
-  {
-    name: 'comment-alt-shield',
-    content: 'eabe'
-  },
-  {
-    name: 'comment-alt-slash',
-    content: 'eabf'
-  },
-  {
-    name: 'comment-alt-upload',
-    content: 'eac0'
-  },
-  {
-    name: 'comment-alt-verify',
-    content: 'eac1'
-  },
-  {
-    name: 'comment-block',
-    content: 'eac3'
-  },
-  {
-    name: 'comment-chart-line',
     content: 'eac4'
   },
   {
-    name: 'comment-check',
+    name: 'comment-alt-block',
+    content: 'eaac'
+  },
+  {
+    name: 'comment-alt-chart-lines',
+    content: 'eaad'
+  },
+  {
+    name: 'comment-alt-check',
+    content: 'eaae'
+  },
+  {
+    name: 'comment-alt-dots',
+    content: 'eaaf'
+  },
+  {
+    name: 'comment-alt-download',
+    content: 'eab0'
+  },
+  {
+    name: 'comment-alt-edit',
+    content: 'eab1'
+  },
+  {
+    name: 'comment-alt-exclamation',
+    content: 'eab2'
+  },
+  {
+    name: 'comment-alt-heart',
+    content: 'eab3'
+  },
+  {
+    name: 'comment-alt-image',
+    content: 'eab4'
+  },
+  {
+    name: 'comment-alt-info',
+    content: 'eab5'
+  },
+  {
+    name: 'comment-alt-lines',
+    content: 'eab6'
+  },
+  {
+    name: 'comment-alt-lock',
+    content: 'eab7'
+  },
+  {
+    name: 'comment-alt-medical',
+    content: 'eab8'
+  },
+  {
+    name: 'comment-alt-message',
+    content: 'eab9'
+  },
+  {
+    name: 'comment-alt-notes',
+    content: 'eaba'
+  },
+  {
+    name: 'comment-alt-plus',
+    content: 'eabb'
+  },
+  {
+    name: 'comment-alt-question',
+    content: 'eabc'
+  },
+  {
+    name: 'comment-alt-redo',
+    content: 'eabd'
+  },
+  {
+    name: 'comment-alt-search',
+    content: 'eabe'
+  },
+  {
+    name: 'comment-alt-share',
+    content: 'eabf'
+  },
+  {
+    name: 'comment-alt-shield',
+    content: 'eac0'
+  },
+  {
+    name: 'comment-alt-slash',
+    content: 'eac1'
+  },
+  {
+    name: 'comment-alt-upload',
+    content: 'eac2'
+  },
+  {
+    name: 'comment-alt-verify',
+    content: 'eac3'
+  },
+  {
+    name: 'comment-block',
     content: 'eac5'
   },
   {
-    name: 'comment-dots',
+    name: 'comment-chart-line',
     content: 'eac6'
   },
   {
-    name: 'comment-download',
+    name: 'comment-check',
     content: 'eac7'
   },
   {
-    name: 'comment-edit',
+    name: 'comment-dots',
     content: 'eac8'
   },
   {
-    name: 'comment-exclamation',
+    name: 'comment-download',
     content: 'eac9'
   },
   {
-    name: 'comment-heart',
+    name: 'comment-edit',
     content: 'eaca'
   },
   {
-    name: 'comment-image',
+    name: 'comment-exclamation',
     content: 'eacb'
   },
   {
-    name: 'comment-info',
-    content: 'eacd'
-  },
-  {
-    name: 'comment-info-alt',
+    name: 'comment-heart',
     content: 'eacc'
   },
   {
-    name: 'comment-lines',
-    content: 'eace'
+    name: 'comment-image',
+    content: 'eacd'
   },
   {
-    name: 'comment-lock',
+    name: 'comment-info',
     content: 'eacf'
   },
   {
-    name: 'comment-medical',
+    name: 'comment-info-alt',
+    content: 'eace'
+  },
+  {
+    name: 'comment-lines',
     content: 'ead0'
   },
   {
-    name: 'comment-message',
+    name: 'comment-lock',
     content: 'ead1'
   },
   {
-    name: 'comment-notes',
+    name: 'comment-medical',
     content: 'ead2'
   },
   {
-    name: 'comment-plus',
+    name: 'comment-message',
     content: 'ead3'
   },
   {
-    name: 'comment-question',
+    name: 'comment-notes',
     content: 'ead4'
   },
   {
-    name: 'comment-redo',
+    name: 'comment-plus',
     content: 'ead5'
   },
   {
-    name: 'comment-search',
+    name: 'comment-question',
     content: 'ead6'
   },
   {
-    name: 'comment-share',
+    name: 'comment-redo',
     content: 'ead7'
   },
   {
-    name: 'comment-shield',
+    name: 'comment-search',
     content: 'ead8'
   },
   {
-    name: 'comment-slash',
+    name: 'comment-share',
     content: 'ead9'
   },
   {
-    name: 'comment-upload',
+    name: 'comment-shield',
     content: 'eada'
   },
   {
-    name: 'comment-verify',
+    name: 'comment-slash',
     content: 'eadb'
   },
   {
-    name: 'comments',
-    content: 'eadd'
-  },
-  {
-    name: 'comments-alt',
+    name: 'comment-upload',
     content: 'eadc'
   },
   {
-    name: 'compact-disc',
+    name: 'comment-verify',
+    content: 'eadd'
+  },
+  {
+    name: 'comments',
+    content: 'eadf'
+  },
+  {
+    name: 'comments-alt',
     content: 'eade'
+  },
+  {
+    name: 'compact-disc',
+    content: 'eae0'
   },
   {
     name: 'company',
@@ -1481,47 +1481,47 @@ const icons = [
   },
   {
     name: 'comparison',
-    content: 'eadf'
-  },
-  {
-    name: 'compass',
-    content: 'eae0'
-  },
-  {
-    name: 'compress',
-    content: 'eae7'
-  },
-  {
-    name: 'compress-alt',
-    content: 'eae2'
-  },
-  {
-    name: 'compress-alt-left',
     content: 'eae1'
   },
   {
-    name: 'compress-arrows',
-    content: 'eae3'
+    name: 'compass',
+    content: 'eae2'
   },
   {
-    name: 'compress-lines',
+    name: 'compress',
+    content: 'eae9'
+  },
+  {
+    name: 'compress-alt',
     content: 'eae4'
   },
   {
-    name: 'compress-point',
+    name: 'compress-alt-left',
+    content: 'eae3'
+  },
+  {
+    name: 'compress-arrows',
     content: 'eae5'
   },
   {
-    name: 'compress-v',
+    name: 'compress-lines',
     content: 'eae6'
   },
   {
-    name: 'confused',
+    name: 'compress-point',
+    content: 'eae7'
+  },
+  {
+    name: 'compress-v',
     content: 'eae8'
   },
   {
+    name: 'confused',
+    content: 'eaea'
+  },
+  {
     name: 'constructor',
-    content: 'eae9'
+    content: 'eaeb'
   },
   {
     name: 'copy',
@@ -1529,63 +1529,63 @@ const icons = [
   },
   {
     name: 'copy-alt',
-    content: 'eaea'
-  },
-  {
-    name: 'copy-landscape',
-    content: 'eaeb'
-  },
-  {
-    name: 'copyright',
     content: 'eaec'
   },
   {
-    name: 'corner-down-left',
+    name: 'copy-landscape',
     content: 'eaed'
   },
   {
-    name: 'corner-down-right',
-    content: 'eaef'
-  },
-  {
-    name: 'corner-down-right-alt',
+    name: 'copyright',
     content: 'eaee'
   },
   {
-    name: 'corner-left-down',
-    content: 'eaf0'
+    name: 'corner-down-left',
+    content: 'eaef'
   },
   {
-    name: 'corner-right-down',
+    name: 'corner-down-right',
     content: 'eaf1'
   },
   {
-    name: 'corner-up-left',
-    content: 'eaf3'
+    name: 'corner-down-right-alt',
+    content: 'eaf0'
   },
   {
-    name: 'corner-up-left-alt',
+    name: 'corner-left-down',
     content: 'eaf2'
   },
   {
-    name: 'corner-up-right',
+    name: 'corner-right-down',
+    content: 'eaf3'
+  },
+  {
+    name: 'corner-up-left',
     content: 'eaf5'
   },
   {
-    name: 'corner-up-right-alt',
+    name: 'corner-up-left-alt',
     content: 'eaf4'
   },
   {
-    name: 'coronavirus',
-    content: 'eaf6'
-  },
-  {
-    name: 'create-dashboard',
+    name: 'corner-up-right',
     content: 'eaf7'
   },
   {
-    name: 'creative-commons-pd',
+    name: 'corner-up-right-alt',
+    content: 'eaf6'
+  },
+  {
+    name: 'coronavirus',
     content: 'eaf8'
+  },
+  {
+    name: 'create-dashboard',
+    content: 'eaf9'
+  },
+  {
+    name: 'creative-commons-pd',
+    content: 'eafa'
   },
   {
     name: 'credit-card',
@@ -1593,11 +1593,11 @@ const icons = [
   },
   {
     name: 'credit-card-search',
-    content: 'eaf9'
+    content: 'eafb'
   },
   {
     name: 'crockery',
-    content: 'eafa'
+    content: 'eafc'
   },
   {
     name: 'crop',
@@ -1605,35 +1605,35 @@ const icons = [
   },
   {
     name: 'crop-alt',
-    content: 'eafd'
-  },
-  {
-    name: 'crop-alt-rotate-left',
-    content: 'eafb'
-  },
-  {
-    name: 'crop-alt-rotate-right',
-    content: 'eafc'
-  },
-  {
-    name: 'crosshair',
     content: 'eaff'
   },
   {
-    name: 'crosshair-alt',
+    name: 'crop-alt-rotate-left',
+    content: 'eafd'
+  },
+  {
+    name: 'crop-alt-rotate-right',
     content: 'eafe'
   },
   {
-    name: 'crosshairs',
-    content: 'eb00'
-  },
-  {
-    name: 'css3-simple',
+    name: 'crosshair',
     content: 'eb01'
   },
   {
-    name: 'cube',
+    name: 'crosshair-alt',
+    content: 'eb00'
+  },
+  {
+    name: 'crosshairs',
     content: 'eb02'
+  },
+  {
+    name: 'css3-simple',
+    content: 'eb03'
+  },
+  {
+    name: 'cube',
+    content: 'eb04'
   },
   {
     name: 'dashboard',
@@ -1641,15 +1641,15 @@ const icons = [
   },
   {
     name: 'data-sharing',
-    content: 'eb03'
-  },
-  {
-    name: 'database',
     content: 'eb05'
   },
   {
+    name: 'database',
+    content: 'eb07'
+  },
+  {
     name: 'database-alt',
-    content: 'eb04'
+    content: 'eb06'
   },
   {
     name: 'delete',
@@ -1657,7 +1657,7 @@ const icons = [
   },
   {
     name: 'desert',
-    content: 'eb06'
+    content: 'eb08'
   },
   {
     name: 'desktop',
@@ -1665,63 +1665,63 @@ const icons = [
   },
   {
     name: 'desktop-alt',
-    content: 'eb08'
-  },
-  {
-    name: 'desktop-alt-slash',
-    content: 'eb07'
-  },
-  {
-    name: 'desktop-cloud-alt',
-    content: 'eb09'
-  },
-  {
-    name: 'desktop-slash',
     content: 'eb0a'
   },
   {
-    name: 'dialpad',
-    content: 'eb0c'
+    name: 'desktop-alt-slash',
+    content: 'eb09'
   },
   {
-    name: 'dialpad-alt',
+    name: 'desktop-cloud-alt',
     content: 'eb0b'
   },
   {
-    name: 'diamond',
-    content: 'eb0d'
+    name: 'desktop-slash',
+    content: 'eb0c'
   },
   {
-    name: 'diary',
-    content: 'eb0f'
-  },
-  {
-    name: 'diary-alt',
+    name: 'dialpad',
     content: 'eb0e'
   },
   {
-    name: 'dice-five',
-    content: 'eb10'
+    name: 'dialpad-alt',
+    content: 'eb0d'
   },
   {
-    name: 'dice-four',
+    name: 'diamond',
+    content: 'eb0f'
+  },
+  {
+    name: 'diary',
     content: 'eb11'
   },
   {
-    name: 'dice-one',
+    name: 'diary-alt',
+    content: 'eb10'
+  },
+  {
+    name: 'dice-five',
     content: 'eb12'
   },
   {
-    name: 'dice-six',
+    name: 'dice-four',
     content: 'eb13'
   },
   {
-    name: 'dice-three',
+    name: 'dice-one',
     content: 'eb14'
   },
   {
-    name: 'dice-two',
+    name: 'dice-six',
     content: 'eb15'
+  },
+  {
+    name: 'dice-three',
+    content: 'eb16'
+  },
+  {
+    name: 'dice-two',
+    content: 'eb17'
   },
   {
     name: 'difference',
@@ -1733,19 +1733,19 @@ const icons = [
   },
   {
     name: 'directions',
-    content: 'eb16'
-  },
-  {
-    name: 'discord',
-    content: 'eb17'
-  },
-  {
-    name: 'dizzy-meh',
     content: 'eb18'
   },
   {
-    name: 'dna',
+    name: 'discord',
     content: 'eb19'
+  },
+  {
+    name: 'dizzy-meh',
+    content: 'eb1a'
+  },
+  {
+    name: 'dna',
+    content: 'eb1b'
   },
   {
     name: 'dns',
@@ -1753,19 +1753,19 @@ const icons = [
   },
   {
     name: 'document-info',
-    content: 'eb1a'
-  },
-  {
-    name: 'document-layout-center',
-    content: 'eb1b'
-  },
-  {
-    name: 'document-layout-left',
     content: 'eb1c'
   },
   {
-    name: 'document-layout-right',
+    name: 'document-layout-center',
     content: 'eb1d'
+  },
+  {
+    name: 'document-layout-left',
+    content: 'eb1e'
+  },
+  {
+    name: 'document-layout-right',
+    content: 'eb1f'
   },
   {
     name: 'dollar',
@@ -1773,15 +1773,15 @@ const icons = [
   },
   {
     name: 'dollar-alt',
-    content: 'eb1e'
-  },
-  {
-    name: 'dollar-sign',
     content: 'eb20'
   },
   {
+    name: 'dollar-sign',
+    content: 'eb22'
+  },
+  {
     name: 'dollar-sign-alt',
-    content: 'eb1f'
+    content: 'eb21'
   },
   {
     name: 'download',
@@ -1789,7 +1789,7 @@ const icons = [
   },
   {
     name: 'download-alt',
-    content: 'eb21'
+    content: 'eb23'
   },
   {
     name: 'drag-indicator',
@@ -1797,27 +1797,27 @@ const icons = [
   },
   {
     name: 'draggabledots',
-    content: 'eb22'
-  },
-  {
-    name: 'dribbble',
-    content: 'eb23'
-  },
-  {
-    name: 'drill',
     content: 'eb24'
   },
   {
-    name: 'dropbox',
+    name: 'dribbble',
     content: 'eb25'
   },
   {
+    name: 'drill',
+    content: 'eb26'
+  },
+  {
+    name: 'dropbox',
+    content: 'eb27'
+  },
+  {
     name: 'dumbbell',
-    content: 'e92c'
+    content: 'e92e'
   },
   {
     name: 'ear',
-    content: 'e92d'
+    content: 'e92f'
   },
   {
     name: 'edit',
@@ -1825,15 +1825,15 @@ const icons = [
   },
   {
     name: 'edit-alt',
-    content: 'e92e'
+    content: 'e930'
   },
   {
     name: 'ellipsis-h',
-    content: 'e92f'
+    content: 'e931'
   },
   {
     name: 'ellipsis-v',
-    content: 'e930'
+    content: 'e932'
   },
   {
     name: 'email',
@@ -1845,127 +1845,127 @@ const icons = [
   },
   {
     name: 'emoji',
-    content: 'e931'
-  },
-  {
-    name: 'english-to-chinese',
-    content: 'e932'
-  },
-  {
-    name: 'enter',
     content: 'e933'
   },
   {
-    name: 'envelope',
-    content: 'e94d'
-  },
-  {
-    name: 'envelope-add',
+    name: 'english-to-chinese',
     content: 'e934'
   },
   {
-    name: 'envelope-alt',
+    name: 'enter',
     content: 'e935'
   },
   {
-    name: 'envelope-block',
+    name: 'envelope',
+    content: 'e94f'
+  },
+  {
+    name: 'envelope-add',
     content: 'e936'
   },
   {
-    name: 'envelope-bookmark',
+    name: 'envelope-alt',
     content: 'e937'
   },
   {
-    name: 'envelope-check',
+    name: 'envelope-block',
     content: 'e938'
   },
   {
-    name: 'envelope-download',
-    content: 'e93a'
-  },
-  {
-    name: 'envelope-download-alt',
+    name: 'envelope-bookmark',
     content: 'e939'
   },
   {
-    name: 'envelope-edit',
-    content: 'e93b'
+    name: 'envelope-check',
+    content: 'e93a'
   },
   {
-    name: 'envelope-exclamation',
+    name: 'envelope-download',
     content: 'e93c'
   },
   {
-    name: 'envelope-heart',
+    name: 'envelope-download-alt',
+    content: 'e93b'
+  },
+  {
+    name: 'envelope-edit',
     content: 'e93d'
   },
   {
-    name: 'envelope-info',
+    name: 'envelope-exclamation',
     content: 'e93e'
   },
   {
-    name: 'envelope-lock',
+    name: 'envelope-heart',
     content: 'e93f'
   },
   {
-    name: 'envelope-minus',
+    name: 'envelope-info',
     content: 'e940'
   },
   {
-    name: 'envelope-open',
+    name: 'envelope-lock',
     content: 'e941'
   },
   {
-    name: 'envelope-question',
+    name: 'envelope-minus',
     content: 'e942'
   },
   {
-    name: 'envelope-receive',
+    name: 'envelope-open',
     content: 'e943'
   },
   {
-    name: 'envelope-redo',
+    name: 'envelope-question',
     content: 'e944'
   },
   {
-    name: 'envelope-search',
+    name: 'envelope-receive',
     content: 'e945'
   },
   {
-    name: 'envelope-send',
+    name: 'envelope-redo',
     content: 'e946'
   },
   {
-    name: 'envelope-share',
+    name: 'envelope-search',
     content: 'e947'
   },
   {
-    name: 'envelope-shield',
+    name: 'envelope-send',
     content: 'e948'
   },
   {
-    name: 'envelope-star',
+    name: 'envelope-share',
     content: 'e949'
   },
   {
-    name: 'envelope-times',
+    name: 'envelope-shield',
     content: 'e94a'
   },
   {
-    name: 'envelope-upload',
-    content: 'e94c'
-  },
-  {
-    name: 'envelope-upload-alt',
+    name: 'envelope-star',
     content: 'e94b'
   },
   {
-    name: 'envelopes',
+    name: 'envelope-times',
+    content: 'e94c'
+  },
+  {
+    name: 'envelope-upload',
     content: 'e94e'
   },
   {
+    name: 'envelope-upload-alt',
+    content: 'e94d'
+  },
+  {
+    name: 'envelopes',
+    content: 'e950'
+  },
+  {
     name: 'equal-circle',
-    content: 'e94f'
+    content: 'e951'
   },
   {
     name: 'equalizer',
@@ -1977,63 +1977,63 @@ const icons = [
   },
   {
     name: 'euro-circle',
-    content: 'e950'
-  },
-  {
-    name: 'exchange',
     content: 'e952'
   },
   {
-    name: 'exchange-alt',
-    content: 'e951'
-  },
-  {
-    name: 'exclamation',
-    content: 'e956'
-  },
-  {
-    name: 'exclamation-circle',
-    content: 'e953'
-  },
-  {
-    name: 'exclamation-octagon',
+    name: 'exchange',
     content: 'e954'
   },
   {
-    name: 'exclamation-triangle',
-    content: 'e955'
+    name: 'exchange-alt',
+    content: 'e953'
   },
   {
-    name: 'exclude',
-    content: 'e957'
-  },
-  {
-    name: 'exit',
+    name: 'exclamation',
     content: 'e958'
   },
   {
-    name: 'expand-alt',
+    name: 'exclamation-circle',
+    content: 'e955'
+  },
+  {
+    name: 'exclamation-octagon',
+    content: 'e956'
+  },
+  {
+    name: 'exclamation-triangle',
+    content: 'e957'
+  },
+  {
+    name: 'exclude',
     content: 'e959'
   },
   {
-    name: 'expand-arrows',
-    content: 'e95b'
-  },
-  {
-    name: 'expand-arrows-alt',
+    name: 'exit',
     content: 'e95a'
   },
   {
-    name: 'expand-from-corner',
-    content: 'e95c'
+    name: 'expand-alt',
+    content: 'e95b'
   },
   {
-    name: 'expand-left',
+    name: 'expand-arrows',
     content: 'e95d'
   },
   {
-    name: 'expand-right',
+    name: 'expand-arrows-alt',
+    content: 'e95c'
+  },
+  {
+    name: 'expand-from-corner',
     content: 'e95e'
+  },
+  {
+    name: 'expand-left',
+    content: 'e95f'
+  },
+  {
+    name: 'expand-right',
+    content: 'e960'
   },
   {
     name: 'explore',
@@ -2041,15 +2041,15 @@ const icons = [
   },
   {
     name: 'export',
-    content: 'e95f'
+    content: 'e961'
   },
   {
     name: 'exposure-alt',
-    content: 'e960'
+    content: 'e962'
   },
   {
     name: 'exposure-increase',
-    content: 'e961'
+    content: 'e963'
   },
   {
     name: 'extension',
@@ -2057,15 +2057,15 @@ const icons = [
   },
   {
     name: 'external-link-alt',
-    content: 'e962'
-  },
-  {
-    name: 'eye',
     content: 'e964'
   },
   {
+    name: 'eye',
+    content: 'e966'
+  },
+  {
     name: 'eye-slash',
-    content: 'e963'
+    content: 'e965'
   },
   {
     name: 'facebook',
@@ -2073,35 +2073,35 @@ const icons = [
   },
   {
     name: 'facebook-f',
-    content: 'e965'
-  },
-  {
-    name: 'facebook-messenger',
     content: 'e967'
   },
   {
-    name: 'facebook-messenger-alt',
-    content: 'e966'
-  },
-  {
-    name: 'fahrenheit',
-    content: 'e968'
-  },
-  {
-    name: 'fast-mail',
-    content: 'e96a'
-  },
-  {
-    name: 'fast-mail-alt',
+    name: 'facebook-messenger',
     content: 'e969'
   },
   {
-    name: 'favorite',
+    name: 'facebook-messenger-alt',
+    content: 'e968'
+  },
+  {
+    name: 'fahrenheit',
+    content: 'e96a'
+  },
+  {
+    name: 'fast-mail',
+    content: 'e96c'
+  },
+  {
+    name: 'fast-mail-alt',
     content: 'e96b'
   },
   {
+    name: 'favorite',
+    content: 'e96d'
+  },
+  {
     name: 'feedback',
-    content: 'e96c'
+    content: 'e96e'
   },
   {
     name: 'file',
@@ -2113,43 +2113,43 @@ const icons = [
   },
   {
     name: 'file-alt',
-    content: 'e96d'
-  },
-  {
-    name: 'file-blank',
-    content: 'e96e'
-  },
-  {
-    name: 'file-block-alt',
     content: 'e96f'
   },
   {
-    name: 'file-bookmark-alt',
+    name: 'file-blank',
     content: 'e970'
   },
   {
-    name: 'file-check',
-    content: 'e972'
-  },
-  {
-    name: 'file-check-alt',
+    name: 'file-block-alt',
     content: 'e971'
   },
   {
-    name: 'file-contract-dollar',
-    content: 'e973'
+    name: 'file-bookmark-alt',
+    content: 'e972'
   },
   {
-    name: 'file-copy-alt',
+    name: 'file-check',
     content: 'e974'
   },
   {
-    name: 'file-download',
+    name: 'file-check-alt',
+    content: 'e973'
+  },
+  {
+    name: 'file-contract-dollar',
+    content: 'e975'
+  },
+  {
+    name: 'file-copy-alt',
     content: 'e976'
   },
   {
+    name: 'file-download',
+    content: 'e978'
+  },
+  {
     name: 'file-download-alt',
-    content: 'e975'
+    content: 'e977'
   },
   {
     name: 'file-edit',
@@ -2157,91 +2157,91 @@ const icons = [
   },
   {
     name: 'file-edit-alt',
-    content: 'e977'
-  },
-  {
-    name: 'file-exclamation',
     content: 'e979'
   },
   {
-    name: 'file-exclamation-alt',
-    content: 'e978'
-  },
-  {
-    name: 'file-export',
-    content: 'e97a'
-  },
-  {
-    name: 'file-graph',
+    name: 'file-exclamation',
     content: 'e97b'
   },
   {
-    name: 'file-heart',
+    name: 'file-exclamation-alt',
+    content: 'e97a'
+  },
+  {
+    name: 'file-export',
     content: 'e97c'
   },
   {
-    name: 'file-import',
+    name: 'file-graph',
     content: 'e97d'
   },
   {
-    name: 'file-info-alt',
+    name: 'file-heart',
     content: 'e97e'
   },
   {
-    name: 'file-landscape',
-    content: 'e980'
-  },
-  {
-    name: 'file-landscape-alt',
+    name: 'file-import',
     content: 'e97f'
   },
   {
-    name: 'file-lanscape-slash',
-    content: 'e981'
+    name: 'file-info-alt',
+    content: 'e980'
   },
   {
-    name: 'file-lock-alt',
+    name: 'file-landscape',
     content: 'e982'
   },
   {
-    name: 'file-medical',
-    content: 'e984'
+    name: 'file-landscape-alt',
+    content: 'e981'
   },
   {
-    name: 'file-medical-alt',
+    name: 'file-lanscape-slash',
     content: 'e983'
   },
   {
-    name: 'file-minus',
+    name: 'file-lock-alt',
+    content: 'e984'
+  },
+  {
+    name: 'file-medical',
     content: 'e986'
   },
   {
-    name: 'file-minus-alt',
+    name: 'file-medical-alt',
     content: 'e985'
   },
   {
-    name: 'file-network',
-    content: 'e987'
-  },
-  {
-    name: 'file-plus',
-    content: 'e989'
-  },
-  {
-    name: 'file-plus-alt',
+    name: 'file-minus',
     content: 'e988'
   },
   {
-    name: 'file-question',
+    name: 'file-minus-alt',
+    content: 'e987'
+  },
+  {
+    name: 'file-network',
+    content: 'e989'
+  },
+  {
+    name: 'file-plus',
     content: 'e98b'
   },
   {
-    name: 'file-question-alt',
+    name: 'file-plus-alt',
     content: 'e98a'
   },
   {
-    name: 'file-redo-alt',
+    name: 'file-question',
+    content: 'e98d'
+  },
+  {
+    name: 'file-question-alt',
     content: 'e98c'
+  },
+  {
+    name: 'file-redo-alt',
+    content: 'e98e'
   },
   {
     name: 'file-remove',
@@ -2249,47 +2249,47 @@ const icons = [
   },
   {
     name: 'file-search-alt',
-    content: 'e98d'
-  },
-  {
-    name: 'file-share-alt',
-    content: 'e98e'
-  },
-  {
-    name: 'file-shield-alt',
     content: 'e98f'
   },
   {
-    name: 'file-slash',
+    name: 'file-share-alt',
     content: 'e990'
   },
   {
-    name: 'file-times',
-    content: 'e993'
-  },
-  {
-    name: 'file-times-alt',
+    name: 'file-shield-alt',
     content: 'e991'
   },
   {
-    name: 'file-upload',
+    name: 'file-slash',
+    content: 'e992'
+  },
+  {
+    name: 'file-times',
     content: 'e995'
   },
   {
-    name: 'file-upload-alt',
-    content: 'e994'
+    name: 'file-times-alt',
+    content: 'e993'
   },
   {
-    name: 'files-landscapes',
+    name: 'file-upload',
     content: 'e997'
   },
   {
-    name: 'files-landscapes-alt',
+    name: 'file-upload-alt',
     content: 'e996'
   },
   {
-    name: 'film',
+    name: 'files-landscapes',
+    content: 'e999'
+  },
+  {
+    name: 'files-landscapes-alt',
     content: 'e998'
+  },
+  {
+    name: 'film',
+    content: 'e99a'
   },
   {
     name: 'filter',
@@ -2297,11 +2297,11 @@ const icons = [
   },
   {
     name: 'filter-slash',
-    content: 'e999'
+    content: 'e99b'
   },
   {
     name: 'fire',
-    content: 'e99a'
+    content: 'e99c'
   },
   {
     name: 'flag',
@@ -2309,19 +2309,19 @@ const icons = [
   },
   {
     name: 'flask',
-    content: 'e99c'
-  },
-  {
-    name: 'flask-potion',
-    content: 'e99b'
-  },
-  {
-    name: 'flip-h',
     content: 'e99e'
   },
   {
-    name: 'flip-h-alt',
+    name: 'flask-potion',
     content: 'e99d'
+  },
+  {
+    name: 'flip-h',
+    content: 'e9a0'
+  },
+  {
+    name: 'flip-h-alt',
+    content: 'e99f'
   },
   {
     name: 'flip-to-back',
@@ -2333,27 +2333,27 @@ const icons = [
   },
   {
     name: 'flip-v',
-    content: 'e9a0'
-  },
-  {
-    name: 'flip-v-alt',
-    content: 'e99f'
-  },
-  {
-    name: 'flower',
-    content: 'e9a1'
-  },
-  {
-    name: 'focus',
-    content: 'e9a4'
-  },
-  {
-    name: 'focus-add',
     content: 'e9a2'
   },
   {
-    name: 'focus-target',
+    name: 'flip-v-alt',
+    content: 'e9a1'
+  },
+  {
+    name: 'flower',
     content: 'e9a3'
+  },
+  {
+    name: 'focus',
+    content: 'e9a6'
+  },
+  {
+    name: 'focus-add',
+    content: 'e9a4'
+  },
+  {
+    name: 'focus-target',
+    content: 'e9a5'
   },
   {
     name: 'folder',
@@ -2365,83 +2365,83 @@ const icons = [
   },
   {
     name: 'folder-check',
-    content: 'e9a5'
-  },
-  {
-    name: 'folder-download',
-    content: 'e9a6'
-  },
-  {
-    name: 'folder-exclamation',
     content: 'e9a7'
   },
   {
-    name: 'folder-heart',
+    name: 'folder-download',
     content: 'e9a8'
   },
   {
-    name: 'folder-info',
+    name: 'folder-exclamation',
     content: 'e9a9'
   },
   {
-    name: 'folder-lock',
+    name: 'folder-heart',
     content: 'e9aa'
   },
   {
-    name: 'folder-medical',
+    name: 'folder-info',
     content: 'e9ab'
   },
   {
-    name: 'folder-minus',
+    name: 'folder-lock',
     content: 'e9ac'
   },
   {
-    name: 'folder-network',
+    name: 'folder-medical',
     content: 'e9ad'
   },
   {
-    name: 'folder-open',
+    name: 'folder-minus',
     content: 'e9ae'
   },
   {
-    name: 'folder-plus',
+    name: 'folder-network',
     content: 'e9af'
   },
   {
-    name: 'folder-question',
+    name: 'folder-open',
     content: 'e9b0'
   },
   {
-    name: 'folder-slash',
+    name: 'folder-plus',
     content: 'e9b1'
   },
   {
-    name: 'folder-times',
+    name: 'folder-question',
     content: 'e9b2'
   },
   {
-    name: 'folder-upload',
+    name: 'folder-slash',
     content: 'e9b3'
   },
   {
-    name: 'font',
+    name: 'folder-times',
     content: 'e9b4'
   },
   {
-    name: 'football',
-    content: 'e9b7'
-  },
-  {
-    name: 'football-american',
+    name: 'folder-upload',
     content: 'e9b5'
   },
   {
-    name: 'football-ball',
+    name: 'font',
     content: 'e9b6'
   },
   {
-    name: 'forecastcloud-moon-tear',
+    name: 'football',
+    content: 'e9b9'
+  },
+  {
+    name: 'football-american',
+    content: 'e9b7'
+  },
+  {
+    name: 'football-ball',
     content: 'e9b8'
+  },
+  {
+    name: 'forecastcloud-moon-tear',
+    content: 'e9ba'
   },
   {
     name: 'format-bold',
@@ -2473,11 +2473,11 @@ const icons = [
   },
   {
     name: 'forwaded-call',
-    content: 'e9b9'
+    content: 'e9bb'
   },
   {
     name: 'forward',
-    content: 'e9ba'
+    content: 'e9bc'
   },
   {
     name: 'franc',
@@ -2485,7 +2485,7 @@ const icons = [
   },
   {
     name: 'frown',
-    content: 'e9bb'
+    content: 'e9bd'
   },
   {
     name: 'fullscreen',
@@ -2501,39 +2501,39 @@ const icons = [
   },
   {
     name: 'game-structure',
-    content: 'e9bc'
-  },
-  {
-    name: 'gift',
-    content: 'e9bd'
-  },
-  {
-    name: 'github',
-    content: 'e9bf'
-  },
-  {
-    name: 'github-alt',
     content: 'e9be'
   },
   {
-    name: 'glass',
-    content: 'e9c4'
+    name: 'gift',
+    content: 'e9bf'
   },
   {
-    name: 'glass-martini',
-    content: 'e9c2'
-  },
-  {
-    name: 'glass-martini-alt',
+    name: 'github',
     content: 'e9c1'
   },
   {
-    name: 'glass-martini-alt-slash',
+    name: 'github-alt',
     content: 'e9c0'
   },
   {
-    name: 'glass-tea',
+    name: 'glass',
+    content: 'e9c6'
+  },
+  {
+    name: 'glass-martini',
+    content: 'e9c4'
+  },
+  {
+    name: 'glass-martini-alt',
     content: 'e9c3'
+  },
+  {
+    name: 'glass-martini-alt-slash',
+    content: 'e9c2'
+  },
+  {
+    name: 'glass-tea',
+    content: 'e9c5'
   },
   {
     name: 'globe',
@@ -2541,11 +2541,11 @@ const icons = [
   },
   {
     name: 'gold',
-    content: 'e9c5'
+    content: 'e9c7'
   },
   {
     name: 'golf-ball',
-    content: 'e9c6'
+    content: 'e9c8'
   },
   {
     name: 'google',
@@ -2553,23 +2553,23 @@ const icons = [
   },
   {
     name: 'google-drive',
-    content: 'e9c8'
-  },
-  {
-    name: 'google-drive-alt',
-    content: 'e9c7'
-  },
-  {
-    name: 'google-hangouts',
     content: 'e9ca'
   },
   {
-    name: 'google-hangouts-alt',
+    name: 'google-drive-alt',
     content: 'e9c9'
   },
   {
-    name: 'google-play',
+    name: 'google-hangouts',
+    content: 'e9cc'
+  },
+  {
+    name: 'google-hangouts-alt',
     content: 'e9cb'
+  },
+  {
+    name: 'google-play',
+    content: 'e9cd'
   },
   {
     name: 'gps',
@@ -2585,67 +2585,67 @@ const icons = [
   },
   {
     name: 'graduation-cap',
-    content: 'e9cc'
-  },
-  {
-    name: 'graph-bar',
-    content: 'e9cd'
-  },
-  {
-    name: 'grid',
     content: 'e9ce'
   },
   {
-    name: 'grids',
+    name: 'graph-bar',
     content: 'e9cf'
   },
   {
-    name: 'grin',
-    content: 'e9d2'
-  },
-  {
-    name: 'grin-tongue-wink',
-    content: 'e9d1'
-  },
-  {
-    name: 'grin-tongue-wink-alt',
+    name: 'grid',
     content: 'e9d0'
   },
   {
-    name: 'grip-horizontal-line',
-    content: 'e9d3'
+    name: 'grids',
+    content: 'e9d1'
   },
   {
-    name: 'hard-hat',
+    name: 'grin',
     content: 'e9d4'
   },
   {
-    name: 'hdd',
+    name: 'grin-tongue-wink',
+    content: 'e9d3'
+  },
+  {
+    name: 'grin-tongue-wink-alt',
+    content: 'e9d2'
+  },
+  {
+    name: 'grip-horizontal-line',
     content: 'e9d5'
   },
   {
-    name: 'head-side',
-    content: 'e9d8'
-  },
-  {
-    name: 'head-side-cough',
+    name: 'hard-hat',
     content: 'e9d6'
   },
   {
-    name: 'head-side-mask',
+    name: 'hdd',
     content: 'e9d7'
   },
   {
-    name: 'headphone-slash',
+    name: 'head-side',
+    content: 'e9da'
+  },
+  {
+    name: 'head-side-cough',
+    content: 'e9d8'
+  },
+  {
+    name: 'head-side-mask',
     content: 'e9d9'
   },
   {
-    name: 'headphones',
+    name: 'headphone-slash',
     content: 'e9db'
   },
   {
+    name: 'headphones',
+    content: 'e9dd'
+  },
+  {
     name: 'headphones-alt',
-    content: 'e9da'
+    content: 'e9dc'
   },
   {
     name: 'health',
@@ -2657,11 +2657,11 @@ const icons = [
   },
   {
     name: 'heart-alt',
-    content: 'e9dc'
+    content: 'e9de'
   },
   {
     name: 'heart-break',
-    content: 'e9dd'
+    content: 'e9df'
   },
   {
     name: 'heart-full',
@@ -2669,15 +2669,15 @@ const icons = [
   },
   {
     name: 'heart-medical',
-    content: 'e9de'
+    content: 'e9e0'
   },
   {
     name: 'heart-rate',
-    content: 'e9df'
+    content: 'e9e1'
   },
   {
     name: 'heart-sign',
-    content: 'e9e0'
+    content: 'e9e2'
   },
   {
     name: 'help',
@@ -2713,91 +2713,91 @@ const icons = [
   },
   {
     name: 'html3',
-    content: 'e9e2'
-  },
-  {
-    name: 'html3-alt',
-    content: 'e9e1'
-  },
-  {
-    name: 'html5',
     content: 'e9e4'
   },
   {
-    name: 'html5-alt',
+    name: 'html3-alt',
     content: 'e9e3'
   },
   {
-    name: 'hunting',
-    content: 'e9e5'
-  },
-  {
-    name: 'image-alt-slash',
+    name: 'html5',
     content: 'e9e6'
   },
   {
-    name: 'image-block',
+    name: 'html5-alt',
+    content: 'e9e5'
+  },
+  {
+    name: 'hunting',
     content: 'e9e7'
   },
   {
-    name: 'image-broken',
+    name: 'image-alt-slash',
     content: 'e9e8'
   },
   {
-    name: 'image-check',
+    name: 'image-block',
     content: 'e9e9'
   },
   {
-    name: 'image-download',
+    name: 'image-broken',
     content: 'e9ea'
   },
   {
-    name: 'image-edit',
+    name: 'image-check',
     content: 'e9eb'
   },
   {
-    name: 'image-lock',
+    name: 'image-download',
     content: 'e9ec'
   },
   {
-    name: 'image-minus',
+    name: 'image-edit',
     content: 'e9ed'
   },
   {
-    name: 'image-plus',
+    name: 'image-lock',
     content: 'e9ee'
   },
   {
-    name: 'image-question',
+    name: 'image-minus',
     content: 'e9ef'
   },
   {
-    name: 'image-redo',
+    name: 'image-plus',
     content: 'e9f0'
   },
   {
-    name: 'image-resize-landscape',
+    name: 'image-question',
     content: 'e9f1'
   },
   {
-    name: 'image-resize-square',
+    name: 'image-redo',
     content: 'e9f2'
   },
   {
-    name: 'image-search',
+    name: 'image-resize-landscape',
     content: 'e9f3'
   },
   {
-    name: 'image-share',
+    name: 'image-resize-square',
     content: 'e9f4'
   },
   {
-    name: 'image-shield',
+    name: 'image-search',
     content: 'e9f5'
   },
   {
-    name: 'image-slash',
+    name: 'image-share',
     content: 'e9f6'
+  },
+  {
+    name: 'image-shield',
+    content: 'e9f7'
+  },
+  {
+    name: 'image-slash',
+    content: 'e9f8'
   },
   {
     name: 'import-export',
@@ -2821,15 +2821,15 @@ const icons = [
   },
   {
     name: 'instagram-alt',
-    content: 'e9f7'
-  },
-  {
-    name: 'intercom',
     content: 'e9f9'
   },
   {
+    name: 'intercom',
+    content: 'e9fb'
+  },
+  {
     name: 'intercom-alt',
-    content: 'e9f8'
+    content: 'e9fa'
   },
   {
     name: 'intersect',
@@ -2841,23 +2841,23 @@ const icons = [
   },
   {
     name: 'invoice',
-    content: 'e9fa'
-  },
-  {
-    name: 'italic',
-    content: 'e9fb'
-  },
-  {
-    name: 'jackhammer',
     content: 'e9fc'
   },
   {
-    name: 'java-script',
+    name: 'italic',
     content: 'e9fd'
   },
   {
-    name: 'kayak',
+    name: 'jackhammer',
     content: 'e9fe'
+  },
+  {
+    name: 'java-script',
+    content: 'e9ff'
+  },
+  {
+    name: 'kayak',
+    content: 'ea00'
   },
   {
     name: 'key',
@@ -2865,11 +2865,11 @@ const icons = [
   },
   {
     name: 'key-skeleton',
-    content: 'ea00'
+    content: 'ea02'
   },
   {
     name: 'key-skeleton-alt',
-    content: 'e9ff'
+    content: 'ea01'
   },
   {
     name: 'keyboard',
@@ -2877,31 +2877,31 @@ const icons = [
   },
   {
     name: 'keyboard-alt',
-    content: 'ea01'
-  },
-  {
-    name: 'keyboard-hide',
-    content: 'ea02'
-  },
-  {
-    name: 'keyboard-show',
     content: 'ea03'
   },
   {
-    name: 'keyhole-circle',
+    name: 'keyboard-hide',
     content: 'ea04'
   },
   {
-    name: 'keyhole-square',
-    content: 'ea06'
-  },
-  {
-    name: 'keyhole-square-full',
+    name: 'keyboard-show',
     content: 'ea05'
   },
   {
-    name: 'kid',
+    name: 'keyhole-circle',
+    content: 'ea06'
+  },
+  {
+    name: 'keyhole-square',
+    content: 'ea08'
+  },
+  {
+    name: 'keyhole-square-full',
     content: 'ea07'
+  },
+  {
+    name: 'kid',
+    content: 'ea09'
   },
   {
     name: 'label',
@@ -2909,31 +2909,31 @@ const icons = [
   },
   {
     name: 'label-alt',
-    content: 'ea08'
-  },
-  {
-    name: 'lamp',
-    content: 'ea09'
-  },
-  {
-    name: 'language',
     content: 'ea0a'
   },
   {
-    name: 'laptop',
-    content: 'ea0d'
-  },
-  {
-    name: 'laptop-cloud',
+    name: 'lamp',
     content: 'ea0b'
   },
   {
-    name: 'laptop-connection',
+    name: 'language',
     content: 'ea0c'
   },
   {
-    name: 'laughing',
+    name: 'laptop',
+    content: 'ea0f'
+  },
+  {
+    name: 'laptop-cloud',
+    content: 'ea0d'
+  },
+  {
+    name: 'laptop-connection',
     content: 'ea0e'
+  },
+  {
+    name: 'laughing',
+    content: 'ea10'
   },
   {
     name: 'layer-align-bottom-center',
@@ -2953,7 +2953,7 @@ const icons = [
   },
   {
     name: 'layer-align-top-center',
-    content: 'e992'
+    content: 'e994'
   },
   {
     name: 'layer-align-vertical',
@@ -2961,11 +2961,11 @@ const icons = [
   },
   {
     name: 'layer-group',
-    content: 'ea10'
+    content: 'ea12'
   },
   {
     name: 'layer-group-slash',
-    content: 'ea0f'
+    content: 'ea11'
   },
   {
     name: 'layers',
@@ -2973,71 +2973,71 @@ const icons = [
   },
   {
     name: 'layers-alt',
-    content: 'ea11'
-  },
-  {
-    name: 'layers-slash',
-    content: 'ea12'
-  },
-  {
-    name: 'left-arrow-from-left',
     content: 'ea13'
   },
   {
-    name: 'left-arrow-to-left',
+    name: 'layers-slash',
     content: 'ea14'
   },
   {
-    name: 'left-indent',
-    content: 'ea16'
-  },
-  {
-    name: 'left-indent-alt',
+    name: 'left-arrow-from-left',
     content: 'ea15'
   },
   {
-    name: 'left-to-right-text-direction',
-    content: 'ea17'
+    name: 'left-arrow-to-left',
+    content: 'ea16'
   },
   {
-    name: 'letter-chinese-a',
+    name: 'left-indent',
     content: 'ea18'
   },
   {
-    name: 'letter-english-a',
+    name: 'left-indent-alt',
+    content: 'ea17'
+  },
+  {
+    name: 'left-to-right-text-direction',
     content: 'ea19'
   },
   {
-    name: 'letter-hindi-a',
+    name: 'letter-chinese-a',
     content: 'ea1a'
   },
   {
-    name: 'letter-japanese-a',
+    name: 'letter-english-a',
     content: 'ea1b'
   },
   {
-    name: 'life-ring',
+    name: 'letter-hindi-a',
     content: 'ea1c'
   },
   {
-    name: 'lightbulb',
-    content: 'ea1e'
-  },
-  {
-    name: 'lightbulb-alt',
+    name: 'letter-japanese-a',
     content: 'ea1d'
   },
   {
-    name: 'line',
-    content: 'ea21'
+    name: 'life-ring',
+    content: 'ea1e'
   },
   {
-    name: 'line-alt',
+    name: 'lightbulb',
+    content: 'ea20'
+  },
+  {
+    name: 'lightbulb-alt',
     content: 'ea1f'
   },
   {
+    name: 'line',
+    content: 'ea23'
+  },
+  {
+    name: 'line-alt',
+    content: 'ea21'
+  },
+  {
     name: 'line-spacing',
-    content: 'ea20'
+    content: 'ea22'
   },
   {
     name: 'link',
@@ -3045,19 +3045,19 @@ const icons = [
   },
   {
     name: 'link-add',
-    content: 'ea22'
-  },
-  {
-    name: 'link-alt',
-    content: 'ea23'
-  },
-  {
-    name: 'link-broken',
     content: 'ea24'
   },
   {
-    name: 'link-h',
+    name: 'link-alt',
     content: 'ea25'
+  },
+  {
+    name: 'link-broken',
+    content: 'ea26'
+  },
+  {
+    name: 'link-h',
+    content: 'ea27'
   },
   {
     name: 'linkedin',
@@ -3065,11 +3065,11 @@ const icons = [
   },
   {
     name: 'linkedin-alt',
-    content: 'ea26'
+    content: 'ea28'
   },
   {
     name: 'lira-sign',
-    content: 'ea27'
+    content: 'ea29'
   },
   {
     name: 'list-bullet',
@@ -3077,27 +3077,27 @@ const icons = [
   },
   {
     name: 'list-ui-alt',
-    content: 'ea28'
-  },
-  {
-    name: 'list-ul',
-    content: 'ea29'
-  },
-  {
-    name: 'location-arrow',
-    content: 'ea2b'
-  },
-  {
-    name: 'location-arrow-alt',
     content: 'ea2a'
   },
   {
-    name: 'location-pin-alt',
+    name: 'list-ul',
+    content: 'ea2b'
+  },
+  {
+    name: 'location-arrow',
+    content: 'ea2d'
+  },
+  {
+    name: 'location-arrow-alt',
     content: 'ea2c'
   },
   {
+    name: 'location-pin-alt',
+    content: 'ea2e'
+  },
+  {
     name: 'location-point',
-    content: 'ea2d'
+    content: 'ea2f'
   },
   {
     name: 'lock',
@@ -3105,7 +3105,7 @@ const icons = [
   },
   {
     name: 'lock-access',
-    content: 'ea2e'
+    content: 'ea30'
   },
   {
     name: 'map',
@@ -3161,7 +3161,7 @@ const icons = [
   },
   {
     name: 'navigator',
-    content: 'eb9f'
+    content: 'eba1'
   },
   {
     name: 'near-me',
@@ -3265,7 +3265,7 @@ const icons = [
   },
   {
     name: 'print',
-    content: 'eb9e'
+    content: 'eba0'
   },
   {
     name: 'protect',
@@ -3277,7 +3277,7 @@ const icons = [
   },
   {
     name: 'px',
-    content: 'eb74'
+    content: 'eb76'
   },
   {
     name: 'quote',
@@ -3549,11 +3549,11 @@ const icons = [
   },
   {
     name: 'volume',
-    content: 'e903'
+    content: 'e905'
   },
   {
     name: 'volume-down',
-    content: 'e900'
+    content: 'e902'
   },
   {
     name: 'volume-max',
@@ -3569,7 +3569,7 @@ const icons = [
   },
   {
     name: 'volume-mute',
-    content: 'e901'
+    content: 'e903'
   },
   {
     name: 'volume-off',
@@ -3577,19 +3577,19 @@ const icons = [
   },
   {
     name: 'volume-up',
-    content: 'e902'
-  },
-  {
-    name: 'vuejs',
-    content: 'e905'
-  },
-  {
-    name: 'vuejs-alt',
     content: 'e904'
   },
   {
-    name: 'wall',
+    name: 'vuejs',
+    content: 'e907'
+  },
+  {
+    name: 'vuejs-alt',
     content: 'e906'
+  },
+  {
+    name: 'wall',
+    content: 'e908'
   },
   {
     name: 'wallet',
@@ -3601,67 +3601,67 @@ const icons = [
   },
   {
     name: 'watch',
-    content: 'e908'
-  },
-  {
-    name: 'watch-alt',
-    content: 'e907'
-  },
-  {
-    name: 'water',
-    content: 'e90b'
-  },
-  {
-    name: 'water-drop-slash',
-    content: 'e909'
-  },
-  {
-    name: 'water-glass',
     content: 'e90a'
   },
   {
-    name: 'web-grid',
+    name: 'watch-alt',
+    content: 'e909'
+  },
+  {
+    name: 'water',
     content: 'e90d'
   },
   {
-    name: 'web-grid-alt',
+    name: 'water-drop-slash',
+    content: 'e90b'
+  },
+  {
+    name: 'water-glass',
     content: 'e90c'
   },
   {
-    name: 'web-section',
-    content: 'e910'
-  },
-  {
-    name: 'web-section-alt',
+    name: 'web-grid',
     content: 'e90f'
   },
   {
-    name: 'webcam',
-    content: 'e911'
+    name: 'web-grid-alt',
+    content: 'e90e'
   },
   {
-    name: 'weight',
+    name: 'web-section',
     content: 'e912'
   },
   {
-    name: 'whatsapp',
-    content: 'e914'
+    name: 'web-section-alt',
+    content: 'e911'
   },
   {
-    name: 'whatsapp-alt',
+    name: 'webcam',
     content: 'e913'
   },
   {
-    name: 'wheel-barrow',
+    name: 'weight',
+    content: 'e914'
+  },
+  {
+    name: 'whatsapp',
+    content: 'e916'
+  },
+  {
+    name: 'whatsapp-alt',
     content: 'e915'
   },
   {
-    name: 'wheelchair',
+    name: 'wheel-barrow',
     content: 'e917'
   },
   {
+    name: 'wheelchair',
+    content: 'e919'
+  },
+  {
     name: 'wheelchair-alt',
-    content: 'e916'
+    content: 'e918'
   },
   {
     name: 'wifi',
@@ -3669,71 +3669,71 @@ const icons = [
   },
   {
     name: 'wifi-router',
-    content: 'e918'
-  },
-  {
-    name: 'wifi-slash',
-    content: 'e919'
-  },
-  {
-    name: 'wind',
-    content: 'e91c'
-  },
-  {
-    name: 'wind-moon',
     content: 'e91a'
   },
   {
-    name: 'wind-sun',
+    name: 'wifi-slash',
     content: 'e91b'
   },
   {
-    name: 'window',
-    content: 'e920'
-  },
-  {
-    name: 'window-grid',
-    content: 'e91d'
-  },
-  {
-    name: 'window-maximize',
+    name: 'wind',
     content: 'e91e'
   },
   {
-    name: 'window-section',
-    content: 'e91f'
+    name: 'wind-moon',
+    content: 'e91c'
   },
   {
-    name: 'windsock',
-    content: 'e921'
+    name: 'wind-sun',
+    content: 'e91d'
   },
   {
-    name: 'windy',
+    name: 'window',
     content: 'e922'
   },
   {
-    name: 'wordpress',
-    content: 'e924'
+    name: 'window-grid',
+    content: 'e91f'
   },
   {
-    name: 'wordpress-simple',
+    name: 'window-maximize',
+    content: 'e920'
+  },
+  {
+    name: 'window-section',
+    content: 'e921'
+  },
+  {
+    name: 'windsock',
     content: 'e923'
   },
   {
-    name: 'wrap-text',
-    content: 'e925'
+    name: 'windy',
+    content: 'e924'
   },
   {
-    name: 'wrench',
+    name: 'wordpress',
     content: 'e926'
   },
   {
-    name: 'x',
+    name: 'wordpress-simple',
+    content: 'e925'
+  },
+  {
+    name: 'wrap-text',
+    content: 'e927'
+  },
+  {
+    name: 'wrench',
     content: 'e928'
   },
   {
+    name: 'x',
+    content: 'e92a'
+  },
+  {
     name: 'x-add',
-    content: 'e927'
+    content: 'e929'
   },
   {
     name: 'yen',
@@ -3741,15 +3741,15 @@ const icons = [
   },
   {
     name: 'yen-circle',
-    content: 'e929'
+    content: 'e92b'
   },
   {
     name: 'yin-yang',
-    content: 'e92a'
+    content: 'e92c'
   },
   {
     name: 'youtube',
-    content: 'e92b'
+    content: 'e92d'
   },
   {
     name: 'zoom-in',
