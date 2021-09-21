@@ -102,7 +102,7 @@ export default {
     page(newVal) {
       this.current = newVal
     },
-    perPage(newVal) {
+    pageSize(newVal) {
       this.perPage = newVal
     }
   },
