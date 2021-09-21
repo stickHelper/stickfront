@@ -7,6 +7,7 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import Components from '@stickearn/stickfront'
 import '@stickearn/stickfront/dist/stickfront.css'
+import '@bit/stickcomponent.stickfront/styles-global'
 
 Vue.use(Components)
 

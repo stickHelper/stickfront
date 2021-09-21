@@ -110,3 +110,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '@bit/stickcomponent.stickfront.styles-global/src/styles/base/_variable.scss';
+.se-btn {
+  padding: $gutter-xxl;
+}
+</style>

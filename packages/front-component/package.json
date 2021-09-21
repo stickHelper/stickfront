@@ -90,5 +90,12 @@
       "git add"
     ]
   },
-  "gitHead": "1be42cac9aac6b3a6b5ca1cbef580f5d4e980d02"
+  "gitHead": "1be42cac9aac6b3a6b5ca1cbef580f5d4e980d02",
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/vue@0.1.13"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }
