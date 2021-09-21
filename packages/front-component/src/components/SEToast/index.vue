@@ -1,22 +1,14 @@
 <template>
-  <transition name="slide-fade">
-    <div
-      v-show="active"
-      :id="id"
-      :class="classes"
-    >
-      <p class="se-toast__message">
-        {{ message }}
-      </p>
-      <i
-        class="se-toast__close icon icon-close"
-        @click="close"
-      />
-    </div>
-  </transition>
+  <div
+    :id="id"
+    ref="seToast"
+    :class="classes"
+  />
 </template>
 
 <script>
+import { notification } from 'ant-design-vue'
+
 export default {
   name: 'SEToast',
   props: {
@@ -28,12 +20,9 @@ export default {
       type: String,
       default: null
     },
-    type: {
+    toasterClass: {
       type: String,
-      default: null,
-      validator: function (value) {
-        return ['success', 'info', 'warning', 'error'].indexOf(value) !== -1
-      }
+      default: null
     },
     isActive: {
       type: Boolean,
@@ -41,83 +30,71 @@ export default {
     },
     duration: {
       type: Number,
-      default: 3000
+      default: 4.5
+    },
+    icon: {
+      type: String,
+      default: null,
+      validator: function (value) {
+        return ['success', 'info', 'warning', 'error'].indexOf(value) !== -1
+      }
+    },
+    placement: {
+      type: String,
+      default: 'topRight',
+      validator: function (value) {
+        return ['topRight', 'topLeft', 'bottomRight', 'bottomLeft'].indexOf(value) !== -1
+      }
     },
     message: {
       type: String,
-      default: 'No message are defined'
-    }
-  },
-  data() {
-    return {
-      active: this.isActive,
-      timeout: this.duration,
-      container: null
+      default: 'Notification Title'
+    },
+    description: {
+      type: String,
+      default: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+    },
+    onClick: {
+      type: Function,
+      default: () => ({})
     }
   },
   computed: {
     classes() {
       return {
-        'se-toast__item': true,
-        [`se-toast__item--${this.type}`]: this.type !== null
+        'se-toast': true,
+        [this.className]: this.className !== null
       }
     }
   },
-  beforeMount() {
-    this.setupContainer()
+  watch: {
+    isActive: function (newValue) {
+      if (newValue && this.isActive) {
+        this.openNotification()
+      }
+    }
+  },
+  beforeDestroy() {
+    notification.destroy()
   },
   methods: {
-    setupContainer() {
-      this.container = document.querySelector('.se-toast')
-
-      if (this.container) return
-
-      if (!this.container) {
-        this.container = document.createElement('div')
-        this.container.className = 'se-toast'
+    openNotification() {
+      const toastOptions = {
+        message: this.message,
+        description: this.description,
+        duration: this.duration,
+        class: this.toasterClass,
+        placement: this.placement,
+        getContainer: () => this.$refs.seToast,
+        onClick: this.onClick
       }
 
-      const documentBody = document.body
-      documentBody.appendChild(this.container)
-    },
-    removeElement(el) {
-      if (typeof el.remove !== 'undefined') {
-        el.remove()
-      } else {
-        el.parentNode.removeChild(el)
+      if (this.icon) {
+        return notification[this.icon](toastOptions)
       }
-    },
-    show() {
-      this.container.insertAdjacentElement('afterbegin', this.$el)
-      this.active = true
-      setTimeout(() => this.close(), this.timeout)
-    },
-    close() {
-      clearTimeout(this.timeout)
-      this.active = false
 
-      setTimeout(() => {
-        this.$destroy()
-        this.removeElement(this.$el)
-      }, 300)
+      return notification.open(toastOptions)
     }
   }
 }
 </script>
-
-<style scoped>
-.slide-fade-enter-active {
-transition: all .3s ease;
-}
-.slide-fade-leave-active {
-transition: all .3s ease;
-}
-.slide-fade-enter {
-transform: translateX(10px);
-opacity: 0;
-}
-.slide-fade-leave-to {
-transform: translateY(10px);
-opacity: 0;
-}
-</style>

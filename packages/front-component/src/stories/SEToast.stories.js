@@ -1,19 +1,24 @@
-import Vue from 'vue'
-
 import SEToast from '@/components/SEToast/index.vue'
-import SEButton from '@/components/SEButton/index.vue'
+import SEToastBasic from '@/components/SEToast/SEToastBasic.vue'
+import SEToastPlacement from '@/components/SEToast/SEToastPlacement.vue'
+import SEToastIcon from '@/components/SEToast/SEToastIcon.vue'
+import SEToastDuration from '@/components/SEToast/SEToastDuration.vue'
+
 import '@/styles/index.scss'
 
 export default {
   title: 'Components/Toast',
   component: SEToast,
-  excludeStories: /.*Data$/
+  argTypes: {
+    icon: { control: { type: 'select', options: ['success', 'info', 'warning', 'error'] } },
+    placement: { control: { type: 'select', options: ['topRight', 'topLeft', 'bottomRight', 'bottomLeft'] } }
+  }
 }
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SEToast },
-  template: '<SEToast :isActive="true" />'
+  components: { SEToastBasic },
+  template: '<SEToastBasic />'
 })
 
 export const Default = Template.bind({})
@@ -21,118 +26,223 @@ export const Default = Template.bind({})
 Default.parameters = {
   docs: {
     source: {
-      code: '<SEToast />'
-    }
-  }
-}
+      code: `<template>
+  <div>
+    <SEButton @click="showToaster">Show Toaster</SEButton>
+    <SEToast
+      id="se-toast"
+      :isActive="activeToaster"
+      :onClick="onClickToaster"
+    />
+  </div>
+</template>
 
-export const Success = () => ({
-  components: { SEToast },
-  template: '<SEToast type="success" :isActive="true" />'
-})
+<script>
+import SEButton from '@/components/SEButton/index.vue'
+import SEToast from '@/components/SEToast/index.vue'
 
-Success.parameters = {
-  docs: {
-    source: {
-      code: '<SEToast type="success" :isActive="true" />'
-    }
-  }
-}
-
-export const Info = () => ({
-  components: { SEToast },
-  template: '<SEToast type="info" :isActive="true" />'
-})
-
-Info.parameters = {
-  docs: {
-    source: {
-      code: '<SEToast type="info" :isActive="true" />'
-    }
-  }
-}
-
-export const Warning = () => ({
-  components: { SEToast },
-  template: '<SEToast type="warning" :isActive="true" />'
-})
-
-Warning.parameters = {
-  docs: {
-    source: {
-      code: '<SEToast type="warning" :isActive="true" />'
-    }
-  }
-}
-
-export const Error = () => ({
-  components: { SEToast },
-  template: '<SEToast type="error" :isActive="true" />'
-})
-
-Error.parameters = {
-  docs: {
-    source: {
-      code: '<SEToast type="error" :isActive="true" />'
-    }
-  }
-}
-
-export const Demo = () => ({
-  components: { SEToast, SEButton },
-  methods: {
-    showToaster: function ({ message, type }) {
-      const toast = new Vue(SEToast)
-
-      toast.message = message
-      toast.type = type
-
-      // document.querySelector('.toast-template-wrapper').appendChild(toast.$mount().$el);
-      // eslint-disable-next-line no-unused-expressions
-      toast.$mount().$el
-      return toast.show()
-    },
-    toastSuccess: function () {
-      this.showToaster({ message: 'Success Toaster', type: 'success' })
-    },
-    toastInfo: function () {
-      this.showToaster({ message: 'Info Toaster', type: 'info' })
-    },
-    toastWarning: function () {
-      this.showToaster({ message: 'Warning Toaster', type: 'warning' })
-    },
-    toastError: function () {
-      this.showToaster({ message: 'Error Toaster', type: 'error' })
+export default {
+  name: 'Basic',
+  components: {
+    SEButton,
+    SEToast
+  },
+  data() {
+    return {
+      activeToaster: false
     }
   },
-  template: `<div class="toast-template-wrapper">
-    <p class="mb-xs-3">
-      <SEButton @click="toastSuccess" v-bind="$props" size="medium">Show Toaster Success</SEButton>
-    </p>
+  methods: {
+    onClickToaster() {
+      console.log('Notification Clicked!')
+    },
+    showToaster() {
+      this.activeToaster = !this.activeToaster
 
-    <p class="mb-xs-3">
-      <SEButton @click="toastInfo" v-bind="$props" color="blue" size="medium">Show Toaster Info</SEButton>
-    </p>
+      setTimeout(() => this.activeToaster = false, 300)
+    }
+  }
+}
+</script>
+`
+    }
+  }
+}
 
-    <p class="mb-xs-3">
-      <SEButton @click="toastWarning" v-bind="$props" color="secondary" size="medium">Show Toaster Warning</SEButton>
-    </p>
-
-    <p class="mb-xs-3">
-      <SEButton @click="toastError" v-bind="$props" color="error" size="medium">Show Toaster Error</SEButton>
-    </p>
-  </div>`
+export const Placement = () => ({
+  components: { SEToastPlacement },
+  template: '<SEToastPlacement />'
 })
 
-Demo.parameters = {
+Placement.parameters = {
   docs: {
     source: {
-      code: `<div class="toast-template-wrapper">
-        <p class="mb-xs-3"><SEButton @click="toastSuccess" v-bind="$props" size="medium">Show Toaster Success</SEButton></p>
-        <p class="mb-xs-3"><SEButton @click="toastInfo" v-bind="$props" color="blue" size="medium">Show Toaster Info</SEButton></p>
-        <p class="mb-xs-3"><SEButton @click="toastWarning" v-bind="$props" color="secondary" size="medium">Show Toaster Warning</SEButton>/p>
-        <p class="mb-xs-3"><SEButton @click="toastError" v-bind="$props" color="error" size="medium">Show Toaster Error</SEButton></p>
-      </div>`
+      code: `<template>
+  <div>
+    <SEButton @click="showToaster('topLeft')">
+      <SEIcon type="radius-upleft" />topLeft
+    </SEButton>
+    <SEButton @click="showToaster('topRight')">
+      <SEIcon type="radius-upright" />topRight
+    </SEButton>
+    <SEButton @click="showToaster('bottomLeft')">
+      <SEIcon type="radius-bottomleft" />bottomLeft
+    </SEButton>
+    <SEButton @click="showToaster('bottomRight')">
+      <SEIcon type="radius-bottomright" />bottomRight
+    </SEButton>
+    <SEToast
+      :isActive="activeToaster"
+      :placement="toasterPlacement"
+    />
+  </div>
+</template>
+
+<script>
+import SEIcon from '@/components/SEIcon/index.vue'
+import SEButton from '@/components/SEButton/index.vue'
+import SEToast from '@/components/SEToast/index.vue'
+
+export default {
+  name: 'Placement',
+  components: {
+    SEIcon,
+    SEButton,
+    SEToast
+  },
+  data() {
+    return {
+      activeToaster: false,
+      toasterPlacement: 'topRight'
+    }
+  },
+  methods: {
+    showToaster(placement) {
+      this.activeToaster = true
+      this.toasterPlacement = placement
+
+      this.clearToaster()
+    },
+    clearToaster() {
+      setTimeout(() => this.activeToaster = false, 1000)
+    }
+  }
+}
+</script>
+`
+    }
+  }
+}
+
+export const Icon = () => ({
+  components: { SEToastIcon },
+  template: '<SEToastIcon />'
+})
+
+Icon.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <div>
+    <SEButton @click="showToaster('success')">Success</SEButton>
+    <SEButton color="blue" @click="showToaster('info')">Info</SEButton>
+    <SEButton color="secondary" @click="showToaster('warning')">Warning</SEButton>
+    <SEButton color="error" @click="showToaster('error')">Error</SEButton>
+    <SEToast
+      :isActive="activeToaster"
+      :icon="toasterIcon"
+    />
+  </div>
+</template>
+
+<script>
+import SEButton from '@/components/SEButton/index.vue'
+import SEToast from '@/components/SEToast/index.vue'
+
+export default {
+  name: 'Icon',
+  components: {
+    SEIcon,
+    SEButton,
+    SEToast
+  },
+  data() {
+    return {
+      activeToaster: false,
+      toasterIcon: 'success'
+    }
+  },
+  methods: {
+    showToaster(icon) {
+      this.activeToaster = !this.activeToaster
+      this.toasterPlacement = icon
+
+      this.clearToaster()
+    },
+    clearToaster() {
+      setTimeout(() => this.activeToaster = false, 300)
+    }
+  }
+}
+</script>
+`
+    }
+  }
+}
+
+export const Duration = () => ({
+  components: { SEToastDuration },
+  template: '<SEToastDuration type="warning" :isActive="true" />'
+})
+
+Duration.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <div>
+    <SEButton @click="showToaster">
+      Custom Duration
+    </SEButton>
+    <SEToast
+      id="se-toast"
+      :is-active="activeToaster"
+      :duration="toasterDuration"
+      description="I will never close automatically. I will never close automatically. I will never close automatically."
+    />
+  </div>
+</template>
+
+<script>
+import SEButton from '@/components/SEButton/index.vue'
+import SEToast from '@/components/SEToast/index.vue'
+
+export default {
+  name: 'Basic',
+  components: {
+    SEButton,
+    SEToast
+  },
+  data() {
+    return {
+      activeToaster: false,
+      toasterDuration: 0
+    }
+  },
+  methods: {
+    showToaster() {
+      this.activeToaster = !this.activeToaster
+
+      this.hideToaster()
+    },
+    hideToaster() {
+      setTimeout(() => {
+        this.activeToaster = false
+      }, 300)
+    }
+  }
+}
+</script>
+`
     }
   }
 }
