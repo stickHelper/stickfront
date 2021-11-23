@@ -15,7 +15,7 @@
       v-model="currentValue"
       style="width: 100%"
       :show-search="showSearch"
-      show-arrow
+      :show-arrow="showArrow"
       :label-in-value="labelInValue"
       :placeholder="placeholder"
       :filter-option="false"
@@ -33,7 +33,11 @@
       @change="handleChange"
       @select="handleSelect"
     >
-      <a-spin v-if="isFetching" slot="notFoundContent" size="small" />
+      <a-spin
+        v-if="isFetching"
+        slot="notFoundContent"
+        size="small"
+      />
       <a-select-option
         v-for="(option, index) in options"
         :key="index"
@@ -42,24 +46,6 @@
         {{ option.label }}
       </a-select-option>
     </a-select>
-    <ul v-if="mode === 'multiple' && currentDefalutValue && currentDefalutValue.length && !count" class="multiple-list">
-      <template
-        v-for="(item, index) in currentDefalutValue"
-      >
-        <li
-          v-if="item"
-          :key="index"
-          class="ant-select-selection__choice"
-        >
-          <div class="ant-select-selection__choice__content">
-            {{ getLabelCurrentValue(item) }}
-          </div>
-          <span class="ant-select-selection__choice__remove" @click="removeData(index)">
-            <i class="icon icon-multiply"/>
-          </span>
-        </li>
-      </template>
-    </ul>
     <span v-if="mode === 'multiple' && currentDefalutValue && currentDefalutValue.length && count" class="count-list">
       {{ currentDefalutValue.length }} {{ count }}
     </span>
@@ -194,6 +180,10 @@ export default {
     isFetching: {
       type: Boolean,
       default: false
+    },
+    showArrow: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -220,6 +210,11 @@ export default {
     }
   },
   watch: {
+    value(newVal) {
+      console.log('watch', newVal)
+    }
+  },
+  watch: {
     currentDefalutValue(newVal) {
       this.$emit('change', newVal)
     }
@@ -229,6 +224,7 @@ export default {
       if (this.mode !== 'multiple') {
         this.currentDefalutValue = value
       } else {
+        console.log('object', value)
         const newVal = []
         value.forEach(item => {
           if (item) {
@@ -245,12 +241,18 @@ export default {
       this.currentDefalutValue.splice(index, 1)
     },
     getLabelCurrentValue(value) {
+      console.log('option', this.option)
+      const data = this.option || this.value || []
+      const isString = typeof value === 'string'
       const label = []
-      this.options.forEach(option => {
-        if (option.value === value) {
-          label.push(option.label)
+
+      data.forEach(option => {
+        if (option.value === value || option.key === value.key) {
+          label.push(isString ? value : option.label)
         }
       })
+
+      console.log({ value, data, label })
       return label.join()
     },
     handleSelect(value) {

@@ -473,7 +473,6 @@ export default {
   }
 }
 
-
 export const SearchToAPIMultiple = () => ({
   components: { SelectSearchAPIMultiple },
   template: `<div>
@@ -490,14 +489,15 @@ SearchToAPIMultiple.parameters = {
     :options="data"
     :show-search="true"
     label-in-value
+    :value="value"
     :filter-option="false"
     :is-fetching="fetching"
+    mode="multiple"
     @change="handleChange"
     @select="handleSelect"
     @search="fetchUser"
   />
 </template>
-
 <script>
 import debounce from 'lodash.debounce';
 
@@ -507,7 +507,7 @@ export default {
     this.fetchUser = debounce(this.fetchUser, 800);
     return {
       data: [],
-      value: '',
+      value: [],
       fetching: false,
     };
   },
@@ -536,7 +536,7 @@ export default {
     handleChange(value) {
       console.log('change', value);
       Object.assign(this, {
-        value: value.key,
+        value,
         data: [],
         fetching: false,
       });
@@ -546,8 +546,7 @@ export default {
     }
   },
 };
-</script>
-  
+</script>    
 `
     }
   }
