@@ -63,7 +63,6 @@
 
 <script>
 /* eslint-disable no-undefined */
-import SEIcon from '@/components/SEIcon'
 import { Select, Spin } from 'ant-design-vue'
 
 export default {
@@ -71,8 +70,7 @@ export default {
   components: {
     'a-select': Select,
     'a-select-option': Select.Option,
-    'a-spin': Spin,
-    SEIcon
+    'a-spin': Spin
   },
   props: {
     id: {
@@ -207,11 +205,6 @@ export default {
     },
     getMultipleDefaultValue() {
       return [...this.currentValue, ...this.currentDefalutValue]
-    }
-  },
-  watch: {
-    value(newVal) {
-      console.log('watch', newVal)
     }
   },
   watch: {
