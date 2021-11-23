@@ -4,7 +4,7 @@
   &.show-list {
     .ant-select {
       .ant-select-selection--multiple {
-        @include border-radius-bottom(0 !important)
+        @include border-radius-bottom(0 !important);
       }
     }
   }
@@ -13,16 +13,15 @@
     list-style: none;
     padding: $gutter-sm;
     background-color: $accent;
-    border: 1px solid $line;
+    border: 1px solid transparent;
 
     @include border-radius-bottom(6px);
     @include flexbox;
 
     .ant-select-selection__choice {
-      background-color: $line;
-      color: $text-normal;
-      font-size: $text-xs;
-      font-weight: 600;
+      background-color: $gray-8;
+      color: $white;
+      font-size: $text-sm;
       height: 24px;
       margin-top: 3px;
       line-height: 22px;
@@ -37,7 +36,7 @@
       transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
       @include border-radius(99px);
-      
+
       &__content {
         display: inline-block;
         max-width: 100%;
@@ -46,7 +45,7 @@
         text-overflow: ellipsis;
         transition: margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
-  
+
       &__remove {
         color: inherit;
         font-style: normal;
@@ -69,7 +68,6 @@
         transform: scale(0.83333333) rotate(0deg);
       }
     }
-
   }
 
   &__large {
@@ -98,16 +96,21 @@
   .ant-select {
     &:not(.ant-select-disabled) {
       .ant-select-selection {
-        background-color: $accent;
-        border-color: $line;
-        
+        background-color: $gray-3;
+        border: 1px solid $gray-3;
+
         @include border-radius(6px);
 
         &:active,
         &:focus,
         &:hover {
-          border-color: $accent;
-          @include box-shadow(0 0 0 2px rgba($color: $text-normal, $alpha: .2))
+          border-color: $purple-5;
+          background-color: $gray-1;
+        }
+
+        &:active,
+        &:focus {
+          @include box-shadow(0px 0px 0px 3px rgba(127, 67, 196, 0.12));
         }
       }
     }
@@ -131,7 +134,6 @@
     .ant-select-selection {
       border-color: $red;
     }
-    
   }
 
   &.success {
@@ -148,7 +150,7 @@
   &.count-multiple {
     background-color: $accent;
     border-color: $line;
-    
+
     @include border-radius(6px);
     .ant-select {
       z-index: 10;

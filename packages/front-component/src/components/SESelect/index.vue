@@ -16,7 +16,10 @@
       style="width: 100%"
       :show-search="showSearch"
       show-arrow
+      :label-in-value="labelInValue"
       :placeholder="placeholder"
+      :filter-option="false"
+      :not-found-content="isFetching ? undefined : null"
       :allow-clear="allowClear"
       :auto-clear-search-value="autoClearSearchValue"
       :auto-focus="autoFocus"
@@ -25,12 +28,12 @@
       :disabled="disabled"
       :size="size"
       :mode="mode"
-      :default-open="defaultOpen"
-      :open="open"
       :loading="loading"
       @search="handleSearch"
       @change="handleChange"
+      @select="handleSelect"
     >
+      <a-spin v-if="isFetching" slot="notFoundContent" size="small" />
       <a-select-option
         v-for="(option, index) in options"
         :key="index"
@@ -52,7 +55,7 @@
             {{ getLabelCurrentValue(item) }}
           </div>
           <span class="ant-select-selection__choice__remove" @click="removeData(index)">
-            <SEIcon type="close" />
+            <i class="icon icon-multiply"/>
           </span>
         </li>
       </template>
@@ -73,14 +76,16 @@
 </template>
 
 <script>
+/* eslint-disable no-undefined */
 import SEIcon from '@/components/SEIcon'
-import { Select } from 'ant-design-vue'
+import { Select, Spin } from 'ant-design-vue'
 
 export default {
   name: 'SESelect',
   components: {
     'a-select': Select,
     'a-select-option': Select.Option,
+    'a-spin': Spin,
     SEIcon
   },
   props: {
@@ -98,11 +103,11 @@ export default {
     },
     placeholder: {
       type: String,
-      default: ''
+      default: undefined
     },
     value: {
       type: [String, Number, Array],
-      default: null
+      default: undefined
     },
     allowClear: {
       type: Boolean,
@@ -126,11 +131,11 @@ export default {
     },
     labelInValue: {
       type: Boolean,
-      default: true
+      default: false
     },
     defaultValue: {
       type: [String, Number, Array],
-      default: null
+      default: undefined
     },
     disabled: {
       type: Boolean,
@@ -166,14 +171,6 @@ export default {
       type: Array,
       default: () => []
     },
-    defaultOpen: {
-      type: Boolean,
-      default: null
-    },
-    open: {
-      type: Boolean,
-      default: null
-    },
     loading: {
       type: Boolean,
       default: false
@@ -189,6 +186,14 @@ export default {
     count: {
       type: String,
       default: null
+    },
+    filterOption: {
+      type: Boolean,
+      default: true
+    },
+    isFetching: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -247,6 +252,9 @@ export default {
         }
       })
       return label.join()
+    },
+    handleSelect(value) {
+      this.$emit('select', value)
     }
   }
 }

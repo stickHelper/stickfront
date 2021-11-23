@@ -1,5 +1,8 @@
 import '@/styles/index.scss'
 import SESelect from '@/components/SESelect/index.vue'
+import SelectSearchBasic from '@/components/SESelect/SelectSearchBasic.vue'
+import SelectSearchAPI from '@/components/SESelect/SelectSearchAjax.vue'
+import SelectSearchAPIMultiple from '@/components/SESelect/SelectSearchAjaxMultiple.vue'
 
 export default {
   title: 'Data Entry/Select',
@@ -230,6 +233,7 @@ export const Size = () => ({
   components: { SESelect },
   template: `<div>
   <SESelect
+    placeholder="Please select one"
     label-name="Small"
     size="small"
     :options="[
@@ -240,6 +244,7 @@ export const Size = () => ({
   <br />
 
   <SESelect
+    placeholder="Please select one"
     label-name="Default"
     :options="[
       { label: 'lucy', value: 'lucy' }
@@ -249,6 +254,7 @@ export const Size = () => ({
   <br />
 
   <SESelect
+    placeholder="Please select one"
     label-name="Large"
     size="large"
     :options="[
@@ -265,6 +271,7 @@ Size.parameters = {
       code: `<SESelect
   label-name="Small"
   size="small"
+  placeholder="Please select one"
   :options="[
     { label: 'lucy', value: 'lucy' }
   ]"
@@ -272,6 +279,7 @@ Size.parameters = {
 
 <SESelect
   label-name="Default"
+  placeholder="Please select one"
   :options="[
     { label: 'lucy', value: 'lucy' }
   ]"
@@ -279,6 +287,7 @@ Size.parameters = {
 
 <SESelect
   label-name="Large"
+  placeholder="Please select one"
   size="large"
   :options="[
     { label: 'lucy', value: 'lucy' }
@@ -339,6 +348,206 @@ CountMultiple.parameters = {
     ]"
   >
   </SESelect> 
+`
+    }
+  }
+}
+
+export const SearchBasic = () => ({
+  components: { SelectSearchBasic },
+  template: `<div>
+    <SelectSearchBasic />
+  </div>`
+})
+
+SearchBasic.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <SESelect
+    placeholder="Please select one"
+    :options="[
+      { label: 'jack', value: 'jack' },
+      { label: 'lucy', value: 'lucy' },
+      { label: 'Yiminghe', value: 'yiminghe' }
+    ]"
+    :show-search="true"
+    @change="handleChangeSelect"
+    @search="handleSearch"
+  />
+</template>
+
+<script>
+export default {
+  methods: {
+    handleChangeSelect(value) {
+      console.log(value)
+    },
+    handleSearch(value) {
+      console.log(value)
+    }
+  }
+}
+</script>
+`
+    }
+  }
+}
+
+export const SearchToAPI = () => ({
+  components: { SelectSearchAPI },
+  template: `<div>
+    <SelectSearchAPI />
+  </div>`
+})
+
+SearchToAPI.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <SESelect
+    placeholder="Please select one"
+    :options="data"
+    :show-search="true"
+    label-in-value
+    :filter-option="false"
+    :is-fetching="fetching"
+    @change="handleChange"
+    @select="handleSelect"
+    @search="fetchUser"
+  />
+</template>
+
+<script>
+import debounce from 'lodash.debounce';
+
+export default {
+  data() {
+    this.lastFetchId = 0;
+    this.fetchUser = debounce(this.fetchUser, 800);
+    return {
+      data: [],
+      value: '',
+      fetching: false,
+    };
+  },
+  methods: {
+    fetchUser(value) {
+      console.log('fetching user', value);
+      this.lastFetchId += 1;
+      const fetchId = this.lastFetchId;
+      this.data = [];
+      this.fetching = true;
+      fetch('https://randomuser.me/api/?results=5')
+        .then(response => response.json())
+        .then(body => {
+          if (fetchId !== this.lastFetchId) {
+            // for fetch callback order
+            return;
+          }
+          const data = body.results.map(user => ({
+            label: user.name.first,
+            value: user.login.username,
+          }));
+          this.data = data;
+          this.fetching = false;
+        });
+    },
+    handleChange(value) {
+      console.log('change', value);
+      Object.assign(this, {
+        value: value.key,
+        data: [],
+        fetching: false,
+      });
+    },
+    handleSelect(value) {
+      console.log('select', value);
+    }
+  },
+};
+</script>
+  
+`
+    }
+  }
+}
+
+
+export const SearchToAPIMultiple = () => ({
+  components: { SelectSearchAPIMultiple },
+  template: `<div>
+    <SelectSearchAPIMultiple />
+  </div>`
+})
+
+SearchToAPIMultiple.parameters = {
+  docs: {
+    source: {
+      code: `<template>
+  <SESelect
+    placeholder="Please select one"
+    :options="data"
+    :show-search="true"
+    label-in-value
+    :filter-option="false"
+    :is-fetching="fetching"
+    @change="handleChange"
+    @select="handleSelect"
+    @search="fetchUser"
+  />
+</template>
+
+<script>
+import debounce from 'lodash.debounce';
+
+export default {
+  data() {
+    this.lastFetchId = 0;
+    this.fetchUser = debounce(this.fetchUser, 800);
+    return {
+      data: [],
+      value: '',
+      fetching: false,
+    };
+  },
+  methods: {
+    fetchUser(value) {
+      console.log('fetching user', value);
+      this.lastFetchId += 1;
+      const fetchId = this.lastFetchId;
+      this.data = [];
+      this.fetching = true;
+      fetch('https://randomuser.me/api/?results=5')
+        .then(response => response.json())
+        .then(body => {
+          if (fetchId !== this.lastFetchId) {
+            // for fetch callback order
+            return;
+          }
+          const data = body.results.map(user => ({
+            label: user.name.first,
+            value: user.login.username,
+          }));
+          this.data = data;
+          this.fetching = false;
+        });
+    },
+    handleChange(value) {
+      console.log('change', value);
+      Object.assign(this, {
+        value: value.key,
+        data: [],
+        fetching: false,
+      });
+    },
+    handleSelect(value) {
+      console.log('select', value);
+    }
+  },
+};
+</script>
+  
 `
     }
   }
