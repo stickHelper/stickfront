@@ -18,7 +18,7 @@
       :show-arrow="showArrow"
       :label-in-value="labelInValue"
       :placeholder="placeholder"
-      :filter-option="false"
+      :filter-option="filterOption"
       :not-found-content="isFetching ? undefined : null"
       :allow-clear="allowClear"
       :auto-clear-search-value="autoClearSearchValue"
