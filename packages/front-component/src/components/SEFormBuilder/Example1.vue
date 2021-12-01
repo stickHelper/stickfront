@@ -10,6 +10,7 @@
 </template>
 
 <script>
+/* eslint-disable no-undefined */
 import SEFormBuilder from '@/components/SEFormBuilder'
 
 const dataSchema = {
@@ -73,13 +74,36 @@ const dataSchema = {
       placeholder: 'Input note'
     },
     {
-      defaultValue: null,
+      defaultValue: undefined,
       name: 'industry',
       labelName: 'Select Industry you want to exclude',
       id: 'jhEbpgY1hnWcqSfA',
       componentName: 'SESelect',
       size: 'large',
       placeholder: 'Please Select',
+      rules: [
+        { required: true, message: 'Please select industry!!' }
+      ],
+      options: [
+        {
+          label: 'Test',
+          value: '420b7fe0-b7c2-4848-9f57-a870195ac604'
+        },
+        {
+          label: 'Industry 2',
+          value: '987e1ef3-5bd9-4f99-bb4d-498a1bcfe896'
+        }
+      ]
+    },
+    {
+      defaultValue: undefined,
+      name: 'industry',
+      labelName: 'Search and Select Industry you want to exclude',
+      id: 'jhEbpgY1hnWcqSfA233',
+      componentName: 'SESelect',
+      size: 'large',
+      placeholder: 'Please Select',
+      showSearch: true,
       rules: [
         { required: true, message: 'Please select industry!!' }
       ],
@@ -289,13 +313,13 @@ export default {
   },
   methods: {
     handleCancel() {
-      // console.log('cancel')
+      console.log('cancel')
     },
     handleSuccess(e) {
-      // console.log('success', e)
+      console.log('success', e)
     },
     handleError(e) {
-      // console.log('error', e)
+      console.log('error', e)
     },
     handleSubmit(e) {
       console.log('submit', e)

@@ -86,7 +86,11 @@
               :placeholder="schema.placeholder"
               :size="schema.size"
               :mode="schema.type"
+              :show-search="schema.showSearch"
               :options="schema.options"
+              :label-in-value="schema.labelInValue"
+              :filter-option="schema.filterOption"
+              :is-fetching="schema.isFetching"
             />
             <div class="help-info">
               {{ schema.helpText }}
@@ -379,6 +383,18 @@
 <script>
 import { Form, DatePicker, TimePicker } from 'ant-design-vue'
 
+import SESelect from '../SESelect'
+import SETextfield from '../SETextfield'
+import SEButton from '../SEButton'
+import SETextarea from '../SETextarea'
+import SERadio from '../SERadio'
+import SERadioGroup from '../SERadio/SERadioGroup'
+import SERadioButton from '../SERadio/SERadioButton'
+import SECheckbox from '../SECheckbox'
+import SECheckboxGroup from '../SECheckbox/SECheckboxGroup'
+import SESpace from '../SESpace'
+import SESwitch from '../SESwitch'
+
 export default {
   name: 'SEFormBuilder',
   components: {
@@ -387,7 +403,18 @@ export default {
     ADatePicker: DatePicker,
     AMonthPicker: DatePicker.MonthPicker,
     ARangePicker: DatePicker.RangePicker,
-    ATimePicker: TimePicker
+    ATimePicker: TimePicker,
+    SESelect,
+    SETextfield,
+    SEButton,
+    SETextarea,
+    SERadio,
+    SERadioGroup,
+    SERadioButton,
+    SECheckbox,
+    SECheckboxGroup,
+    SESpace,
+    SESwitch
   },
   props: {
     id: {
