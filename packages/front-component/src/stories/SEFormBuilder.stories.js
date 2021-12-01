@@ -113,6 +113,29 @@ const dataSchema = {
       ]
     },
     {
+      defaultValue: undefined,
+      name: 'industry',
+      labelName: 'Search and Select Industry you want to exclude',
+      id: 'jhEbpgY1hnWcqSfA233',
+      componentName: 'SESelect',
+      size: 'large',
+      placeholder: 'Please Select',
+      showSearch: true,
+      rules: [
+        { required: true, message: 'Please select industry!!' }
+      ],
+      options: [
+        {
+          label: 'Test',
+          value: '420b7fe0-b7c2-4848-9f57-a870195ac604'
+        },
+        {
+          label: 'Industry 2',
+          value: '987e1ef3-5bd9-4f99-bb4d-498a1bcfe896'
+        }
+      ]
+    },
+    {
       defaultValue: [],
       name: 'category',
       labelName: 'Select Multiple Category',
