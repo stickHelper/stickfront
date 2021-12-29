@@ -2,13 +2,15 @@
   <SESelect
     placeholder="Please select one"
     :options="[
-      { label: 'jack', value: 'jack' },
-      { label: 'lucy', value: 'lucy' },
-      { label: 'Yiminghe', value: 'yiminghe' }
+      { label: 'Jack', value: 'jack', key: 'as123djh' },
+      { label: 'Lucy', value: 'lucy', key: 'zv23sd' },
+      { label: 'Yiminghe', value: 'yiminghe', key: 'asf1245' }
     ]"
     :show-search="true"
+    label-in-value
     @change="handleChangeSelect"
     @search="handleSearch"
+    @select="handleSelect"
   />
 </template>
 
@@ -25,6 +27,9 @@ export default {
     },
     handleSearch(value) {
       console.log(value)
+    },
+    handleSelect(value) {
+      console.log('select', value)
     }
   }
 }

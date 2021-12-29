@@ -1,13 +1,12 @@
 <template>
-  <SESelect
-    placeholder="Please select one"
+  <SESelectMultiple
+    position="left"
+    name="company"
+    label="Company"
     :options="data"
-    :show-search="true"
     label-in-value
     :value="value"
-    :filter-option="false"
     :is-fetching="fetching"
-    mode="multiple"
     @change="handleChange"
     @select="handleSelect"
     @search="fetchUser"
@@ -15,11 +14,11 @@
 </template>
 <script>
 import debounce from 'lodash.debounce'
-import SESelect from './index.vue'
+import SESelectMultiple from './index.vue'
 
 export default {
   components: {
-    SESelect
+    SESelectMultiple
   },
   data() {
     this.lastFetchId = 0
@@ -43,11 +42,12 @@ export default {
             // for fetch callback order
             return
           }
-          const data = body.results.map(user => ({
-            label: `${user.name.first} ${user.name.last}`,
-            value: user.login.username
+          const data = body.results.map((user) => ({
+            uuid: user.login.uuid,
+            name: `${user.name.first} ${user.name.last}`
           }))
           this.data = data
+          console.log(this.data)
           this.fetching = false
         })
     },

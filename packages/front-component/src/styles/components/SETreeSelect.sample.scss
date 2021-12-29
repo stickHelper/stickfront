@@ -1,0 +1,100 @@
+.se-tree-select {
+  &.ant-select {
+    &:not(.ant-select-disabled) {
+      .ant-select-selection {
+        background-color: $gray-3;
+        border: 1px solid $gray-3;
+
+        @include border-radius(6px);
+
+        &:active,
+        &:focus,
+        &:hover {
+          border-color: $purple-5;
+          background-color: $gray-1;
+        }
+
+        &:active,
+        &:focus {
+          @include box-shadow(0px 0px 0px 3px rgba(127, 67, 196, 0.12));
+        }
+      }
+    }
+
+    &.ant-select-disabled {
+      .ant-select-selection {
+        background-color: $gray-4;
+        border: 1px solid $gray-4;
+      }
+    }
+
+    .ant-select-selection__rendered {
+      .ant-select-selection__placeholder {
+        color: $gray-6;
+      }
+    }
+
+    .ant-select-selection--multiple {
+      .ant-select-selection__rendered {
+        margin-left: $gutter-sm;
+
+        .ant-select-selection__choice {
+          @include border-radius(6px);
+          background-color: $gray-8;
+          color: $white;
+
+          .ant-select-selection__choice__remove {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.se-tree-select__list {
+  .ant-select-tree-checkbox {
+    .ant-select-tree-checkbox-inner {
+      width: 24px;
+      height: 24px;
+      border: 2px solid $gray-5;
+      box-sizing: border-box;
+      @include border-radius(6px);
+    }
+
+    &.ant-select-tree-checkbox-checked {
+      &:after {
+        border-color: $purple-6;
+        @include border-radius(6px);
+      }
+      .ant-select-tree-checkbox-inner {
+        background-color: $purple-6;
+        border-color: $purple-6;
+        &:after {
+          top: 45%;
+          left: 25%;
+          width: 6.714286px;
+          height: 11.142857px;
+        }
+      }
+    }
+
+    &.ant-select-tree-checkbox-indeterminate {
+      .ant-select-tree-checkbox-inner {
+        &::after {
+          background-color: $purple-6;
+          height: 12px;
+          width: 12px;
+          @include border-radius(3px);
+        }
+      }
+    }
+  }
+
+  .ant-select-tree-checkbox-wrapper:hover .ant-select-tree-checkbox-inner,
+  .ant-select-tree-checkbox:hover .ant-select-tree-checkbox-inner,
+  .ant-select-tree-checkbox-input:focus + .ant-select-tree-checkbox-inner {
+    border-color: $purple-6;
+    @include border-radius(6px);
+  }
+}

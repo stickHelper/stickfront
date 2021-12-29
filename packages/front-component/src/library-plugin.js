@@ -45,6 +45,7 @@ import SERadioGroup from './components/SERadio/SERadioGroup/index.vue'
 import SERadioButton from './components/SERadio/SERadioButton/index.vue'
 import SERow from './components/SERow/index.vue'
 import SESelect from './components/SESelect/index.vue'
+import SESelectMultiple from './components/SESelectMultiple/index.vue'
 import SESidebarMenu from './components/SESidebarMenu/index.vue'
 import SESkeleton from './components/SESkeleton/index.vue'
 import SESlider from './components/SESlider/index.vue'
@@ -96,6 +97,7 @@ const components = {
   SERadioButton,
   SERow,
   SESelect,
+  SESelectMultiple,
   SESidebarMenu,
   SESkeleton,
   SESlider,
