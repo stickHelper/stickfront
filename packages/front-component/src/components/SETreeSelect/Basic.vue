@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      value: undefined,
+      value: null,
       options
     }
   },

@@ -59,6 +59,7 @@ import SETextfield from './components/SETextfield/index.vue'
 import SEToast from './components/SEToast/index.vue'
 import SETopBar from './components/SETopBar/index.vue'
 import SEWysiwyg from './components/SEWysiwyg/index.vue'
+import SETreeSelect from './components/SETreeSelect/index.vue'
 import DefaultTemplate from './components/Template/DefaultTemplate/index.vue'
 
 const components = {
@@ -121,7 +122,8 @@ const components = {
   SEMediaUploader,
   SEAlert,
   SEPopover: Popover,
-  SEPopconfirm: Popconfirm
+  SEPopconfirm: Popconfirm,
+  SETreeSelect
 }
 
 const install = (Vue, opts = {}) => {

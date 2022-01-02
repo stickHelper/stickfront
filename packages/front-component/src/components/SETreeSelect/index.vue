@@ -20,6 +20,8 @@
     :limit-text="limitText"
     :loading-text="loadingText"
     :max-height="maxHeight"
+    :load-options="loadOptions"
+    :async="async"
     @open="handleOpen"
     @close="handleClose"
     @input="handleInput"
@@ -126,6 +128,14 @@ export default {
     limitText: {
       type: Function,
       default: (count) => `and ${count} more`
+    },
+    loadOptions: {
+      type: Function,
+      default: undefined
+    },
+    async: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

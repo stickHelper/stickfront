@@ -1,3 +1,4 @@
+@use "sass:math";
 // Font sizes
 $text-huge:48px;
 $text-xxl:32px;
@@ -21,9 +22,9 @@ $gutter-md: 16px;
 $gutter-xxl: $gutter-md * 4; //64px
 $gutter-xl: $gutter-md * 2; //32px
 $gutter-lg: $gutter-md * 1.5; //24px
-$gutter-sm: $gutter-md / 2; //8px
-$gutter-xs: $gutter-md / 4; //4px
-$gutter-xxs: $gutter-md / 8; //2px
+$gutter-sm:  math.div($gutter-md, 2); //8px
+$gutter-xs:  math.div($gutter-md, 4); //4px
+$gutter-xxs:  math.div($gutter-md, 8); //2px
 
 $card-box-shadow : 0 0 0 1px rgba(0,0,0,0.05), 0 2px 5px 0 rgba(0,0,0,0.05);
 

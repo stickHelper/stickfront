@@ -119,6 +119,7 @@ export default {
   },
   data() {
     return {
+      options: this.optionsDetail()
     }
   },
 
@@ -129,7 +130,38 @@ export default {
         [this.className]: this.className !== null
       }
     },
-    options() {
+    totalDonut() {
+      return this.seriesData.reduce((a, b) => a + b, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
+  },
+  watch: {
+    categories: function (newVal) {
+      this.options = {
+        ...this.options,
+        xaxis: {
+          ...this.options.xaxis,
+          categories: newVal
+        }
+      }
+    }
+  },
+  methods: {
+    YFormatter() {
+      return this.seriesData.map(() => {
+        return {
+          formatter: function (y) {
+            if (typeof y !== 'undefined') {
+              return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            }
+            return y
+          },
+          title: {
+            formatter: () => ''
+          }
+        }
+      })
+    },
+    optionsDetail() {
       return {
         chart: {
           type: this.type,
@@ -262,37 +294,6 @@ export default {
           }
         }
       }
-    },
-    totalDonut() {
-      return this.seriesData.reduce((a, b) => a + b, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-    }
-  },
-  watch: {
-    categories: function (newVal) {
-      this.options = {
-        ...this.options,
-        xaxis: {
-          ...this.options.xaxis,
-          categories: newVal
-        }
-      }
-    }
-  },
-  methods: {
-    YFormatter() {
-      return this.seriesData.map(() => {
-        return {
-          formatter: function (y) {
-            if (typeof y !== 'undefined') {
-              return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-            }
-            return y
-          },
-          title: {
-            formatter: () => ''
-          }
-        }
-      })
     }
   }
 }

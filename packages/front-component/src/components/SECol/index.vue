@@ -16,8 +16,8 @@
     :xl="sm"
     :xxl="xxl"
   >
-  <!-- eslint-disable-next-line vue/valid-template-root vue/no-multiple-template-root -->
-  <slot />
+    <!-- eslint-disable-next-line vue/valid-template-root vue/no-multiple-template-root -->
+    <slot />
   <!-- eslint-disable-next-line vue/no-parsing-error -->
   </Col>
 </template>
