@@ -1,6 +1,5 @@
-.se-tree-select.vue-treeselect {
+.se-tree-select {
   position: relative;
-
   &.se-tree-select__default {
     .vue-treeselect__control {
       height: 32px;
@@ -85,109 +84,124 @@
     }
   }
 
-  &:not(.vue-treeselect--disabled):not(.vue-treeselect--focused) .vue-treeselect__control:hover {
-    border-color: transparent;
-  }
-
-  &.vue-treeselect--open.vue-treeselect--open-below {
-    &:not(.vue-treeselect--append-to-body) {
-      .vue-treeselect__menu-container {
-        top: 115%;
-      }
-    }
-    .vue-treeselect__control {
-      @include border-radius-bottom(6px);
-    }
-    .vue-treeselect__menu {
-      @include border-radius(6px);
-      @include box-shadow(0px 0px 1px rgba(44, 62, 80, 0.24), 0px 4px 8px -2px rgba(44, 62, 80, 0.16));
-      border: none;
-      background-color: $white;
-
-      .vue-treeselect__label-container {
-        line-height: 35px;
-
-        .vue-treeselect__label {
-          padding-left: $gutter-md;
-        }
-      }
-    }
-  }
-
-  .vue-treeselect__control {
-    background-color: $gray-3;
-    border: 2px solid $gray-3;
-    @include border-radius(6px);
-
-    .vue-treeselect__multi-value-item-container {
-      .vue-treeselect__multi-value-item {
-        background-color: $gray-8;
-        color: $white;
-        @include border-radius(6px);
+  .vue-treeselect {
   
-        .vue-treeselect__value-remove {
-          color: $white;
+    &:not(.vue-treeselect--disabled):not(.vue-treeselect--focused) .vue-treeselect__control:hover {
+      border-color: transparent;
+    }
+  
+    &.vue-treeselect--open.vue-treeselect--open-below {
+      &:not(.vue-treeselect--append-to-body) {
+        .vue-treeselect__menu-container {
+          top: 115%;
         }
       }
-
-    }
-    .vue-treeselect__limit-tip {
-      .vue-treeselect__limit-tip-text {
-        margin: 0;
-        padding: 2px 5px;
-        line-height: 19px;
-        font-weight: normal;
-        background-color: $gray-8;
-        color: $white;
+      .vue-treeselect__control {
+        @include border-radius-bottom(6px);
+      }
+      .vue-treeselect__menu {
         @include border-radius(6px);
+        @include box-shadow(0px 0px 1px rgba(44, 62, 80, 0.24), 0px 4px 8px -2px rgba(44, 62, 80, 0.16));
+        border: none;
+        background-color: $white;
+  
+        .vue-treeselect__label-container {
+          line-height: 35px;
+  
+          .vue-treeselect__label {
+            padding-left: $gutter-md;
+          }
+        }
       }
     }
-  }
-
-  .vue-treeselect__checkbox-container {
-    .vue-treeselect__checkbox {
-      &.vue-treeselect__checkbox--unchecked {
-        border: 1px solid $gray-5;
+  
+    .vue-treeselect__control {
+      background-color: $gray-3;
+      border: 2px solid $gray-3;
+      @include border-radius(6px);
+  
+      .vue-treeselect__multi-value-item-container {
+        .vue-treeselect__multi-value-item {
+          background-color: $gray-8;
+          color: $white;
+          @include border-radius(6px);
+    
+          .vue-treeselect__value-remove {
+            color: $white;
+          }
+        }
+  
       }
-      &.vue-treeselect__checkbox--checked{
-        background-color: $purple-6;
-        border-color: $purple-6;
+      .vue-treeselect__limit-tip {
+        .vue-treeselect__limit-tip-text {
+          margin: 0;
+          padding: 2px 5px;
+          line-height: 19px;
+          font-weight: normal;
+          background-color: $gray-8;
+          color: $white;
+          @include border-radius(6px);
+        }
       }
-      &.vue-treeselect__checkbox--indeterminate {
-        border: none;
-        background-color: transparent;
-        .vue-treeselect__minus-mark {
-          position: relative;
-          top: 0;
-          left: 0;
-          display: block;
-          width: 16px;
-          height: 16px;
-          background-color: $white;
+    }
+  
+    .vue-treeselect__checkbox-container {
+      .vue-treeselect__checkbox {
+        &.vue-treeselect__checkbox--unchecked {
           border: 1px solid $gray-5;
-          @include border-radius(4px);
-          border-collapse: separate;
-          transition: 200ms all ease;
-          &:after {
-            border: 0;
-            transform: translate(-50%,-50%) scale(1);
-            opacity: 1;
-            background-color: $purple-6;
-            height: 8px;
-            width: 8px;
-            @include border-radius(3px);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            display: table;
-            border: 0;
-            transform: translate(-50%,-50%) scale(1);
-            transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
-            content: " ";
+        }
+        &.vue-treeselect__checkbox--checked{
+          background-color: $purple-6;
+          border-color: $purple-6;
+        }
+        &.vue-treeselect__checkbox--indeterminate {
+          border: none;
+          background-color: transparent;
+          .vue-treeselect__minus-mark {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: $white;
+            border: 1px solid $gray-5;
+            @include border-radius(4px);
+            border-collapse: separate;
+            transition: 200ms all ease;
+            &:after {
+              border: 0;
+              transform: translate(-50%,-50%) scale(1);
+              opacity: 1;
+              background-color: $purple-6;
+              height: 8px;
+              width: 8px;
+              @include border-radius(3px);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              display: table;
+              border: 0;
+              transform: translate(-50%,-50%) scale(1);
+              transition: all .1s cubic-bezier(.71,-.46,.88,.6),opacity .1s;
+              content: " ";
+            }
           }
         }
       }
     }
   }
 
+  &.se-tree-select__count {
+    .counter {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+    .vue-treeselect__multi-value-item-container {
+      display: none;
+    }
+  }
 }

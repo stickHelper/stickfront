@@ -1,11 +1,16 @@
 <template>
-  <SETreeSelect
-    v-model="value"
-    :multiple="true"
-    :options="options"
-    :load-options="loadOptions"
-    placeholder="Try expanding any folder option..."
-  />
+  <div>
+    <SETreeSelect
+      v-model="value"
+      :multiple="true"
+      :options="options"
+      :load-options="loadOptions"
+      placeholder="Try expanding any folder option..."
+    />
+    <br>
+    <pre><code>{{ value }}</code></pre>
+    <br>
+  </div>
 </template>
 
 <script>

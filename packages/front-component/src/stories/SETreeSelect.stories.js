@@ -4,6 +4,7 @@ import BasicExample from '@/components/SETreeSelect/Basic.vue'
 import MoreFeatureExample from '@/components/SETreeSelect/MoreFeature.vue'
 import DelayedLoadingExample from '@/components/SETreeSelect/DelayedLoading.vue'
 import AsyncSearchingExample from '@/components/SETreeSelect/AsyncSearching.vue'
+import PreventValueCombiningExample from '@/components/SETreeSelect/PreventValueCombining.vue'
 
 export default {
   title: 'Data Entry/TreeSelect',
@@ -34,8 +35,6 @@ Default.parameters = {
       :limit="3"
       :limit-text="(count) => '+'+count+'...'"
       placeholder="Select your favourite(s)..."
-      @change="handleChange"
-      @select="handleSelect"
     />
     <br>
     <SETreeSelect
@@ -44,8 +43,16 @@ Default.parameters = {
       :limit="3"
       size="large"
       placeholder="Select your favourite(s)..."
-      @change="handleChange"
-      @select="handleSelect"
+    />
+    <br>
+    <SETreeSelect
+      :multiple="true"
+      :options="options"
+      :text-counter="(count) => 'Fruits ' + (count > 0 ? '('+count+')' : '')"
+      show-count
+      value-consists-of="LEAF_PRIORITY"
+      type="count"
+      placeholder="Select your favourite(s)..."
     />
   </div>
 </template>
@@ -92,20 +99,13 @@ const options = [{
 export default {
   data() {
     return {
-      value: [],
+      value1: [],
       options
-    }
-  },
-  methods: {
-    handleChange(value) {
-      console.log('change', { value })
-    },
-    handleSelect(value) {
-      console.log('select', { value })
     }
   }
 }
-</script>    
+</script>
+      
 `
     }
   }
@@ -374,6 +374,108 @@ export default {
   }
 }
 </script>
+`
+    }
+  }
+}
+
+export const PreventValueCombining = () => ({
+  components: { PreventValueCombiningExample },
+  template: `<div>
+    <PreventValueCombiningExample />
+  </div>`
+})
+
+PreventValueCombining.parameters = {
+  docs: {
+    source: {
+      code:`<template>
+  <div>
+    <SETreeSelect
+      :multiple="true"
+      :options="options"
+      :values="value"
+      :value-consists-of="valueConsistsOf"
+      @change="hangdleChange"
+    />
+    <br>
+    <pre><code>{{ value }}</code></pre>
+    <br>
+    <p><strong>Value consists of:</strong></p>
+    <p class="options">
+      <label><input
+        v-model="valueConsistsOf"
+        type="radio"
+        value="ALL"
+        class="mr-xs-1"
+      >All</label><br>
+      <label><input
+        v-model="valueConsistsOf"
+        type="radio"
+        value="BRANCH_PRIORITY"
+        class="mr-xs-1"
+      >Branch priority</label><br>
+      <label><input
+        v-model="valueConsistsOf"
+        type="radio"
+        value="LEAF_PRIORITY"
+        class="mr-xs-1"
+      >Leaf priority</label><br>
+      <label><input
+        v-model="valueConsistsOf"
+        type="radio"
+        value="ALL_WITH_INDETERMINATE"
+        class="mr-xs-1"
+      >All with indeterminate</label>
+    </p>
+  </div>
+</template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      value: [],
+      valueConsistsOf: 'BRANCH_PRIORITY',
+      options: [{
+        id: 'company',
+        label: 'Company 🏢',
+        children: [{
+          id: 'team-i',
+          label: 'Team I 👥',
+          children: [{
+            id: 'person-a',
+            label: 'Person A 👱'
+          }, {
+            id: 'person-b',
+            label: 'Person B 🧔'
+          }]
+        }, {
+          id: 'team-ii',
+          label: 'Team II 👥',
+          children: [{
+            id: 'person-c',
+            label: 'Person C 👳'
+          }, {
+            id: 'person-d',
+            label: 'Person D 👧'
+          }]
+        }, {
+          id: 'person-e',
+          label: 'Person E 👩'
+        }]
+      }]
+    }
+  },
+  methods: {
+    hangdleChange(payload) {
+      this.value = payload
+    }
+  }
+}
+</script>
+    
 `
     }
   }

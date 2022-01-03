@@ -4,10 +4,8 @@
       :multiple="true"
       :options="options"
       :limit="3"
-      :limit-text="(count) => `+${count}...`"
+      :limit-text="(count) => '+'+count+'...'"
       placeholder="Select your favourite(s)..."
-      @change="handleChange"
-      @select="handleSelect"
     />
     <br>
     <SETreeSelect
@@ -16,8 +14,16 @@
       :limit="3"
       size="large"
       placeholder="Select your favourite(s)..."
-      @change="handleChange"
-      @select="handleSelect"
+    />
+    <br>
+    <SETreeSelect
+      :multiple="true"
+      :options="options"
+      :text-counter="(count) => 'Fruits ' + (count > 0 ? '('+count+')' : '')"
+      show-count
+      value-consists-of="LEAF_PRIORITY"
+      type="count"
+      placeholder="Select your favourite(s)..."
     />
   </div>
 </template>
@@ -69,16 +75,8 @@ export default {
   },
   data() {
     return {
-      value: null,
+      value1: [],
       options
-    }
-  },
-  methods: {
-    handleChange(value) {
-      console.log('change', { value })
-    },
-    handleSelect(value) {
-      console.log('select', { value })
     }
   }
 }

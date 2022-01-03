@@ -1,34 +1,42 @@
 <template>
-  <treeselect
-    :id="id"
-    v-model="value"
-    :class="classes"
-    :name="name"
-    :multiple="multiple"
-    :options="options"
-    :placeholder="placeholder"
-    :clearable="clearable"
-    :searchable="searchable"
-    :disabled="disabled"
-    :open-on-click="openOnClick"
-    :open-on-focus="openOnFocus"
-    :clear-on-select="clearOnSelect"
-    :close-on-select="closeOnSelect"
-    :always-open="alwaysOpen"
-    :append-to-body="appendToBody"
-    :limit="limit"
-    :limit-text="limitText"
-    :loading-text="loadingText"
-    :max-height="maxHeight"
-    :load-options="loadOptions"
-    :async="async"
-    @open="handleOpen"
-    @close="handleClose"
-    @input="handleInput"
-    @select="handleSelect"
-    @deselect="handleDeselect"
-    @search-change="handleSearchChange"
-  />
+  <div :id="id" :class="classes">
+    <div v-if="type === 'count' && multiple && !isOpen" class="counter">
+      {{ getTextCunter }}
+    </div>
+    <treeselect
+      :id="id"
+      v-model="value"
+      :name="name"
+      :multiple="multiple"
+      :options="options"
+      :placeholder="type === 'count' && !isOpen ? '' : placeholder"
+      :clearable="clearable"
+      :searchable="searchable"
+      :disabled="disabled"
+      :open-on-click="openOnClick"
+      :open-on-focus="openOnFocus"
+      :clear-on-select="clearOnSelect"
+      :close-on-select="closeOnSelect"
+      :always-open="alwaysOpen"
+      :append-to-body="appendToBody"
+      :limit="limit"
+      :limit-text="limitText"
+      :loading-text="loadingText"
+      :max-height="maxHeight"
+      :load-options="loadOptions"
+      :async="async"
+      :search-prompt-text="searchPromptText"
+      :show-count="showCount"
+      :show-count-of="showCountOf"
+      :value-consists-of="valueConsistsOf"
+      @open="handleOpen"
+      @close="handleClose"
+      @input="handleInput"
+      @select="handleSelect"
+      @deselect="handleDeselect"
+      @search-change="handleSearchChange"
+    />
+  </div>
 </template>
 
 <script>
@@ -53,6 +61,13 @@ export default {
     name: {
       type: String,
       default: null
+    },
+    type: {
+      type: String,
+      default: 'default',
+      validator: function (value) {
+        return ['default', 'count', 'default'].indexOf(value) !== -1
+      }
     },
     size: {
       type: String,
@@ -136,11 +151,49 @@ export default {
     async: {
       type: Boolean,
       default: false
+    },
+    searchPromptText: {
+      type: String,
+      default: 'Type to search...'
+    },
+    showCount: {
+      type: Boolean,
+      default: false
+    },
+    showCountOf: {
+      type: String,
+      default: 'ALL_CHILDREN',
+      validator: function (value) {
+        return ['ALL_CHILDREN', 'ALL_DESCENDANTS', 'LEAF_CHILDREN', 'LEAF_DESCENDANTS'].indexOf(value) !== -1
+      }
+    },
+    sortValueBy: {
+      type: String,
+      default: 'ORDER_SELECTED',
+      validator: function (value) {
+        return ['ORDER_SELECTED', 'LEVEL', 'INDEX'].indexOf(value) !== -1
+      }
+    },
+    valueConsistsOf: {
+      type: String,
+      default: 'BRANCH_PRIORITY',
+      validator: function (value) {
+        return ['ALL', 'BRANCH_PRIORITY', 'LEAF_PRIORITY', 'ALL_WITH_INDETERMINATE'].indexOf(value) !== -1
+      }
+    },
+    zIndex: {
+      type: [Number, String],
+      default: 999
+    },
+    textCounter: {
+      type: Function,
+      default: (count) => `${count} count selected`
     }
   },
   data() {
     return {
-      value: null
+      value: null,
+      isOpen: false
     }
   },
   computed: {
@@ -148,8 +201,12 @@ export default {
       return {
         'se-tree-select': true,
         [this.className]: this.className !== null,
-        [`se-tree-select__${this.size}`]: this.size !== null
+        [`se-tree-select__${this.size}`]: this.size !== null,
+        [`se-tree-select__${this.type}`]: this.type !== null
       }
+    },
+    getTextCunter() {
+      return this.textCounter(this.value && this.value.length ? this.value.length : 0)
     }
   },
   watch: {
@@ -162,9 +219,11 @@ export default {
   },
   methods: {
     handleOpen(instanceId) {
-      this.$emit('open', { instanceId })
+      this.isOpen = true
+      this.$emit('open', instanceId)
     },
     handleClose(value, instanceId) {
+      this.isOpen = false
       this.$emit('close', { value, instanceId })
     },
     handleInput(value, instanceId) {
