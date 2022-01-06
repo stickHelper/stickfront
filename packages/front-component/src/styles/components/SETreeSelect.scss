@@ -3,6 +3,22 @@
   &.se-tree-select__default {
     .vue-treeselect__control {
       height: 32px;
+      max-height: 32px;
+
+    }
+    .vue-treeselect--has-value {
+      .vue-treeselect__multi-value {
+        margin-bottom: 0;
+        .vue-treeselect__multi-value-item-container {
+          padding-top: 3px;
+          .vue-treeselect__multi-value-item {
+            font-size: $text-xxs;
+          }
+        }
+        .vue-treeselect__input-container {
+          padding-top: 3px;
+        }
+      }
     }
   
     .vue-treeselect__placeholder, .vue-treeselect__single-value {

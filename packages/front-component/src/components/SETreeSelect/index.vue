@@ -64,9 +64,9 @@ export default {
     },
     type: {
       type: String,
-      default: 'default',
+      default: null,
       validator: function (value) {
-        return ['default', 'count', 'default'].indexOf(value) !== -1
+        return ['count'].indexOf(value) !== -1
       }
     },
     size: {
