@@ -1,6 +1,6 @@
 {
   "name": "@stickearn/stickfront",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "private": false,
   "license": "MIT",
   "publishConfig": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@riophae/vue-treeselect": "^0.4.0",
-    "@stickearn/stickfront": "^1.3.3",
+    "@stickearn/stickfront": "^1.3.4",
     "ant-design-vue": "^1.7.3",
     "apexcharts": "^3.22.0",
     "chart.js": "^2.9.4",
