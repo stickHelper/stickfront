@@ -245,6 +245,7 @@ export const Donut = () => ({
     :colors="['#4E277A', '#F7A300', '#FF5757', '#00B4AE']"
     :categories="['SD', 'SMP', 'SMA', 'S1']"
     :series-data="[1000, 1500, 1300, 900]"
+    :donut-width="55"
   />
   </div>
   `
@@ -258,6 +259,7 @@ Donut.parameters = {
   :colors="['#4E277A', '#F7A300', '#FF5757', '#00B4AE']"
   :categories="['SD', 'SMP', 'SMA', 'S1']"
   :series-data="[1000, 1500, 1300, 900]"
+  :donut-width="55"
 />`
     }
   }

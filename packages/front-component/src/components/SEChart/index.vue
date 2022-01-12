@@ -108,6 +108,10 @@ export default {
       type: [String, Number],
       default: '30%'
     },
+    donutWidth: {
+      type: [Number],
+      default: 55
+    },
     isStacked: {
       type: Boolean,
       default: false
@@ -224,7 +228,7 @@ export default {
           },
           pie: {
             donut: {
-              size: '80%',
+              size: this.donutWidth,
               labels: {
                 show: false,
                 name: {
