@@ -21,6 +21,7 @@ const Template = (args, { argTypes }) => ({
         data: [300,400,1000,500,45,600,300,400,200,500,450,600]
       }]"
       barWidth="80%"
+      :data-label="true"
     />
   </div>`
 })
