@@ -61,6 +61,29 @@ export default {
       type: String,
       default: null
     },
+    dataLabel: {
+      type: Boolean,
+      default: false
+    },
+    dataLabelSize: {
+      type: String,
+      default: '12px'
+    },
+    dataLabelColor: {
+      type: Array,
+      default: () => ['#000']
+    },
+    dataLabelPosition: {
+      type: String,
+      default: 'top',
+      validator: function (value) {
+        return ['top', 'bottom', 'center'].indexOf(value) !== -1
+      }
+    },
+    labelOffsetY: {
+      type: Number,
+      default: 0
+    },
     type: {
       type: String,
       default: null,
@@ -191,7 +214,12 @@ export default {
           }
         }],
         dataLabels: {
-          enabled: false
+          enabled: this.dataLabel,
+          style: {
+            colors: this.dataLabelColor,
+            fontSize: this.dataLabelSize
+          },
+          offsetY: this.labelOffsetY
         },
         colors: this.colors,
         grid: {
@@ -224,7 +252,11 @@ export default {
         },
         plotOptions: {
           bar: {
-            columnWidth: this.barWidth
+            columnWidth: this.barWidth,
+            horizontal: false,
+            dataLabels: {
+              position: this.dataLabelPosition
+            }
           },
           pie: {
             donut: {
