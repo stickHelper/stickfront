@@ -25,14 +25,14 @@
         :series="seriesData"
       />
       <div
-        v-if="type === 'donut'"
+        v-if="type === 'donut' && showLabel === true"
         class="se-chart__label"
         :class="type"
       >
-        <div class="label">
+        <div class="label" :style="{fontSize: labelFontSize}">
           {{ labelTotal }}
         </div>
-        <div class="value">
+        <div class="value" :style="{fontSize: valueFontSize}">
           {{ totalDonut }}
         </div>
       </div>
@@ -122,6 +122,18 @@ export default {
     labelTotal: {
       type: String,
       default: 'Total'
+    },
+    labelFontSize: {
+      type: String,
+      default: '1.2rem'
+    },
+    valueFontSize: {
+      type: String,
+      default: '1.8rem'
+    },
+    showLabel: {
+      type: Boolean,
+      default: true
     },
     labels: {
       type: Array,
