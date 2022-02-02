@@ -18,10 +18,9 @@ const Template = (args, { argTypes }) => ({
       :colors="['#FFB800']"
       :categories="['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12']"
       :series-data="[{
-        data: [300,400,1000,500,45,600,300,400,200,500,450,600]
+        data: [100,400,600,500,1000,600,300,400,200,500,450,600]
       }]"
       barWidth="80%"
-      :data-label="true"
     />
   </div>`
 })
@@ -247,6 +246,8 @@ export const Donut = () => ({
     :categories="['SD', 'SMP', 'SMA', 'S1']"
     :series-data="[1000, 1500, 1300, 900]"
     :donut-width="55"
+    labelFontSize="1rem"
+    valueFontSize="1.5rem"
   />
   </div>
   `
@@ -261,6 +262,8 @@ Donut.parameters = {
   :categories="['SD', 'SMP', 'SMA', 'S1']"
   :series-data="[1000, 1500, 1300, 900]"
   :donut-width="55"
+  labelFontSize="1rem"
+  valueFontSize="1.5rem"
 />`
     }
   }
