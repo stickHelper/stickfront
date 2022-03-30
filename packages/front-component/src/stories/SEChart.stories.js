@@ -60,6 +60,9 @@ export const BarMultiple = () => ({
         data: [15, 25, 40, 45, 68, 70]
       }
     ]"
+    :xAxisLabelRotation="-45"
+    xAxisLabelSize="10px"
+    yAxisLabelSize="10px"
   />
   </div>
   `
@@ -68,19 +71,27 @@ export const BarMultiple = () => ({
 BarMultiple.parameters = {
   docs: {
     source: {
-      code: ` <SEChart
-  type="bar"
-  :colors="['#4E277A', '#F7A300']"
-  :categories="['10 - 20', '20 - 30', '30 - 40', '40 - 50', '50 - 60', '> 60']"
-  :series-data="[
-    {
-      data: [10, 30, 30, 50, 55, 80]
-    },
-    {
-      data: [15, 25, 40, 45, 68, 70]
-    }
-  ]"
-/>`
+      code: `<div>
+  <SEChart
+    type="bar"
+    :colors="['#4E277A', '#F7A300']"
+    :categories="['10 - 20', '20 - 30', '30 - 40', '40 - 50', '50 - 60', '> 60']"
+    :series-data="[
+      {
+        name: 'Male',
+        data: [10, 30, 30, 50, 55, 80]
+      },
+      {
+        name: 'Female',
+        data: [15, 25, 40, 45, 68, 70]
+      }
+    ]"
+    :xAxisLabelRotation="-45"
+    xAxisLabelSize="10px"
+    yAxisLabelSize="10px"
+  />
+  </div>
+  `
     }
   }
 }
