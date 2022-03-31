@@ -28,6 +28,7 @@
         v-if="type === 'donut' && showLabel === true"
         class="se-chart__label"
         :class="type"
+        :style="{left: chartLabelLeftPos}"
       >
         <div class="label" :style="{fontSize: labelFontSize}">
           {{ labelTotal }}
@@ -123,6 +124,10 @@ export default {
       type: String,
       default: 'Total'
     },
+    chartLabelLeftPos: {
+      type: String,
+      default: '50%'
+    },
     labelFontSize: {
       type: String,
       default: '1.2rem'
@@ -151,7 +156,51 @@ export default {
       type: Boolean,
       default: false
     },
+    yAxisLabelRotation: {
+      type: Number,
+      default: 0
+    },
+    yAxisLabelSize: {
+      type: String,
+      default: '12px'
+    },
+    yAxisLabelColor: {
+      type: String,
+      default: '#000'
+    },
+    yAxisMinHeight: {
+      type: Number,
+      default: 50
+    },
+    yAxisMaxHeight: {
+      type: Number,
+      default: null
+    },
     yAxisLabel: {
+      type: Boolean,
+      default: true
+    },
+    xAxisLabelRotation: {
+      type: Number,
+      default: 0
+    },
+    xAxisLabelSize: {
+      type: String,
+      default: '12px'
+    },
+    xAxisLabelColor: {
+      type: String,
+      default: '#000'
+    },
+    xAxisMinHeight: {
+      type: Number,
+      default: 50
+    },
+    xAxisMaxHeight: {
+      type: Number,
+      default: null
+    },
+    xAxisLabel: {
       type: Boolean,
       default: true
     }
@@ -253,6 +302,14 @@ export default {
                 return Math.sign(value) * ((Math.abs(value) / 1000).toFixed(1)) + 'k'
               }
               return value
+            },
+            rotate: this.yAxisLabelRotation,
+            rotateAlways: this.yAxisLabelRotation === "0" || this.xAxisLabelRotation === 0 ? false : true,
+            minHeight: this.yAxisMinHeight,
+            maxHeight: this.yAxisMaxHeight,
+            style: {
+              colors: this.yAxisLabelColor,
+              fontSize: this.yAxisLabelSize
             }
           }
         },
@@ -260,7 +317,18 @@ export default {
           categories: this.categories,
           tooltip: {
             enabled: false
-          }
+          },
+          labels: {
+            show: this.xAxisLabel,
+            rotate: this.xAxisLabelRotation,
+            rotateAlways: this.xAxisLabelRotation === "0" || this.xAxisLabelRotation === 0 ? false : true,
+            minHeight: this.xAxisMinHeight,
+            maxHeight: this.xAxisMaxHeight,
+            style: {
+              colors: this.xAxisLabelColor,
+              fontSize: this.xAxisLabelSize
+            }
+          },
         },
         plotOptions: {
           bar: {
