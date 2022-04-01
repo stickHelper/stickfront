@@ -304,7 +304,7 @@ export default {
               return value
             },
             rotate: this.yAxisLabelRotation,
-            rotateAlways: this.yAxisLabelRotation === "0" || this.xAxisLabelRotation === 0 ? false : true,
+            rotateAlways: !(this.yAxisLabelRotation === '0' || this.xAxisLabelRotation === 0),
             minHeight: this.yAxisMinHeight,
             maxHeight: this.yAxisMaxHeight,
             style: {
@@ -321,14 +321,14 @@ export default {
           labels: {
             show: this.xAxisLabel,
             rotate: this.xAxisLabelRotation,
-            rotateAlways: this.xAxisLabelRotation === "0" || this.xAxisLabelRotation === 0 ? false : true,
+            rotateAlways: !(this.xAxisLabelRotation === '0' || this.xAxisLabelRotation === 0),
             minHeight: this.xAxisMinHeight,
             maxHeight: this.xAxisMaxHeight,
             style: {
               colors: this.xAxisLabelColor,
               fontSize: this.xAxisLabelSize
             }
-          },
+          }
         },
         plotOptions: {
           bar: {
