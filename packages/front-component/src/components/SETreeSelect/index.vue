@@ -215,6 +215,12 @@ export default {
       handler(newVal) {
         this.$emit('change', newVal)
       }
+    },
+    values: {
+      immediate: true,
+      handler(newVal) {
+        this.value = newVal
+      }
     }
   },
   methods: {
