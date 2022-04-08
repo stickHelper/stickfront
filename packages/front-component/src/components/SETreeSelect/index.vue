@@ -192,7 +192,7 @@ export default {
   },
   data() {
     return {
-      value: this.values,
+      value: this.values || [],
       isOpen: false
     }
   },
@@ -218,6 +218,7 @@ export default {
     },
     values: {
       immediate: true,
+      deep: true,
       handler(newVal) {
         this.value = newVal
       }
