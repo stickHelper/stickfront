@@ -29,6 +29,7 @@
       :show-count="showCount"
       :show-count-of="showCountOf"
       :value-consists-of="valueConsistsOf"
+      :search-neste="searchNested"
       @open="handleOpen"
       @close="handleClose"
       @input="handleInput"
@@ -160,6 +161,10 @@ export default {
       type: Boolean,
       default: false
     },
+    searchNested: {
+      type: Boolean,
+      default: false
+    },
     showCountOf: {
       type: String,
       default: 'ALL_CHILDREN',
@@ -243,7 +248,7 @@ export default {
       this.$emit('deselect', { node, instanceId })
     },
     handleSearchChange(searchQuery, instanceId) {
-      this.$emit('deselect', { searchQuery, instanceId })
+      this.$emit('search-change', { searchQuery, instanceId })
     }
   }
 }
