@@ -30,6 +30,7 @@
       :show-count-of="showCountOf"
       :value-consists-of="valueConsistsOf"
       :search-neste="searchNested"
+      :auto-load-root-options="autoLoadRootOptions"
       @open="handleOpen"
       @close="handleClose"
       @input="handleInput"
@@ -164,6 +165,10 @@ export default {
     searchNested: {
       type: Boolean,
       default: false
+    },
+    autoLoadRootOptions: {
+      type: Boolean,
+      default: true
     },
     showCountOf: {
       type: String,
