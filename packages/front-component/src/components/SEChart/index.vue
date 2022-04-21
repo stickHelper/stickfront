@@ -81,6 +81,10 @@ export default {
         return ['top', 'bottom', 'center'].indexOf(value) !== -1
       }
     },
+    labelLength: {
+      type: Number,
+      default: null
+    },
     labelOffsetY: {
       type: Number,
       default: 0
@@ -250,6 +254,12 @@ export default {
       })
     },
     optionsDetail() {
+      let truncatedLabelValues
+      if (this.labelLength) {
+        truncatedLabelValues = this.categories.map((val) => {
+          return val.length > this.labelLength ? val.slice(0, this.labelLength) + '..' : val
+        })
+      }
       return {
         chart: {
           type: this.type,
@@ -314,7 +324,7 @@ export default {
           }
         },
         xaxis: {
-          categories: this.categories,
+          categories: truncatedLabelValues || this.categories,
           tooltip: {
             enabled: false
           },
