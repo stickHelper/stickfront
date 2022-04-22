@@ -21,6 +21,8 @@ const Template = (args, { argTypes }) => ({
         data: [100,400,600,500,1000,600,300,400,200,500,450,600]
       }]"
       barWidth="80%"
+      :labelLength="7"
+      :xAxisLabelRotation="-45"
     />
   </div>`
 })
@@ -38,6 +40,8 @@ Default.parameters = {
     data: [300,400,1000,500,45,600,300,400,200,500,450,600]
   }]"
   barWidth="80%"
+  :labelLength="7"
+  :xAxisLabelRotation="-45"
 />`
     }
   }

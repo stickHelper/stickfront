@@ -1,4 +1,4 @@
-import SECombobox from '@/components/SECombobox/index.vue'
+import SECombobox from '@/components/SEComboBox/index.vue'
 import '@/styles/index.scss'
 import '@/styles/icon/se-font.min.scss'
 
